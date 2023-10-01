@@ -1,0 +1,98 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+            </h1>
+			<div>
+				<table>
+					<tr>
+							<td class="label"><b>&nbsp;{{ localize "CDE.Orientation" }}</b></td>
+							<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Orientation" }}" name="system.spell.orientation" value="{{systemData.spell.orientation}}"/></td>
+							<td class="label"><b>&nbsp;{{ localize "CDE.Aspect" }}</b></td>
+							<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Aspect" }}" name="system.spell.aspect" value="{{systemData.spell.aspect}}"/></td>
+							<td class="label"><b>&nbsp;{{ localize "CDE.Skill" }}</b></td>
+							<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Skill" }}" name="system.spell.skill" value="{{systemData.spell.skill}}"/></td>
+							<td class="label"><b>&nbsp;{{ localize "CDE.Speciality" }}</b></td>
+							<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Speciality" }}" name="system.spell.speciality" value="{{systemData.spell.speciality}}"/></td>
+					</tr>
+				</table>			
+			</div>
+        </div>
+    </header>
+	
+	{{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="description">{{localize "CDE.Description"}}</a>
+        <a class="item" data-tab="other">{{localize "CDE.Data"}}</a>
+        <a class="item" data-tab="examples">{{localize "CDE.Examples"}}</a>
+    </nav>
+	
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+
+        {{!-- Description Tab --}}
+        <div class="tab" data-group="primary" data-tab="description">
+            {{editor descriptionHTML target="system.spell.description" button=true editable=editable engine="prosemirror"}}
+        </div>
+
+        {{!-- Data Tab --}}
+        <div class="tab" data-group="primary" data-tab="data">
+		
+			<div>
+				<b>{{ localize "CDE.Style" }}</b>
+				<input type="textarea" name="system.spell.style" value="{{systemData.spell.style}}"/>
+			</div>
+		
+            <div class="technique">
+                <label>{{localize "CDE.Technique"}}</label>
+				<input type="checkbox" name="system.spell.technique1.check" value="{{systemData.spell.technique1.check}}" />
+                <input type="text" name="system.spell.technique1.name" value="{{systemData.spell.technique1.name}}"/>
+				<table>
+					<tr>
+						<td class="label"><b>{{ localize "CDE.Activation" }}</b></td>
+						<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Activation" }}" name="system.spell.technique1.activation" value="{{systemData.spell.technique1.activation}}"/></td>
+					</tr>
+				</table>
+				<b>{{ localize "CDE.Description" }}</b>
+				<input type="textarea" name="system.spell.technique1.description" value="{{systemData.spell.technique1.description}}"/>
+			</div>
+           
+			<div class="technique">
+                <label>{{localize "CDE.Technique"}}</label>
+				<input type="checkbox" name="system.spell.technique2.check" value="{{systemData.spell.technique2.check}}" />
+                <input type="text" name="system.spell.technique2.name" value="{{systemData.spell.technique2.name}}"/>
+				<table>
+					<tr>
+						<td class="label"><b>{{ localize "CDE.Activation" }}</b></td>
+						<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Activation" }}" name="system.spell.technique2.activation" value="{{systemData.spell.technique2.activation}}"/></td>
+					</tr>
+				</table>
+				<b>{{ localize "CDE.Description" }}</b>
+				<input type="textarea" name="system.spell.technique2.description" value="{{systemData.spell.technique2.description}}"/>
+           </div>
+
+		   <div class="technique">
+                <label>{{localize "CDE.Technique"}}</label>
+				<input type="checkbox" name="system.spell.technique3.check" value="{{systemData.spell.technique3.check}}" />
+                <input type="text" name="system.spell.technique3.name" value="{{systemData.spell.technique3.name}}"/>
+				<table>
+					<tr>
+						<td class="label"><b>{{ localize "CDE.Activation" }}</b></td>
+						<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Activation" }}" name="system.spell.technique3.activation" value="{{systemData.spell.technique3.activation}}"/></td>
+					</tr>
+				</table>
+				<b>{{ localize "CDE.Description" }}</b>
+				<input type="textarea" name="system.spell.technique3.description" value="{{systemData.spell.technique3.description}}"/>
+           </div>
+		   
+        </div>
+		
+        {{!-- Examples Tab --}}
+        <div class="tab" data-group="primary" data-tab="examples">
+            {{editor descriptionHTML target="system.spell.examples" button=true editable=editable engine="prosemirror"}}
+        </div>
+			
+    </section>
+</form>

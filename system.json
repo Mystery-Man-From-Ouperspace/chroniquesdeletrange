@@ -1,0 +1,39 @@
+{
+  "id": "chroniquesdeletrange",
+  "version": "0.0.1",
+  "title": "Les Chroniques de l'Étrange",
+  "url": "https://chroniques-etrange-no.fr/download/foundry/",
+  "description": "Game system for Les Chroniques de l'Étrange.",
+  "license": "LICENSE.txt",
+  "authors": [
+    {
+      "name": "Man From Outerspace",
+      "url": "https://chroniques-etrange-no.fr"
+    }
+  ],
+  "esmodules": ["module/chroniquesdeletrange.js"],
+  "styles": ["styles/chroniquesdeletrange.css"],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+	{
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    }
+  ],
+  "compatibility": {
+    "minimum": "10",
+    "verified": "11"
+  },
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "power",
+  "manifest": "https://chroniques-etrange-no.fr/download/foundry/system.json",
+  "download": "https://chroniques-etrange-no.fr/download/foundry/release-001.zip"
+}
