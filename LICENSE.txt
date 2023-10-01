@@ -13,7 +13,7 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
 
-Code additionnel David D.R. Bercovici 2023
+Code additionnel David R.D. Bercovici 2023
 
 Les images des fichiers cde_bois.png, cde_eau.png, cde_feu.png, cde_metal.png et
 cde_terre.png utilisées dans ce logiciel sont Copyright (c) 2023 Antre Monde Éditions ;
