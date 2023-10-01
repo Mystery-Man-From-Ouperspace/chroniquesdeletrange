@@ -2,7 +2,7 @@ Copyright (c) 2023 David D.R. Bercovici
 
 Les images cde_bois.png, cde_eau.png, cde_feu.png, cde_metal.png cde_terre.png
 utilisées dans ce logiciel sont Copyright (c) 2023 Antre Monde Éditions ;
-elles sont leur propriété et elles ne peuvent être reproduites ou réutilisées
+elles sont leurs propriétés et elles ne peuvent être reproduites ou réutilisées
 sans leur autorisation expresse
 
 The above copyright notice and this permission notice shall be included in all
