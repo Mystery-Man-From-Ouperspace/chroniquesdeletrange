@@ -1,3 +1,3 @@
-# Simple Worldbuilding System
+# Les Chroniques de l'étrange System
 
-A simple game system for Foundry VTT which allows for flexible definition of Actors and Items to assist with worldbuilding or for running games which do not have a more complete system implementation available.
+"description": "A rudimentary implementation of Les Chroniques de l'étrange for Foundry VTT, based entirely on the Simple Worldbuilding System for Foundry designed by Atropos."
