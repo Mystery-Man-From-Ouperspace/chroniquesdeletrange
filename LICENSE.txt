@@ -15,10 +15,10 @@ copies or substantial portions of the Software.
 
 Code additionnel David R.D. Bercovici 2023
 
-Les images des fichiers cde_bois.png, cde_eau.png, cde_feu.png, cde_metal.png et
-cde_terre.png utilisées dans ce logiciel sont Copyright (c) 2023 Antre Monde Éditions ;
-elles sont leurs propriétés et elles ne peuvent ni être reproduites ni réutilisées
-en dehors de ce logiciel, ni cédées sans leur autorisation expresse
+Exceptées les images de d10, les images des fichiers .png du dossier images
+utilisées dans ce logiciel sont Copyright (c) 2023 Antre Monde Éditions ;
+elles sont leurs propriétés et elles ne peuvent ni être reproduites ni
+réutilisées en dehors de ce logiciel, ni cédées sans leur autorisation expresse
 
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
