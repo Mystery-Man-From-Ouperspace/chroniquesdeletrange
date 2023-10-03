@@ -314,7 +314,7 @@
 				"max": 0
 			},
 			"dicelevel": {
-				"levelzerod": {
+				"level0d": {
 					"san": {
 						"value": 0,
 						"max": 0
@@ -324,7 +324,7 @@
 						"max": 0
 					}
 				},
-				"leveloned": {
+				"level1d": {
 					"san": {
 						"value": 0,
 						"max": 0
@@ -334,7 +334,7 @@
 						"max": 0
 					}
 				},
-				"leveltwod": {
+				"level2d": {
 					"san": {
 						"value": 0,
 						"max": 0
