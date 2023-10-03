@@ -44,7 +44,8 @@ Hooks.once("init", async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("chroniquesdeletrange", SimpleActorSheet, { makeDefault: true });
+  // Actors.registerSheet("chroniquesdeletrange", SimpleActorSheet, { makeDefault: true });						// ligne modifiée selon directives de LeRatierBretonnien
+  Actors.registerSheet("chroniquesdeletrange", SimpleActorSheet, { types: ["character"], makeDefault: true });	// ligne modifiée selon directives de LeRatierBretonnien
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("chroniquesdeletrange", SimpleItemSheet, { makeDefault: true });
 

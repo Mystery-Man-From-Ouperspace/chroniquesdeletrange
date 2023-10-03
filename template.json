@@ -1,287 +1,369 @@
 {
 "Actor": {
-  "types": ["character"],
-  "htmlFields": ["biography"],
+	"types": {"character"},
+	"htmlFields": {"biography"},
 	"character": {
- 	"concept": "",
-	"guardian": "0",
-	"biography": "",
-	"fire": {
-      "value": 15,
-      "min": 1,
-      "max": 15
-    },
-    "earth": {
-      "value": 15,
-      "min": 1,
-      "max": 15
-    },
-    "metal": {
-      "value": 15,
-      "min": 1,
-      "max": 15
-    },
-    "water": {
-      "value": 15,
-      "min": 1,
-      "max": 15
-    },
-    "wood": {
-      "value": 15,
-      "min": 1,
-      "max": 15
-    },
-    "attributes": {},
-    "groups": {},
-	
-	"art": {
-	  "check": false,
-	  "specialities": "",
-	  "value": 0,
-      "min": 0,
-      "max": 5
-	},
-	"investigation": {
-	  "check": false,
-	  "specialities": "",
-	  "value": 0,
-      "min": 0,
-      "max": 5
-	},
-	"erudition": {
-	  "check": false,
-	  "specialities": "",
-	  "value": 0,
-      "min": 0,
-      "max": 5
-	},
-	"knavery": {
-	  "check": false,
-	  "specialities": "",
-	  "value": 0,
-      "min": 0,
-      "max": 5
-	},
-	"wordliness": {
-	  "check": false,
-	  "specialities": "",
-	  "value": 0,
-      "min": 0,
-      "max": 5
-	},
-	"prowess": {
-	  "check": false,
-	  "specialities": "",
-	  "value": 0,
-      "min": 0,
-      "max": 5
-	},
-	"sciences": {
-	  "check": false,
-	  "specialities": "",
-	  "value": 0,
-      "min": 0,
-      "max": 5
-	},
-	"technologies": {
-	  "check": false,
-	  "specialities": "",
-	  "value": 0,
-      "min": 0,
-      "max": 5
-	},
- 	"kungfu": {
-	  "check": false,
-	  "specialities": "",
-	  "value": 0,
-      "min": 0,
-      "max": 5
-	},
-	"rangedcombat": {
-	  "check": false,
-	  "specialities": "",
-	  "value": 0,
-      "min": 0,
-      "max": 5
-	},
+		"concept": "",
+		"guardian": "0",
+		"biography": "",
+		
+		"aspect": {
+			"fire": {
+				"label": "CDE.Fire",
+				"value": 15,
+				"min": 1,
+				"max": 15
+			},
+			"earth": {
+				"label": "CDE.Earth",
+				"value": 15,
+				"min": 1,
+				"max": 15
+			},
+			"metal": {
+				"label": "CDE.Metal",
+				"value": 15,
+				"min": 1,
+				"max": 15
+			},
+			"water": {
+				"label": "CDE.Water",
+				"value": 15,
+				"min": 1,
+				"max": 15
+			},
+			"wood": {
+				"label": "CDE.Wood",
+				"value": 15,
+				"min": 1,
+				"max": 15
+			}
+		},
+		
+		"attributes": {},
+		"groups": {},
+		
+		"skill": {
+			"art": {
+				"label": "CDE.Art",
+				"check": false,
+				"specialities": "",
+				"value": 0,
+				"min": 0,
+				"max": 5
+			},
+			"investigation": {
+				"label": "CDE.Investigation",
+				"check": false,
+				"specialities": "",
+				"value": 0,
+				"min": 0,
+				"max": 5
+			},
+			"erudition": {
+				"label": "CDE.Erudition",
+				"check": false,
+				"specialities": "",
+				"value": 0,
+				"min": 0,
+				"max": 5
+			},
+			"knavery": {
+				"label": "CDE.Knavery",
+				"check": false,
+				"specialities": "",
+				"value": 0,
+				"min": 0,
+				"max": 5
+			},
+			"wordliness": {
+				"label": "CDE.Wordliness",
+				"check": false,
+				"specialities": "",
+				"value": 0,
+				"min": 0,
+				"max": 5
+			},
+			"prowess": {
+				"label": "CDE.Prowess",
+				"check": false,
+				"specialities": "",
+				"value": 0,
+				"min": 0,
+				"max": 5
+			},
+			"sciences": {
+				"label": "CDE.Sciences",
+				"check": false,
+				"specialities": "",
+				"value": 0,
+				"min": 0,
+				"max": 5
+			},
+			"technologies": {
+				"label": "CDE.Technologies",
+				"check": false,
+				"specialities": "",
+				"value": 0,
+				"min": 0,
+				"max": 5
+			},
+			"kungfu": {
+				"label": "CDE.KungFu",
+				"check": false,
+				"specialities": "",
+				"value": 0,
+				"min": 0,
+				"max": 5
+			},
+			"rangedcombat": {
+				"label": "CDE.RangedCombat",
+				"check": false,
+				"specialities": "",
+				"value": 0,
+				"min": 0,
+				"max": 5
+			}
+		},
 
-	"supply": {
-	  "check": false,
-	  "specialities": "",
-	  "value": 0,
-      "min": 0,
-      "max": 5,
-	  "debt": false
-	},
-	"inquiry": {
-	  "check": false,
-	  "specialities": "",
-	  "value": 0,
-      "min": 0,
-      "max": 5,
-	  "debt": false
-	},
-	"influence": {
-	  "check": false,
-	  "specialities": "",
-	  "value": 0,
-      "min": 0,
-      "max": 5,
-	  "debt": false
-	},
+		"resources": {
+			"supply": {
+				"label": "CDE.Supply",
+				"check": false,
+				"specialities": "",
+				"value": 0,
+				"min": 0,
+				"max": 5,
+				"debt": false
+			},
+			"inquiry": {
+				"label": "CDE.Inquiry",
+				"check": false,
+				"specialities": "",
+				"value": 0,
+				"min": 0,
+				"max": 5,
+				"debt": false
+			},
+			"influence": {
+				"label": "CDE.Influence",
+				"check": false,
+				"specialities": "",
+				"value": 0,
+				"min": 0,
+				"max": 5,
+				"debt": false
+			}
+		},
 	
-	"internalcinnabar": {
-		"value": 0,
-		"min": 0,
-		"max": 5
-	},
-	"essence": {
-		"check": false
-	},
-	"mind": {
-		"check": false
-	},
-	"purification": {
-		"check": false
-	},
-	"manipulation": {
-		"check": false
-	},
-	"aura": {
-		"check": false
-	},
-	
-	"alchemy": {
-		"value": 0,
-		"min": 0,
-		"max": 5
-	},
-	"acupuncture": {
-		"check": false
-	},
-	"elixirs": {
-		"check": false
-	},
-	"poisons": {
-		"check": false
-	},
-	"arsenal": {
-		"check": false
-	},
-	"potions": {
-		"check": false
-	},
-	
-	"masteryoftheway": {
-		"value": 0,
-		"min": 0,
-		"max": 5
-	},
-	"curse": {
-		"check": false
-	},
-	"transfiguration": {
-		"check": false
-	},
-	"necromancy": {
-		"check": false
-	},
-	"climatecontrol": {
-		"check": false
-	},
-	"goldenmagic": {
-		"check": false
-	},
-	
-	"exorcism": {
-		"value": 0,
-		"min": 0,
-		"max": 5
-	},
-	"invocation": {
-		"check": false
-	},
-	"tracking": {
-		"check": false
-	},
-	"protection": {
-		"check": false
-	},
-	"punishment": {
-		"check": false
-	},
-	"domination": {
-		"check": false
-	},
-	
-	"geomancy": {
-	   "value": 0,
-       "min": 0,
-       "max": 5
-	},
-	"neutralization": {
-		"check": false
-	},
-	"divination": {
-		"check": false
-	},
-	"earthlyprayer": {
-		"check": false
-	},
-	"heavenlyprayer": {
-		"check": false
-	},
-	"fungseoi": {
-		"check": false
-	},
-	
-	"heiyang": {
-		"value": 0,
-		"max": 0
-	},
-	"heiyin": {
-		"value": 0,
-		"max": 0
-	},
-	"san1": {
-		"value": 0,
-		"max": 0
-	},
-	"zing1": {
-		"value": 0,
-		"max": 0
-	},
-	"san2": {
-		"value": 0,
-		"max": 0
-	},
-	"zing2": {
-		"value": 0,
-		"max": 0
-	},
-	"san3": {
-		"value": 0,
-		"max": 0
-	},
-	"zing3": {
-		"value": 0,
-		"max": 0
-	},
-	"experience": {
-		"value": 0,
-		"max": 0
-	}	
-  }
+		"magic": {
+			"internalcinnabar": {
+				"label": "CDE.InternalCinnabar",
+				"value": 0,
+				"min": 0,
+				"max": 5,
+				"aspectlabel": "CDE.Metal",
+				"speciality": {
+					"essence": {
+						"check": false,
+						"label": "CDE.Essence"
+					},
+					"mind": {
+						"check": false,
+						"label": "CDE.Mind"
+					},
+					"purification": {
+						"check": false,
+						"label": "CDE.Purification"
+					},
+					"manipulation": {
+						"check": false,
+						"label": "CDE.Manipulation"
+					},
+					"aura": {
+						"check": false,
+						"label": "CDE.Aura"
+					}
+				}
+			},
+			"alchemy": {
+				"label": "CDE.Alchemy",
+				"value": 0,
+				"min": 0,
+				"max": 5,
+				"aspectlabel": "CDE.Water",
+				"speciality": {
+					"acupuncture": {
+						"check": false,
+						"label": "CDE.Water"
+					},
+					"elixirs": {
+						"check": false,
+						"label": "CDE.Elixirs"
+					},
+					"poisons": {
+						"check": false,
+						"label": "CDE.Poisons"
+					},
+					"arsenal": {
+						"check": false,
+						"label": "CDE.Arsenal"
+					},
+					"potions": {
+						"check": false,
+						"label": "CDE.Potions"
+					}
+				}
+			},
+			"masteryoftheway": {
+				"label": "CDE.MasteryOfTheWay",
+				"value": 0,
+				"min": 0,
+				"max": 5,
+				"aspectlabel": "CDE.Earth",
+				"speciality": {
+					"curse": {
+						"check": false,
+						"label": "CDE.Curse"
+					},
+					"transfiguration": {
+						"check": false,
+						"label": "CDE.Transfiguration"
+					},
+					"necromancy": {
+						"check": false,
+						"label": "CDE.Necromancy"
+					},
+					"climatecontrol": {
+						"check": false,
+						"label": "CDE.ClimateControl"
+					},
+					"goldenmagic": {
+						"check": false,
+						"label": "CDE.GoldenMagic"
+					}
+				}
+			},
+			"exorcism": {
+				"label": "CDE.Exorcism",
+				"value": 0,
+				"min": 0,
+				"max": 5,
+				"aspectlabel": "CDE.Fire",
+				"speciality": {
+					"invocation": {
+						"check": false,
+						"label": "CDE.Invocation"
+					},
+					"tracking": {
+						"check": false,
+						"label": "CDE.Tracking"
+					},
+					"protection": {
+						"check": false,
+						"label": "CDE.Protection"
+					},
+					"punishment": {
+						"check": false,
+						"label": "CDE.Punishment"
+					},
+					"domination": {
+						"check": false,
+						"label": "CDE.Domination"
+					}
+				}
+			},
+			"geomancy": {
+				"label": "CDE.Geomancy",
+				"value": 0,
+				"min": 0,
+				"max": 5,
+				"aspectlabel": "CDE.Wood",
+				"speciality": {
+					"neutralization": {
+						"check": false,
+						"label": "CDE.Neutralization"
+					},
+					"divination": {
+						"check": false,
+						"label": "CDE.Divination"
+					},
+					"earthlyprayer": {
+						"check": false,
+						"label": "CDE.EarthlyPrayer"
+					},
+					"heavenlyprayer": {
+						"check": false,
+						"label": "CDE.HeavenlyPrayer"
+					},
+					"fungseoi": {
+						"check": false,
+						"label": "CDE.Fungseoi"
+					}
+				}
+			}
+		},
+		
+		"threetreasures": {
+			"heiyang": {
+				"value": 0,
+				"max": 0
+			},
+			"heiyin": {
+				"value": 0,
+				"max": 0
+			},
+			"dicelevel": {
+				"level0d": {
+					"san": {
+						"value": 0,
+						"max": 0
+					},
+					"zing": {
+						"value": 0,
+						"max": 0
+					}
+				},
+				"level1d": {
+					"san": {
+						"value": 0,
+						"max": 0
+					},
+					"zing": {
+						"value": 0,
+						"max": 0
+					}
+				},
+				"level2d": {
+					"san": {
+						"value": 0,
+						"max": 0
+					},
+					"zing": {
+						"value": 0,
+						"max": 0
+					}
+				}
+			}
+		},
+		
+		"experience": {
+			"value": 0,
+			"max": 0
+		}
+	}
 },
+
 "Item": {
-  "types": ["item"],
-  "htmlFields": ["description"],
-  "item": {
-    "description": "",
-    "quantity": 1,
-    "weight": 0,
-    "attributes": {},
-    "groups": {}
-  }
+	"types": {"item"},
+	"htmlFields": {"description"},
+	"item": {
+	"description": "",
+	"quantity": 1,
+	"weight": 0,
+	"attributes": {},
+	"groups": {}
+	}
 }
+
 }
