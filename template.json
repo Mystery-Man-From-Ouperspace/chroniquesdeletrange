@@ -1,7 +1,7 @@
 {
 "Actor": {
-	"types": {"character"},
-	"htmlFields": {"biography"},
+	"types": ["character"],
+	"htmlFields": ["biography"],
 	"character": {
 		"concept": "",
 		"guardian": "0",
@@ -355,8 +355,8 @@
 },
 
 "Item": {
-	"types": {"item"},
-	"htmlFields": {"description"},
+	"types": ["item"],
+	"htmlFields": ["description"],
 	"item": {
 	"description": "",
 	"quantity": 1,
