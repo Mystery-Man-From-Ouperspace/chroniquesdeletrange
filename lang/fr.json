@@ -66,8 +66,10 @@
  "CDE.Spells": "Sortilèges",
   
   
- "CDE.Die": "Cliquez ici pour jeter les dés",
- "CDE.Debt": "Cochez si vous avec contracté une Dette",
+ "CDE.Die": "Cliquez ici pour jeter les dés pour ",
+ "CDE.DieSP": "Cliquez ici pour jeter les dés pour la spécialité ",
+ "CDE.DieDM": "Cliquez ici pour jeter les dés pour un de ces domaines",
+ "CDE.Debt": "Cochez si vous avec contracté une dette en ",
 
   
  "CDE.Specialities": "Spécialités",
@@ -104,7 +106,7 @@
  "CDE.Fire": "Feu",
  "CDE.Wood": "Bois",
 
- "CDE.PracticeSpecialty": "Cochez si vous pratiquez cette Spécialité",
+ "CDE.PracticeSpecialty": "Cochez si vous pratiquez la spécialité ",
 
  "CDE.Essence": "Essence",
  "CDE.Mind": "Esprit",

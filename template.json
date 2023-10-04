@@ -228,7 +228,7 @@
 				"speciality": {
 					"acupuncture": {
 						"check": false,
-						"label": "CDE.Water"
+						"label": "CDE.Acupuncture"
 					},
 					"elixirs": {
 						"check": false,

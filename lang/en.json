@@ -66,8 +66,10 @@
  "CDE.Spells": "Spells",
  
   
- "CDE.Die": "Click Here to Throw Dice",
- "CDE.Debt": "Check If You Have Incurred a Debt",
+ "CDE.Die": "Click Here to Throw Dice For ",
+ "CDE.DieSP": "Click Here to Throw Dice For This Speciality: ",
+ "CDE.DieDM": "Click Here to Throw Dice For One Of These Fields",
+ "CDE.Debt": "Check If You Have Incurred a Debt For ",
   
   
  "CDE.Specialities": "Specialities",
@@ -105,7 +107,7 @@
  "CDE.Fire": "Fire",
  "CDE.Wood": "Wood",
 
- "CDE.PracticeSpecialty": "Check If You Practice This Speciality",
+ "CDE.PracticeSpecialty": "Check If You Practice This Speciality: ",
 
  "CDE.Essence": "Essence",
  "CDE.Mind": "Mind",
