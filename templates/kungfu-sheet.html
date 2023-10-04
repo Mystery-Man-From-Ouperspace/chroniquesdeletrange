@@ -2,7 +2,7 @@
     <header class="sheet-header">
         <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
         <div class="header-fields">
-            <h1 class="charname">
+            <h1 class="kungfu">
                 <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
             </h1>
 			<div>
@@ -25,68 +25,58 @@
 	{{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="description">{{localize "CDE.Description"}}</a>
-        <a class="item" data-tab="other">{{localize "CDE.Data"}}</a>
+        <a class="item" data-tab="technique1">{{localize "CDE.Technique"}} 1</a>
+        <a class="item" data-tab="technique2">{{localize "CDE.Technique"}} 2</a>
+        <a class="item" data-tab="technique3">{{localize "CDE.Technique"}} 3</a>
     </nav>
 	
     {{!-- Sheet Body --}}
     <section class="sheet-body">
 
         {{!-- Description Tab --}}
-        <div class="tab" data-group="primary" data-tab="description">
+        <div class="tab" components-group="primary" components-tab="description">
             {{editor descriptionHTML target="system.kf.description" button=true editable=editable engine="prosemirror"}}
         </div>
-
-        {{!-- Data Tab --}}
-        <div class="tab" data-group="primary" data-tab="data">
 		
-			<div>
-				<b>{{ localize "CDE.Style" }}</b>
-				<input type="textarea" name="system.kf.style" value="{{systemData.kf.style}}"/>
+		{{!-- Technique 1 Tab --}}
+        <div class="tab" data-group="primary" data-tab="technique1">
+			<div class="techniquename1">
+				<label><b>{{localize "CDE.Technique"}} 1</b></label>
+				<input class="input" type="text" placeholder="{{ localize "CDE.Technique" }}" name="system.kf.techniques.technique1.name" value="{{systemData.kf.techniques.technique1.name}}" />
 			</div>
-		
-            <div class="technique">
-                <label>{{localize "CDE.Technique"}}</label>
-				<input type="checkbox" name="system.kf.technique1.check" value="{{systemData.kf.technique1.check}}" />
-                <input type="text" name="system.kf.technique1.name" value="{{systemData.kf.technique1.name}}"/>
-				<table>
-					<tr>
-						<td class="label"><b>{{ localize "CDE.Activation" }}</b></td>
-						<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Activation" }}" name="system.kf.technique1.activation" value="{{systemData.kf.technique1.activation}}"/></td>
-					</tr>
-				</table>
-				<b>{{ localize "CDE.Description" }}</b>
-				<input type="textarea" name="system.kf.technique1.description" value="{{systemData.kf.technique1.description}}"/>
+			<div class="techniqueactivation1">
+				<label><b>{{localize "CDE.Activation"}}</b></label>
+				<input class="input" type="text" placeholder="{{ localize "CDE.Activation" }" name="system.kf.techniques.technique1.activation" value="{{systemData.kf.techniques.technique1.activation}}" />
 			</div>
-           
-			<div class="technique">
-                <label>{{localize "CDE.Technique"}}</label>
-				<input type="checkbox" name="system.kf.technique2.check" value="{{systemData.kf.technique2.check}}" />
-                <input type="text" name="system.kf.technique2.name" value="{{systemData.kf.technique2.name}}"/>
-				<table>
-					<tr>
-						<td class="label"><b>{{ localize "CDE.Activation" }}</b></td>
-						<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Activation" }}" name="system.kf.technique2.activation" value="{{systemData.kf.technique2.activation}}"/></td>
-					</tr>
-				</table>
-				<b>{{ localize "CDE.Description" }}</b>
-				<input type="textarea" name="system.kf.technique2.description" value="{{systemData.kf.technique2.description}}"/>
-           </div>
-
-		   <div class="technique">
-                <label>{{localize "CDE.Technique"}}</label>
-				<input type="checkbox" name="system.kf.technique3.check" value="{{systemData.kf.technique3.check}}" />
-                <input type="text" name="system.kf.technique3.name" value="{{systemData.kf.technique3.name}}"/>
-				<table>
-					<tr>
-						<td class="label"><b>{{ localize "CDE.Activation" }}</b></td>
-						<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Activation" }}" name="system.kf.technique3.activation" value="{{systemData.kf.technique3.activation}}"/></td>
-					</tr>
-				</table>
-				<b>{{ localize "CDE.Description" }}</b>
-				<input type="textarea" name="system.kf.technique3.description" value="{{systemData.kf.technique3.description}}"/>
-           </div>
-		   
+			{{editor descriptionHTML target="system.kf.techniques.technique1.technique" button=true editable=editable engine="prosemirror"}}
         </div>
-			
+
+		{{!-- Technique 2 Tab --}}
+        <div class="tab" data-group="primary" data-tab="technique2">
+			<div class="techniquename2">
+				<label><b>{{localize "CDE.Technique"}} 2</b></label>
+				<input class="input" type="text" placeholder="{{ localize "CDE.Technique" }}" name="system.kf.techniques.technique2.name" value="{{systemData.kf.techniques.technique2.name}}" />
+			</div>
+			<div class="techniqueactivation2">
+				<label><b>{{localize "CDE.Activation"}}</b></label>
+				<input class="input" type="text" placeholder="{{ localize "CDE.Activation" }}" name="system.kf.techniques.technique2.activation" value="{{systemData.kf.techniques.technique2.activation}}" />
+			</div>
+			{{editor descriptionHTML target="system.kf.techniques.technique2.technique" button=true editable=editable engine="prosemirror"}}
+        </div>
+
+		{{!-- Technique 3 Tab --}}
+        <div class="tab" data-group="primary" data-tab="technique3">
+			<div class="techniquename3">
+				<label><b>{{localize "CDE.Technique"}} 3</b></label>
+				<input class="input" type="text" placeholder="{{ localize "CDE.Technique" }}" name="system.kf.techniques.technique3.name" value="{{systemData.kf.techniques.technique31.name}}" />
+			</div>
+			<div class="techniqueactivation3">
+				<label><b>{{localize "CDE.Activation"}}</b></label>
+				<input class="input" type="text" placeholder="{{ localize "CDE.Activation" }}" name="system.kf.techniques.technique3.activation" value="{{systemData.kf.techniques.technique3.activation}}" />
+			</div>
+			{{editor descriptionHTML target="system.kf.techniques.technique3.technique" button=true editable=editable engine="prosemirror"}}
+        </div>
+
     </section>
+
 </form>

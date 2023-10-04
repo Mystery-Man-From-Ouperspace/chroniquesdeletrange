@@ -5,27 +5,15 @@
             <h1 class="charname">
                 <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
             </h1>
-			<div>
-				<table>
-					<tr>
-							<td class="label"><b>&nbsp;{{ localize "CDE.Orientation" }}</b></td>
-							<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Orientation" }}" name="system.spell.orientation" value="{{systemData.spell.orientation}}"/></td>
-							<td class="label"><b>&nbsp;{{ localize "CDE.Aspect" }}</b></td>
-							<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Aspect" }}" name="system.spell.aspect" value="{{systemData.spell.aspect}}"/></td>
-							<td class="label"><b>&nbsp;{{ localize "CDE.Skill" }}</b></td>
-							<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Skill" }}" name="system.spell.skill" value="{{systemData.spell.skill}}"/></td>
-							<td class="label"><b>&nbsp;{{ localize "CDE.Speciality" }}</b></td>
-							<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Speciality" }}" name="system.spell.speciality" value="{{systemData.spell.speciality}}"/></td>
-					</tr>
-				</table>			
-			</div>
-        </div>
+		</div>
     </header>
 	
 	{{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="description">{{localize "CDE.Description"}}</a>
-        <a class="item" data-tab="other">{{localize "CDE.Data"}}</a>
+        <a class="item" data-tab="data">{{localize "CDE.Data"}}</a>
+        <a class="item" data-tab="Components">{{localize "CDE.Components"}}</a>
+        <a class="item" data-tab="effects">{{localize "CDE.Effects"}}</a>
         <a class="item" data-tab="examples">{{localize "CDE.Examples"}}</a>
     </nav>
 	
@@ -39,58 +27,49 @@
 
         {{!-- Data Tab --}}
         <div class="tab" data-group="primary" data-tab="data">
-		
-			<div>
-				<b>{{ localize "CDE.Style" }}</b>
-				<input type="textarea" name="system.spell.style" value="{{systemData.spell.style}}"/>
+		    <div class="specialityname">
+				<label><b>{{ localize "CDE.SpecialityName" }}</b></label>
+				<input class="input" type="text" placeholder="{{ localize "CDE.SpecialityName" }}1" name="system.spell.specialityname" value="{{systemData.spell.specialityname}}"/>
 			</div>
 		
-            <div class="technique">
-                <label>{{localize "CDE.Technique"}}</label>
-				<input type="checkbox" name="system.spell.technique1.check" value="{{systemData.spell.technique1.check}}" />
-                <input type="text" name="system.spell.technique1.name" value="{{systemData.spell.technique1.name}}"/>
-				<table>
-					<tr>
-						<td class="label"><b>{{ localize "CDE.Activation" }}</b></td>
-						<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Activation" }}" name="system.spell.technique1.activation" value="{{systemData.spell.technique1.activation}}"/></td>
-					</tr>
-				</table>
-				<b>{{ localize "CDE.Description" }}</b>
-				<input type="textarea" name="system.spell.technique1.description" value="{{systemData.spell.technique1.description}}"/>
+            <div class="associatedelement">
+                <label><b>{{localize "CDE.AssociatedElement"}}</b></label>
+				<input class="input" type="text" placeholder="{{ localize "CDE.AssociatedElement" }}1" name="system.spell.associatedelement" value="{{systemData.spell.associatedelement}}"/>
 			</div>
-           
-			<div class="technique">
-                <label>{{localize "CDE.Technique"}}</label>
-				<input type="checkbox" name="system.spell.technique2.check" value="{{systemData.spell.technique2.check}}" />
-                <input type="text" name="system.spell.technique2.name" value="{{systemData.spell.technique2.name}}"/>
-				<table>
-					<tr>
-						<td class="label"><b>{{ localize "CDE.Activation" }}</b></td>
-						<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Activation" }}" name="system.spell.technique2.activation" value="{{systemData.spell.technique2.activation}}"/></td>
-					</tr>
-				</table>
-				<b>{{ localize "CDE.Description" }}</b>
-				<input type="textarea" name="system.spell.technique2.description" value="{{systemData.spell.technique2.description}}"/>
-           </div>
 
-		   <div class="technique">
-                <label>{{localize "CDE.Technique"}}</label>
-				<input type="checkbox" name="system.spell.technique3.check" value="{{systemData.spell.technique3.check}}" />
-                <input type="text" name="system.spell.technique3.name" value="{{systemData.spell.technique3.name}}"/>
-				<table>
-					<tr>
-						<td class="label"><b>{{ localize "CDE.Activation" }}</b></td>
-						<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Activation" }}" name="system.spell.technique3.activation" value="{{systemData.spell.technique3.activation}}"/></td>
-					</tr>
-				</table>
-				<b>{{ localize "CDE.Description" }}</b>
-				<input type="textarea" name="system.spell.technique3.description" value="{{systemData.spell.technique3.description}}"/>
-           </div>
-		   
+		    <div class="hei">
+				<label></label><b>{{ localize "CDE.Hei" }}</b></label>
+				<input class="input" type="text" placeholder="{{ localize "CDE.Hei" }}1" name="system.spell.hei" value="{{systemData.spell.hei}}"/>
+			</div>
+
+		    <div class="realizationtimeritual">
+                <label><b>{{localize "CDE.RealizationTimeRitual"}}</b></label>
+				<input class="input" type="text" placeholder="{{ localize "CDE.RealizationTimeRitual" }}1" name="system.spell.realizationtimeritual" value="{{systemData.spell.realizationtimeritual}}"/>
+			</div>
+			
+		    <div class="realizationtimeaccelerated">
+			<label></label><b>{{ localize "CDE.RealizationTimeAccelerated" }}</b></label>
+				<input class="input" type="text" placeholder="{{ localize "CDE.RealizationTimeAccelerated" }}1" name="system.spell.realizationtimeaccelerated" value="{{systemData.spell.realizationtimeaccelerated}}"/>
+			</div>
+		
+            <div class="flashback">
+                <label><b>{{localize "CDE.Flashback"}}</b></label>
+				<input class="input" type="text" placeholder="{{ localize "CDE.Flashback" }}1" name="system.spell.flashback" value="{{systemData.spell.flashback}}"/>
+			</div>           
         </div>
 		
-        {{!-- Examples Tab --}}
-        <div class="tab" data-group="primary" data-tab="examples">
+        {{!-- Components Tab --}}
+        <div class="tab" components-group="primary" components-tab="components">
+            {{editor descriptionHTML target="system.spell.components" button=true editable=editable engine="prosemirror"}}
+        </div>
+
+		{{!-- Effects Tab --}}
+        <div class="tab" effects-group="primary" effects-tab="effect">
+            {{editor descriptionHTML target="system.spell.effects" button=true editable=editable engine="prosemirror"}}
+        </div>
+
+		{{!-- Examples Tab --}}
+        <div class="tab" examples-group="primary" examples-tab="examples">
             {{editor descriptionHTML target="system.spell.examples" button=true editable=editable engine="prosemirror"}}
         </div>
 			

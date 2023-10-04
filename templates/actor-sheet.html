@@ -777,107 +777,107 @@
 
         {{!-- Owned KungFu Tab --}}
         <div class="tab kungfu" data-group="primary" data-tab="kungfu">
-            <ol class="item-list">
-                {{#each data.items as |item id|}}
-                <li class="item flexrow" data-item-id="{{item._id}}">
-                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
-                    <h4 class="item-name">{{item.name}}</h4>
-                    {{!-- Iterate through all attributes on the item and output buttons for any that are formula. --}}
-                    <div class="item-buttons">
-                        {{#each item.system.attributes as |itemAttr key|}}
-                        {{#if itemAttr.dtype}}
-                            {{#if itemAttr.isFormula}}
-                                {{!-- Use the items.name.key format for shorthand. --}}
+            <ol class="kungfu-list">
+                {{#each data.kungfus as |kungfu id|}}
+                <li class="kungfu flexrow" data-kungfu-id="{{kungfu._id}}">
+                    <img src="{{kungfu.img}}" title="{{kungfu.name}}" width="24" height="24" />
+                    <h4 class="kungfu-name">{{kungfu.name}}</h4>
+                    {{!-- Iterate through all attributes on the kungfu and output buttons for any that are formula. --}}
+                    <div class="kungfu-buttons">
+                        {{#each kungfu.system.attributes as |kungfuAttr key|}}
+                        {{#if kungfuAttr.dtype}}
+                            {{#if kungfuAttr.isFormula}}
+                                {{!-- Use the kungfus.name.key format for shorthand. --}}
                                 {{#if ../../shorthand}}
-                                <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.{{key}}" data-label="{{ itemAttr.label }}"
-                                    title="{{itemAttr.value}}">{{itemAttr.label}}</button>
-                                {{!-- Use the items.name.attributes.key.value format otherwise. --}}
+                                <button class="kungfu-button rollable" data-roll="@kungfus.{{slugify kungfu.name}}.{{key}}" data-label="{{ kungfuAttr.label }}"
+                                    title="{{kungfuAttr.value}}">{{kungfuAttr.label}}</button>
+                                {{!-- Use the kungfus.name.attributes.key.value format otherwise. --}}
                                 {{else}}
-                                <button class="item-button rollable"
-                                    data-roll="@items.{{slugify item.name}}.attributes.{{key}}.value" data-label="{{ itemAttr.label }}"
-                                    title="{{itemAttr.value}}">{{itemAttr.label}}</button>
+                                <button class="kungfu-button rollable"
+                                    data-roll="@kungfus.{{slugify kungfu.name}}.attributes.{{key}}.value" data-label="{{ kungfuAttr.label }}"
+                                    title="{{kungfuAttr.value}}">{{kungfuAttr.label}}</button>
                                 {{/if}}
                             {{/if}}
                         {{else}}
-                            {{#each itemAttr as |itemGroupedAttr groupedKey|}}
-                                {{#if itemGroupedAttr.isFormula}}
-                                    {{!-- Use the items.name.key format for shorthand. --}}
+                            {{#each kungfuAttr as |kungfuGroupedAttr groupedKey|}}
+                                {{#if kungfuGroupedAttr.isFormula}}
+                                    {{!-- Use the kungfus.name.key format for shorthand. --}}
                                     {{#if ../../../shorthand}}
-                                    <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.{{key}}.{{groupedKey}}" data-label="{{ itemGroupedAttr.label }}"
-                                        title="{{itemGroupedAttr.value}}">{{itemGroupedAttr.label}}</button>
-                                    {{!-- Use the items.name.attributes.key.value format otherwise. --}}
+                                    <button class="kungfu-button rollable" data-roll="@kungfus.{{slugify kungfu.name}}.{{key}}.{{groupedKey}}" data-label="{{ kungfuGroupedAttr.label }}"
+                                        title="{{kungfuGroupedAttr.value}}">{{kungfuGroupedAttr.label}}</button>
+                                    {{!-- Use the kungfus.name.attributes.key.value format otherwise. --}}
                                     {{else}}
-                                    <button class="item-button rollable"
-                                        data-roll="@items.{{slugify item.name}}.attributes.{{key}}.{{groupedKey}}.value" data-label="{{ itemGroupedAttr.label }}"
-                                        title="{{itemGroupedAttr.value}}">{{itemGroupedAttr.label}}</button>
+                                    <button class="kungfu-button rollable"
+                                        data-roll="@kungfus.{{slugify kungfu.name}}.attributes.{{key}}.{{groupedKey}}.value" data-label="{{ kungfuGroupedAttr.label }}"
+                                        title="{{kungfuGroupedAttr.value}}">{{kungfuGroupedAttr.label}}</button>
                                     {{/if}}
                                 {{/if}}
                             {{/each}}
                         {{/if}}
                         {{/each}}
                     </div>
-                    <div class="item-controls">
-                        <a class="item-control" title="{{ localize "CDE.KFEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
-                        <a class="item-control" title="{{ localize "CDE.KFDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                    <div class="kungfu-controls">
+                        <a class="kungfu-control" title="{{ localize "CDE.KFEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
+                        <a class="kungfu-control" title="{{ localize "CDE.KFDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
                     </div>
                 </li>
                 {{/each}}
             </ol>
             <p>
-                <a class="item-control" title="{{ localize "CDE.KFCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "CDE.KFCreate" }}</a>
+                <a class="kungfu-control" title="{{ localize "CDE.KFCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "CDE.KFCreate" }}</a>
             </p>
         </div>
 		
 		{{!-- Owned Spells Tab --}}
 	    <div class="tab spells" data-group="primary" data-tab="spells">
-			<ol class="item-list">
-                {{#each data.items as |item id|}}
-                <li class="item flexrow" data-item-id="{{item._id}}">
-                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
-                    <h4 class="item-name">{{item.name}}</h4>
-                    {{!-- Iterate through all attributes on the item and output buttons for any that are formula. --}}
-                    <div class="item-buttons">
-                        {{#each item.system.attributes as |itemAttr key|}}
-                        {{#if itemAttr.dtype}}
-                            {{#if itemAttr.isFormula}}
-                                {{!-- Use the items.name.key format for shorthand. --}}
+			<ol class="spell-list">
+                {{#each data.spells as |spell id|}}
+                <li class="spell flexrow" data-spell-id="{{spell._id}}">
+                    <img src="{{spell.img}}" title="{{spell.name}}" width="24" height="24" />
+                    <h4 class="spell-name">{{spell.name}}</h4>
+                    {{!-- Iterate through all attributes on the spell and output buttons for any that are formula. --}}
+                    <div class="spell-buttons">
+                        {{#each spell.system.attributes as |spellAttr key|}}
+                        {{#if spellAttr.dtype}}
+                            {{#if spellAttr.isFormula}}
+                                {{!-- Use the spells.name.key format for shorthand. --}}
                                 {{#if ../../shorthand}}
-                                <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.{{key}}" data-label="{{ itemAttr.label }}"
-                                    title="{{itemAttr.value}}">{{itemAttr.label}}</button>
-                                {{!-- Use the items.name.attributes.key.value format otherwise. --}}
+                                <button class="spell-button rollable" data-roll="@spells.{{slugify spell.name}}.{{key}}" data-label="{{ spellAttr.label }}"
+                                    title="{{spellAttr.value}}">{{spellAttr.label}}</button>
+                                {{!-- Use the spells.name.attributes.key.value format otherwise. --}}
                                 {{else}}
-                                <button class="item-button rollable"
-                                    data-roll="@items.{{slugify item.name}}.attributes.{{key}}.value" data-label="{{ itemAttr.label }}"
-                                    title="{{itemAttr.value}}">{{itemAttr.label}}</button>
+                                <button class="spell-button rollable"
+                                    data-roll="@spells.{{slugify spell.name}}.attributes.{{key}}.value" data-label="{{ spellAttr.label }}"
+                                    title="{{spellAttr.value}}">{{spellAttr.label}}</button>
                                 {{/if}}
                             {{/if}}
                         {{else}}
-                            {{#each itemAttr as |itemGroupedAttr groupedKey|}}
-                                {{#if itemGroupedAttr.isFormula}}
-                                    {{!-- Use the items.name.key format for shorthand. --}}
+                            {{#each spellAttr as |spellGroupedAttr groupedKey|}}
+                                {{#if spellGroupedAttr.isFormula}}
+                                    {{!-- Use the spells.name.key format for shorthand. --}}
                                     {{#if ../../../shorthand}}
-                                    <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.{{key}}.{{groupedKey}}" data-label="{{ itemGroupedAttr.label }}"
-                                        title="{{itemGroupedAttr.value}}">{{itemGroupedAttr.label}}</button>
-                                    {{!-- Use the items.name.attributes.key.value format otherwise. --}}
+                                    <button class="spell-button rollable" data-roll="@spells.{{slugify spell.name}}.{{key}}.{{groupedKey}}" data-label="{{ spellGroupedAttr.label }}"
+                                        title="{{spellGroupedAttr.value}}">{{spellGroupedAttr.label}}</button>
+                                    {{!-- Use the spells.name.attributes.key.value format otherwise. --}}
                                     {{else}}
-                                    <button class="item-button rollable"
-                                        data-roll="@items.{{slugify item.name}}.attributes.{{key}}.{{groupedKey}}.value" data-label="{{ itemGroupedAttr.label }}"
-                                        title="{{itemGroupedAttr.value}}">{{itemGroupedAttr.label}}</button>
+                                    <button class="spell-button rollable"
+                                        data-roll="@spells.{{slugify spell.name}}.attributes.{{key}}.{{groupedKey}}.value" data-label="{{ spellGroupedAttr.label }}"
+                                        title="{{spellGroupedAttr.value}}">{{spellGroupedAttr.label}}</button>
                                     {{/if}}
                                 {{/if}}
                             {{/each}}
                         {{/if}}
                         {{/each}}
                     </div>
-                    <div class="item-controls">
-                        <a class="item-control" title="{{ localize "CDE.SpellEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
-                        <a class="item-control" title="{{ localize "CDE.SpellDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                    <div class="spell-controls">
+                        <a class="ispell-control" title="{{ localize "CDE.SpellEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
+                        <a class="spell-control" title="{{ localize "CDE.SpellDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
                     </div>
                 </li>
                 {{/each}}
             </ol>
             <p>
-                <a class="item-control" title="{{ localize "CDE.SpellCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "CDE.SpellCreate" }}</a>
+                <a class="spell-control" title="{{ localize "CDE.SpellCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "CDE.SpellCreate" }}</a>
             </p>
 		</div>
 		
