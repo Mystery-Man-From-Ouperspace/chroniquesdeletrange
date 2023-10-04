@@ -49,7 +49,7 @@
  "CDE.CelestialGuardian1": "Azurean Dragon (Wood)",
  "CDE.CelestialGuardian2": "Black Turtle (Water)",
  "CDE.CelestialGuardian3": "Scarlet Bird (Fire)",
- "CDE.CelestialGuardian4": "White Tigre (Metal)",
+ "CDE.CelestialGuardian4": "White Tiger (Metal)",
  "CDE.CelestialGuardian5": "Yellow Kirin (Earth)",
 
   
@@ -67,7 +67,7 @@
  
   
  "CDE.Die": "Click Here to Throw Dice",
- "CDE.Debt": "Debt",
+ "CDE.Debt": "Check If You Have Incurred a Debt",
   
   
  "CDE.Specialities": "Specialities",
@@ -80,7 +80,6 @@
  "CDE.Prowess": "Prowess",
  "CDE.Sciences": "Sciences",
  "CDE.Technologies": "Technologies",
- "CDE.KungFu": "Kung Fu",
  "CDE.RangedCombat": "Ranged Combat",
 
  "CDE.Supply": "Supply",
@@ -88,8 +87,9 @@
  "CDE.Influence": "Influence",
 
  "CDE.Components2": "Components & Ingredients",
- "CDE.Component": "Component",
- "CDE.ChanceThrow": "Draw a component at random",
+ "CDE.Component": "Component #",
+ "CDE.ChanceThrow": "Select a Component at Random In a Hurry",
+ "CDE.TypesOfMagic": "Types of Magic",
 
  
  "CDE.InternalCinnabar": "Internal Cinnabar",
@@ -105,6 +105,7 @@
  "CDE.Fire": "Fire",
  "CDE.Wood": "Wood",
 
+ "CDE.PracticeSpecialty": "Check If You Practice This Speciality",
 
  "CDE.Essence": "Essence",
  "CDE.Mind": "Mind",
@@ -170,7 +171,7 @@
  "CDE.SpecialityName": "Speciality Name",
  "CDE.AssociatedElement": "Associated Element",
  "CDE.HEI2": "Hei",
- "CDE.RealizationTimeRitual": "Realialization Time (Ritual)",
+ "CDE.RealizationTimeRitual": "Realization Time (Ritual)",
  "CDE.RealizationTimeAccelerated": "Realization Time (Accelerated)",
  "CDE.Flashback": "Flashback",
  "CDE.Components": "Components",

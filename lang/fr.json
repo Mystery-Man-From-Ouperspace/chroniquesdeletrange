@@ -67,7 +67,7 @@
   
   
  "CDE.Die": "Cliquez ici pour jeter les dés",
- "CDE.Debt": "Dette",
+ "CDE.Debt": "Cochez si vous avec contracté une Dette",
 
   
  "CDE.Specialities": "Spécialités",
@@ -80,16 +80,16 @@
  "CDE.Prowess": "Prouesse",
  "CDE.Sciences": "Sciences",
  "CDE.Technologies": "Technologies",
- "CDE.KungFu": "Kung Fu",
  "CDE.RangedCombat": "Combat à Distance",
 
  "CDE.Supply": "Matériel",
  "CDE.Inquiry": "Renseignement",
  "CDE.Influence": "Influence",
 
- "CDE.Components2": "Composants & Ingrédients",
-"CDE.Component": "Composant",
-"CDE.ChanceThrow": "Tirer un composant au hasard",
+"CDE.Components2": "Composants & ingrédients",
+"CDE.Component": "Composant n° ",
+"CDE.ChanceThrow": "Choisir un composant au hasard dans l′urgence",
+"CDE.TypesOfMagic": "Types de magie",
 
  "CDE.InternalCinnabar": "Cinabre Interne",
  "CDE.Alchemy":"Alchimie",
@@ -104,6 +104,7 @@
  "CDE.Fire": "Feu",
  "CDE.Wood": "Bois",
 
+ "CDE.PracticeSpecialty": "Cochez si vous pratiquez cette Spécialité",
 
  "CDE.Essence": "Essence",
  "CDE.Mind": "Esprit",

@@ -391,11 +391,63 @@
 	"types": ["item"],
 	"htmlFields": ["description"],
 	"item": {
-	"description": "",
-	"quantity": 1,
-	"weight": 0,
-	"attributes": {},
-	"groups": {}
+		"description": "",
+		"quantity": 1,
+		"weight": 0,
+		"attributes": {},
+		"groups": {}
+	}
+},
+
+"Spell": {
+	"types": ["spell"],
+	"htmlFields": ["description", "components", "effects", "examples"],
+	"spell": {
+		"specialityname": "",
+		"description": "",
+		"associatedelement": "",
+		"hei": "",
+		"realizationtimeritual": "",
+		"realizationtimeaccelerated": "",
+		"flashback": "",
+		"components": "",
+		"effects": "",
+		"examples": "",
+		"attributes": {},
+		"groups": {}
+	}
+},
+
+"KungFu": {
+	"types": ["kungfu"],
+	"htmlFields": ["description", "style", "technique"],
+	"kungfu": {
+		"martialartname": "",
+		"orientation": "",
+		"aspect": "",
+		"skill": "",
+		"speciality": "",
+		"description": "",
+		"style": "",
+		"techniques": {
+			"technique1": {
+				"name": "",
+				"technique": "",
+				"activation": ""
+			},
+			"technique2": {
+				"name": "",
+				"technique": "",
+				"activation": ""
+			},
+			"technique3": {
+				"name": "",
+				"technique": "",
+				"activation": ""
+			}
+		},
+		"attributes": {},
+		"groups": {}
 	}
 }
 
