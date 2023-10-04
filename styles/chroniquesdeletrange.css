@@ -13,7 +13,6 @@
 }
 .chroniquesdeletrange .sheet-header {
   flex: 0 0 150px;
-  overflow: hidden;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -24,6 +23,12 @@
   background-image:url(/systems/chroniquesdeletrange/images/logo_jeu.png);
   background-size : 18%;
   background-repeat : no-repeat; */
+
+  height: 100%;
+  overflow-y: clip;
+  
+  background-image: url("/systems/chroniquesdeletrange/images/fond_de_page.png");
+  background-position: top right; 
 }
 
 .chroniquesdeletrange .sheet-header .logo-img {
@@ -47,14 +52,177 @@
   margin: 0;
 }
 
-.chroniquesdeletrange .sheet-header {
-  height: 100%;
-  overflow-y: clip;
-  
-  background-image: url("/systems/chroniquesdeletrange/images/fond_de_page.png");
-  background-position: top right; 
+
+
+
+.chroniquesdeletrange .tabs {
+  flex: 0 0 40px;
+  border-top: 1px solid #AAA;
+  border-bottom: 1px solid #AAA;
+}
+.chroniquesdeletrange .tabs .item {
+  line-height: 40px;
+  font-weight: bold;
+}
+.chroniquesdeletrange .tabs .item.active {
+  text-decoration: underline;
+  text-shadow: none;
 }
 
+
+
+.chroniquesdeletrange .sheet-body {
+  overflow: hidden;
+}
+.chroniquesdeletrange .sheet-body .tab {
+  height: 100%;
+  overflow-y: auto;
+  
+  background-image: url("/systems/chroniquesdeletrange/images/fond_de_page.png");
+  background-position: bottom left; 
+}
+.chroniquesdeletrange .sheet-body .click:hover {
+cursor: pointer;
+}
+.chroniquesdeletrange .sheet-body img {
+border: 0px;
+}
+
+
+
+.chroniquesdeletrange .sheet-body .skills image img {
+border: 0px;
+z-index: 4;
+width: 100%;
+}
+.chroniquesdeletrange .sheet-body .skills image div.truc {
+margin-top: -52px;
+z-index: 2;
+width: 3%;
+text-align: center;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.click {
+width: 4%;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td table tr td.icon-d {
+width: 1%;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.bonus {
+width: 35px;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.label {
+width: 25%;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.check {
+width: 5%;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.image {
+width: 5%;
+text-align: center;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.image img {
+z-index: 4;
+width: 100%;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.image div.truc {
+margin-top: -52px;
+z-index: 2;
+width: 3%;
+text-align: center;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.image input.input {
+border: 0px;
+width: 30px;
+text-align: center;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.specialities input.input {
+width: 100%;
+text-align: left;
+}
+
+
+
+
+.chroniquesdeletrange .sheet-body .magics .linear-green {
+	background: linear-gradient(Khaki, ForestGreen);
+}
+
+
+.chroniquesdeletrange .sheet-body .magics .linear-red {
+	background: linear-gradient(Khaki, Red);
+}
+
+
+.chroniquesdeletrange .sheet-body .magics .linear-brown {
+	background: linear-gradient(Khaki, Sienna);
+}
+
+
+.chroniquesdeletrange .sheet-body .magics .linear-blue {
+	background: linear-gradient(Khaki, DodgerBlue);
+}
+
+
+.chroniquesdeletrange .sheet-body .magics .linear-grey {
+	background: linear-gradient(Khaki, SlateGray);
+}
+
+
+.chroniquesdeletrange .sheet-body .magics table tr td.label {
+  width: 150px;
+}
+  .chroniquesdeletrange .sheet-body .magics table tr td table tr td.label {
+  width: 150px;
+}
+  .chroniquesdeletrange .sheet-body .magics .check {
+  width: 5%;
+}
+  .chroniquesdeletrange .sheet-body .magics table tr td.image {
+  width: 5%;
+  text-align: center;
+}
+  .chroniquesdeletrange .sheet-body .magics .image img {
+  z-index: 4;
+  width: 50px;
+}
+  .chroniquesdeletrange .sheet-body .magics .image div.truc {
+  margin-top: -46px;
+  z-index: 2;
+  width: 3%;
+  text-align: center;
+}
+  .chroniquesdeletrange .sheet-body .magics .image input {
+  border: 0px;
+  margin-top: -30px;
+  text-align: center;
+}
+  .chroniquesdeletrange .sheet-body .magics .click {
+  width: 4%;
+}
+  .chroniquesdeletrange .sheet-body .magics .icon-d {
+  width: 8%;
+}
+  .chroniquesdeletrange .sheet-body .magics .icon-element img {
+  width: 50%;
+  margin-left: 6px;
+  margin-bottom: 2px;
+}
+  .chroniquesdeletrange .sheet-body .magics .icon-yin img {
+  width: 25%;
+  margin-left: 8px;
+  margin-bottom: 2px;
+}
+  .chroniquesdeletrange .sheet-body .magics .icon-yang img {
+  width: 40%;
+  margin-left: 0px;
+  margin-bottom: 2px;
+}
+  .chroniquesdeletrange .sheet-body .magics .icon-yinyang img {
+  width: 40%;
+  margin-left: 0px;
+  margin-bottom: 2px;
+}
+  
 
 
 .chroniquesdeletrange .resource0 {
@@ -128,7 +296,6 @@
   text-align: center;
 }
 
-
 .chroniquesdeletrange .resourceZ input {
   width: 150px;
   height: 28px;
@@ -176,208 +343,31 @@
   font-size: 1.5em;
 }
 
-
 .chroniquesdeletrange .resource1 #systemfireclick {
-width: 5%;
-margin-top: 82px;
-margin-left: 309px;
+  width: 5%;
+  margin-top: 82px;
+  margin-left: 309px;
 }
 .chroniquesdeletrange .resource2 #systemwoodclick {
-width: 5%;
-margin-top: 223px;
-margin-left: 116px;
+  width: 5%;
+  margin-top: 223px;
+  margin-left: 116px;
 }
 .chroniquesdeletrange .resource4 #systemearthclick {
-width: 5%;
-margin-top: 227px;
-margin-left: 503px;
+  width: 5%;
+  margin-top: 227px;
+  margin-left: 503px;
 }
 .chroniquesdeletrange .resource5 #systemwaterclick {
-width: 5%;
-margin-top: 427px;
-margin-left: 168px;
+  width: 5%;
+  margin-top: 427px;
+  margin-left: 168px;
 }
 .chroniquesdeletrange .resource7 #systemmetalclick {
-width: 5%;
-margin-top: 427px;
-margin-left: 445px;
+  width: 5%;
+  margin-top: 427px;
+  margin-left: 445px;
 }
-
-
-
-
-
-
-.chroniquesdeletrange .tabs {
-  flex: 0 0 40px;
-  border-top: 1px solid #AAA;
-  border-bottom: 1px solid #AAA;
-}
-.chroniquesdeletrange .tabs .item {
-  line-height: 40px;
-  font-weight: bold;
-}
-.chroniquesdeletrange .tabs .item.active {
-  text-decoration: underline;
-  text-shadow: none;
-}
-
-.chroniquesdeletrange .sheet-body {
-  overflow: hidden;
-}
-.chroniquesdeletrange .sheet-body .tab {
-  height: 100%;
-  overflow-y: auto;
-  
-  background-image: url("/systems/chroniquesdeletrange/images/fond_de_page.png");
-  background-position: bottom left; 
-}
-.chroniquesdeletrange .sheet-body .click:hover {
-cursor: pointer;
-}
-.chroniquesdeletrange .sheet-body img {
-border: 0px;
-}
-
-
-
-.chroniquesdeletrange .sheet-body .magics table tr td.label {
-width: 150px;
-}
-.chroniquesdeletrange .sheet-body .magics table tr td table tr td.label {
-width: 150px;
-}
-.chroniquesdeletrange .sheet-body .magics .check {
-width: 5%;
-}
-.chroniquesdeletrange .sheet-body .magics table tr td.image {
-width: 5%;
-text-align: center;
-}
-.chroniquesdeletrange .sheet-body .magics .image img {
-z-index: 4;
-width: 50px;
-}
-.chroniquesdeletrange .sheet-body .magics .image div.truc {
-margin-top: -46px;
-z-index: 2;
-width: 3%;
-text-align: center;
-}
-.chroniquesdeletrange .sheet-body .magics .image input {
-border: 0px;
-margin-top: -30px;
-text-align: center;
-}
-.chroniquesdeletrange .sheet-body .magics .click {
-width: 4%;
-}
-.chroniquesdeletrange .sheet-body .magics .icon-d {
-width: 8%;
-}
-.chroniquesdeletrange .sheet-body .magics .icon-element img {
-width: 50%;
-margin-left: 6px;
-margin-bottom: 2px;
-}
-.chroniquesdeletrange .sheet-body .magics .icon-yin img {
-width: 25%;
-margin-left: 8px;
-margin-bottom: 2px;
-}
-.chroniquesdeletrange .sheet-body .magics .icon-yang img {
-width: 40%;
-margin-left: 0px;
-margin-bottom: 2px;
-}
-.chroniquesdeletrange .sheet-body .magics .icon-yinyang img {
-width: 40%;
-margin-left: 0px;
-margin-bottom: 2px;
-}
-
-
-
-
-
-.chroniquesdeletrange .sheet-body .skills image img {
-border: 0px;
-z-index: 4;
-width: 100%;
-}
-.chroniquesdeletrange .sheet-body .skills image div.truc {
-margin-top: -52px;
-z-index: 2;
-width: 3%;
-text-align: center;
-}
-.chroniquesdeletrange .sheet-body .skills table tr td.click {
-width: 4%;
-}
-.chroniquesdeletrange .sheet-body .skills table tr td table tr td.icon-d {
-width: 1%;
-}
-.chroniquesdeletrange .sheet-body .skills table tr td.bonus {
-width: 35px;
-}
-.chroniquesdeletrange .sheet-body .skills table tr td.label {
-width: 25%;
-}
-.chroniquesdeletrange .sheet-body .skills table tr td.check {
-width: 5%;
-}
-.chroniquesdeletrange .sheet-body .skills table tr td.image {
-width: 5%;
-text-align: center;
-}
-.chroniquesdeletrange .sheet-body .skills table tr td.image img {
-z-index: 4;
-width: 100%;
-}
-.chroniquesdeletrange .sheet-body .skills table tr td.image div.truc {
-margin-top: -52px;
-z-index: 2;
-width: 3%;
-text-align: center;
-}
-.chroniquesdeletrange .sheet-body .skills table tr td.image input.input {
-border: 0px;
-width: 30px;
-text-align: center;
-}
-.chroniquesdeletrange .sheet-body .skills table tr td.specialities input.input {
-width: 100%;
-text-align: left;
-}
-
-
-
-.chroniquesdeletrange .sheet-body .magics .linear-green {
-	background: linear-gradient(Khaki, ForestGreen);
-}
-
-
-.chroniquesdeletrange .sheet-body .magics .linear-red {
-	background: linear-gradient(Khaki, Red);
-}
-
-
-.chroniquesdeletrange .sheet-body .magics .linear-brown {
-	background: linear-gradient(Khaki, Sienna);
-}
-
-
-.chroniquesdeletrange .sheet-body .magics .linear-blue {
-	background: linear-gradient(Khaki, DodgerBlue);
-}
-
-
-.chroniquesdeletrange .sheet-body .magics .linear-grey {
-	background: linear-gradient(Khaki, SlateGray);
-}
-
-
-
 
 
 
@@ -575,6 +565,9 @@ text-align: left;
   margin:0;
 } */
 
+
+
+/*
 .chroniquesdeletrange .sheet-body .logo_wrap {
   background-image: url("");
 }  
@@ -598,7 +591,7 @@ text-align: left;
     height: auto;
     opacity: 0.2;
 }
-
+*/
 
 .chroniquesdeletrange .sheet-body .nghang_wrap {
   background-image: url("");
@@ -622,7 +615,3 @@ text-align: left;
     width: 100%;
     height: auto;
 }
-
-
-
-
