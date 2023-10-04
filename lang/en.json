@@ -86,7 +86,11 @@
  "CDE.Supply": "Supply",
  "CDE.Inquiry": "Inquiry",
  "CDE.Influence": "Influence",
- 
+
+ "CDE.Components2": "Components & Ingredients",
+ "CDE.Component": "Component",
+ "CDE.ChanceThrow": "Draw a component at random",
+
  
  "CDE.InternalCinnabar": "Internal Cinnabar",
  "CDE.Alchemy":"Alchemy",

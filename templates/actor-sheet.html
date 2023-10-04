@@ -25,8 +25,9 @@
 									<div class="resourceZ">
 										<input type="text" name="system.concept" value="{{systemData.concept}}" placeholder="{{ localize "CDE.Concept" }}"/>
 										<span> / </span>
-										<select name="system.guardian" value="{{ systemData.guardian }}" >
-										{{#select selected:value }}
+										<!-- <select name="system.guardian" value="{{ systemData.guardian }}" > -->
+										<select name="system.guardian">
+										{{#select systemData.guardian }}
 											<option value="0">{{ localize "CDE.CelestialGuardian" }}</option>
 											<option value="1">{{ localize "CDE.CelestialGuardian1" }}</option>
 											<option value="2">{{ localize "CDE.CelestialGuardian2" }}</option>
@@ -161,6 +162,7 @@
 					<td class="bonus">+1 D</td>
 					<td class="click"><img id="system.technologies.D2.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}" alt="Die" /></td>
 				</tr>
+
 				<tr>
 					<td class="click"><img id="system.kungfu.D1.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}" alt="Die" /></td>
 					<td class="label"><b>&nbsp;{{ localize "CDE.KungFu" }}</b></td>
@@ -198,7 +200,7 @@
 					<td class="bonus">+1 D</td>
 					<td class="click"><img id="system.supply.D2.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}" alt="Die" /></td>
 					<td class="check"><input type="checkbox" name="system.resources.supply.debt" {{ checked systemData.resources.supply.debt  }} title="{{ localize "CDE.Debt" }}" /></td>
-			</tr>
+				</tr>
 
 				<tr>
 					<td class="click"><img id="system.inquiry.D1.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}" alt="Die" /></td>
@@ -224,6 +226,7 @@
 					<td class="check"><input type="checkbox" name="system.resources.influence.debt" {{ checked systemData.resources.influence.debt  }} title="{{ localize "CDE.Debt" }}" /></td>
 				</tr>
 			</table>
+
 		</div>
 		
 		
@@ -231,6 +234,52 @@
 		{{!-- Magics Tab --}}
 		<div class="tab magics" data-group="primary" data-tab="magics">
 		
+			&nbsp;<br>&nbsp;
+			<b>{{ localize "CDE.Components2" }}</b>
+			<table>
+				<tr>
+					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-1.png" alt="Die" /></td>
+					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }} 1" name="system.component.one.value" value="{{systemData.component.one.value}}"/></td>
+					<td style="width: 2%;">&nbsp;</td>
+					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-6.png" alt="Die" /></td>
+					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }} 6" name="system.component.six.value" value="{{systemData.component.six.value}}"/></td>
+				</tr>
+				<tr>
+					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-2.png" alt="Die" /></td>
+					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }} 2" name="system.component.two.value" value="{{systemData.component.two.value}}"/></td>
+					<td style="width: 2%;">&nbsp;</td>
+					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-7.png" alt="Die" /></td>
+					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }} 7" name="system.component.seven.value" value="{{systemData.component.seven.value}}"/></td>
+				</tr>
+				<tr>
+					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-3.png" alt="Die" /></td>
+					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }} 3" name="system.component.three.value" value="{{systemData.component.three.value}}"/></td>
+					<td style="width: 2%;">&nbsp;</td>
+					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-8.png" alt="Die" /></td>
+					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }} 8" name="system.component.eight.value" value="{{systemData.component.eight.value}}"/></td>
+				</tr>
+				<tr>
+					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-4.png" alt="Die" /></td>
+					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }} 4" name="system.component.four.value" value="{{systemData.component.four.value}}"/></td>
+					<td style="width: 2%;">&nbsp;</td>
+					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-9.png" alt="Die" /></td>
+					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }} 9" name="system.component.nine.value" value="{{systemData.component.nine.value}}"/></td>
+				</tr>
+				<tr>
+					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-5.png" alt="Die" /></td>
+					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }} 5" name="system.component.five.value" value="{{systemData.component.five.value}}"/></td>
+					<td style="width: 2%;">&nbsp;</td>
+					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-0.png" alt="Die" /></td>
+					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }} 0" name="system.component.zero.value" value="{{systemData.component.zero.value}}"/></td>
+				</tr>
+				<tr>
+					<td style="width: 2%;" class="click"><img src="systems/chroniquesdeletrange/images/d10-10.png" alt="Die" /></td>	
+					<td style="margin-left: 5px;" class="label"><b>&nbsp;{{ localize "CDE.ChanceThrow" }}</b></td>
+				</tr>
+			</table>	
+			
+			&nbsp;<br>&nbsp;
+			<b>{{ localize "CDE.Magics" }}</b>
 			<table class="linear-grey">
 				<tr>
 					<td class="click"><img id="system.internalcinnabar.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}" alt="Metal" /></td>
@@ -258,7 +307,6 @@
 							</tr>	
 						
 							<tr>
-
 								<td class="check"><input type="checkbox" name="system.magic.internalcinnabar.speciality.purification.check" {{ checked systemData.magic.internalcinnabar.speciality.purification.check  }} /></td>
 								<td class="label"><b>{{ localize "CDE.Purification" }}</b></td>
 								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_terre.png" title="{{ localize "CDE.Earth" }}" alt="Earth" /></td>
@@ -284,7 +332,8 @@
 						</table>
 					</td>
 				</tr>
-			</table>	
+
+			</table>
 							
 			<table class="linear-blue">
 				<tr>
@@ -650,7 +699,7 @@
 				<div class="resource6">
 				</div>
 				<div class="resource7">
-					<input type="number" name="system.metal.value" value="{{systemData.aspect.metal.value}}" />
+					<input type="number" name="system.aspect.metal.value" value="{{systemData.aspect.metal.value}}" />
 					<img class="click" id="systemmetalclick" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}"
 					alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
 				</div>

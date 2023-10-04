@@ -51,7 +51,8 @@
  "CDE.CelestialGuardian3": "Oiseau Écarlate (Feu)",
  "CDE.CelestialGuardian4": "Tigre Blanc (Métal)",
  "CDE.CelestialGuardian5": "Kirin Jaune (Terre)",
-  
+
+   
  "CDE.Description": "Description",
  "CDE.Description2": "Descript.",
  "CDE.Attributes": "Attributs",
@@ -86,7 +87,10 @@
  "CDE.Inquiry": "Renseignement",
  "CDE.Influence": "Influence",
 
-    
+ "CDE.Components2": "Composants & Ingrédients",
+"CDE.Component": "Composant",
+"CDE.ChanceThrow": "Tirer un composant au hasard",
+
  "CDE.InternalCinnabar": "Cinabre Interne",
  "CDE.Alchemy":"Alchimie",
  "CDE.MasteryOfTheWay": "Maîtrise de la Voie",
