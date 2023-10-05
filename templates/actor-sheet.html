@@ -75,9 +75,18 @@
 		<div class="tab skills" data-group="primary" data-tab="skills">
 
 			<table>
-
-				{{#each systemData.skills as |skill key|}}
-
+				{{#each systemData.skills}}
+				<tr>
+					<td>
+						{{@key}}
+					</td>
+				</tr>
+				{{/each}}
+			</table>
+			
+			{{ log "Hello"}}
+			{{#each systemData.skills as |skill key|}}
+				{{ log "Hello"}}
 				<tr>
 					<td class="click"><img id="D1.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize skill.label }}" alt="Die" /></td>
 					<td class="label"><b>&nbsp;{{ localize skill.label }}</b></td>
