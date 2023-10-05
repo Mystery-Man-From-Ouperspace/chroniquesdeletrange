@@ -1,0 +1,89 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <div class="name">
+            <label><b>{{ localize "CDE.PromptName" }}{{ systemData.prompt.title }}</b></label>
+        </div>
+    </header>
+	
+    {{!-- Sheet Body --}}
+    <section class="sheet-body" id="prompt">
+
+        {{!-- Frame --}}
+        <div class="frame">
+
+            <table>
+                <tr>
+                    <td class="label col1-5">&nbsp;</td>
+                    <td class="image col2-5">
+                        <img class="bigsquare" src="systems/chroniquesdeletrange/images/bigsquare.png" />
+                    </td>
+                    <td class="label col3-5">&nbsp;</td>
+                    <td class="label col4-5"><b>+</b></td>
+                    <td class="label col5-5">&nbsp;</td>
+                </tr>
+                <tr> <!-- Ce tr collé au-dessus du tr ci-dessus, pour que le numberofdice soit au milieu du bigsquare.png -->
+                    <td class="value col1-3">{{ systemData.prompt.numberofdice }}</td>
+                    <td class="label col2-3">&nbsp;</td>
+                    <td class="label col3-3">&nbsp;</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td class="label col1-3">{{ localize "CDE.Aspect" }}</td>
+                    <td class="label col2-3">&nbsp;</td>
+                    <td class="label col3-3">{{ localize "CDE.BonusMalus" }}</td>
+                </tr>
+                <tr>
+                    <td class="select col1-3">
+                        <select name="system.prompt.aspect">
+                        {{#select systemData.prompt.bonusmalus }}
+                            <option value="1">{{ localize "CDE.Fire" }}</option>
+                            <option value="2">{{ localize "CDE.Earth" }}</option>
+                            <option value="3">{{ localize "CDE.Metal" }}</option>
+                            <option value="4">{{ localize "CDE.Water" }}</option>
+                            <option value="5">{{ localize "CDE.Wood" }}</option>
+                        {{/select}}
+                        </select>
+                    </td>
+                    <td class="label col2-3">&nbsp;</td>
+                    <td class="value col3-3"><input class="input" type="text" placeholder="{{ localize "CDE.Specialities" }}" name="system.prompt.bonusdesfastes" value="{{systemData.prompt.bonusdesfastes}}"/></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td class="label col123 totheleft">{{ localize "CDE.BonusAuspiciousDice" }}</td>
+                </tr>
+                <tr>
+                    <td  class="select col1-1">
+                        <select name="system.prompt.bonusauspiciousdice">
+                        {{#select systemData.prompt.bonusauspiciousdice }}
+                            <option value="0">0</option>
+                            <option value="1">+1&nbsp;{{ localize "CDE.AuspiciousDie" }}</option>
+                            <option value="2">+2&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
+                            <option value="3">+3&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
+                            <option value="4">+4&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
+                            <option value="5">+5&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
+                            <option value="6">+6&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
+                            <option value="7">+7&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
+                            <option value="8">+8&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
+                            <option value="9">+9&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
+                            <option value="10">+10&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
+                            <option value="11">+11&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
+                            <option value="12">+12&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
+                            <option value="13">+13&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
+                            <option value="14">+14&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
+                            <option value="15">+15&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
+                        {{/select}}
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr> <!-- Ce logo sert de bouton pour valider le Prompt -->
+                    <td class="click col123 button-right"><img id="system.prompt.click" src="systems/chroniquesdeletrange/images/yin_yang.png" title="{{ localize "CDE.Die" }}" alt="Die" /></td>
+                </tr>
+            </table>
+
+		</div>	
+    </section>
+</form>
