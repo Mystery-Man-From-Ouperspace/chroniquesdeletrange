@@ -1,6 +1,6 @@
 {
 "Actor": {
-	"types": ["character"],
+	"types": ["character", "spell", "kungfu"],
 	"htmlFields": ["biography"],
 	"character": {
 		"concept": "",
@@ -388,7 +388,7 @@
 },
 
 "Item": {
-	"types": ["item"],
+	"types": ["item", "kungfu", "spell"],
 	"htmlFields": ["description"],
 	"item": {
 		"description": "",
@@ -396,58 +396,58 @@
 		"weight": 0,
 		"attributes": {},
 		"groups": {}
-	}
-},
-
-"Spell": {
-	"types": ["spell"],
-	"htmlFields": ["description", "components", "effects", "examples"],
-	"spell": {
-		"specialityname": "",
-		"description": "",
-		"associatedelement": "",
-		"hei": "",
-		"realizationtimeritual": "",
-		"realizationtimeaccelerated": "",
-		"flashback": "",
-		"components": "",
-		"effects": "",
-		"examples": "",
-		"attributes": {},
-		"groups": {}
-	}
-},
-
-"KungFu": {
-	"types": ["kungfu"],
-	"htmlFields": ["description", "style", "technique"],
+	},
+	
 	"kungfu": {
-		"martialartname": "",
-		"orientation": "",
-		"aspect": "",
-		"skill": "",
-		"speciality": "",
-		"description": "",
-		"style": "",
-		"techniques": {
-			"technique1": {
-				"name": "",
-				"activation": "",
-				"technique": ""
+		"types": ["kungfu"],
+		"htmlFields": ["description", "style", "technique"],
+		"martialart": {
+			"martialartname": "",
+			"orientation": "",
+			"aspect": "",
+			"skill": "",
+			"speciality": "",
+			"description": "",
+			"style": "",
+			"techniques": {
+				"technique1": {
+					"name": "",
+					"activation": "",
+					"technique": ""
+				},
+				"technique2": {
+					"name": "",
+					"activation": "",
+					"technique": ""
+				},
+				"technique3": {
+					"name": "",
+					"activation": "",
+					"technique": ""
+				}
 			},
-			"technique2": {
-				"name": "",
-				"activation": "",
-				"technique": ""
-			},
-			"technique3": {
-				"name": "",
-				"activation": "",
-				"technique": ""
-			}
-		},
-		"attributes": {},
-		"groups": {}
+			"attributes": {},
+			"groups": {}
+		}
+	},
+	
+	"spell": {
+		"types": ["spell"],
+		"htmlFields": ["description", "components", "effects", "examples"],
+		"spell": {
+			"specialityname": "",
+			"description": "",
+			"associatedelement": "",
+			"hei": "",
+			"realizationtimeritual": "",
+			"realizationtimeaccelerated": "",
+			"flashback": "",
+			"components": "",
+			"effects": "",
+			"examples": "",
+			"attributes": {},
+			"groups": {}
+		}
 	}
 
 }
