@@ -100,11 +100,16 @@
  "CDE.Geomancy": "Géomancie",
   
 
- "CDE.Metal": "Métal",
- "CDE.Water": "Eau",
- "CDE.Earth": "Terre",
- "CDE.Fire": "Feu",
- "CDE.Wood": "Bois",
+ "CDE.Metal": "Métal ",
+ "CDE.MetalQualities": "– agressif, passionné, combatif, enthousiate…",
+ "CDE.Water": "Eau ",
+ "CDE.WaterQualities": "– souple, appliqué, adaptable, discipliné…",
+ "CDE.Earth": "Terre ",
+ "CDE.EarthQualities": "– obstiné, résilient, endurant, patient…",
+ "CDE.Fire": "Feu ",
+ "CDE.FireQualities": "– chaleureux, créatif, empathique, inspiré…",
+ "CDE.Wood": "Bois ",
+ "CDE.WoodQualities": "– intuitif, observateur, ouvert, instinctif…",
 
  "CDE.PracticeSpecialty": "Cochez si vous pratiquez la spécialité ",
 
