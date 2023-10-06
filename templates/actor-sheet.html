@@ -69,24 +69,28 @@
             {{editor biographyHTML target="system.biography" button=true editable=editable engine="prosemirror"}}
 		</div>
 		
-		
-		
+
+
 		{{!-- Skills Tab --}}
 		<div class="tab skills" data-group="primary" data-tab="skills">
 
+
+
 			<table>
-				{{#each systemData.skills}}
+				{{ log "Hello" system systemData skills Actor }}
+				{{#each system.skills as |skill key|}}
 				<tr>
 					<td>
 						{{@key}}
-					</td>
+					<td>
 				</tr>
-				{{/each}}
 			</table>
-			
-			{{ log "Hello"}}
-			{{#each systemData.skills as |skill key|}}
-				{{ log "Hello"}}
+			{{/each}}
+
+
+			<table>
+
+				{{#each system.skills as |skill key|}}
 				<tr>
 					<td class="click"><img id="D1.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize skill.label }}" alt="Die" /></td>
 					<td class="label"><b>&nbsp;{{ localize skill.label }}</b></td>
@@ -102,11 +106,12 @@
 
 			</table>
 
+
 			&nbsp;<br>&nbsp;
 			<b>{{ localize "CDE.Resources" }}</b>
 			<table>
 
-				{{#each systemData.resources as |resource key|}}
+				{{#each system.resources as |resource key|}}
 				<tr>
 					<td class="click"><img id="D1.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize resource.label }}" alt="Die" /></td>
 					<td class="label"><b>&nbsp;{{ localize resource/label }}</b></td>

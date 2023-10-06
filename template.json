@@ -1,6 +1,6 @@
 {
 "Actor": {
-	"types": ["character", "spell", "kungfu"],
+	"types": ["character"],
 	"htmlFields": ["biography"],
 	"character": {
 		"concept": "",
@@ -430,7 +430,7 @@
 			"groups": {}
 		}
 	},
-	
+
 	"spell": {
 		"types": ["spell"],
 		"htmlFields": ["description", "components", "effects", "examples"],
