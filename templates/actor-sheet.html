@@ -75,22 +75,9 @@
 		<div class="tab skills" data-group="primary" data-tab="skills">
 
 
-
-			<table>
-				{{ log "Hello" system systemData skills Actor }}
-				{{#each system.skills as |skill key|}}
-				<tr>
-					<td>
-						{{@key}}
-					<td>
-				</tr>
-			</table>
-			{{/each}}
-
-
 			<table>
 
-				{{#each system.skills as |skill key|}}
+				{{#each systemData.skills as |skill key|}}
 				<tr>
 					<td class="click"><img id="D1.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize skill.label }}" alt="Die" /></td>
 					<td class="label"><b>&nbsp;{{ localize skill.label }}</b></td>
@@ -98,10 +85,9 @@
 						<div class="truc">&nbsp;</div>
 						<input class="input" type="number" placeholder="0" name="system.skills.{{@key}}.value" value="{{skill.value}}" /></td>
 					<td class="specialities"><input class="input" type="text" placeholder="{{ localize "CDE.Specialities" }}" name="system.skills.{{@key}}.specialities" value="{{skill.specialities}}" /></td>
-					<td class="bonus">+1 D</td>
+					<td class="bonus"><b>+1 D</b></td>
 					<td class="click"><img id="D2.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}" alt="Die" /></td>
 				</tr>
-				{{ log skill }}
 				{{/each}}
 
 			</table>
@@ -111,16 +97,16 @@
 			<b>{{ localize "CDE.Resources" }}</b>
 			<table>
 
-				{{#each system.resources as |resource key|}}
+				{{#each systemData.resources as |resource key|}}
 				<tr>
 					<td class="click"><img id="D1.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize resource.label }}" alt="Die" /></td>
 					<td class="label"><b>&nbsp;{{ localize resource/label }}</b></td>
 					<td class="image"><img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
 						<div class="truc">&nbsp;</div>
 						<input class="input" type="number" placeholder="0" name="system.resources.{{@key}}.value" value="{{resource.value}}" /></td>
-					<td class="specialities"><input class="input" type="text" placeholder="{{ localize "CDE.Specialities" }}" name="system.resources.{{@key}}.specialities" value="{{resource.specialities}}" /></td>
-					<td class="bonus">+1 D</td>
-					<td class="click"><img id="D2.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}" alt="Die" /></td>
+					<td class="specialities"><input class="input" type="text" placeholder="{{ localize "CDE.Fields" }}" name="system.resources.{{@key}}.specialities" value="{{resource.specialities}}" /></td>
+					<td class="bonus"><b>+1 D</b></td>
+					<td class="click"><img id="D2.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieDM" }}" alt="Die" /></td>
 					<td class="check"><input type="checkbox" name="system.resources.{{@key}}.debt" title="{{ localize "CDE.Debt" }}{{ localize resource.label }}" /></td>
 				</tr>
 				{{/each}}
@@ -180,277 +166,36 @@
 			
 			&nbsp;<br>&nbsp;
 			<b>{{ localize "CDE.TypesOfMagic" }}</b>
-			<table class="linear-grey">
+			{{ log "Hello1" systemData.magics }}
+			{{#each systemData.magics as |magic key|}}
+			<table class="{{magic.background}}">
+
 				<tr>
-					<td class="click"><img id="system.magic.internalcinnabar.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.InternalCinnabar" }}" alt="Metal" /></td>
-					<td class="label"><b>&nbsp;&nbsp;{{ localize "CDE.InternalCinnabar" }}</b></td>
-					<td class="image"><img id="system.magic.internalcinnabar.cercle.value" src="systems/chroniquesdeletrange/images/cercle.png" title="Circle" alt="Cercle" />
+					<td class="click"><img id="system.magics.{{@key}}.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize magic.label }}" alt="{{ localize magic.aspectlabel }}" /></td>
+					<td class="label"><b>&nbsp;&nbsp;{{ localize magic.label }}</b></td>
+					<td class="image"><img id="system.magics.{{@key}}.cercle.value" src="systems/chroniquesdeletrange/images/cercle.png" title="Circle" alt="Cercle" />
 						<div class="truc">&nbsp;</div>
-						<input class="input" type="number" placeholder="0" name="system.magic.internalcinnabar.value" value="{{systemData.magic.internalcinnabar.value}}" /></td>
+						<input class="input" type="number" placeholder="0" name="system.magics.{{@key}}.value" value="{{magic.value}}" /></td>
 					<td class="label"><b>&nbsp;&nbsp;,&nbsp;{{ localize "CDE.Metal" }}</b></td>
 					<td>
 						<table>
+							{{ log "Hello2" magic.speciality }}
+							{{#each magic.speciality as |special key|}}
 							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.internalcinnabar.speciality.essence.check" {{ checked systemData.magic.internalcinnabar.speciality.essence.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Essence" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Essence" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_metal.png" title="{{ localize "CDE.Metal" }}" alt="Metal" /></td>
-								<td class="icon-yin"><img src="systems/chroniquesdeletrange/images/cde_yin.png" title="Yin" alt="Yin" /></td>
-								<td class="click icon-d"><img id="system.essence.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Essence" }}" alt="Die" /></td>
-							</tr>
-					
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.internalcinnabar.speciality.mind.check" {{ checked systemData.magic.internalcinnabar.speciality.mind.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Mind" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Mind" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_eau.png" title="{{ localize "CDE.Water" }}" alt="Die" /></td>
-								<td class="icon-yin"><img src="systems/chroniquesdeletrange/images/cde_yin.png" title="Yin" alt="Yin" /></td>
-								<td class="click icon-d"><img id="system.magic.internalcinnabar.speciality..mind.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Mind" }}" alt="Die" /></td>
+								<td class="check"><input type="checkbox" name="{{system.magics.magic.speciality.special.check}}" {{ checked special.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize special.label }}" /></td>
+								<td class="label"><b>{{ localize special.label }}</b></td>
+								<td class="icon-element"><img src="{{special.elementicon}}" title="{{ localize magic.aspectlabel }}" alt="{{special.labelelement}}" /></td>
+								<td class="{{special.classicon}}"><img src="{{special.icon}}" title="{{special.labelicon}}" alt="{{special.labelicon}}" /></td>
+								<td class="click icon-d"><img id="{{system.magics.magic.speciality.special.click}}" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize special.label }}" alt="Die" /></td>
 							</tr>	
-						
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.internalcinnabar.speciality.purification.check" {{ checked systemData.magic.internalcinnabar.speciality.purification.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Purification" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Purification" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_terre.png" title="{{ localize "CDE.Earth" }}" alt="Earth" /></td>
-								<td class="icon-yinyang"><img src="systems/chroniquesdeletrange/images/yin_yang.png" title="Yin-Yang" alt="Yin-Yang" /></td>
-								<td class="click icon-d"><img id="system.magic.internalcinnabar.speciality..purification.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Purification" }}" alt="Die" /></td>
-							</tr>
-						
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.internalcinnabar.speciality.manipulation.check" {{ checked systemData.magic.internalcinnabar.speciality.manipulation.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Manipulation" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Manipulation" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_feu.png" title="{{ localize "CDE.Fire" }}" alt="Fire" /></td>
-								<td class="icon-yang"><img src="systems/chroniquesdeletrange/images/cde_yang.png" title="Yang" alt="Yang" /></td>
-								<td class="click icon-d"><img id="system.magic.internalcinnabar.speciality..manipulation.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Manipulation" }}" alt="Die" /></td>
-							</tr>
-
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.internalcinnabar.speciality.aura.check" {{ checked systemData.magic.internalcinnabar.speciality.aura.check }}  title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Aura" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Aura" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_bois.png" title="{{ localize "CDE.Wood" }}" alt="Wood" /></td>
-								<td class="icon-yang"><img src="systems/chroniquesdeletrange/images/cde_yang.png" title="Yang" alt="Yang" /></td>
-								<td class="click icon-d"><img id="system.magic.internalcinnabar.speciality..aura.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Aura" }}" alt="Die" /></td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-
-			</table>
+							{{/each}}
 							
-			<table class="linear-blue">
-				<tr>
-					<td class="click"><img id="system.magic.alchemy.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Alchemy" }}" alt="Die" /></td>
-					<td class="label"><b>&nbsp;&nbsp;{{ localize "CDE.Alchemy" }}</b></td>
-					<td class="image"><img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
-						<div class="truc">&nbsp;</div>
-						<input class="input" type="number" placeholder="0" name="system.magic.alchemy.value" value="{{systemData.magic.alchemy.value}}" /></td>
-					<td class="label"><b>&nbsp;&nbsp;,&nbsp;{{ localize "CDE.Water" }}</b></td>
-					<td>
-						<table>
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.alchemy.speciality.acupuncture.check" {{ checked systemData.magic.alchemy.speciality.acupuncture.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Acupuncture" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Acupuncture" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_metal.png" title="{{ localize "CDE.Metal" }}" alt="Metal"></td>
-								<td class="icon-yin"><img src="systems/chroniquesdeletrange/images/cde_yin.png" title="Yin" alt="Yin" /></td>
-								<td class="click icon-d"><img id="system.magic.alchemy.speciality.acupuncture.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Acupuncture" }}" alt="Die" /></td>
-							</tr>
-					
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.alchemy.speciality.elixirs.check" {{ checked systemData.magic.alchemy.speciality.elixirs.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Elixirs" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Elixirs" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_eau.png" title="{{ localize "CDE.Water" }}" alt="Water" /></td>
-								<td class="icon-yin"><img src="systems/chroniquesdeletrange/images/cde_yin.png" title="Yin" alt="Yin" /></td>
-								<td class="click icon-d"><img id="system.magic.alchemy.speciality.elixirs.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Elixirs" }}" alt="Die" /></td>
-							</tr>	
-						
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.alchemy.speciality.poisons.check" {{ checked systemData.magic.alchemy.speciality.poisons.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Poisons" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Poisons" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_terre.png" title="{{ localize "CDE.Earth" }}" alt="Earth"></td>
-								<td class="icon-yinyang"><img src="systems/chroniquesdeletrange/images/yin_yang.png" title="Yin-Yang" alt="Yin-Yang" /></td>
-								<td class="click icon-d"><img id="system.magic.alchemy.speciality.poisons.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Poisons" }}" alt="Die" /></td>
-							</tr>
-						
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.alchemy.speciality.arsenal.check" {{ checked systemData.magic.alchemy.speciality.arsenal.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Arsenal" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Arsenal" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_feu.png" title="{{ localize "CDE.Fire" }}" alt="Fire"></td>
-								<td class="icon-yang"><img src="systems/chroniquesdeletrange/images/cde_yang.png" title="Yang" alt="Yang" /></td>
-								<td class="click icon-d"><img id="system.magic.alchemy.speciality.arsenal.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Arsenal" }}" alt="Die" /></td>
-							</tr>
-
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.alchemy.speciality.potions.check" {{ checked systemData.magic.alchemy.speciality.potions.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Potions" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Potions" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_bois.png" title="{{ localize "CDE.Wood" }}" alt="Wood"></td>
-								<td class="icon-yang"><img src="systems/chroniquesdeletrange/images/cde_yang.png" title="Yang" alt="Yang" /></td>
-								<td class="click icon-d"><img id="system.magic.alchemy.speciality.potions.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Potions" }}" alt="Die" /></td>
-							</tr>
 						</table>
 					</td>
 				</tr>
-			</table>	
-				
-			<table class="linear-brown">
-				<tr>
-					<td class="click"><img id="system.magic.masteryoftheway.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.MasteryOfTheWay" }}" alt="Die" /></td>
-					<td class="label"><b>&nbsp;&nbsp;{{ localize "CDE.MasteryOfTheWay" }}</b></td>
-					<td class="image"><img src="systems/chroniquesdeletrange/images/cercle.png" title="Circle" alt="Cercle">
-						<div class="truc">&nbsp;</div>
-						<input class="input" type="number" placeholder="0" name="system.magic.masteryoftheway.value" value="{{systemData.magic.masteryoftheway.value}}" /></td>
-					<td class="label"><b>&nbsp;&nbsp;,&nbsp;{{ localize "CDE.Earth" }}</b></td>
-					<td>
-						<table>
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.masteryoftheway.speciality.curse.check" {{ checked systemData.magic.masteryoftheway.speciality.curse.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Curse" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Curse" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_metal.png" title="{{ localize "CDE.Metal" }}" alt="Metal" /></td>
-								<td class="icon-yin"><img src="systems/chroniquesdeletrange/images/cde_yin.png" title="Yin" alt="Yin"></td>
-								<td class="click icon-d"><img id="system.magic.masteryoftheway.speciality.curse.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Curse" }}" alt="Die" /></td>
-							</tr>
-				
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.masteryoftheway.speciality.transfiguration.check" {{ checked systemData.magic.masteryoftheway.speciality.transfiguration.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Transfiguration" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Transfiguration" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_eau.png" title="{{ localize "CDE.Water" }}" alt="Water" /></td>
-								<td class="icon-yin"><img src="systems/chroniquesdeletrange/images/cde_yin.png" title="Yin" alt="Yin"></td>
-								<td class="click icon-d"><img id="system.magic.masteryoftheway.speciality.transfiguration.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Transfiguration" }}" alt="Die" /></td>
-							</tr>	
 
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.masteryoftheway.speciality.necromancy.check" {{ checked systemData.magic.masteryoftheway.speciality.necromancy.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Necromancy" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Necromancy" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_terre.png" title="{{ localize "CDE.Earth" }}" alt="Earth"></td>
-								<td class="icon-yinyang"><img src="systems/chroniquesdeletrange/images/yin_yang.png" title="Yin-Yang" alt="Yin-Yang" /></td>
-								<td class="click icon-d"><img id="system.magic.masteryoftheway.speciality.necromancy.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Necromancy" }}" alt="Die" /></td>
-							</tr>
-				
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.masteryoftheway.speciality.climatecontrol.check" {{ checked systemData.magic.masteryoftheway.speciality.climatecontrol.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.ClimateControl" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.ClimateControl" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_feu.png" title="{{ localize "CDE.Fire" }}" alt="Fire" /></td>
-								<td class="icon-yang"><img src="systems/chroniquesdeletrange/images/cde_yang.png" title="Yang" alt="Yang"></td>
-								<td class="click icon-d"><img id="system.magic.masteryoftheway.speciality.climatecontrol.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.ClimateControl" }}" alt="Die" /></td>
-							</tr>
-	
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.masteryoftheway.speciality.goldenmagic.check" {{ checked systemData.magic.masteryoftheway.speciality.goldenmagic.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.GoldenMagic" }}"  /></td>
-								<td class="label"><b>{{ localize "CDE.GoldenMagic" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_bois.png" title="{{ localize "CDE.Wood" }}" alt="Wood" /></td>
-								<td class="icon-yang"><img src="systems/chroniquesdeletrange/images/cde_yang.png" title="Yang" alt="Yang"></td>
-								<td class="click icon-d"><img id="system.magic.masteryoftheway.speciality.goldenmagic.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.GoldenMagic" }}" alt="Die" /></td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				
 			</table>
-
-			<table class="linear-red">
-				<tr>
-					<td class="click"><img id="system.magic.exorcisme.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Exorcism" }}" alt="Die" /></td>
-					<td class="label"><b>&nbsp;&nbsp;{{ localize "CDE.Exorcism" }}</b></td>
-					<td class="image"><img src="systems/chroniquesdeletrange/images/cercle.png" title="Circle" alt="Cercle" />
-						<div class="truc">&nbsp;</div>
-						<input class="input" type="number" placeholder="0" name="system.magic.exorcism.value" value="{{systemData.magic.exorcism.value}}" /></td>
-					<td class="label"><b>&nbsp;&nbsp;,&nbsp;{{ localize "CDE.Fire" }}</b></td>
-					<td>
-						<table>
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.exorcism.speciality.invocation.check" {{ checked systemData.magic.exorcism.speciality.invocation.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Invocation" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Invocation" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_metal.png" title="{{ localize "CDE.Metal" }}" alt="Metal"></td>
-								<td class="icon-yin"><img src="systems/chroniquesdeletrange/images/cde_yin.png" title="Yin" alt="Yin"></td>
-								<td class="click icon-d"><img id="system.magic.exorcism.speciality.invocation.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Invocation" }}" alt="Die" /></td>
-							</tr>
-					
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.exorcism.speciality.tracking.check" {{ checked systemData.magic.exorcism.speciality.tracking.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Tracking" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Tracking" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_eau.png" title="{{ localize "CDE.Water" }}" alt="Water" /></td>
-								<td class="icon-yin"><img src="systems/chroniquesdeletrange/images/cde_yin.png" title="Yin" alt="Yin"></td>
-								<td class="click icon-d"><img id="system.magic.exorcism.speciality.tracking.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Tracking" }}" alt="Die" /></td>
-							</tr>	
-						
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.exorcism.speciality.protection.check" {{ checked systemData.magic.exorcism.speciality.protection.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Protection" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Protection" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_terre.png" title="{{ localize "CDE.Earth" }}" alt="Earth"></td>
-								<td class="icon-yinyang"><img src="systems/chroniquesdeletrange/images/yin_yang.png" title="Yin-Yang" alt="Yin-Yang"></td>
-								<td class="click icon-d"><img id="system.magic.exorcism.speciality.protection.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Protection" }}" alt="Die" /></td>
-							</tr>
-						
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.exorcism.speciality.punishment.check" {{ checked systemData.magic.exorcism.speciality.punishment.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Punishment" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Punishment" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_feu.png" title="{{ localize "CDE.Fire" }}" alt="Fire"></td>
-								<td class="icon-yang"><img src="systems/chroniquesdeletrange/images/cde_yang.png" title="Yang" alt="Yang"></td>
-								<td class="click icon-d"><img id="system.magic.exorcism.speciality.punishment.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Punishment" }}" alt="Die" /></td>
-							</tr>
-
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.exorcism.speciality.domination.check" {{ checked systemData.magic.exorcism.speciality.domination.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Domination" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Domination" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_bois.png" title="{{ localize "CDE.Wood" }}" alt="Wood"></td>
-								<td class="icon-yang"><img src="systems/chroniquesdeletrange/images/cde_yang.png" title="Yang" alt="Yang"></td>
-								<td class="click icon-d"><img id="system.magic.exorcism.speciality.domination.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Domination" }}" alt="Die" /></td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
-			
-			<table class="linear-green">
-				<tr>
-					<td class="click"><img id="system.magic.geomancy.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Geomancy" }}" alt="Die" /></td>
-					<td class="label"><b>&nbsp;&nbsp;{{ localize "CDE.Geomancy" }}</b></td>
-					<td class="image"><img src="systems/chroniquesdeletrange/images/cercle.png" title="Circle" alt="Cercle" />
-						<div class="truc">&nbsp;</div>
-						<input class="input" type="number" placeholder="0" name="system.magic.geomancy.value" value="{{systemData.magic.geomancy.value}}" /></td>
-						<td class="label"><b>&nbsp;&nbsp;,&nbsp;{{ localize "CDE.Wood" }}</b></td>
-					<td>
-						<table>
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.geomancy.speciality.neutralization.check" {{ checked systemData.magic.geomancy.speciality.neutralization.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Neutralization" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Neutralization" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_metal.png" title="{{ localize "CDE.Metal" }}" alt="Metal" /></td>
-								<td class="icon-yin"><img src="systems/chroniquesdeletrange/images/cde_yin.png" title="Yin" alt="Yin"></td>
-								<td class="click icon-d"><img id="system.magic.geomancy.speciality.neutralization.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Neutralization" }}" alt="Die" /></td>
-							</tr>
-					
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.geomancy.speciality.divination.check" {{ checked systemData.magic.geomancy.speciality.divination.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Divination" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Divination" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_eau.png" title="{{ localize "CDE.Water" }}" alt="Water" /></td>
-								<td class="icon-yin"><img src="systems/chroniquesdeletrange/images/cde_yin.png" title="Yin" alt="Yin" /></td>
-								<td class="click icon-d"><img id="system.magic.geomancy.speciality.divination.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Divination" }}" alt="Die" /></td>
-							</tr>	
-						
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.geomancy.speciality.earthlyprayer.check" {{ checked systemData.magic.geomancy.speciality.earthlyprayer.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.EarthlyPrayer" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.EarthlyPrayer" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_terre.png" title="{{ localize "CDE.Earth" }}" alt="Earth" /></td>
-								<td class="icon-yinyang"><img src="systems/chroniquesdeletrange/images/yin_yang.png" title="Yin-Yang" alt="Yin-Yang"></td>
-								<td class="click icon-d"><img id="system.magic.geomancy.speciality.earthlyprayer.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.EarthlyPrayer" }}" alt="Die" /></td>
-							</tr>
-						
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.geomancy.speciality.heavenlyprayer.check" {{ checked systemData.magic.geomancy.speciality.heavenlyprayer.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.HeavenlyPrayer" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.HeavenlyPrayer" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_feu.png" title="{{ localize "CDE.Fire" }}" alt="Fire" /></td>
-								<td class="icon-yang"><img src="systems/chroniquesdeletrange/images/cde_yang.png" title="Yang" alt="Yang"></td>
-								<td class="click icon-d"><img id="system.magic.geomancy.speciality.heavenlyprayer.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.HeavenlyPrayer" }}" alt="Die" /></td>
-							</tr>
-
-							<tr>
-								<td class="check"><input type="checkbox" name="system.magic.geomancy.speciality.fungseoi.check" {{ checked systemData.magic.geomancy.speciality.fungseoi.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize "CDE.Fungseoi" }}" /></td>
-								<td class="label"><b>{{ localize "CDE.Fungseoi" }}</b></td>
-								<td class="icon-element"><img src="systems/chroniquesdeletrange/images/cde_bois.png" title="{{ localize "CDE.Wood" }}" alt="Wood" /></td>
-								<td class="icon-yang"><img src="systems/chroniquesdeletrange/images/cde_yang.png" title="Yang" alt="Yang"></td>
-								<td class="click icon-d"><img id="system.magic.geomancy.speciality.fungseoi.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize "CDE.Fungseoi" }}" alt="Die" /></td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
+			{{/each}}
 			
 		</div>
 
@@ -506,10 +251,10 @@
 				<img style="width: 15%;margin-left: -25px;" class="cercle.petit" src="systems/chroniquesdeletrange/images/cercle.png" title="{{ localize "CDE.Max" }}" alt="Cercle">
 			</div>
 			<div style ="position: relative;margin-top: -90px;" class="hei-yang">
-                <input style="width: 40px;height: 28px;margin-left: 95px;text-align: center;font-size: 1.5em;" class="input san1.max" type="number" name="system.dicelevel.level0d.san.max" value="{{systemData.dicelevel.level0d.san.max}}"/>
-                <input style="width: 40px;height: 28px;margin-left: 75px;text-align: center;font-size: 1.5em;" class="input san1.value" type="number" name="system.dicelevel.level0d.san.value" value="{{systemData.dicelevel.level0d.san.value}}"/>
-                <input style="width: 40px;height: 28px;margin-left: 145px;text-align: center;font-size: 1.5em;" class="input zing1.value" type="number" name="system.dicelevel.level0d.zing.value" value="{{systemData.dicelevel.level0d.zing.value}}"/>
-                <input style="width: 40px;height: 28px;margin-left: 75px;text-align: center;font-size: 1.5em;" class="input zing1.max" type="number" name="system.dicelevel.level0d.zing.max" value="{{systemData.dicelevel.level0d.zing.max}}"/>
+                <input style="width: 40px;height: 28px;margin-left: 95px;text-align: center;font-size: 1.5em;" class="input san1.max" type="number" name="system.threetreasures.dicelevel.level0d.san.max" value="{{systemData.threetreasures.dicelevel.level0d.san.max}}"/>
+                <input style="width: 40px;height: 28px;margin-left: 75px;text-align: center;font-size: 1.5em;" class="input san1.value" type="number" name="system.threetreasures.dicelevel.level0d.san.value" value="{{systemData.threetreasures.dicelevel.level0d.san.value}}"/>
+                <input style="width: 40px;height: 28px;margin-left: 145px;text-align: center;font-size: 1.5em;" class="input zing1.value" type="number" name="system.threetreasures.dicelevel.level0d.zing.value" value="{{systemData.threetreasures.dicelevel.level0d.zing.value}}"/>
+                <input style="width: 40px;height: 28px;margin-left: 75px;text-align: center;font-size: 1.5em;" class="input zing1.max" type="number" name="system.threetreasures.dicelevel.level0d.zing.max" value="{{systemData.threetreasures.dicelevel.level0d.zing.max}}"/>
             </div>
 			&nbsp;<br>&nbsp;
 			&nbsp;<br>&nbsp;
@@ -524,10 +269,10 @@
 				<img style="width: 15%;margin-left: -25px;" class="cercle-tres_petit" src="systems/chroniquesdeletrange/images/cercle.png" title="{{ localize "CDE.Max" }}" alt="Cercle">
 			</div>
 			<div style ="position: relative;margin-top: -90px;" class="hei-yang">
-                <input style="width: 40px;height: 28px;margin-left: 90px;text-align: center;font-size: 1.5em;" class="input san2.max" type="number" name="system.dicelevel.level1d.san.max" value="{{systemData.dicelevel.level1d.san.max}}"/>
-                <input style="width: 40px;height: 28px;margin-left: 75px;text-align: center;font-size: 1.5em;" class="input san2.value" type="number" name="system.dicelevel.level1d.san.value" value="{{systemData.dicelevel.level1d.san.value}}"/>
-                <input style="width: 40px;height: 28px;margin-left: 160px;text-align: center;font-size: 1.5em;" class="input zing2.value" type="number" name="system.dicelevel.level1d.zing.value" value="{{systemData.dicelevel.level1d.zing.value}}"/>
-                <input style="width: 40px;height: 28px;margin-left: 75px;text-align: center;font-size: 1.5em;" class="input zing2.max" type="number" name="system.dicelevel.level1d.zing.max" value="{{systemData.dicelevel.level1d.zing.max}}"/>
+                <input style="width: 40px;height: 28px;margin-left: 90px;text-align: center;font-size: 1.5em;" class="input san2.max" type="number" name="system.threetreasures.dicelevel.level1d.san.max" value="{{systemData.threetreasures.dicelevel.level1d.san.max}}"/>
+                <input style="width: 40px;height: 28px;margin-left: 75px;text-align: center;font-size: 1.5em;" class="input san2.value" type="number" name="system.threetreasures.dicelevel.level1d.san.value" value="{{systemData.threetreasures.dicelevel.level1d.san.value}}"/>
+                <input style="width: 40px;height: 28px;margin-left: 160px;text-align: center;font-size: 1.5em;" class="input zing2.value" type="number" name="system.threetreasures.dicelevel.level1d.zing.value" value="{{systemData.threetreasures.dicelevel.level1d.zing.value}}"/>
+                <input style="width: 40px;height: 28px;margin-left: 75px;text-align: center;font-size: 1.5em;" class="input zing2.max" type="number" name="system.threetreasures.dicelevel.level1d.zing.max" value="{{systemData.threetreasures.dicelevel.level1d.zing.max}}"/>
             </div>
 			&nbsp;<br>&nbsp;
 			&nbsp;<br>&nbsp;
@@ -540,10 +285,10 @@
 				<img style="width: 15%;margin-left: -25px;" class="cercle-tres-petit" src="systems/chroniquesdeletrange/images/cercle.png" title="{{ localize "CDE.Max" }}" alt="Cercle">
 			</div>
 			<div style ="position: relative;margin-top: -90px;" class="hei-yang">
-                <input style="width: 40px;height: 28px;margin-left: 90px;text-align: center;font-size: 1.5em;" class="input san3.max" type="number" name="system.dicelevel.level2d.san.max" value="{{systemData.dicelevel.level2d.san.max}}"/>
-                <input style="width: 40px;height: 28px;margin-left: 75px;text-align: center;font-size: 1.5em;" class="input san3.value" type="number" name="system.dicelevel.level2d.san.value" value="{{systemData.dicelevel.level2d.san.value}}"/>
-                <input style="width: 40px;height: 28px;margin-left: 160px;text-align: center;font-size: 1.5em;" class="input zing3.value" type="number" name="system.dicelevel.level2d.zing.value" value="{{systemData.dicelevel.level2d.zing.value}}"/>
-                <input style="width: 40px;height: 28px;margin-left: 75px;text-align: center;font-size: 1.5em;" class="input zing3.max" type="number" name="system.dicelevel.level2d.zing.max" value="{{systemData.dicelevel.level2d.zing.max}}"/>
+                <input style="width: 40px;height: 28px;margin-left: 90px;text-align: center;font-size: 1.5em;" class="input san3.max" type="number" name="system.threetreasures.dicelevel.level2d.san.max" value="{{systemData.threetreasures.dicelevel.level2d.san.max}}"/>
+                <input style="width: 40px;height: 28px;margin-left: 75px;text-align: center;font-size: 1.5em;" class="input san3.value" type="number" name="system.threetreasures.dicelevel.level2d.san.value" value="{{systemData.threetreasures.dicelevel.level2d.san.value}}"/>
+                <input style="width: 40px;height: 28px;margin-left: 160px;text-align: center;font-size: 1.5em;" class="input zing3.value" type="number" name="system.threetreasures.dicelevel.level2d.zing.value" value="{{systemData.threetreasures.dicelevel.level2d.zing.value}}"/>
+                <input style="width: 40px;height: 28px;margin-left: 75px;text-align: center;font-size: 1.5em;" class="input zing3.max" type="number" name="system.threetreasures.dicelevel.level2d.zing.max" value="{{systemData.threetreasures.dicelevel.level2d.zing.max}}"/>
             </div>
 			&nbsp;<br>&nbsp;
 			&nbsp;<br>&nbsp;
@@ -579,33 +324,33 @@
 				</div>
 				<br>&nbsp;<br>
 				<div class="resource1">
-					<input type="number" name="system.aspect.fire.value" placeholder="15" value="{{systemData.aspect.fire.value}}" title="{{ localize "CDE.Fire" }}{{ localize "CDE.FireQualities" }}" />
+					<input type="number" name="system.aspect.fire.value" value="{{systemData.aspect.fire.value}}" title="{{ localize "CDE.Fire" }}{{ localize "CDE.FireQualities" }}" />
 					<img class="click" id="systemfireclick" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Fire" }}"
 					alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
 				</div>
 				<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>
 				<div class="resource2">
-					<input type="number" name="system.aspect.wood.value" placeholder="15" value="{{systemData.aspect.wood.value}}" title="{{ localize "CDE.Wood" }}{{ localize "CDE.WoodQualities" }}" />
+					<input type="number" name="system.aspect.wood.value" value="{{systemData.aspect.wood.value}}" title="{{ localize "CDE.Wood" }}{{ localize "CDE.WoodQualities" }}" />
 					<img class="click" id="systemwoodclick" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Wood" }}"
 					alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
 				</div>
 				<div class="resource3">
 				</div>
 				<div class="resource4">
-					<input type="number" name="system.aspect.earth.value" placeholder="15" value="{{systemData.aspect.earth.value}}" title="{{ localize "CDE.Earth" }}{{ localize "CDE.EarthQualities" }}" />
+					<input type="number" name="system.aspect.earth.value" value="{{systemData.aspect.earth.value}}" title="{{ localize "CDE.Earth" }}{{ localize "CDE.EarthQualities" }}" />
 					<img class="click" id="systemearthclick" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Earth" }}"
 					alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
 				</div>
 				<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>
 				<div class="resource5">
-					<input type="number" name="system.aspect.water.value" placeholder="15" value="{{systemData.aspect.water.value}}" title="{{ localize "CDE.Water" }}{{ localize "CDE.WaterQualities" }}" />
+					<input type="number" name="system.aspect.water.value" value="{{systemData.aspect.water.value}}" title="{{ localize "CDE.Water" }}{{ localize "CDE.WaterQualities" }}" />
 					<img class="click" id="systemwaterclick" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Water" }}"
 					alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
 				</div>
 				<div class="resource6">
 				</div>
 				<div class="resource7">
-					<input type="number" name="system.aspect.metal.value" placeholder="15" value="{{systemData.aspect.metal.value}}" title="{{ localize "CDE.Metal" }}{{ localize "CDE.MetalQualities" }}" />
+					<input type="number" name="system.aspect.metal.value" value="{{systemData.aspect.metal.value}}" title="{{ localize "CDE.Metal" }}{{ localize "CDE.MetalQualities" }}" />
 					<img class="click" id="systemmetalclick" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Metal" }}"
 					alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
 				</div>
