@@ -166,7 +166,8 @@
 			
 			&nbsp;<br>&nbsp;
 			<b>{{ localize "CDE.TypesOfMagic" }}</b>
-			{{ log "Hello1" systemData.magics }}
+
+
 			{{#each systemData.magics as |magic key|}}
 			<table class="{{magic.background}}">
 
@@ -179,7 +180,6 @@
 					<td class="label"><b>&nbsp;&nbsp;,&nbsp;{{ localize "CDE.Metal" }}</b></td>
 					<td>
 						<table>
-							{{ log "Hello2" magic.speciality }}
 							{{#each magic.speciality as |special key|}}
 							<tr>
 								<td class="check"><input type="checkbox" name="{{system.magics.magic.speciality.special.check}}" {{ checked special.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize special.label }}" /></td>
