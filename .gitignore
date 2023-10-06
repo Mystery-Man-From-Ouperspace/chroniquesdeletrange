@@ -1,6 +1,7 @@
 # IDE
 .idea/
 .vs/
+.history/
 
 # Node Modules
 node_modules/
