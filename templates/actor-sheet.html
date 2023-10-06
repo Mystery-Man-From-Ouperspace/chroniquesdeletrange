@@ -177,14 +177,14 @@
 					<td class="image"><img id="system.magics.{{@key}}.cercle.value" src="systems/chroniquesdeletrange/images/cercle.png" title="Circle" alt="Cercle" />
 						<div class="truc">&nbsp;</div>
 						<input class="input" type="number" placeholder="0" name="system.magics.{{@key}}.value" value="{{magic.value}}" /></td>
-					<td class="label"><b>&nbsp;&nbsp;,&nbsp;{{ localize "CDE.Metal" }}</b></td>
+					<td class="label"><b>&nbsp;&nbsp;,&nbsp;{{ localize magic.aspectlabel }}</b></td>
 					<td>
 						<table>
 							{{#each magic.speciality as |special key|}}
 							<tr>
 								<td class="check"><input type="checkbox" name="{{system.magics.magic.speciality.special.check}}" {{ checked special.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize special.label }}" /></td>
 								<td class="label"><b>{{ localize special.label }}</b></td>
-								<td class="icon-element"><img src="{{special.elementicon}}" title="{{ localize magic.aspectlabel }}" alt="{{special.labelelement}}" /></td>
+								<td class="icon-element"><img src="{{special.elementicon}}" title="{{ localize special.labelelement }}" alt="{{special.labelelement}}" /></td>
 								<td class="{{special.classicon}}"><img src="{{special.icon}}" title="{{special.labelicon}}" alt="{{special.labelicon}}" /></td>
 								<td class="click icon-d"><img id="{{system.magics.magic.speciality.special.click}}" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize special.label }}" alt="Die" /></td>
 							</tr>	
@@ -529,7 +529,6 @@
             </p>
 		</div>
 		
-		
-		
+				
     </section>
 </form>

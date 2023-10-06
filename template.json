@@ -9,30 +9,35 @@
       
       "aspect": {
         "fire": {
+          "chinese": "㊋",
           "label": "CDE.Fire",
           "value": 15,
           "min": 1,
           "max": 15
         },
         "earth": {
+          "chinese": "㊏",
           "label": "CDE.Earth",
           "value": 15,
           "min": 1,
           "max": 15
         },
         "metal": {
+          "chinese": "㊎",
           "label": "CDE.Metal",
           "value": 15,
           "min": 1,
           "max": 15
         },
         "water": {
+          "chinese": "㊌",
           "label": "CDE.Water",
           "value": 15,
           "min": 1,
           "max": 15
         },
         "wood": {
+          "chinese": "㊍",
           "label": "CDE.Wood",
           "value": 15,
           "min": 1,
@@ -240,7 +245,7 @@
               "classicon": "icon-yang",
               "icon": "/systems/chroniquesdeletrange/images/cde_yang.png",
               "elementicon": "/systems/chroniquesdeletrange/images/cde_bois.png",
-              "labelicon": "",
+              "labelicon": "Yang",
               "labelelement": "CDE.Wood"
             }
           }
@@ -581,5 +586,4 @@
     }
   
   }
-  }
-  
+  }  

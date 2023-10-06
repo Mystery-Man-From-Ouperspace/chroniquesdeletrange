@@ -20,7 +20,7 @@ réutilisées en dehors de ce logiciel, ni cédées sans leur autorisation
 expresse.
 
 
-Code additionnel 2023
+Code additionnel et modifications 2023
 David R.D. Bercovici
 LeRatierBretonnien
 (et d'autres)
