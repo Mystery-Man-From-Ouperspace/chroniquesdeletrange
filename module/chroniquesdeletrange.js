@@ -32,8 +32,7 @@ Hooks.once("init", async function() {
   };
 
   game.chroniquesdeletrange = {
-    SimpleActor,
-	createchroniquesdeletrangeMacro
+	  createchroniquesdeletrangeMacro
   };
 
   // Define custom Document classes
@@ -44,8 +43,9 @@ Hooks.once("init", async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("chroniquesdeletrange", SimpleActorSheet, { makeDefault: true });
-  // Actors.registerSheet("chroniquesdeletrange", SimpleActorSheet, { types: ["character"], makeDefault: true });	// ligne modifiée selon directives de LeRatierBretonnien
+  //Actors.registerSheet("chroniquesdeletrange", SimpleActorSheet, { makeDefault: true });
+  console.log("ACTOR SHEET LOADED !!!!")
+  Actors.registerSheet("chroniquesdeletrange", SimpleActorSheet, { types: ["character"], makeDefault: true });	// ligne modifiée selon directives de LeRatierBretonnien
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("chroniquesdeletrange", SimpleItemSheet, { makeDefault: true });
 
@@ -109,33 +109,6 @@ Hooks.on("hotbarDrop", (bar, data, slot) => createchroniquesdeletrangeMacro(data
  */
 Hooks.on("getActorDirectoryEntryContext", (html, options) => {
 
-  // Define an actor as a template.
-  options.push({
-    name: game.i18n.localize("SIMPLE.DefineTemplate"),
-    icon: '<i class="fas fa-stamp"></i>',
-    condition: li => {
-      const actor = game.actors.get(li.data("documentId"));
-      return !actor.isTemplate;
-    },
-    callback: li => {
-      const actor = game.actors.get(li.data("documentId"));
-      actor.setFlag("chroniquesdeletrange", "isTemplate", true);
-    }
-  });
-
-  // Undefine an actor as a template.
-  options.push({
-    name: game.i18n.localize("SIMPLE.UnsetTemplate"),
-    icon: '<i class="fas fa-times"></i>',
-    condition: li => {
-      const actor = game.actors.get(li.data("documentId"));
-      return actor.isTemplate;
-    },
-    callback: li => {
-      const actor = game.actors.get(li.data("documentId"));
-      actor.setFlag("chroniquesdeletrange", "isTemplate", false);
-    }
-  });
 });
 
 /**
@@ -143,31 +116,4 @@ Hooks.on("getActorDirectoryEntryContext", (html, options) => {
  */
 Hooks.on("getItemDirectoryEntryContext", (html, options) => {
 
-  // Define an item as a template.
-  options.push({
-    name: game.i18n.localize("SIMPLE.DefineTemplate"),
-    icon: '<i class="fas fa-stamp"></i>',
-    condition: li => {
-      const item = game.items.get(li.data("documentId"));
-      return !item.isTemplate;
-    },
-    callback: li => {
-      const item = game.items.get(li.data("documentId"));
-      item.setFlag("chroniquesdeletrange", "isTemplate", true);
-    }
-  });
-
-  // Undefine an item as a template.
-  options.push({
-    name: game.i18n.localize("SIMPLE.UnsetTemplate"),
-    icon: '<i class="fas fa-times"></i>',
-    condition: li => {
-      const item = game.items.get(li.data("documentId"));
-      return item.isTemplate;
-    },
-    callback: li => {
-      const item = game.items.get(li.data("documentId"));
-      item.setFlag("chroniquesdeletrange", "isTemplate", false);
-    }
-  });
 });

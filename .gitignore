@@ -1,9 +1,10 @@
 # IDE
 .idea/
 .vs/
+.history/
 
 # Node Modules
 node_modules/
 package-lock.json
 
-worldbuilding.lock
+chroniquesdeletrange.lock
