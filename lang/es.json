@@ -1,21 +1,21 @@
 {
  "SETTINGS.SimpleMacroShorthandN": "Shortened Macro Syntax",
  "SETTINGS.SimpleMacroShorthandL": "Enable a shortened macro syntax which allows referencing attributes directly, for example @str instead of @attributes.str.value. Disable this setting if you need the ability to reference the full attribute model, for example @attributes.str.label.",
- "SETTINGS.SimpleInitFormulaN": "Formule d′initiative",
- "SETTINGS.SimpleInitFormulaL": "Saisissez une formule d′initiative, telle que d20+@dex",
+ "SETTINGS.SimpleInitFormulaN": "Initiative Formula",
+ "SETTINGS.SimpleInitFormulaL": "Enter an initiative formula, such as d20+@dex",
 
  "CDE.ItemCreate": "Créer un Équipement",
  "CDE.ItemEdit": "Éditer l′Équipement",
  "CDE.ItemDelete": "Supprimer l′Équipement",
  "CDE.ItemNew": "Nouvel Équipement",
 
- "CDE.NotifyInitFormulaUpdated": "La formule d′initiative a été modifiée en",
- "CDE.NotifyInitFormulaInvalid": "Cette formule d′initiative était invalide",
- "CDE.NotifyGroupDuplicate": "Ce groupe d′attributs existe déjà.",
- "CDE.NotifyGroupAttrDuplicate": "Ce groupe d′attributs existe déjà en tant qu′attribut.",
- "CDE.NotifyGroupAlphanumeric": "Les noms de groupe d′attributs ne peuvent pas contenir d′espaces ni de points.",
- "CDE.NotifyGroupReserved": "Le groupe d′attributs \"{key}\" est réservé et ne peut être utilisé.",
- "CDE.NotifyAttrDuplicate": "Cette clé d′Attribut existe déjà en tant que groupe.",
+ "CDE.NotifyInitFormulaUpdated": "Initiative formula was updated to",
+ "CDE.NotifyInitFormulaInvalid": "Initiative formula was invalid",
+ "CDE.NotifyGroupDuplicate": "Attribute group already exists.",
+ "CDE.NotifyGroupAttrDuplicate": "Attribute group already exists as an attribute.",
+ "CDE.NotifyGroupAlphanumeric": "Attribute group names may not contain spaces or periods.",
+ "CDE.NotifyGroupReserved": "Attribute group \"{key}\" is reserved and cannot be used.",
+ "CDE.NotifyAttrDuplicate": "Attribute key already exists as a group.",
 
  "CDE.ResourceMin": "Min",
  "CDE.ResourceValue": "Valeur",
@@ -88,10 +88,10 @@
  "CDE.Inquiry": "Renseignement",
  "CDE.Influence": "Influence",
 
-"CDE.Components2": "Composants & ingrédients",
-"CDE.Component": "Composant n° ",
-"CDE.ChanceThrow": "Choisir un composant au hasard dans l′urgence",
-"CDE.TypesOfMagic": "Types de magie",
+ "CDE.Components2": "Composants & ingrédients",
+ "CDE.Component": "Composant n° ",
+ "CDE.ChanceThrow": "Choisir un composant au hasard dans l′urgence",
+ "CDE.TypesOfMagic": "Types de magie",
 
 
  "CDE.InternalCinnabar": "Cinabre Interne",
@@ -101,18 +101,18 @@
  "CDE.Geomancy": "Géomancie",
   
 
- "CDE.Metal": "㊎ Métal ",
- "CDE.MetalQualities": "– agressif, passionné, combatif, enthousiate…",
- "CDE.Water": "㊌ Eau ",
- "CDE.WaterQualities": "– souple, appliqué, adaptable, discipliné…",
- "CDE.Earth": "㊏ Terre ",
- "CDE.EarthQualities": "– obstiné, résilient, endurant, patient…",
- "CDE.Fire": "㊋ Feu ",
- "CDE.FireQualities": "– chaleureux, créatif, empathique, inspiré…",
- "CDE.Wood": "㊍ Bois ",
- "CDE.WoodQualities": "– intuitif, observateur, ouvert, instinctif…",
-
-
+ "CDE.Metal": "㊎ Metal ",
+ "CDE.MetalQualities": "– agresivo, apasionado, combativo, entusiasta…",
+ "CDE.Water": "㊌ Agua ",
+ "CDE.WaterQualities": "– flexible, diligente, adaptable, disciplinado…",
+ "CDE.Earth": "㊏ Iierra ",
+ "CDE.EarthQualities": "– terco, resistente, perdurable, paciente…",
+ "CDE.Fire": "㊋ Fuego ",
+ "CDE.FireQualities": "– cálido, creativo, empático, inspirado…",
+ "CDE.Wood": "㊍ Madera ",
+ "CDE.WoodQualities": "– intuitivo, observador, abierto, instintivo…",
+ 
+ 
  "CDE.PracticeSpecialty": "Cochez si vous pratiquez la spécialité ",
 
  "CDE.Essence": "Essence",
@@ -182,7 +182,7 @@
  "CDE.RealizationTimeRitual": "Temps de Réalisation (Rituel)",
  "CDE.RealizationTimeAccelerated": "Temps de Réalisation (Acceléré)",
  "CDE.Flashback": "Flash-back",
- "CDE.Data": "Données",
+ "CDE.Data": "Data",
  "CDE.Components": "Composantes",
  "CDE.Effects": "Effets",
  "CDE.Examples": "Exemples",

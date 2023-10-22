@@ -20,20 +20,26 @@
       "name": "English",
       "path": "lang/en.json"
     },
-	{
+	  {
       "lang": "fr",
       "name": "Français",
       "path": "lang/fr.json"
+    },
+    {
+      "lang": "es",
+      "name": "Español",
+      "path": "lang/es.json"
     }
   ],
   "compatibility": {
     "minimum": "10",
-    "verified": "11"
+    "verified": "11",
+    "maximum": "11"
   },
   "gridDistance": 5,
-  "gridUnits": "ft",
+  "gridUnits": "m",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power",
   "manifest": "https://chroniques-etrange-no.fr/download/foundry/system.json",
-  "download": "https://chroniques-etrange-no.fr/download/foundry/release-001.zip"
+  "download": "https://chroniques-etrange-no.fr/download/foundry/release-002.zip"
 }

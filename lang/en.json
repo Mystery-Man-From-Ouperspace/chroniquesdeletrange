@@ -46,11 +46,11 @@
  "CDE.Name": "Character's Name",
  "CDE.Concept": "Concept",
  "CDE.CelestialGuardian": "Celestial Guardian",
- "CDE.CelestialGuardian1": "Azurean Dragon (Wood)",
+ "CDE.CelestialGuardian1": "White Tiger (Metal)",
  "CDE.CelestialGuardian2": "Black Turtle (Water)",
- "CDE.CelestialGuardian3": "Scarlet Bird (Fire)",
- "CDE.CelestialGuardian4": "White Tiger (Metal)",
- "CDE.CelestialGuardian5": "Yellow Kirin (Earth)",
+ "CDE.CelestialGuardian3": "Yellow Kirin (Earth)",
+ "CDE.CelestialGuardian4": "Scarlet Bird (Fire)",
+ "CDE.CelestialGuardian5": "Azurean Dragon (Wood)",
 
   
  "CDE.Description": "Description",
@@ -101,15 +101,15 @@
  "CDE.Geomancy": "Geomancy",
  
  
- "CDE.Metal": "Metal ",
+ "CDE.Metal": "㊎ Metal ",
  "CDE.MetalQualities": "– aggressive, passionate, combative, enthusiastic…",
- "CDE.Water": "Water ",
+ "CDE.Water": "㊌ Water ",
  "CDE.WaterQualities": "– flexible, diligent, adaptable, disciplined…",
- "CDE.Earth": "Earth ",
+ "CDE.Earth": "㊏ Earth ",
  "CDE.EarthQualities": "– stubborn, resilient, enduring, patient…",
- "CDE.Fire": "Fire ",
+ "CDE.Fire": "㊋ Fire ",
  "CDE.FireQualities": "– warm, creative, empathetic, inspired…",
- "CDE.Wood": "Wood ",
+ "CDE.Wood": "㊍ Wood ",
  "CDE.WoodQualities": "– intuitive, observant, open, instinctive…",
 
 
@@ -181,6 +181,7 @@
  "CDE.HEI2": "Hei",
  "CDE.RealizationTimeRitual": "Realization Time (Ritual)",
  "CDE.RealizationTimeAccelerated": "Realization Time (Accelerated)",
+ "CDE.Data": "Data",
  "CDE.Flashback": "Flashback",
  "CDE.Components": "Components",
  "CDE.Effects": "Effects",

@@ -55,6 +55,16 @@ export class SimpleActorSheet extends ActorSheet {
     html.find(".item-control").click(this._onItemControl.bind(this));
     html.find(".items .rollable").on("click", this._onItemRoll.bind(this));
 
+
+
+    html.find(".kungfu-control").click(this._onKungFuControl.bind(this));
+   //  html.find(".kungfus .rollable").on("click", this._onKungFuRoll.bind(this));
+
+    html.find(".spell-control").click(this._onSpellControl.bind(this));
+    // html.find(".spells .rollable").on("click", this._onSpellRoll.bind(this));
+
+
+
     // Add draggable for Macro creation
     html.find(".attributes a.attribute-roll").each((i, a) => {
       a.setAttribute("draggable", true);
@@ -92,6 +102,49 @@ export class SimpleActorSheet extends ActorSheet {
     }
   }
 
+
+  _onKungFuControl(event) {
+    event.preventDefault();
+
+    // Obtain event data
+    const button = event.currentTarget;
+    const li = button.closest(".kungfu");
+    const item = this.actor.items.get(li?.dataset.itemId);
+
+    // Handle different actions
+    switch ( button.dataset.action ) {
+      case "kungfucreate":
+        const cls = getDocumentClass("Item");
+        return cls.create({name: game.i18n.localize("CDE.KFNew"), type: "kungfu"}, {parent: this.actor});
+      case "kungfuedit":
+        return item.sheet.render(true);
+      case "kungfudelete":
+        return item.delete();
+    }
+  }
+
+
+  _onSpellControl(event) {
+    event.preventDefault();
+
+    // Obtain event data
+    const button = event.currentTarget;
+    const li = button.closest(".spell");
+    const item = this.actor.items.get(li?.dataset.itemId);
+
+    // Handle different actions
+    switch ( button.dataset.action ) {
+      case "spellcreate":
+        const cls = getDocumentClass("Item");
+        return cls.create({name: game.i18n.localize("CDE.SpellNew"), type: "spell"}, {parent: this.actor});
+      case "spelledit":
+        return item.sheet.render(true);
+      case "spelldelete":
+        return item.delete(); 
+    }
+  }
+
+
   /* -------------------------------------------- */
 
   /**
@@ -109,6 +162,34 @@ export class SimpleActorSheet extends ActorSheet {
       flavor: `<h2>${item.name}</h2><h3>${button.text()}</h3>`
     });
   }
+
+
+ /* _onKungFuRoll(event) {
+    let button = $(event.currentTarget);
+    const li = button.parents(".kungfu");
+    const item = this.actor.items.get(li.data("itemId"));
+    let r = new Roll(button.data('roll'), this.actor.getRollData());
+    return r.toMessage({
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      flavor: `<h2>${item.name}</h2><h3>${button.text()}</h3>`
+    });
+  } */
+
+
+ /*  _onSpellRoll(event) {
+    let button = $(event.currentTarget);
+    const li = button.parents(".spell");
+    const item = this.actor.items.get(li.data("itemId"));
+    let r = new Roll(button.data('roll'), this.actor.getRollData());
+    return r.toMessage({
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      flavor: `<h2>${item.name}</h2><h3>${button.text()}</h3>`
+    });
+  } */
+
+
 
   /* -------------------------------------------- */
 

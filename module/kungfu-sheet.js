@@ -5,7 +5,7 @@ import {ATTRIBUTE_TYPES} from "./constants.js";
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export class SimpleSpellSheet extends ItemSheet {
+export class SimpleKungFuSheet extends ItemSheet {
 
   /** @inheritdoc */
   static get defaultOptions() {

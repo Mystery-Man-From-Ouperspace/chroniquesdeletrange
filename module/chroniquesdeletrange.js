@@ -12,6 +12,20 @@ import { preloadHandlebarsTemplates } from "./templates.js";
 import { createchroniquesdeletrangeMacro } from "./macro.js";
 import { SimpleToken, SimpleTokenDocument } from "./token.js";
 
+
+
+
+
+import { SimpleKungFu } from "./kungfu.js";
+import { SimpleKungFuSheet } from "./kungfu-sheet.js";
+import { SimpleSpell } from "./spell.js";
+import { SimpleSpellSheet } from "./spell-sheet.js";
+
+
+
+
+
+
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
 /* -------------------------------------------- */
@@ -41,6 +55,15 @@ Hooks.once("init", async function() {
   CONFIG.Token.documentClass = SimpleTokenDocument;
   CONFIG.Token.objectClass = SimpleToken;
 
+
+
+  /* CONFIG.KungFu.documentClass = SimpleKungFu;
+  CONFIG.Spell.documentClass = SimpleSpell; */
+
+
+
+
+
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
   //Actors.registerSheet("chroniquesdeletrange", SimpleActorSheet, { makeDefault: true });
@@ -49,6 +72,21 @@ Hooks.once("init", async function() {
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("chroniquesdeletrange", SimpleItemSheet, { makeDefault: true });
 
+
+
+
+
+
+  /* Items.unregisterSheet("core", KungFuSheet, { types: ["kungfu"] });
+  Items.registerSheet("chroniquesdeletrange", SimpleKungFuSheet, { types: ["kungfu"], makeDefault: false });
+
+  Items.unregisterSheet("core", SpellSheet, { types: ["spell"] });
+  Items.registerSheet("chroniquesdeletrange", SimpleSpellSheet, { types: ["spell"], makeDefault: false }); */
+
+
+
+
+  
   // Register system settings
   game.settings.register("chroniquesdeletrange", "macroShorthand", {
     name: "SETTINGS.SimpleMacroShorthandN",

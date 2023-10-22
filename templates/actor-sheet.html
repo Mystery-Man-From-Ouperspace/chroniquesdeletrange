@@ -55,7 +55,7 @@
         <a class="item" data-tab="nghang">{{ localize "CDE.NgHang" }}</a>
 		<a class="item" data-tab="treasures">{{ localize "CDE.Treasures" }}</a>
 		<a class="item" data-tab="spells">{{ localize "CDE.Spells" }}</a>
-        <a class="item" data-tab="kungfu">{{ localize "CDE.KungFu" }}</a>
+        <a class="item" data-tab="kungfus">{{ localize "CDE.KungFu" }}</a>
         <a class="item" data-tab="items">{{ localize "CDE.Items" }}</a>
     </nav>
 
@@ -424,7 +424,7 @@
         </div>
 
         {{!-- Owned KungFu Tab --}}
-        <div class="tab kungfu" data-group="primary" data-tab="kungfu">
+        <div class="tab kungfus" data-group="primary" data-tab="kungfus">
             <ol class="kungfu-list">
                 {{#each data.kungfus as |kungfu id|}}
                 <li class="kungfu flexrow" data-kungfu-id="{{kungfu._id}}">
@@ -465,14 +465,14 @@
                         {{/each}}
                     </div>
                     <div class="kungfu-controls">
-                        <a class="kungfu-control" title="{{ localize "CDE.KFEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
-                        <a class="kungfu-control" title="{{ localize "CDE.KFDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                        <a class="kungfu-control" title="{{ localize "CDE.KFEdit" }}" data-action="kungfuedit"><i class="fas fa-edit"></i></a>
+                        <a class="kungfu-control" title="{{ localize "CDE.KFDelete" }}" data-action="kungfudelete"><i class="fas fa-trash"></i></a>
                     </div>
                 </li>
                 {{/each}}
             </ol>
             <p>
-                <a class="kungfu-control" title="{{ localize "CDE.KFCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "CDE.KFCreate" }}</a>
+                <a class="kungfu-control" title="{{ localize "CDE.KFCreate" }}" data-action="kungfucreate"><i class="fas fa-plus"></i> {{ localize "CDE.KFCreate" }}</a>
             </p>
         </div>
 		
@@ -518,14 +518,14 @@
                         {{/each}}
                     </div>
                     <div class="spell-controls">
-                        <a class="ispell-control" title="{{ localize "CDE.SpellEdit" }}" data-action="edit"><i class="fas fa-edit"></i></a>
-                        <a class="spell-control" title="{{ localize "CDE.SpellDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+                        <a class="spell-control" title="{{ localize "CDE.SpellEdit" }}" data-action="spelledit"><i class="fas fa-edit"></i></a>
+                        <a class="spell-control" title="{{ localize "CDE.SpellDelete" }}" data-action="spelldelete"><i class="fas fa-trash"></i></a>
                     </div>
                 </li>
                 {{/each}}
             </ol>
             <p>
-                <a class="spell-control" title="{{ localize "CDE.SpellCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "CDE.SpellCreate" }}</a>
+                <a class="spell-control" title="{{ localize "CDE.SpellCreate" }}" data-action="spellcreate"><i class="fas fa-plus"></i> {{ localize "CDE.SpellCreate" }}</a>
             </p>
 		</div>
 		
