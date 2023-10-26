@@ -15,11 +15,17 @@ import { SimpleToken, SimpleTokenDocument } from "./token.js";
 
 
 
-
+// Added MMFO
 import { SimpleKungFu } from "./kungfu.js";
 import { SimpleKungFuSheet } from "./kungfu-sheet.js";
 import { SimpleSpell } from "./spell.js";
 import { SimpleSpellSheet } from "./spell-sheet.js";
+import { SimpleLoksyu } from "./loksyu.js";
+import { SimpleLoksyuSheet } from "./loksyu-sheet.js";
+import { SimpleSkill } from "./skill-dice.js";
+import { SimpleSkillPrompt } from "./skill-dice-prompt.js";
+import { SimpleMagic } from "./magic-dice.js";
+import { SimpleMagicPrompt } from "./magic-dice-prompt.js";
 
 
 
@@ -57,9 +63,13 @@ Hooks.once("init", async function() {
 
 
 
-  /* CONFIG.KungFu.documentClass = SimpleKungFu;
-  CONFIG.Spell.documentClass = SimpleSpell; */
 
+  // Added MMFO
+  CONFIG.Item.documentClass = SimpleKungFu;
+  CONFIG.Item.documentClass = SimpleSpell;
+  CONFIG.Actor.documentClass = SimpleLoksyu;
+  CONFIG.Actor.documentClass = SimpleMagic;
+  CONFIG.Actor.documentClass = SimpleSkill;
 
 
 
@@ -77,11 +87,13 @@ Hooks.once("init", async function() {
 
 
 
-  /* Items.unregisterSheet("core", KungFuSheet, { types: ["kungfu"] });
+  // Added MMFO
   Items.registerSheet("chroniquesdeletrange", SimpleKungFuSheet, { types: ["kungfu"], makeDefault: false });
+  Items.registerSheet("chroniquesdeletrange", SimpleSpellSheet, { types: ["spell"], makeDefault: false });
+  Actors.registerSheet("chroniquesdeletrange", SimpleLoksyuSheet, { types: ["loksyu"], makeDefault: false });
+  Actors.registerSheet("chroniquesdeletrange", SimpleSkillPrompt, { types: ["skillprpt"], makeDefault: false });
+  Actors.registerSheet("chroniquesdeletrange", SimpleMagicPrompt, { types: ["magicprpt"], makeDefault: false });
 
-  Items.unregisterSheet("core", SpellSheet, { types: ["spell"] });
-  Items.registerSheet("chroniquesdeletrange", SimpleSpellSheet, { types: ["spell"], makeDefault: false }); */
 
 
 

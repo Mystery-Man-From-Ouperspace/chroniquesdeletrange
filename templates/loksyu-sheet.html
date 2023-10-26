@@ -1,0 +1,97 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+
+{{log this}}
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+		<table>
+			<tr>
+				<td>
+					<!-- <img class="logo-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" height="300" width="200" /> -->
+					<img class="logo-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+				</td>
+				<td>
+					<div class="header-fields">
+						<table>
+							<tr>
+								<td>
+									<h1 class="charname">
+										<input name="name" type="text" value="{{data.name}}" placeholder="{{ localize "CDE.Name" }}" />
+									</h1>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+    </header>
+	
+
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="loksyu">{{ localize "CDE.Loksyu" }}</a>
+		<a class="item" data-tab="skills">{{ localize "CDE.Skills" }}</a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+	
+
+
+		
+		{{!-- Loksyu Tab --}}
+        <div class="tab loksyu loksyu_wrap" data-group="primary" data-tab="loksyu">
+			<div class="machin">
+				<div>
+				<img style="width: 21%;margin-top: -30px;margin-left: -22px;" class="logo" src="systems/chroniquesdeletrange/images/logo_jeu.png" title="奇闻异事 ● Hong Kong – Les Chroniques de l'&Eacute;trange ● R.d′Huissier & C.Lameire ● Antre Monde &Eacute;ditions" alt="Logo">
+				</div>
+				<br>&nbsp;<br>
+				<div class="resource1">
+					<input type="number" name="system.aspect.fire.value" value="{{systemData.aspect.fire.value}}" title="{{ localize "CDE.Fire" }}{{ localize "CDE.FireQualities" }}" />
+					<img class="click" id="systemfireclick" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Fire" }}"
+					alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
+				</div>
+				<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>
+				<div class="resource2">
+					<input type="number" name="system.aspect.wood.value" value="{{systemData.aspect.wood.value}}" title="{{ localize "CDE.Wood" }}{{ localize "CDE.WoodQualities" }}" />
+					<img class="click" id="systemwoodclick" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Wood" }}"
+					alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
+				</div>
+				<div class="resource3">
+				</div>
+				<div class="resource4">
+					<input type="number" name="system.aspect.earth.value" value="{{systemData.aspect.earth.value}}" title="{{ localize "CDE.Earth" }}{{ localize "CDE.EarthQualities" }}" />
+					<img class="click" id="systemearthclick" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Earth" }}"
+					alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
+				</div>
+				<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>
+				<div class="resource5">
+					<input type="number" name="system.aspect.water.value" value="{{systemData.aspect.water.value}}" title="{{ localize "CDE.Water" }}{{ localize "CDE.WaterQualities" }}" />
+					<img class="click" id="systemwaterclick" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Water" }}"
+					alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
+				</div>
+				<div class="resource6">
+				</div>
+				<div class="resource7">
+					<input type="number" name="system.aspect.metal.value" value="{{systemData.aspect.metal.value}}" title="{{ localize "CDE.Metal" }}{{ localize "CDE.MetalQualities" }}" />
+					<img class="click" id="systemmetalclick" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Metal" }}"
+					alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
+				</div>
+
+ 			</div>
+			<img src="systems/chroniquesdeletrange/images/loksyu.png"
+				title="Loksyu"
+				alt="Loksyu">
+		</div>
+
+		{{!-- skills Tab --}}
+        <div class="tab skills" data-group="primary" data-tab="skills">
+
+		</div>
+
+
+
+				
+    </section>
+</form>

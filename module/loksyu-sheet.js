@@ -5,18 +5,18 @@ import {ATTRIBUTE_TYPES} from "./constants.js";
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class SimpleActorSheet extends ActorSheet {
+export class SimpleLoksyuSheet extends ActorSheet {
 
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["chroniquesdeletrange", "sheet", "actor"],
-      template: "systems/chroniquesdeletrange/templates/actor-sheet.html",
+      classes: ["chroniquesdeletrange", "sheet", "loksyu"],
+      template: "systems/chroniquesdeletrange/templates/loksyu-sheet.html",
       width: 700,
       height: 850,
-      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
+      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "loksyu"}],
       scrollY: [".biography", ".items", ".attributes"],
-      dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
+      // dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
     });
   }
 
@@ -52,15 +52,15 @@ export class SimpleActorSheet extends ActorSheet {
     //html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
 
     // Item Controls
-    html.find(".item-control").click(this._onItemControl.bind(this));
-    html.find(".items .rollable").on("click", this._onItemRoll.bind(this));
+    // html.find(".item-control").click(this._onItemControl.bind(this));
+    // html.find(".items .rollable").on("click", this._onItemRoll.bind(this));
 
 
 
-    html.find(".kungfu-control").click(this._onKungFuControl.bind(this));
-   //  html.find(".kungfus .rollable").on("click", this._onKungFuRoll.bind(this));
+    // html.find(".kungfu-control").click(this._onKungFuControl.bind(this));
+    // html.find(".kungfus .rollable").on("click", this._onKungFuRoll.bind(this));
 
-    html.find(".spell-control").click(this._onSpellControl.bind(this));
+    // html.find(".spell-control").click(this._onSpellControl.bind(this));
     // html.find(".spells .rollable").on("click", this._onSpellRoll.bind(this));
 
 
@@ -78,11 +78,13 @@ export class SimpleActorSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   /**
-   * Handle click events for Item item control buttons within the Actor Sheet
+   * Handle click events for Item control buttons within the Actor Sheet
    * @param event
    * @private
    */
-  _onItemControl(event) {
+ 
+ 
+  /*  _onItemControl(event) {
     event.preventDefault();
 
     // Obtain event data
@@ -103,12 +105,7 @@ export class SimpleActorSheet extends ActorSheet {
   }
 
 
-   /**
-   * Handle click events for Item kungfu control buttons within the Actor Sheet
-   * @param event
-   * @private
-   */
-   _onKungFuControl(event) {
+  _onKungFuControl(event) {
     event.preventDefault();
 
     // Obtain event data
@@ -129,11 +126,6 @@ export class SimpleActorSheet extends ActorSheet {
   }
 
 
-  /**
-   * Handle click events for Item spell control buttons within the Actor Sheet
-   * @param event
-   * @private
-   */
   _onSpellControl(event) {
     event.preventDefault();
 
@@ -152,7 +144,7 @@ export class SimpleActorSheet extends ActorSheet {
       case "spelldelete":
         return item.delete(); 
     }
-  }
+  } */
 
 
   /* -------------------------------------------- */
@@ -161,7 +153,7 @@ export class SimpleActorSheet extends ActorSheet {
    * Listen for roll buttons on items.
    * @param {MouseEvent} event    The originating left click event
    */
-  _onItemRoll(event) {
+ /*  _onItemRoll(event) {
     let button = $(event.currentTarget);
     const li = button.parents(".item");
     const item = this.actor.items.get(li.data("itemId"));
@@ -171,7 +163,7 @@ export class SimpleActorSheet extends ActorSheet {
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       flavor: `<h2>${item.name}</h2><h3>${button.text()}</h3>`
     });
-  }
+  } */
 
 
  /* _onKungFuRoll(event) {
