@@ -190,5 +190,19 @@
  "CDE.SpellCreate": "Create Spell",
  "CDE.SpellEdit": "Edit Spell",
  "CDE.SpellDelete": "Delete Spell",
- "CDE.SpellNew": "New Spell"
+ "CDE.SpellNew": "New Spell",
+
+
+ "CDE.PromptName1": "",
+ "CDE.BonusMalus": "Bonus/Malus",
+ "CDE.BonusAuspiciousDice": "Bonus/Aspicious-Dice",
+
+ "CDE.PromptName2": "",
+ "CDE.OneMagicRoll": "1. Magic Roll",
+ "CDE.DoNOtModify": "Do not Modify this Aspect",
+ "CDE.AspectSkill": "Aspect/Skill",
+ "CDE.TwoPowerOfSpell": "2. Power of Spell",
+ "CDE.AspectSpeciality": "Aspect/Speciality",
+ "CDE.RollDifficulty": "Roll Difficulty"
+
 }

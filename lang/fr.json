@@ -190,5 +190,19 @@
  "CDE.SpellCreate": "Créer un Sortilège",
  "CDE.SpellEdit": "Éditer le Sortilège",
  "CDE.SpellDelete": "Supprimer le Sortilège",
- "CDE.SpellNew": "Nouveau Sortilège"
+ "CDE.SpellNew": "Nouveau Sortilège",
+
+
+ "CDE.PromptName1": "",
+ "CDE.BonusMalus": "Bonus/Malus",
+ "CDE.BonusAuspiciousDice": "Bonus/Dés-fastes",
+
+ "CDE.PromptName2": "",
+ "CDE.OneMagicRoll": "1. Jet de Magie",
+ "CDE.DoNOtModify": "Ne modifiez pas cet Aspect",
+ "CDE.AspectSkill": "Aspect/Compétence",
+ "CDE.TwoPowerOfSpell": "2. Puissance du Sort",
+ "CDE.AspectSpeciality": "Aspect/Spécialité",
+ "CDE.RollDifficulty": "Difficulté du Jet"
+
 }

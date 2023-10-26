@@ -13,12 +13,19 @@
 
             <table>
                 <tr>
+                    <td>
+                        {{ localize "CDE.OneMagicRoll" }}
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
                     <td class="label col1-5">&nbsp;</td>
                     <td class="image col2-5">
                         <img class="bigsquare" src="systems/chroniquesdeletrange/images/bigsquare.png" />
                     </td>
                     <td class="label col3-5">&nbsp;</td>
-                    <td class="label col4-5"><b>+</b></td>
+                    <td class="label col4-5"><b>+ 1 +</b></td>
                     <td class="label col5-5">&nbsp;</td>
                 </tr>
                 <tr> <!-- Ce tr collé au-dessus du tr ci-dessus, pour que le numberofdice soit au milieu du bigsquare.png -->
@@ -29,13 +36,22 @@
             </table>
             <table>
                 <tr>
-                    <td class="label col1-3">{{ localize "CDE.Aspect" }}</td>
-                    <td class="label col2-3">&nbsp;</td>
-                    <td class="label col3-3">{{ localize "CDE.BonusMalus" }}</td>
+                    <td class="small">
+                        {{ localize "CDE.DoNotModify" }}
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td class="label col1-5">{{ localize "CDE.AspectSkill" }}</td>
+                    <td class="label col2-5">&nbsp;</td>
+                    <td class="label col3-5">{{ localize "CDE.BonusMalus" }}</td>
+                    <td class="label col4-5">&nbsp;</td>
+                    <td class="label col5-5">{{ localize "CDE.BonusAuspiciousDice" }}</td>
                 </tr>
                 <tr>
-                    <td class="select col1-3">
-                        <select name="system.prompt.aspect">
+                    <td class="select col1-5">
+                        <select name="system.prompt.aspectskill">
                         {{#select systemData.prompt.bonusmalus }}
                             <option value="1">{{ localize "CDE.Metal" }}</option>
                             <option value="2">{{ localize "CDE.Water" }}</option>
@@ -45,16 +61,10 @@
                         {{/select}}
                         </select>
                     </td>
-                    <td class="label col2-3">&nbsp;</td>
-                    <td class="value col3-3"><input class="input" type="text" placeholder="{{ localize "CDE.Specialities" }}" name="system.prompt.bonusdesfastes" value="{{systemData.prompt.bonusdesfastes}}"/></td>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                    <td class="label col123 totheleft">{{ localize "CDE.BonusAuspiciousDice" }}</td>
-                </tr>
-                <tr>
-                    <td  class="select col1-1">
+                    <td class="label col2-5">+</td>
+                    <td class="value col3-5"><input class="input" type="number" name="system.prompt.bonusmalus" value="{{systemData.prompt.bonusmalus}}"/></td>
+                    <td class="label col4-5">&nbsp;</td>
+                    <td  class="select col5-5">
                         <select name="system.prompt.bonusauspiciousdice">
                         {{#select systemData.prompt.bonusauspiciousdice }}
                             <option value="0">0</option>
@@ -76,6 +86,46 @@
                         {{/select}}
                         </select>
                     </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>
+                        {{ localize "CDE.TwoPowerOfSpell" }}
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td class="small">
+                        {{ localize "CDE.DoNotModify" }}
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td class="label col1-5">{{ localize "CDE.AspectSpeciality" }}</td>
+                    <td class="label col2-5">&nbsp;</td>
+                    <td class="label col3-5">{{ localize "CDE.RollDifficulty" }}</td>
+                    <td class="label col4-5">&nbsp;</td>
+                    <td class="label col5-5">{{ localize "CDE.BonusMalus" }}</td>
+                </tr>
+                <tr>
+                    <td class="select col1-5">
+                        <select name="system.prompt.aspectspeciality">
+                        {{#select systemData.prompt.rolldifficulty }}
+                            <option value="1">{{ localize "CDE.Metal" }}</option>
+                            <option value="2">{{ localize "CDE.Water" }}</option>
+                            <option value="3">{{ localize "CDE.Earth" }}</option>
+                            <option value="4">{{ localize "CDE.Fire" }}</option>
+                            <option value="5">{{ localize "CDE.Wood" }}</option>
+                        {{/select}}
+                        </select>
+                    </td>
+                    <td class="label col2-5">⨯</td>
+                    <td class="value col3-5"><input class="input" type="number" name="system.prompt.rolldifficulty" value="{{systemData.prompt.rolldifficulty}}"/></td>
+                    <td class="label col4-5">+</td>
+                    <td class="value col3-5"><input class="input" type="number" name="system.prompt.bonusmalus" value="{{systemData.prompt.bonusmalus2}}"/></td>
                 </tr>
             </table>
             <table>

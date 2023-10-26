@@ -22,7 +22,7 @@
                     <td class="label col5-5">&nbsp;</td>
                 </tr>
                 <tr> <!-- Ce tr collé au-dessus du tr ci-dessus, pour que le numberofdice soit au milieu du bigsquare.png -->
-                    <td class="value col1-3"><input class="input" type="number" name="system.prompt.numberifdice" value="{{ systemData.prompt.numberofdice }}" /></td>
+                    <td class="value col1-3">{{ systemData.prompt.numberofdice }}</td>
                     <td class="label col2-3">&nbsp;</td>
                     <td class="label col3-3">&nbsp;</td>
                 </tr>
@@ -46,7 +46,7 @@
                         </select>
                     </td>
                     <td class="label col2-3">&nbsp;</td>
-                    <td class="value col3-3"><input class="input" type="text" placeholder="{{ localize "CDE.Specialities" }}" name="system.prompt.bonusdesfastes" value="{{systemData.prompt.bonusdesfastes}}"/></td>
+                    <td class="value col3-3"><input class="input" type="number" name="system.prompt.bonusmalus" value="{{systemData.prompt.bonusmalus}}"/></td>
                 </tr>
             </table>
             <table>
