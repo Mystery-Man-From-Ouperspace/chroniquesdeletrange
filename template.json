@@ -579,7 +579,7 @@
   },
   
   "Item": {
-    "types": ["item", "kungfu", "spell", "supernatural", "skillprpt", "magicprpt"],
+    "types": ["item", "kungfu", "spell", "paranormal", "skillprpt", "magicprpt"],
     "htmlFields": ["description", "style", "technique", "components", "effects", "examples"],
 
     "item": {
