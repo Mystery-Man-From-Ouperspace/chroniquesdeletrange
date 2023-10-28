@@ -55,19 +55,17 @@ Hooks.once("init", async function() {
   // Define custom Document classes
   CONFIG.Actor.documentClass = CDEActor;
   CONFIG.Item.documentClass = CDEItem;
-  CONFIG.Token.documentClass = CDETokenDocument;
-  CONFIG.Token.objectClass = CDEToken;
+  // CONFIG.Token.documentClass = CDETokenDocument;
+  // CONFIG.Token.objectClass = CDEToken;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  //Actors.registerSheet("chroniquesdeletrange", CDEActorSheet, { makeDefault: true }); 	// ligne modifiée selon directives de LeRatierBretonnien
-  console.log("ACTOR SHEET LOADED !!!!")
-  Actors.registerSheet("chroniquesdeletrange", CDEActorSheet, { types: ["character"], makeDefault: true });	// ligne modifiée selon directives de LeRatierBretonnien
   Items.unregisterSheet("core", ItemSheet);
+
+  //Actors.registerSheet("chroniquesdeletrange", CDEActorSheet, { makeDefault: true }); 	// ligne modifiée selon directives de LeRatierBretonnien
+  
+  Actors.registerSheet("chroniquesdeletrange", CDEActorSheet, { types: ["character"], makeDefault: true });	// ligne modifiée selon directives de LeRatierBretonnien
   Items.registerSheet("chroniquesdeletrange", CDEItemSheet, { types: ["item"], makeDefault: true });
-
-
-
 
   // Added MMFO
   Actors.registerSheet("chroniquesdeletrange", CDEPNJSheet, { types: ["pnj"], makeDefault: true });
@@ -75,11 +73,10 @@ Hooks.once("init", async function() {
   Items.registerSheet("chroniquesdeletrange", CDEKungFuSheet, { types: ["kungfu"], makeDefault: true });
   Items.registerSheet("chroniquesdeletrange", CDESpellSheet, { types: ["spell"], makeDefault: true });
   Items.registerSheet("chroniquesdeletrange", CDESupernaturalSheet, { types: ["supernatural"], makeDefault: true });
-  Items.registerSheet("chroniquesdeletrange", CDESkillPrompt, { types: ["skillprpt"], makeDefault: true });
-  Items.registerSheet("chroniquesdeletrange", CDEMagicPrompt, { types: ["magicprpt"], makeDefault: true });
+  //Items.registerSheet("chroniquesdeletrange", CDESkillPrompt, { types: ["skillprpt"], makeDefault: true });
+  //Items.registerSheet("chroniquesdeletrange", CDEMagicPrompt, { types: ["magicprpt"], makeDefault: true });
 
-  
-
+  console.log("ACTOR SHEET LOADED !!!!")
 
   // Register system settings
   game.settings.register("chroniquesdeletrange", "macroShorthand", {
