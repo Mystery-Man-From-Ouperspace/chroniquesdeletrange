@@ -65,6 +65,7 @@ Hooks.once("init", async function() {
   //Actors.registerSheet("chroniquesdeletrange", CDEActorSheet, { makeDefault: true }); 	// ligne modifiée selon directives de LeRatierBretonnien
   
   Actors.registerSheet("chroniquesdeletrange", CDEActorSheet, { types: ["character"], makeDefault: true });	// ligne modifiée selon directives de LeRatierBretonnien
+  Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("chroniquesdeletrange", CDEItemSheet, { types: ["item"], makeDefault: true });
 
   // Added MMFO

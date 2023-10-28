@@ -2,21 +2,20 @@ import { EntitySheetHelper } from "../helper.js";
 import {ATTRIBUTE_TYPES} from "../constants.js";
 
 /**
- * Extend the basic ActorSheet with some very simple modifications
- * @extends {ActorSheet}
+ * Extend the basic ItemSheet with some very simple modifications
+ * @extends {ItemSheet}
  */
-export class CDESkillPrompt extends ActorSheet {
+export class CDESkillPrompt extends ItemSheet {
 
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["chroniquesdeletrange", "sheet", "skill"],
+      classes: ["chroniquesdeletrange", "sheet", "kungfu"],
       template: "systems/chroniquesdeletrange/templates/item/skill-dice-prompt.html",
-      width: 700,
-      height: 600,
-      popOut: true,
-      title: "Skill",
-      scrollY: [".biography", ".items", ".attributes"]
+      width: 520,
+      height: 480,
+      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
+      scrollY: [".attributes"]
     });
   }
 
@@ -26,14 +25,12 @@ export class CDESkillPrompt extends ActorSheet {
   async getData(options) {
     const context = await super.getData(options);
     //EntitySheetHelper.getAttributeData(context.data);
-    context.shorthand = !!game.settings.get("chroniquesdeletrange", "macroShorthand");
-    context.systemData = duplicate(this.actor.system);
+    context.systemData = context.data.system;
     context.dtypes = ATTRIBUTE_TYPES;
-    context.biographyHTML = await TextEditor.enrichHTML(context.systemData.biography, {
+    context.descriptionHTML = await TextEditor.enrichHTML(context.systemData.description, {
       secrets: this.document.isOwner,
       async: true
     });
-    console.log("getData context", context)
     return context;
   }
 
@@ -47,16 +44,9 @@ export class CDESkillPrompt extends ActorSheet {
     if ( !this.isEditable ) return;
 
     // Attribute Management
-    //html.find(".attributes").on("click", ".attribute-control", EntitySheetHelper.onClickAttributeControl.bind(this));
-    //html.find(".groups").on("click", ".group-control", EntitySheetHelper.onClickAttributeGroupControl.bind(this));
-    //html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
-
-    // Item Controls
-    html.find(".item-control").click(this._onItemControl.bind(this));
-    html.find(".items .rollable").on("click", this._onItemRoll.bind(this));
-
-
-
+    html.find(".attributes").on("click", ".attribute-control", EntitySheetHelper.onClickAttributeControl.bind(this));
+    html.find(".groups").on("click", ".group-control", EntitySheetHelper.onClickAttributeGroupControl.bind(this));
+    html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
 
     // Add draggable for Macro creation
     html.find(".attributes a.attribute-roll").each((i, a) => {
@@ -70,58 +60,11 @@ export class CDESkillPrompt extends ActorSheet {
 
   /* -------------------------------------------- */
 
-  /**
-   * Handle click events for Item control buttons within the Actor Sheet
-   * @param event
-   * @private
-   */
-  _onItemControl(event) {
-    event.preventDefault();
-
-    // Obtain event data
-    const button = event.currentTarget;
-    const li = button.closest(".item");
-    const item = this.actor.items.get(li?.dataset.itemId);
-
-    // Handle different actions
-    switch ( button.dataset.action ) {
-      case "create":
-        const cls = getDocumentClass("Item");
-        return cls.create({name: game.i18n.localize("CDE.ItemNew"), type: "item"}, {parent: this.actor});
-      case "edit":
-        return item.sheet.render(true);
-      case "delete":
-        return item.delete();
-    }
-  }
-
-
-  /* -------------------------------------------- */
-
-  /**
-   * Listen for roll buttons on items.
-   * @param {MouseEvent} event    The originating left click event
-   */
-  _onItemRoll(event) {
-    let button = $(event.currentTarget);
-    const li = button.parents(".item");
-    const item = this.actor.items.get(li.data("itemId"));
-    let r = new Roll(button.data('roll'), this.actor.getRollData());
-    return r.toMessage({
-      user: game.user.id,
-      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      flavor: `<h2>${item.name}</h2><h3>${button.text()}</h3>`
-    });
-  }
-
-
-  /* -------------------------------------------- */
-
-  /** @inheritdoc */
+  /** @override */
   _getSubmitData(updateData) {
     let formData = super._getSubmitData(updateData);
-    //formData = EntitySheetHelper.updateAttributes(formData, this.object);
-    //formData = EntitySheetHelper.updateGroups(formData, this.object);
+    formData = EntitySheetHelper.updateAttributes(formData, this.object);
+    formData = EntitySheetHelper.updateGroups(formData, this.object);
     return formData;
   }
 }
