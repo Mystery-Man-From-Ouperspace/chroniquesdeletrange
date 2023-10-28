@@ -1,7 +1,7 @@
 <form class="flexcol {{cssClass}}" autocomplete="off">
     <header class="sheet-header">
         <div class="name">
-            <label><b>{{ localize "CDE.PromptName" }}{{ systemData.prompt.title }}</b></label>
+            <label><b>{{ localize "CDE.SkillPromptName" }}{{ systemData.skillprpt.title }}</b></label>
         </div>
     </header>
 	
@@ -22,7 +22,7 @@
                     <td class="label col5-5">&nbsp;</td>
                 </tr>
                 <tr> <!-- Ce tr collé au-dessus du tr ci-dessus, pour que le numberofdice soit au milieu du bigsquare.png -->
-                    <td class="value col1-3">{{ systemData.prompt.numberofdice }}</td>
+                    <td class="value col1-3">{{ systemData.skillprpt.numberofdice }}</td>
                     <td class="label col2-3">&nbsp;</td>
                     <td class="label col3-3">&nbsp;</td>
                 </tr>
@@ -35,8 +35,8 @@
                 </tr>
                 <tr>
                     <td class="select col1-3">
-                        <select name="system.prompt.aspect">
-                        {{#select systemData.prompt.bonusmalus }}
+                        <select name="system.skillprpt.aspect">
+                        {{#select systemData.skillprpt.aspect }}
                             <option value="1">{{ localize "CDE.Metal" }}</option>
                             <option value="2">{{ localize "CDE.Water" }}</option>
                             <option value="3">{{ localize "CDE.Earth" }}</option>
@@ -46,7 +46,7 @@
                         </select>
                     </td>
                     <td class="label col2-3">&nbsp;</td>
-                    <td class="value col3-3"><input class="input" type="number" name="system.prompt.bonusmalus" value="{{systemData.prompt.bonusmalus}}"/></td>
+                    <td class="value col3-3"><input class="input" type="number" name="system.skillprpt.bonusmalus" value="{{systemData.skillprpt.bonusmalus}}"/></td>
                 </tr>
             </table>
             <table>
@@ -55,8 +55,8 @@
                 </tr>
                 <tr>
                     <td  class="select col1-1">
-                        <select name="system.prompt.bonusauspiciousdice">
-                        {{#select systemData.prompt.bonusauspiciousdice }}
+                        <select name="system.skillprpt.bonusauspiciousdice">
+                        {{#select systemData.skillprpt.bonusauspiciousdice }}
                             <option value="0">0</option>
                             <option value="1">+1&nbsp;{{ localize "CDE.AuspiciousDie" }}</option>
                             <option value="2">+2&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
@@ -80,7 +80,7 @@
             </table>
             <table>
                 <tr> <!-- Ce logo sert de bouton pour valider le Prompt -->
-                    <td class="click col123 button-right"><img id="system.prompt.click" src="systems/chroniquesdeletrange/images/yin_yang.png" title="{{ localize "CDE.Die" }}" alt="Die" /></td>
+                    <td class="click col123 button-right"><img id="system.skillprpt.click" src="systems/chroniquesdeletrange/images/yin_yang.png" title="{{ localize "CDE.Die" }}" alt="Die" /></td>
                 </tr>
             </table>
 

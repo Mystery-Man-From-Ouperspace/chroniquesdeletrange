@@ -5,13 +5,13 @@ import {ATTRIBUTE_TYPES} from "./constants.js";
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export class SimpleSpellSheet extends ItemSheet {
+export class CDEKungFuSheet extends ItemSheet {
 
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["chroniquesdeletrange", "sheet", "spell"],
-      template: "systems/chroniquesdeletrange/templates/spell-sheet.html",
+      classes: ["chroniquesdeletrange", "sheet", "kungfu"],
+      template: "systems/chroniquesdeletrange/templates/item/kungfu-sheet.html",
       width: 520,
       height: 480,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],

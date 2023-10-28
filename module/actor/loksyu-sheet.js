@@ -5,7 +5,7 @@ import {ATTRIBUTE_TYPES} from "./constants.js";
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class SimpleLoksyuSheet extends ActorSheet {
+export class CDELoksyuSheet extends ActorSheet {
 
   /** @inheritdoc */
   static get defaultOptions() {

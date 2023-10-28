@@ -1,7 +1,7 @@
 <form class="flexcol {{cssClass}}" autocomplete="off">
     <header class="sheet-header">
         <div class="name">
-            <label><b>{{ localize "CDE.PromptName" }}{{ systemData.prompt.title }}</b></label>
+            <label><b>{{ localize "CDE.MagicPromptName" }}{{ systemData.magicprpt.title }}</b></label>
         </div>
     </header>
 	
@@ -29,7 +29,7 @@
                     <td class="label col5-5">&nbsp;</td>
                 </tr>
                 <tr> <!-- Ce tr collé au-dessus du tr ci-dessus, pour que le numberofdice soit au milieu du bigsquare.png -->
-                    <td class="value col1-3">{{ systemData.prompt.numberofdice }}</td>
+                    <td class="value col1-3">{{ systemData.magicprpt.numberofdice }}</td>
                     <td class="label col2-3">&nbsp;</td>
                     <td class="label col3-3">&nbsp;</td>
                 </tr>
@@ -51,8 +51,8 @@
                 </tr>
                 <tr>
                     <td class="select col1-5">
-                        <select name="system.prompt.aspectskill">
-                        {{#select systemData.prompt.bonusmalus }}
+                        <select name="system.magicprpt.aspectskill">
+                        {{#select systemData.magicprpt.aspectskill }}
                             <option value="1">{{ localize "CDE.Metal" }}</option>
                             <option value="2">{{ localize "CDE.Water" }}</option>
                             <option value="3">{{ localize "CDE.Earth" }}</option>
@@ -62,11 +62,11 @@
                         </select>
                     </td>
                     <td class="label col2-5">+</td>
-                    <td class="value col3-5"><input class="input" type="number" name="system.prompt.bonusmalus" value="{{systemData.prompt.bonusmalus}}"/></td>
+                    <td class="value col3-5"><input class="input" type="number" name="system.magicprpt.bonusmalusskill" value="{{systemData.magicprpt.bonusmalusskill}}"/></td>
                     <td class="label col4-5">&nbsp;</td>
                     <td  class="select col5-5">
-                        <select name="system.prompt.bonusauspiciousdice">
-                        {{#select systemData.prompt.bonusauspiciousdice }}
+                        <select name="system.magicprpt.bonusauspiciousdice">
+                        {{#select systemData.magicprpt.bonusauspiciousdice }}
                             <option value="0">0</option>
                             <option value="1">+1&nbsp;{{ localize "CDE.AuspiciousDie" }}</option>
                             <option value="2">+2&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
@@ -112,8 +112,8 @@
                 </tr>
                 <tr>
                     <td class="select col1-5">
-                        <select name="system.prompt.aspectspeciality">
-                        {{#select systemData.prompt.rolldifficulty }}
+                        <select name="system.magicprpt.aspectspeciality">
+                        {{#select systemData.magicprpt.aspectspeciality }}
                             <option value="1">{{ localize "CDE.Metal" }}</option>
                             <option value="2">{{ localize "CDE.Water" }}</option>
                             <option value="3">{{ localize "CDE.Earth" }}</option>
@@ -123,14 +123,14 @@
                         </select>
                     </td>
                     <td class="label col2-5">⨯</td>
-                    <td class="value col3-5"><input class="input" type="number" name="system.prompt.rolldifficulty" value="{{systemData.prompt.rolldifficulty}}"/></td>
+                    <td class="value col3-5"><input class="input" type="number" name="system.magicprpt.rolldifficulty" value="{{systemData.magicprpt.rolldifficulty}}"/></td>
                     <td class="label col4-5">+</td>
-                    <td class="value col3-5"><input class="input" type="number" name="system.prompt.bonusmalus" value="{{systemData.prompt.bonusmalus2}}"/></td>
+                    <td class="value col3-5"><input class="input" type="number" name="system.magicprpt.bonusmalusspeciality" value="{{systemData.magicprpt.bonusmalusspeciality}}"/></td>
                 </tr>
             </table>
             <table>
                 <tr> <!-- Ce logo sert de bouton pour valider le Prompt -->
-                    <td class="click col123 button-right"><img id="system.prompt.click" src="systems/chroniquesdeletrange/images/yin_yang.png" title="{{ localize "CDE.Die" }}" alt="Die" /></td>
+                    <td class="click col123 button-right"><img id="system.magicprpt.click" src="systems/chroniquesdeletrange/images/yin_yang.png" title="{{ localize "CDE.Die" }}" alt="Die" /></td>
                 </tr>
             </table>
 

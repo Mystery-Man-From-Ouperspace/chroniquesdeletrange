@@ -5,13 +5,13 @@ import {ATTRIBUTE_TYPES} from "./constants.js";
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class SimpleSkillPrompt extends ActorSheet {
+export class CDESkillPrompt extends ActorSheet {
 
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["chroniquesdeletrange", "sheet", "skill-dice-prompt"],
-      template: "systems/chroniquesdeletrange/templates/parts/skill-dice-prompt.html",
+      classes: ["chroniquesdeletrange", "sheet", "skill"],
+      template: "systems/chroniquesdeletrange/templates/item/skill-dice-prompt.html",
       width: 700,
       height: 600,
       popOut: true,

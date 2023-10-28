@@ -4,28 +4,25 @@
  */
 
 // Import Modules
-import { SimpleActor } from "./actor.js";
-import { SimpleItem } from "./item.js";
-import { SimpleItemSheet } from "./item-sheet.js";
-import { SimpleActorSheet } from "./actor-sheet.js";
+import { CDEActor } from "./actor/actor.js";
+import { CDEItem } from "./item/item.js";
+import { CDEItemSheet } from "./item/item-sheet.js";
+import { CDEActorSheet } from "./actor/actor-sheet.js";
 import { preloadHandlebarsTemplates } from "./templates.js";
 import { createchroniquesdeletrangeMacro } from "./macro.js";
-import { SimpleToken, SimpleTokenDocument } from "./token.js";
+import { CDEToken, CDETokenDocument } from "./token.js";
 
 
 
 
 // Added MMFO
-import { SimpleKungFu } from "./kungfu.js";
-import { SimpleKungFuSheet } from "./kungfu-sheet.js";
-import { SimpleSpell } from "./spell.js";
-import { SimpleSpellSheet } from "./spell-sheet.js";
-import { SimpleLoksyu } from "./loksyu.js";
-import { SimpleLoksyuSheet } from "./loksyu-sheet.js";
-import { SimpleSkill } from "./skill-dice.js";
-import { SimpleSkillPrompt } from "./skill-dice-prompt.js";
-import { SimpleMagic } from "./magic-dice.js";
-import { SimpleMagicPrompt } from "./magic-dice-prompt.js";
+import { CDEPNJSheet } from "./actor/pnj-sheet.js";
+import { CDELoksyuSheet } from "./actor/loksyu-sheet.js";
+import { CDEKungFuSheet } from "./item/kungfu-sheet.js";
+import { CDESpellSheet } from "./item/spell-sheet.js";
+import { CDESupernaturalSheet } from "./item/supernatural-sheet.js";
+import { CDESkillPrompt } from "./item/skill-dice-prompt.js";
+import { CDEMagicPrompt } from "./item/magic-dice-prompt.js";
 
 
 
@@ -56,53 +53,38 @@ Hooks.once("init", async function() {
   };
 
   // Define custom Document classes
-  CONFIG.Actor.documentClass = SimpleActor;
-  CONFIG.Item.documentClass = SimpleItem;
-  CONFIG.Token.documentClass = SimpleTokenDocument;
-  CONFIG.Token.objectClass = SimpleToken;
-
-
-
-
-  // Added MMFO
-  CONFIG.Item.documentClass = SimpleKungFu;
-  CONFIG.Item.documentClass = SimpleSpell;
-  CONFIG.Actor.documentClass = SimpleLoksyu;
-  CONFIG.Actor.documentClass = SimpleMagic;
-  CONFIG.Actor.documentClass = SimpleSkill;
-
-
-
+  CONFIG.Actor.documentClass = CDEActor;
+  CONFIG.Item.documentClass = CDEItem;
+  CONFIG.Token.documentClass = CDETokenDocument;
+  CONFIG.Token.objectClass = CDEToken;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  //Actors.registerSheet("chroniquesdeletrange", SimpleActorSheet, { makeDefault: true });
+  //Actors.registerSheet("chroniquesdeletrange", CDEActorSheet, { makeDefault: true }); 	// ligne modifiée selon directives de LeRatierBretonnien
   console.log("ACTOR SHEET LOADED !!!!")
-  Actors.registerSheet("chroniquesdeletrange", SimpleActorSheet, { types: ["character"], makeDefault: true });	// ligne modifiée selon directives de LeRatierBretonnien
+  Actors.registerSheet("chroniquesdeletrange", CDEActorSheet, { types: ["character"], makeDefault: true });	// ligne modifiée selon directives de LeRatierBretonnien
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("chroniquesdeletrange", SimpleItemSheet, { makeDefault: true });
-
-
+  Items.registerSheet("chroniquesdeletrange", CDEItemSheet, { types: ["item"], makeDefault: true });
 
 
 
 
   // Added MMFO
-  Items.registerSheet("chroniquesdeletrange", SimpleKungFuSheet, { types: ["kungfu"], makeDefault: false });
-  Items.registerSheet("chroniquesdeletrange", SimpleSpellSheet, { types: ["spell"], makeDefault: false });
-  Actors.registerSheet("chroniquesdeletrange", SimpleLoksyuSheet, { types: ["loksyu"], makeDefault: false });
-  Actors.registerSheet("chroniquesdeletrange", SimpleSkillPrompt, { types: ["skillprpt"], makeDefault: false });
-  Actors.registerSheet("chroniquesdeletrange", SimpleMagicPrompt, { types: ["magicprpt"], makeDefault: false });
-
-
-
-
+  Actors.registerSheet("chroniquesdeletrange", CDEPNJSheet, { types: ["pnj"], makeDefault: true });
+  Actors.registerSheet("chroniquesdeletrange", CDELoksyuSheet, { types: ["loksyu"], makeDefault: true });
+  Items.registerSheet("chroniquesdeletrange", CDEKungFuSheet, { types: ["kungfu"], makeDefault: true });
+  Items.registerSheet("chroniquesdeletrange", CDESpellSheet, { types: ["spell"], makeDefault: true });
+  Items.registerSheet("chroniquesdeletrange", CDESupernaturalSheet, { types: ["supernatural"], makeDefault: true });
+  Items.registerSheet("chroniquesdeletrange", CDESkillPrompt, { types: ["skillprpt"], makeDefault: true });
+  Items.registerSheet("chroniquesdeletrange", CDEMagicPrompt, { types: ["magicprpt"], makeDefault: true });
 
   
+
+
   // Register system settings
   game.settings.register("chroniquesdeletrange", "macroShorthand", {
-    name: "SETTINGS.SimpleMacroShorthandN",
-    hint: "SETTINGS.SimpleMacroShorthandL",
+    name: "SETTINGS.CDEMacroShorthandN",
+    hint: "SETTINGS.CDEMacroShorthandL",
     scope: "world",
     type: Boolean,
     default: true,
@@ -111,8 +93,8 @@ Hooks.once("init", async function() {
 
   // Register initiative setting.
   game.settings.register("chroniquesdeletrange", "initFormula", {
-    name: "SETTINGS.SimpleInitFormulaN",
-    hint: "SETTINGS.SimpleInitFormulaL",
+    name: "SETTINGS.CDEInitFormulaN",
+    hint: "SETTINGS.CDEInitFormulaL",
     scope: "world",
     type: String,
     default: "1d20",

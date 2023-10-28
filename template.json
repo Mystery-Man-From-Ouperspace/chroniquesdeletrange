@@ -1,7 +1,8 @@
 {
   "Actor": {
-    "types": ["character"],
+    "types": ["character", "pnj", "loksyu"],
     "htmlFields": ["biography"],
+
     "character": {
       "concept": "",
       "guardian": "0",
@@ -44,9 +45,7 @@
           "max": 15
         }
       },
-      
-
-      
+            
       "skills": {
         "art": {
           "label": "CDE.Art",
@@ -520,22 +519,69 @@
       }
     },
 
+    "pnj": {
+      "levelofthreat": 0,
+      "powerofnuisance": 0,
+      "aptitudes": {
+        "physical": {
+          "value": 0,
+          "speciality": ""
+        },
+        "martial": {
+          "value": 0,
+          "speciality": ""
+        },
+        "mental": {
+          "value": 0,
+          "speciality": ""
+        },
+        "social": {
+          "value": 0,
+          "speciality": ""
+        },
+        "spiritual": {
+          "value": 0,
+          "speciality": ""
+        }
+      },
+      "vitality": {
+        "value": 0,
+        "note": ""
+      },
+      "hei": {
+        "value": 0,
+        "note": ""
+      }
+    },
+
     "loksyu": {
-      
-    },
-
-    "skillprpt": {
-
-    },
-
-    "magicprpt": {
-      
+      "fire": {
+        "yin": 0,
+        "yang": 0
+      },
+      "earth": {
+        "yin": 0,
+        "yang": 0
+      },
+      "metal": {
+        "yin": 0,
+        "yang": 0
+      },
+      "water": {
+        "yin": 0,
+        "yang": 0
+      },
+      "wood": {
+        "yin": 0,
+        "yang": 0
+      }
     }
   },
   
   "Item": {
-    "types": ["item", "kungfu", "spell"],
-    "htmlFields": ["description"],
+    "types": ["item", "kungfu", "spell", "paranormal", "skillprpt", "magicprpt"],
+    "htmlFields": ["description", "style", "technique", "components", "effects", "examples"],
+
     "item": {
       "description": "",
       "quantity": 1,
@@ -545,51 +591,65 @@
     },
     
     "kungfu": {
-      "types": ["kungfu"],
-      "htmlFields": ["description", "style", "technique"],
-      "martialart": {
-        "martialartname": "",
-        "orientation": "",
-        "aspect": "",
-        "skill": "",
-        "speciality": "",
-        "description": "",
-        "style": "",
-        "techniques": {
-          "technique1": {
-            "name": "",
-            "activation": "",
-            "technique": ""
-          },
-          "technique2": {
-            "name": "",
-            "activation": "",
-            "technique": ""
-          },
-          "technique3": {
-            "name": "",
-            "activation": "",
-            "technique": ""
-          }
+      "orientation": "",
+      "aspect": "",
+      "skill": "",
+      "speciality": "",
+      "description": "",
+      "style": "",
+      "techniques": {
+        "technique1": {
+          "name": "",
+          "activation": "",
+          "technique": ""
+        },
+        "technique2": {
+          "name": "",
+          "activation": "",
+          "technique": ""
+        },
+        "technique3": {
+          "name": "",
+          "activation": "",
+          "technique": ""
         }
       }
     },
   
     "spell": {
-      "types": ["spell"],
-      "htmlFields": ["description", "components", "effects", "examples"],
-      "spell": {
-        "specialityname": "",
-        "description": "",
-        "associatedelement": "",
-        "hei": "",
-        "realizationtimeritual": "",
-        "realizationtimeaccelerated": "",
-        "flashback": "",
-        "components": "",
-        "effects": "",
-        "examples": ""
-      }
+      "specialityname": "",
+      "description": "",
+      "associatedelement": "",
+      "hei": "",
+      "realizationtimeritual": "",
+      "realizationtimeaccelerated": "",
+      "flashback": "",
+      "components": "",
+      "effects": "",
+      "examples": ""
+    },
+
+    "supernatural": {
+      "description": ""
+    },
+
+    "skillprpt": {
+      "title": "",
+      "numberofdice": 0,
+      "aspect": 0,
+      "bonusmalus": 0,
+      "bonusauspiciousdice": 0
+    },
+
+    "magicprpt": {
+      "title": "",
+      "numberofdice": 0,
+      "aspectskill": 0,
+      "bonusmalusskill": 0,
+      "bonusauspiciousdice": 0,
+      "aspectspeciality": 0,
+      "rolldifficulty": 0,
+      "bonusmalusspeciality": 0
     }
   
   }
