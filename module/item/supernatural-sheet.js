@@ -1,5 +1,5 @@
-import { EntitySheetHelper } from "./helper.js";
-import {ATTRIBUTE_TYPES} from "./constants.js";
+import { EntitySheetHelper } from "../helper.js";
+import {ATTRIBUTE_TYPES} from "../constants.js";
 
 /**
  * Extend the basic ItemSheet with some very simple modifications
@@ -24,7 +24,7 @@ export class CDESupernaturalSheet extends ItemSheet {
   /** @inheritdoc */
   async getData(options) {
     const context = await super.getData(options);
-    EntitySheetHelper.getAttributeData(context.data);
+    //EntitySheetHelper.getAttributeData(context.data);
     context.systemData = context.data.system;
     context.dtypes = ATTRIBUTE_TYPES;
     context.descriptionHTML = await TextEditor.enrichHTML(context.systemData.description, {
