@@ -16,7 +16,7 @@ import { CDEToken, CDETokenDocument } from "./token.js";
 
 
 // Added MMFO
-import { CDEPNJSheet } from "./actor/pnj-sheet.js";
+import { CDEPNJSheet } from "./actor/npc-sheet.js";
 import { CDELoksyuSheet } from "./actor/loksyu-sheet.js";
 import { CDEKungFuSheet } from "./item/kungfu-sheet.js";
 import { CDESpellSheet } from "./item/spell-sheet.js";
@@ -69,7 +69,7 @@ Hooks.once("init", async function() {
   Items.registerSheet("chroniquesdeletrange", CDEItemSheet, { types: ["item"], makeDefault: true });
 
   // Added MMFO
-  Actors.registerSheet("chroniquesdeletrange", CDEPNJSheet, { types: ["pnj"], makeDefault: true });
+  Actors.registerSheet("chroniquesdeletrange", CDEPNJSheet, { types: ["npc"], makeDefault: true });
   Actors.registerSheet("chroniquesdeletrange", CDELoksyuSheet, { types: ["loksyu"], makeDefault: true });
   Items.registerSheet("chroniquesdeletrange", CDEKungFuSheet, { types: ["kungfu"], makeDefault: true });
   Items.registerSheet("chroniquesdeletrange", CDESpellSheet, { types: ["spell"], makeDefault: true });

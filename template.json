@@ -1,7 +1,7 @@
 {
   "Actor": {
-    "types": ["character", "pnj", "loksyu"],
-    "htmlFields": ["biography"],
+    "types": ["character", "npc", "loksyu"],
+    "htmlFields": ["biography", "description"],
 
     "character": {
       "concept": "",
@@ -519,7 +519,8 @@
       }
     },
 
-    "pnj": {
+    "npc": {
+      "type": "",
       "levelofthreat": 0,
       "powerofnuisance": 0,
       "aptitudes": {
@@ -546,10 +547,12 @@
       },
       "vitality": {
         "value": 0,
+        "calcul": 0,
         "note": ""
       },
       "hei": {
         "value": 0,
+        "calcul": 0,
         "note": ""
       }
     },
@@ -574,7 +577,8 @@
       "wood": {
         "yin": 0,
         "yang": 0
-      }
+      },
+      "description": ""
     }
   },
   

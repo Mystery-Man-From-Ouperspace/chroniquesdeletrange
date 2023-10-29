@@ -53,8 +53,8 @@
  "CDE.CelestialGuardian5": "Dragon d′Azur (Bois)",
 
    
- "CDE.Description": "Description",
- "CDE.Description2": "Descript.",
+ "CDE.Description": "Descripción",
+ "CDE.Description2": "Descripc.",
  "CDE.Attributes": "Attributs",
  "CDE.Skills": "Compétences",
  "CDE.Magics": "Magies",
@@ -72,7 +72,7 @@
  "CDE.Debt": "Cochez si vous avec contracté une dette en ",
 
   
- "CDE.Specialities": "Spécialités",
+ "CDE.Specialities": "Especialidades",
  "CDE.Fields": "Domaines",
  "CDE.Art": "Art",
  "CDE.Investigation": "Enquête",
@@ -101,6 +101,7 @@
  "CDE.Geomancy": "Géomancie",
   
 
+ "CDE.Loksyu": "Loksyu",
  "CDE.Metal": "㊎ Metal ",
  "CDE.MetalQualities": "– agresivo, apasionado, combativo, entusiasta…",
  "CDE.Water": "㊌ Agua ",
@@ -111,7 +112,17 @@
  "CDE.FireQualities": "– cálido, creativo, empático, inspirado…",
  "CDE.Wood": "㊍ Madera ",
  "CDE.WoodQualities": "– intuitivo, observador, abierto, instintivo…",
- 
+ "CDE.MetalYang": "㊎ Metal Yang (3)",
+ "CDE.MetalYin": "㊎ Metal Yin (8)",
+ "CDE.WaterYang": "㊌ Agua Yang (1)",
+ "CDE.WaterYin": "㊌ Agua Yin (6)",
+ "CDE.EarthYang": "㊏ Tierra Yang (5)",
+ "CDE.EarthYin": "㊏ Tierra Yin (0)",
+ "CDE.FireYang": "㊋ Fuego Yang (7)",
+ "CDE.FireYin": "㊋ Fuego Yin (2)",
+ "CDE.WoodYang": "㊍ Madera Yang (9)",
+ "CDE.WoodYin": "㊍ Madera Yin (4)",
+
  
  "CDE.PracticeSpecialty": "Cochez si vous pratiquez la spécialité ",
 
@@ -202,7 +213,39 @@
  "CDE.DoNotModify": "No cambie el Aspecto",
  "CDE.AspectSkill": "Aspecto/Habilidad",
  "CDE.TwoPowerOfSpell": "2. Poder de Hechizo",
- "CDE.AspectSpeciality": "Aspecto/Specialidad",
- "CDE.RollDifficulty": "Dificultad de la Tirada"
+ "CDE.AspectSpeciality": "Aspecto/Especialidad",
+ "CDE.RollDifficulty": "Dificultad de la Tirada",
+
+ 
+ "CDE.Type": "Tipo",
+
+ "CDE.Threat": "Nivel de Amenaza",
+ "CDE.Profane": "Profano",
+ "CDE.Apprentice": "Aprendiz",
+ "CDE.Initiate": "Iniciado",
+ "CDE.Accomplished": "Consumado",
+ "CDE.Reknowned": "Renombrado",
+
+ "CDE.Nuisance": "Capacitad de Molesta",
+ "CDE.Figurant": "Extra",
+ "CDE.Minion": "Esbirro",
+ "CDE.Adversary": "Adversario",
+ "CDE.Ally": "Aliado",
+ "CDE.Boss": "Jefe",
+ "CDE.Dininity": "Deidad",
+
+ "CDE.Aptitudes": "Habilidades",
+ "CDE.SuperNatural": "Habilidades Sobrenaturales",
+
+ "CDE.Physical": "● Físical",
+ "CDE.Martial": "● Marcial",
+ "CDE.Mental": "● Mental",
+ "CDE.Social": "● Social",
+ "CDE.Spiritual": "● Espiritual",
+
+ "CDE.Vitality": "Vitalidad",
+ "CDE.Hei": "Hei",
+
+ "CDE.Notes": "Notas"
 
 }

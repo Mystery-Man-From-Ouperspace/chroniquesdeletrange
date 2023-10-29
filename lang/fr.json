@@ -101,6 +101,7 @@
  "CDE.Geomancy": "Géomancie",
   
 
+ "CDE.Loksyu": "Loksyu",
  "CDE.Metal": "㊎ Métal ",
  "CDE.MetalQualities": "– agressif, passionné, combatif, enthousiate…",
  "CDE.Water": "㊌ Eau ",
@@ -111,6 +112,16 @@
  "CDE.FireQualities": "– chaleureux, créatif, empathique, inspiré…",
  "CDE.Wood": "㊍ Bois ",
  "CDE.WoodQualities": "– intuitif, observateur, ouvert, instinctif…",
+ "CDE.MetalYang": "㊎ Métal Yang (3)",
+ "CDE.MetalYin": "㊎ Métal Yin (8)",
+ "CDE.WaterYang": "㊌ Eau Yang (1)",
+ "CDE.WaterYin": "㊌ Eau Yin (6)",
+ "CDE.EarthYang": "㊏ Terre Yang (5)",
+ "CDE.EarthYin": "㊏ Terre Yin (0)",
+ "CDE.FireYang": "㊋ Feu Yang (7)",
+ "CDE.FireYin": "㊋ Feu Yin (2)",
+ "CDE.WoodYang": "㊍ Bois Yang (9)",
+ "CDE.WoodYin": "㊍ Bois Yin (4)",
 
 
  "CDE.PracticeSpecialty": "Cochez si vous pratiquez la spécialité ",
@@ -203,6 +214,36 @@
  "CDE.AspectSkill": "Aspect/Compétence",
  "CDE.TwoPowerOfSpell": "2. Puissance du Sort",
  "CDE.AspectSpeciality": "Aspect/Spécialité",
- "CDE.RollDifficulty": "Difficulté du Jet"
+ "CDE.RollDifficulty": "Difficulté du Jet",
+
+ 
+ "CDE.Type": "Type",
+
+ "CDE.Threat": "Niveau de Menace",
+ "CDE.Profane": "Profane",
+ "CDE.Apprentice": "Apprenti",
+ "CDE.Initiate": "Initié",
+ "CDE.Accomplished": "Accompli",
+ "CDE.Reknowned": "Renommé",
+
+ "CDE.Nuisance": "Capacité de Nuisance",
+ "CDE.Figurant": "Figurant",
+ "CDE.Minion": "Sbire",
+ "CDE.Adversary": "Adversaire",
+ "CDE.Ally": "Allié",
+ "CDE.Boss": "Boss",
+ "CDE.Dininity": "Divinité",
+
+ "CDE.Aptitudes": "Aptitudes",
+ "CDE.SuperNatural": "Capacités Surnaturelles",
+
+ "CDE.Physical": "● Physique",
+ "CDE.Martial": "● Martiale",
+ "CDE.Mental": "● Mentale",
+ "CDE.Social": "● Sociale",
+ "CDE.Spiritual": "● Spirituelle",
+
+ "CDE.Vitality": "Vitalité",
+ "CDE.Hei": "Hei"
 
 }

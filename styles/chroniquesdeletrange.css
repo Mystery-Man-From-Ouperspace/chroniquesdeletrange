@@ -615,3 +615,168 @@ text-align: left;
     width: 100%;
     height: auto;
 }
+
+
+
+
+
+
+.chroniquesdeletrange .sheet-body .loksyu_wrap {
+  background-image: url("");
+}  
+	
+.chroniquesdeletrange .sheet-body .loksyu_wrap {
+    position: relative;
+    overflow: hidden;
+    padding: 16px;
+    border: no-border;
+}
+.chroniquesdeletrange .sheet-body .loksyu_wrap .machin {
+    padding: 100px;
+    position: relative;
+    z-index: 2;
+}
+.chroniquesdeletrange .sheet-body .loksyu_wrap img {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: auto;
+}
+
+/*
+.chroniquesdeletrange .sheet-body .loksyu table
+{
+  border: 0px;
+  background: none;
+}
+
+.chroniquesdeletrange .sheet-body .loksyu table tr:nth-child(even)
+{
+  background: none;
+}
+.chroniquesdeletrange .sheet-body .loksyu table tr:nth-child(odd)
+{
+  background: none;
+}
+*/
+
+
+
+
+
+.chroniquesdeletrange.sheet.loksyu {
+  min-width: 700px; /* 560px; */
+  max-width: 700px;
+  min-height: 420px;
+  max-height: 850px;
+}
+
+.chroniquesdeletrange .sheet-body .loksyu div input
+{
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.chroniquesdeletrange .sheet-body .loksyu div.wood-yang
+{
+  margin-top: 5px;
+  margin-left : 123px;
+}
+
+.chroniquesdeletrange .sheet-body .loksyu div.wood-yin
+{
+  margin-top: 12px;
+  margin-left : 285px;
+}
+
+.chroniquesdeletrange .sheet-body .loksyu div.metal-yang
+{
+  margin-top: 20px;
+  margin-left : 25px;
+}
+
+.chroniquesdeletrange .sheet-body .loksyu div.fire-yang
+{
+  margin-top: -38px;
+  margin-left: 420px;
+}
+
+.chroniquesdeletrange .sheet-body .loksyu div.earth-yang
+{
+  margin-top: 45px;
+  margin-left: 123px;
+}
+
+.chroniquesdeletrange .sheet-body .loksyu div.earth-yin
+{
+  margin-top: 12px;
+  margin-left: 285px;
+}
+
+.chroniquesdeletrange .sheet-body .loksyu div.metal-yin
+{
+  margin-top: 35px;
+  margin-left: -15px;
+
+}
+
+.chroniquesdeletrange .sheet-body .loksyu div.fire-yin
+{
+  margin-top: -40px;
+  margin-left: 380px;
+}
+
+.chroniquesdeletrange .sheet-body .loksyu div.water-yang
+{
+  margin-top: 42px;
+  margin-left : 125px;
+}
+
+.chroniquesdeletrange .sheet-body .loksyu div.water-yin
+{
+  margin-top: 10px;
+  margin-left : 285px;
+}
+
+
+
+
+
+.chroniquesdeletrange .sheet-body .aptitudes table tr td.image input.input {
+  border: 0px;
+}
+.chroniquesdeletrange .sheet-body .aptitudes table tr td.image {
+  width: 5%;
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body .aptitudes table tr td.image img {
+  z-index: 4;
+  width: 100%;
+}
+.chroniquesdeletrange .sheet-body .aptitudes table tr td.image div.truc {
+  margin-top: -52px;
+  z-index: 2;
+  width: 3%;
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body .aptitudes table tr td.image2 {
+  margin-top: 0px;
+    width: 5%;
+    text-align: center;
+}
+.chroniquesdeletrange .sheet-body .aptitudes table tr td.image2 img {
+    margin-top: -5px;
+    z-index: 4;
+    width: 100%;
+}
+.chroniquesdeletrange .sheet-body .aptitudes table tr td.image2 div.truc {
+  margin-top: -47px;
+  z-index: 2;
+  width: 3%;
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body .aptitudes .specialities {
+  width: 70%;
+}

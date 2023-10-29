@@ -118,12 +118,12 @@ export class CDEActorSheet extends ActorSheet {
 
     // Handle different actions
     switch ( button.dataset.action ) {
-      case "kungfucreate":
+      case "create":
         const cls = getDocumentClass("Item");
         return cls.create({name: game.i18n.localize("CDE.KFNew"), type: "kungfu"}, {parent: this.actor});
-      case "kungfuedit":
+      case "edit":
         return item.sheet.render(true);
-      case "kungfudelete":
+      case "delete":
         return item.delete();
     }
   }
@@ -144,12 +144,12 @@ export class CDEActorSheet extends ActorSheet {
 
     // Handle different actions
     switch ( button.dataset.action ) {
-      case "spellcreate":
+      case "create":
         const cls = getDocumentClass("Item");
         return cls.create({name: game.i18n.localize("CDE.SpellNew"), type: "spell"}, {parent: this.actor});
-      case "spelledit":
+      case "edit":
         return item.sheet.render(true);
-      case "spelldelete":
+      case "delete":
         return item.delete(); 
     }
   }
