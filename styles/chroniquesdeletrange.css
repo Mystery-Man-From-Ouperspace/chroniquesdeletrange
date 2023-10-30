@@ -18,11 +18,6 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-bottom: 10px;
- /* margin-left: auto;
-  margin-right: auto;
-  background-image:url(/systems/chroniquesdeletrange/images/logo_jeu.png);
-  background-size : 18%;
-  background-repeat : no-repeat; */
 
   height: 100%;
   overflow-y: clip;
@@ -225,7 +220,7 @@ text-align: left;
   
 
 
-.chroniquesdeletrange .resource0 {
+.chroniquesdeletrange .nghangpart0 {
   width: 30%;
   height: 40px;
   margin-top: 15px;
@@ -239,7 +234,7 @@ text-align: left;
   float: left;
   text-align: center;
 }
-.chroniquesdeletrange .resource1 {
+.chroniquesdeletrange .nghangpart1 {
   width: 100%;
   height: 40px;
   margin-top: -100px;
@@ -247,7 +242,7 @@ text-align: left;
   float: left;
   text-align: center;
 }
-.chroniquesdeletrange .resource2 {
+.chroniquesdeletrange .nghangpart2 {
   width: 30%;
   height: 40px;
   margin-top: -45px;
@@ -255,7 +250,7 @@ text-align: left;
   float: left;
   text-align: center;
 }
-.chroniquesdeletrange .resource3 {
+.chroniquesdeletrange .nghangpart3 {
   width: 40%;
   height: 40px;
   margin-top: -45px;
@@ -263,7 +258,7 @@ text-align: left;
   float: left;
   text-align: center;
 }
-.chroniquesdeletrange .resource4 {
+.chroniquesdeletrange .nghangpart4 {
   width: 30%;
   height: 40px;
   margin-top: -40px;
@@ -271,7 +266,7 @@ text-align: left;
   float: left;
   text-align: center;
 }
-.chroniquesdeletrange .resource5 {
+.chroniquesdeletrange .nghangpart5 {
   width: 40%;
   height: 40px;
   margin-top: 20px;
@@ -279,7 +274,7 @@ text-align: left;
   float: left;
   text-align: center;
 }
-.chroniquesdeletrange .resource6 {
+.chroniquesdeletrange .nghangpart6 {
   width: 15%;
   height: 40px;
   margin-top: 20px;
@@ -287,7 +282,7 @@ text-align: left;
   float: left;
   text-align: center;
 }
-.chroniquesdeletrange .resource7 {
+.chroniquesdeletrange .nghangpart7 {
   width: 45%;
   height: 40px;
   margin-top: -40px;
@@ -300,70 +295,70 @@ text-align: left;
   width: 150px;
   height: 28px;
 }
-.chroniquesdeletrange .resource1 input {
+.chroniquesdeletrange .nghangpart1 input {
   width: 40px;
   height: 28px;
   margin-left: 80px;
   font-size: 1.5em;
 }
-.chroniquesdeletrange .resource2 input {
+.chroniquesdeletrange .nghangpart2 input {
   width: 40px;
   height: 28px;
   margin-left: 152px;
   font-size: 1.5em;
 }
 /*
-.chroniquesdeletrange .resource3 input {
+.chroniquesdeletrange .nghangpart3 input {
   width: 40px;
   height: 28px;
 }
 */
-.chroniquesdeletrange .resource4 input {
+.chroniquesdeletrange .nghangpart4 input {
   width: 40px;
   height: 28px;
   margin-left: 2px;
   font-size: 1.5em;
 }
-.chroniquesdeletrange .resource5 input {
+.chroniquesdeletrange .nghangpart5 input {
   width: 40px;
   height: 28px;
   margin-left: 195px;
   font-size: 1.5em;
 }
 /*
-.chroniquesdeletrange .resource6 input {
+.chroniquesdeletrange .nghangpart6 input {
   width: 40px;
   height: 28px;
 }
 */
-.chroniquesdeletrange .resource7 input {
+.chroniquesdeletrange .nghangpart7 input {
   width: 40px;
   height: 28px;
   margin-left: -13px;
   font-size: 1.5em;
 }
 
-.chroniquesdeletrange .resource1 #systemfireclick {
+.chroniquesdeletrange .nghangpart1 #systemfireclick {
   width: 5%;
   margin-top: 82px;
   margin-left: 309px;
 }
-.chroniquesdeletrange .resource2 #systemwoodclick {
+.chroniquesdeletrange .nghangpart2 #systemwoodclick {
   width: 5%;
   margin-top: 223px;
   margin-left: 116px;
 }
-.chroniquesdeletrange .resource4 #systemearthclick {
+.chroniquesdeletrange .nghangpart4 #systemearthclick {
   width: 5%;
   margin-top: 227px;
   margin-left: 503px;
 }
-.chroniquesdeletrange .resource5 #systemwaterclick {
+.chroniquesdeletrange .nghangpart5 #systemwaterclick {
   width: 5%;
   margin-top: 427px;
   margin-left: 168px;
 }
-.chroniquesdeletrange .resource7 #systemmetalclick {
+.chroniquesdeletrange .nghangpart7 #systemmetalclick {
   width: 5%;
   margin-top: 427px;
   margin-left: 445px;
@@ -552,47 +547,6 @@ text-align: left;
 
 
 
-
-
-
-/* .chroniquesdeletrange .sheet-body .nghang {
-  width: 100%;	
-  color:black;
-  background-color: white;
-  background-image: url("/systems/chroniquesdeletrange/images/nghang.png");
-  background-size : 100%;
-  background-repeat : no-repeat;
-  margin:0;
-} */
-
-
-
-/*
-.chroniquesdeletrange .sheet-body .logo_wrap {
-  background-image: url("");
-}  
-	
-.chroniquesdeletrange .sheet-body .logo_wrap {
-    position: relative;
-    overflow: hidden;
-    padding: 16px;
-    border: no-border;
-}
-.chroniquesdeletrange .sheet-body .logo_wrap .machin {
-    padding: 100px;
-    position: relative;
-    z-index: 2;
-}
-.chroniquesdeletrange .sheet-body .logo_wrap img {
-    position: absolute;
-    left: 0;
-    top: -60px;
-    width: 100%;
-    height: auto;
-    opacity: 0.2;
-}
-*/
-
 .chroniquesdeletrange .sheet-body .nghang_wrap {
   background-image: url("");
 }  
@@ -644,22 +598,6 @@ text-align: left;
     height: auto;
 }
 
-/*
-.chroniquesdeletrange .sheet-body .loksyu table
-{
-  border: 0px;
-  background: none;
-}
-
-.chroniquesdeletrange .sheet-body .loksyu table tr:nth-child(even)
-{
-  background: none;
-}
-.chroniquesdeletrange .sheet-body .loksyu table tr:nth-child(odd)
-{
-  background: none;
-}
-*/
 
 
 
