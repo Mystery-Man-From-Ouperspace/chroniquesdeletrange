@@ -16,7 +16,7 @@
 							<tr>
 								<td>
 									<h1 class="charname">
-										<input name="name" type="text" value="{{data.name}}" placeholder="{{ localize "CDE.Name" }}" />
+										<input name="name" type="text" value="{{data.name}}" placeholder="{{ localize "CDE.NPCName" }}" />
 									</h1>
 								</td>
 								<td>
@@ -157,52 +157,57 @@
 				
 		{{!-- SuperNatural Tab --}}
 		<div class="tab supernaturals" data-group="primary" data-tab="supernaturals">
-		
-			&nbsp;<br>&nbsp;
-			<b>{{ localize "CDE.Components2" }}</b>
-			<table>
-				<tr>
-					<td style="width: 2.2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-1.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}1" name="system.component.one.value" value="{{systemData.component.one.value}}"/></td>
-					<td style="width: 2%;">&nbsp;</td>
-					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-6.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}6" name="system.component.six.value" value="{{systemData.component.six.value}}"/></td>
-				</tr>
-				<tr>
-					<td style="width: 2.2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-2.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}2" name="system.component.two.value" value="{{systemData.component.two.value}}"/></td>
-					<td style="width: 2%;">&nbsp;</td>
-					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-7.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}7" name="system.component.seven.value" value="{{systemData.component.seven.value}}"/></td>
-				</tr>
-				<tr>
-					<td style="width: 2.2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-3.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}3" name="system.component.three.value" value="{{systemData.component.three.value}}"/></td>
-					<td style="width: 2%;">&nbsp;</td>
-					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-8.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}8" name="system.component.eight.value" value="{{systemData.component.eight.value}}"/></td>
-				</tr>
-				<tr>
-					<td style="width: 2.2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-4.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}4" name="system.component.four.value" value="{{systemData.component.four.value}}"/></td>
-					<td style="width: 2%;">&nbsp;</td>
-					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-9.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}9" name="system.component.nine.value" value="{{systemData.component.nine.value}}"/></td>
-				</tr>
-				<tr>
-					<td style="width: 2.2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-5.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}5" name="system.component.five.value" value="{{systemData.component.five.value}}"/></td>
-					<td style="width: 2%;">&nbsp;</td>
-					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-0.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}0" name="system.component.zero.value" value="{{systemData.component.zero.value}}"/></td>
-				</tr>
-				<tr>
-					<td style="width: 2.2%;" class="click"><img src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.ChanceThrow" }}"" alt="Die" /></td>	
-					<td style="margin-left: 5px;" class="label"><b>&nbsp;{{ localize "CDE.ChanceThrow" }}</b></td>
-				</tr>
-			</table>	
-			
+			<ol class="supernaturals-list">
+				{{#each data.supernaturals as |supernatural id|}}
+				<li class="supernatural flexrow" data-item-id="{{supernatural._id}}">
+					<img src="{{supernatural.img}}" title="{{supernatural.name}}" width="24" height="24" />
+					<h4 class="supernatural-name">{{supernatural.name}}</h4>
+<!--                    {{!-- Iterate through all attributes on the kungfu and output buttons for any that are formula. --}}
+					<div class="kungfu-buttons">
+						{{#each kungfu.system.attributes as |kungfuAttr key|}}
+						{{#if kungfuAttr.dtype}}
+							{{#if kungfuAttr.isFormula}}
+								{{!-- Use the kungfus.name.key format for shorthand. --}}
+								{{#if ../../shorthand}}
+								<button class="kungfu-button rollable" data-roll="@kungfus.{{slugify kungfu.name}}.{{key}}" data-label="{{ kungfuAttr.label }}"
+									title="{{kungfuAttr.value}}">{{kungfuAttr.label}}</button>
+								{{!-- Use the kungfus.name.attributes.key.value format otherwise. --}}
+								{{else}}
+								<button class="kungfu-button rollable"
+									data-roll="@kungfus.{{slugify kungfu.name}}.attributes.{{key}}.value" data-label="{{ kungfuAttr.label }}"
+									title="{{kungfuAttr.value}}">{{kungfuAttr.label}}</button>
+								{{/if}}
+							{{/if}}
+						{{else}}
+							{{#each kungfuAttr as |kungfuGroupedAttr groupedKey|}}
+								{{#if kungfuGroupedAttr.isFormula}}
+									{{!-- Use the kungfus.name.key format for shorthand. --}}
+									{{#if ../../../shorthand}}
+									<button class="kungfu-button rollable" data-roll="@kungfus.{{slugify kungfu.name}}.{{key}}.{{groupedKey}}" data-label="{{ kungfuGroupedAttr.label }}"
+										title="{{kungfuGroupedAttr.value}}">{{kungfuGroupedAttr.label}}</button>
+									{{!-- Use the kungfus.name.attributes.key.value format otherwise. --}}
+									{{else}}
+									<button class="kungfu-button rollable"
+										data-roll="@kungfus.{{slugify kungfu.name}}.attributes.{{key}}.{{groupedKey}}.value" data-label="{{ kungfuGroupedAttr.label }}"
+										title="{{kungfuGroupedAttr.value}}">{{kungfuGroupedAttr.label}}</button>
+									{{/if}}
+								{{/if}}
+							{{/each}}
+						{{/if}}
+						{{/each}}
+					</div> -->
+					<div class="supernatural-controls">
+						<a class="supernatural-control" title="{{ localize "CDE.SupernaturalEdit" }}" data-action="uedit"><i class="fas fa-edit"></i></a>
+						<a class="supernatural-control" title="{{ localize "CDE.SupernaturalDelete" }}" data-action="delete"><i class="fas fa-trash"></i></a>
+					</div>
+				</li>
+				{{/each}}
+			</ol>
+			<p>
+				<a class="supernatural-control" title="{{ localize "CDE.SupernaturalCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "CDE.SupernaturalCreate" }}</a>
+			</p>
 		</div>
+	
 
 		
 				

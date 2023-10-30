@@ -100,8 +100,7 @@
  "CDE.Exorcism": "Exorcism",
  "CDE.Geomancy": "Geomancy",
  
- 
- "CDE.Loksyu": "Loksyu",
+
  "CDE.Metal": "㊎ Metal ",
  "CDE.MetalQualities": "– aggressive, passionate, combative, enthusiastic…",
  "CDE.Water": "㊌ Water ",
@@ -112,17 +111,7 @@
  "CDE.FireQualities": "– warm, creative, empathetic, inspired…",
  "CDE.Wood": "㊍ Wood ",
  "CDE.WoodQualities": "– intuitive, observant, open, instinctive…",
- "CDE.MetalYang": "㊎ Yang Metal (3)",
- "CDE.MetalYin": "㊎ Yin Metal (8)",
- "CDE.WaterYang": "㊌ Yang Water (1)",
- "CDE.WaterYin": "㊌ Yin Water (6)",
- "CDE.EarthYang": "㊏Yang Earth (5)",
- "CDE.EarthYin": "㊏Yin Earth (0)",
- "CDE.FireYang": "㊋ Yang Fire (7)",
- "CDE.FireYin": "㊋ Yin Fire (2)",
- "CDE.WoodYang": "㊍ Yang Wood (9)",
- "CDE.WoodYin": "㊍ Yin Wood (4)",
-
+ 
 
  "CDE.PracticeSpecialty": "Check If You Practice This Speciality: ",
 
@@ -217,9 +206,10 @@
  "CDE.RollDifficulty": "Roll Difficulty",
 
 
- "CDE.Type": "Type",
+ "CDE.NPCName": "NPC's Name",
+ "CDE.Type": "Type of Creature",
 
- "CDE.Menace": "Capacity of Threat",
+ "CDE.Threat": "Capacity of Threat",
  "CDE.Profane": "Profane",
  "CDE.Apprentice": "Apprentice",
  "CDE.Initiate": "Initiate",
@@ -246,6 +236,25 @@
  "CDE.Vitality": "Vitality",
  "CDE.Hei": "Hei",
 
- "CDE.Notes": "Notes"
+ "CDE.Notes": "Notes",
+
+ "CDE.SupernaturalCreate": "Create Supernatural Ability",
+ "CDE.SupernaturalEdit": "Edit Supernatural Ability",
+ "CDE.SupernaturalDelete": "Delete Supernatural Ability",
+ "CDE.SupernaturalNew": "New Supernatural Ability",
+
+   
+ "CDE.LoksyuName": "Loksyu Name",
+ "CDE.Loksyu": "Loksyu",
+ "CDE.MetalYang": "㊎ Yang Metal (3)",
+ "CDE.MetalYin": "㊎ Yin Metal (8)",
+ "CDE.WaterYang": "㊌ Yang Water (1)",
+ "CDE.WaterYin": "㊌ Yin Water (6)",
+ "CDE.EarthYang": "㊏Yang Earth (5)",
+ "CDE.EarthYin": "㊏Yin Earth (0)",
+ "CDE.FireYang": "㊋ Yang Fire (7)",
+ "CDE.FireYin": "㊋ Yin Fire (2)",
+ "CDE.WoodYang": "㊍ Yang Wood (9)",
+ "CDE.WoodYin": "㊍ Yin Wood (4)"
 
 }

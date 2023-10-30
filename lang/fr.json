@@ -37,7 +37,7 @@
 
 
  "CDE.DeleteGroup": "Supprimer le groupe ?",
- "CDE.DeleteGroupContent": "Souhaitez-vous supprimer ce groupe ? cela supprimera le groupe suivant et tous les attributs inclus : ",
+ "CDE.DeleteGroupContent": "Souhaitez-vous supprimer ce groupe ? Cela supprimera le groupe suivant et tous les attributs inclus : ",
 
  "CDE.Create": "Créer",
  "CDE.New": "Nouveau",
@@ -88,10 +88,10 @@
  "CDE.Inquiry": "Renseignement",
  "CDE.Influence": "Influence",
 
-"CDE.Components2": "Composants & ingrédients",
+"CDE.Components2": "Composants & Ingrédients",
 "CDE.Component": "Composant n° ",
 "CDE.ChanceThrow": "Choisir un composant au hasard dans l′urgence",
-"CDE.TypesOfMagic": "Types de magie",
+"CDE.TypesOfMagic": "Types de Magie",
 
 
  "CDE.InternalCinnabar": "Cinabre Interne",
@@ -99,9 +99,9 @@
  "CDE.MasteryOfTheWay": "Maîtrise de la Voie",
  "CDE.Exorcism": "Exorcisme",
  "CDE.Geomancy": "Géomancie",
-  
+ "CDE.WoodYin": "㊍ Bois Yin (4)",
 
- "CDE.Loksyu": "Loksyu",
+
  "CDE.Metal": "㊎ Métal ",
  "CDE.MetalQualities": "– agressif, passionné, combatif, enthousiate…",
  "CDE.Water": "㊌ Eau ",
@@ -112,17 +112,7 @@
  "CDE.FireQualities": "– chaleureux, créatif, empathique, inspiré…",
  "CDE.Wood": "㊍ Bois ",
  "CDE.WoodQualities": "– intuitif, observateur, ouvert, instinctif…",
- "CDE.MetalYang": "㊎ Métal Yang (3)",
- "CDE.MetalYin": "㊎ Métal Yin (8)",
- "CDE.WaterYang": "㊌ Eau Yang (1)",
- "CDE.WaterYin": "㊌ Eau Yin (6)",
- "CDE.EarthYang": "㊏ Terre Yang (5)",
- "CDE.EarthYin": "㊏ Terre Yin (0)",
- "CDE.FireYang": "㊋ Feu Yang (7)",
- "CDE.FireYin": "㊋ Feu Yin (2)",
- "CDE.WoodYang": "㊍ Bois Yang (9)",
- "CDE.WoodYin": "㊍ Bois Yin (4)",
-
+ 
 
  "CDE.PracticeSpecialty": "Cochez si vous pratiquez la spécialité ",
 
@@ -217,7 +207,8 @@
  "CDE.RollDifficulty": "Difficulté du Jet",
 
  
- "CDE.Type": "Type",
+ "CDE.NPCName": "Nom du PNJ",
+ "CDE.Type": "Type de Créature",
 
  "CDE.Threat": "Niveau de Menace",
  "CDE.Profane": "Profane",
@@ -244,6 +235,24 @@
  "CDE.Spiritual": "● Spirituelle",
 
  "CDE.Vitality": "Vitalité",
- "CDE.Hei": "Hei"
+ "CDE.Hei": "Hei",
+
+ "CDE.SupernaturalCreate": "Créer une Capacité Surnaturelle",
+ "CDE.SupernaturalEdit": "Éditer la Capacité Surnaturelle",
+ "CDE.SupernaturalDelete": "Supprimer la Capacité Surnaturelle",
+ "CDE.SupernaturalNew": "Nouvelle Capacité Surnaturelle",
+  
+ 
+ "CDE.LoksyuName": "Nom du Loksyu",
+ "CDE.Loksyu": "Loksyu",
+ "CDE.MetalYang": "㊎ Métal Yang (3)",
+ "CDE.MetalYin": "㊎ Métal Yin (8)",
+ "CDE.WaterYang": "㊌ Eau Yang (1)",
+ "CDE.WaterYin": "㊌ Eau Yin (6)",
+ "CDE.EarthYang": "㊏ Terre Yang (5)",
+ "CDE.EarthYin": "㊏ Terre Yin (0)",
+ "CDE.FireYang": "㊋ Feu Yang (7)",
+ "CDE.FireYin": "㊋ Feu Yin (2)",
+ "CDE.WoodYang": "㊍ Bois Yang (9)"
 
 }
