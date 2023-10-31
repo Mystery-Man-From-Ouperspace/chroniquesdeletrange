@@ -15,8 +15,8 @@ export class CDEPNJSheet extends ActorSheet {
       width: 700,
       height: 850,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
-      scrollY: [".biography", ".items", ".attributes"],
-      dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
+      scrollY: [".description", ".supernaturals"],
+      dragDrop: [{dragSelector: ".supernatural", dropSelector: null}]
     });
   }
 
@@ -52,17 +52,8 @@ export class CDEPNJSheet extends ActorSheet {
     //html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
 
     // Item Controls
-    html.find(".item-control").click(this._onItemControl.bind(this));
-    html.find(".items .rollable").on("click", this._onItemRoll.bind(this));
-
-
-
-    html.find(".kungfu-control").click(this._onKungFuControl.bind(this));
-   //  html.find(".kungfus .rollable").on("click", this._onKungFuRoll.bind(this));
-
-    html.find(".spell-control").click(this._onSpellControl.bind(this));
-    // html.find(".spells .rollable").on("click", this._onSpellRoll.bind(this));
-
+    html.find(".supernatural-control").click(this._onSupernaturalControl.bind(this));
+    // html.find(".items .rollable").on("click", this._onSupernaturalRoll.bind(this));
 
 
     // Add draggable for Macro creation
@@ -75,81 +66,28 @@ export class CDEPNJSheet extends ActorSheet {
     });
   }
 
-  /* -------------------------------------------- */
-
+   
   /**
-   * Handle click events for Item item control buttons within the Actor Sheet
+   * Handle click events for Item supernatural control buttons within the Actor Sheet
    * @param event
    * @private
    */
-  _onItemControl(event) {
+  _onSupernaturalControl(event) {
     event.preventDefault();
 
     // Obtain event data
     const button = event.currentTarget;
-    const li = button.closest(".item");
+    const li = button.closest(".supernatural");
     const item = this.actor.items.get(li?.dataset.itemId);
 
     // Handle different actions
     switch ( button.dataset.action ) {
       case "create":
         const cls = getDocumentClass("Item");
-        return cls.create({name: game.i18n.localize("CDE.ItemNew"), type: "item"}, {parent: this.actor});
+        return cls.create({name: game.i18n.localize("CDE.SupernaturalNew"), type: "supernatural"}, {parent: this.actor});
       case "edit":
         return item.sheet.render(true);
       case "delete":
-        return item.delete();
-    }
-  }
-
-
-   /**
-   * Handle click events for Item kungfu control buttons within the Actor Sheet
-   * @param event
-   * @private
-   */
-   _onKungFuControl(event) {
-    event.preventDefault();
-
-    // Obtain event data
-    const button = event.currentTarget;
-    const li = button.closest(".kungfu");
-    const item = this.actor.items.get(li?.dataset.itemId);
-
-    // Handle different actions
-    switch ( button.dataset.action ) {
-      case "kungfucreate":
-        const cls = getDocumentClass("Item");
-        return cls.create({name: game.i18n.localize("CDE.KFNew"), type: "kungfu"}, {parent: this.actor});
-      case "kungfuedit":
-        return item.sheet.render(true);
-      case "kungfudelete":
-        return item.delete();
-    }
-  }
-
-
-  /**
-   * Handle click events for Item spell control buttons within the Actor Sheet
-   * @param event
-   * @private
-   */
-  _onSpellControl(event) {
-    event.preventDefault();
-
-    // Obtain event data
-    const button = event.currentTarget;
-    const li = button.closest(".spell");
-    const item = this.actor.items.get(li?.dataset.itemId);
-
-    // Handle different actions
-    switch ( button.dataset.action ) {
-      case "spellcreate":
-        const cls = getDocumentClass("Item");
-        return cls.create({name: game.i18n.localize("CDE.SpellNew"), type: "spell"}, {parent: this.actor});
-      case "spelledit":
-        return item.sheet.render(true);
-      case "spelldelete":
         return item.delete(); 
     }
   }

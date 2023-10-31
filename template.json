@@ -1,7 +1,7 @@
 {
   "Actor": {
     "types": ["character", "npc", "loksyu"],
-    "htmlFields": ["biography", "description"],
+    "htmlFields": ["biography", "description", "description2"],
 
     "character": {
       "concept": "",
@@ -49,7 +49,6 @@
       "skills": {
         "art": {
           "label": "CDE.Art",
-          "check": false,
           "specialities": "",
           "value": 0,
           "min": 0,
@@ -57,7 +56,6 @@
         },
         "investigation": {
           "label": "CDE.Investigation",
-          "check": false,
           "specialities": "",
           "value": 0,
           "min": 0,
@@ -65,7 +63,6 @@
         },
         "erudition": {
           "label": "CDE.Erudition",
-          "check": false,
           "specialities": "",
           "value": 0,
           "min": 0,
@@ -73,7 +70,6 @@
         },
         "knavery": {
           "label": "CDE.Knavery",
-          "check": false,
           "specialities": "",
           "value": 0,
           "min": 0,
@@ -81,7 +77,6 @@
         },
         "wordliness": {
           "label": "CDE.Wordliness",
-          "check": false,
           "specialities": "",
           "value": 0,
           "min": 0,
@@ -89,7 +84,6 @@
         },
         "prowess": {
           "label": "CDE.Prowess",
-          "check": false,
           "specialities": "",
           "value": 0,
           "min": 0,
@@ -97,7 +91,6 @@
         },
         "sciences": {
           "label": "CDE.Sciences",
-          "check": false,
           "specialities": "",
           "value": 0,
           "min": 0,
@@ -105,7 +98,6 @@
         },
         "technologies": {
           "label": "CDE.Technologies",
-          "check": false,
           "specialities": "",
           "value": 0,
           "min": 0,
@@ -113,7 +105,6 @@
         },
         "kungfu": {
           "label": "CDE.KungFu",
-          "check": false,
           "specialities": "",
           "value": 0,
           "min": 0,
@@ -121,7 +112,6 @@
         },
         "rangedcombat": {
           "label": "CDE.RangedCombat",
-          "check": false,
           "specialities": "",
           "value": 0,
           "min": 0,
@@ -132,7 +122,6 @@
       "resources": {
         "supply": {
           "label": "CDE.Supply",
-          "check": false,
           "specialities": "",
           "value": 0,
           "min": 0,
@@ -141,7 +130,6 @@
         },
         "inquiry": {
           "label": "CDE.Inquiry",
-          "check": false,
           "specialities": "",
           "value": 0,
           "min": 0,
@@ -150,7 +138,6 @@
         },
         "influence": {
           "label": "CDE.Influence",
-          "check": false,
           "specialities": "",
           "value": 0,
           "min": 0,
@@ -473,41 +460,49 @@
       "threetreasures": {
         "heiyang": {
           "value": 0,
-          "max": 0
+          "max": 0,
+          "min": 0
         },
         "heiyin": {
           "value": 0,
-          "max": 0
+          "max": 0,
+          "min": 0
         },
         "dicelevel": {
           "level0d": {
             "san": {
               "value": 0,
-              "max": 0
+              "max": 0,
+              "min": 0
             },
             "zing": {
               "value": 0,
-              "max": 0
+              "max": 0,
+              "min": 0
             }
           },
           "level1d": {
             "san": {
               "value": 0,
-              "max": 0
+              "max": 0,
+              "min": 0
             },
             "zing": {
               "value": 0,
-              "max": 0
+              "max": 0,
+              "min": 0
             }
           },
           "level2d": {
             "san": {
               "value": 0,
-              "max": 0
+              "max": 0,
+              "min": 0
             },
             "zing": {
               "value": 0,
-              "max": 0
+              "max": 0,
+              "min": 0
             }
           }
         }
@@ -515,7 +510,8 @@
       
       "experience": {
         "value": 0,
-        "max": 0
+        "max": 0,
+        "min": 0
       }
     },
 
@@ -526,60 +522,109 @@
       "aptitudes": {
         "physical": {
           "value": 0,
+          "min": 0,
           "speciality": ""
         },
         "martial": {
           "value": 0,
+          "min": 0,
           "speciality": ""
         },
         "mental": {
           "value": 0,
+          "min": 0,
           "speciality": ""
         },
         "social": {
           "value": 0,
+          "min": 0,
           "speciality": ""
         },
         "spiritual": {
           "value": 0,
+          "min": 0,
           "speciality": ""
         }
       },
       "vitality": {
         "value": 0,
+        "min": 0,
         "calcul": 0,
         "note": ""
       },
       "hei": {
         "value": 0,
+        "min": 0,
         "calcul": 0,
         "note": ""
-      }
+      },
+      "description": ""
     },
 
     "loksyu": {
       "fire": {
-        "yin": 0,
-        "yang": 0
+        "yin": {
+          "value": 0,
+          "max": 999,
+          "min": 0
+        },
+        "yang": {
+          "value": 0,
+          "max": 999,
+          "min":  0
+        }
       },
       "earth": {
-        "yin": 0,
-        "yang": 0
+        "yin": {
+          "value": 0,
+          "max": 999,
+          "min":  0
+        },
+        "yang": {
+          "value": 0,
+          "max": 999,
+          "min":  0
+        }
       },
       "metal": {
-        "yin": 0,
-        "yang": 0
+        "yin": {
+          "value": 0,
+          "max": 999,
+          "min":  0
+        },
+        "yang": {
+          "value": 0,
+          "max": 999,
+          "min":  0
+        }
       },
       "water": {
-        "yin": 0,
-        "yang": 0
+        "yin": {
+          "value": 0,
+          "max": 999,
+          "min":  0
+        },
+        "yang": {
+          "value": 0,
+          "max": 999,
+          "min":  0
+        }
       },
       "wood": {
-        "yin": 0,
-        "yang": 0
+        "yin": {
+          "value": 0,
+          "max": 999,
+          "min":  0
+        },
+        "yang": {
+          "value": 0,
+          "max": 999,
+          "min":  0
+        }
       },
-      "description": ""
+      "description2": ""
     }
+    
   },
   
   "Item": {

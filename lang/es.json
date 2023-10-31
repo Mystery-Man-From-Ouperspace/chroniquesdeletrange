@@ -255,6 +255,24 @@
  "CDE.FireYang": "㊋ Fuego Yang (7)",
  "CDE.FireYin": "㊋ Fuego Yin (2)",
  "CDE.WoodYang": "㊍ Madera Yang (9)",
- "CDE.WoodYin": "㊍ Madera Yin (4)"
+ "CDE.WoodYin": "㊍ Madera Yin (4)",
 
+
+ "CDE.Yin": "● Yin",
+ "CDE.Yang": "○ Yang",
+ "CDE.Successes": "Éxitos",
+ "CDE.Beneficial": "Dados-Buenos",
+ "CDE.Noxious": "Dados-Dañinos",
+ "CDE.TinJi": "Tin Ji:",
+ "CDE.Loksyu2": "Loksyu:",
+ "CDE.Results": "Résultos:",
+
+
+ "TYPES": {
+    "Actor" : {
+      "character" : "Fat si",
+      "npc": "Criatura",
+      "loksyu": "Loksyu"
+    }
+}
 }

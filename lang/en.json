@@ -255,6 +255,24 @@
  "CDE.FireYang": "㊋ Yang Fire (7)",
  "CDE.FireYin": "㊋ Yin Fire (2)",
  "CDE.WoodYang": "㊍ Yang Wood (9)",
- "CDE.WoodYin": "㊍ Yin Wood (4)"
+ "CDE.WoodYin": "㊍ Yin Wood (4)",
 
+
+ "CDE.Yin": "● Yin",
+ "CDE.Yang": "○ Yang",
+ "CDE.Successes": "Successes",
+ "CDE.Beneficial": "Beneficial-Dice",
+ "CDE.Noxious": "Noxious-Dice",
+ "CDE.TinJi": "Tin Ji:",
+ "CDE.Loksyu2": "Loksyu:",
+ "CDE.Results": "Results:",
+
+
+ "TYPES": {
+    "Actor" : {
+      "character" : "Fat si",
+      "npc": "Creature",
+      "loksyu": "Loksyu"
+    }
+}
 }

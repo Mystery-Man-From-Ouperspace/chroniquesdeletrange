@@ -253,6 +253,24 @@
  "CDE.EarthYin": "㊏ Terre Yin (0)",
  "CDE.FireYang": "㊋ Feu Yang (7)",
  "CDE.FireYin": "㊋ Feu Yin (2)",
- "CDE.WoodYang": "㊍ Bois Yang (9)"
+ "CDE.WoodYang": "㊍ Bois Yang (9)",
 
+
+ "CDE.Yin": "● Yin",
+ "CDE.Yang": "○ Yang",
+ "CDE.Successes": "Succès",
+ "CDE.Beneficial": "Dés-Fastes",
+ "CDE.Noxious": "Dés-Néfastes",
+ "CDE.TinJi": "Tin Ji :",
+ "CDE.Loksyu2": "Loksyu :",
+ "CDE.Results": "Résultats :",
+
+
+ "TYPES": {
+    "Actor" : {
+      "character" : "Fat si",
+      "npc": "Créature",
+      "lLoksyu": "Loksyu"
+    }
+}
 }

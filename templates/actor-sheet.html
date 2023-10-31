@@ -78,15 +78,15 @@
 			<table>
 
 				{{#each systemData.skills as |skill key|}}
-				<tr>
-					<td class="click"><img id="D1.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize skill.label }}" alt="Die" /></td>
+				<tr class="clickondie {{key}}">
+					<td class="click"><img class="d1click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize skill.label }}" alt="Die" /></td>
 					<td class="label"><b>&nbsp;{{ localize skill.label }}</b></td>
 					<td class="image"><img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
 						<div class="truc">&nbsp;</div>
 						<input class="input" type="number" placeholder="0" name="system.skills.{{@key}}.value" value="{{skill.value}}" /></td>
 					<td class="specialities"><input class="input" type="text" placeholder="{{ localize "CDE.Specialities" }}" name="system.skills.{{@key}}.specialities" value="{{skill.specialities}}" /></td>
 					<td class="bonus"><b>+1 D</b></td>
-					<td class="click"><img id="D2.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}" alt="Die" /></td>
+					<td class="click"><img class="d2click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}" alt="Die" /></td>
 				</tr>
 				{{/each}}
 
@@ -98,16 +98,16 @@
 			<table>
 
 				{{#each systemData.resources as |resource key|}}
-				<tr>
-					<td class="click"><img id="D1.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize resource.label }}" alt="Die" /></td>
-					<td class="label"><b>&nbsp;{{ localize resource/label }}</b></td>
+				<tr class="clickondie {{key}}">
+					<td class="click"><img class="d1click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize resource.label }}" alt="Die" /></td>
+					<td class="label"><b>&nbsp;{{ localize resource.label }}</b></td>
 					<td class="image"><img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
 						<div class="truc">&nbsp;</div>
 						<input class="input" type="number" placeholder="0" name="system.resources.{{@key}}.value" value="{{resource.value}}" /></td>
 					<td class="specialities"><input class="input" type="text" placeholder="{{ localize "CDE.Fields" }}" name="system.resources.{{@key}}.specialities" value="{{resource.specialities}}" /></td>
 					<td class="bonus"><b>+1 D</b></td>
-					<td class="click"><img id="D2.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieDM" }}" alt="Die" /></td>
-					<td class="check"><input type="checkbox" name="system.resources.{{@key}}.debt" title="{{ localize "CDE.Debt" }}{{ localize resource.label }}" /></td>
+					<td class="click"><img class="d2click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieDM" }}" alt="Die" /></td>
+					<td class="check"><input type="checkbox" name="system.resources.{{@key}}.debt" {{checked resource.debt}} title="{{ localize "CDE.Debt" }}{{ localize resource.label }}" /></td>
 				</tr>
 				{{/each}}
 
@@ -168,10 +168,10 @@
 			<b>{{ localize "CDE.TypesOfMagic" }}</b>
 
 
-			{{#each systemData.magics as |magic key|}}
+			{{#each systemData.magics as |magic key1|}}
 			<table class="{{magic.background}}">
 
-				<tr>
+				<tr class="clickondie {{key1}}">
 					<td class="click"><img id="system.magics.{{@key}}.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize magic.label }}" alt="{{ localize magic.aspectlabel }}" /></td>
 					<td class="label"><b>&nbsp;&nbsp;{{ localize magic.label }}</b></td>
 					<td class="image"><img id="system.magics.{{@key}}.cercle.value" src="systems/chroniquesdeletrange/images/cercle.png" title="Circle" alt="Cercle" />
@@ -180,9 +180,9 @@
 					<td class="label"><b>&nbsp;&nbsp;,&nbsp;{{ localize magic.aspectlabel }}</b></td>
 					<td>
 						<table>
-							{{#each magic.speciality as |special key|}}
-							<tr>
-								<td class="check"><input type="checkbox" name="{{system.magics.magic.speciality.special.check}}" {{ checked special.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize special.label }}" /></td>
+							{{#each magic.speciality as |special key2|}}
+							<tr class="{{key2}}">
+								<td class="check"><input type="checkbox" name="system.magics.{{key1}}.speciality.{{key2}}.check" {{ checked special.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize special.label }}" /></td>
 								<td class="label"><b>{{ localize special.label }}</b></td>
 								<td class="icon-element"><img src="{{special.elementicon}}" title="{{ localize special.labelelement }}" alt="{{special.labelelement}}" /></td>
 								<td class="{{special.classicon}}"><img src="{{special.icon}}" title="{{special.labelicon}}" alt="{{special.labelicon}}" /></td>

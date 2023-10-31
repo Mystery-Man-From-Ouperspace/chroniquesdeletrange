@@ -16,7 +16,6 @@ export class CDELoksyuSheet extends ActorSheet {
       height: 850,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "loksyu"}],
       scrollY: [".description"],
-      // dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
     });
   }
 

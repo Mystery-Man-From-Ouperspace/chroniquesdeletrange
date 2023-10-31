@@ -28,6 +28,46 @@ import { CDEMagicPrompt } from "./item/magic-dice-prompt.js";
 
 
 
+/**
+ * Adds custom dice to Dice So Nice!.
+ */
+Hooks.once('diceSoNiceInit', (dice3d) => {
+  // Called once the module is ready to listen to new rolls and display 3D animations.
+  // dice3d: Main class, instantiated and ready to use.
+
+  
+  Hooks.once('diceSoNiceReady', (dice3d) => {
+  //Called once the module is ready to listen to new rolls and display 3D animations.
+  //dice3d: Main class, instantiated and ready to use.
+
+  dice3d.addSystem({id: "chroniquesdeletrange", name: "Chroniques de l'étrange"}, "preferred");
+
+    dice3d.addDicePreset({
+      type: "d10",
+      labels: [
+        "systems/chroniquesdeletrange/images/dice-so-nice/d10-1.webp",
+        "systems/chroniquesdeletrange/images/dice-so-nice/d10-2.webp",
+        "systems/chroniquesdeletrange/images/dice-so-nice/d10-3.webp",
+        "systems/chroniquesdeletrange/images/dice-so-nice/d10-4.webp",
+        "systems/chroniquesdeletrange/images/dice-so-nice/d10-5.webp",
+        "systems/chroniquesdeletrange/images/dice-so-nice/d10-6.webp",
+        "systems/chroniquesdeletrange/images/dice-so-nice/d10-7.webp",
+        "systems/chroniquesdeletrange/images/dice-so-nice/d10-8.webp",
+        "systems/chroniquesdeletrange/images/dice-so-nice/d10-9.webp",
+        "systems/chroniquesdeletrange/images/dice-so-nice/d10-10.webp"
+      ],
+      system: "chroniquesdeletrange"
+    });
+  
+  
+  });
+
+  //...
+});
+
+
+
+
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -55,8 +95,8 @@ Hooks.once("init", async function() {
   // Define custom Document classes
   CONFIG.Actor.documentClass = CDEActor;
   CONFIG.Item.documentClass = CDEItem;
-  // CONFIG.Token.documentClass = CDETokenDocument;
-  // CONFIG.Token.objectClass = CDEToken;
+  CONFIG.Token.documentClass = CDETokenDocument;
+  CONFIG.Token.objectClass = CDEToken;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
