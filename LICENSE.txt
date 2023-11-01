@@ -20,8 +20,10 @@ réutilisées en dehors de ce logiciel, ni cédées sans leur autorisation
 expresse.
 
 
-Code additionnel et modifications 2023
-David R.D. 'Mystery Man From Outerspace' Bercovici
+Code additionnel et modifications / additionnal code and code editing:
+David R.D. 'Mystery Man From Outerspace' Bercovici (2023)
+
+Avec l'aide précieuse de / with precious help from:
 LeRatierBretonnien
 Christophe 'Qaw' Laudon 
 (et d'autres)
