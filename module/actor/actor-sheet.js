@@ -58,7 +58,7 @@ export class CDEActorSheet extends ActorSheet {
 
 
     html.find(".kungfu-control").click(this._onKungFuControl.bind(this));
-   //  html.find(".kungfus .rollable").on("click", this._onKungFuRoll.bind(this));
+    // html.find(".kungfus .rollable").on("click", this._onKungFuRoll.bind(this));
 
     html.find(".spell-control").click(this._onSpellControl.bind(this));
     // html.find(".spells .rollable").on("click", this._onSpellRoll.bind(this));
@@ -101,7 +101,7 @@ export class CDEActorSheet extends ActorSheet {
     switch ( button.dataset.action ) {
       case "create":
         const cls = getDocumentClass("Item");
-        return cls.create({name: game.i18n.game.i18n.localize("CDE.ItemNew"), type: "item"}, {parent: this.actor});
+        return cls.create({name: game.i18n.localize("CDE.ItemNew"), type: "item"}, {parent: this.actor});
       case "edit":
         return item.sheet.render(true);
       case "delete":
@@ -338,7 +338,7 @@ export class CDEActorSheet extends ActorSheet {
         message += game.i18n.localize("CDE.Metal");
         message += suite;
         break;
-        // Results: 4 ㊍ wood successes, 3 ㊋ fire beneficial-dice, 2 ㊌ water noxious-dice --- Loksyu : ㊏ earth 1 ● yin, 1 ○ yang --- Tin Ji : 1 ㊎ metal (7,2,5,9,4,10,6,4,4,2,6,8)      break;
+        // Results: 4 ㊍ wood successes, 3 ㊋ fire beneficial-dice, 2 ㊌ water noxious-dice --- Loksyu : ㊏ earth 1 ● yin, 1 ○ yang --- Tin Ji : 1 ㊎ metal (7,2,5,9,4,10,6,4,4,2,6,8)
       case fire:
         message += (parseInt(d10_2) + parseInt(d10_8)) + " ";
         message += game.i18n.localize("CDE.Fire");
@@ -360,7 +360,7 @@ export class CDEActorSheet extends ActorSheet {
         message += game.i18n.localize("CDE.Water");
         message += suite;
         break;
-        // Results: 0 ㊋ fire successes, 0 ㊏ earth beneficial-dice, 1 ㊍ wood noxious-dice --- Loksyu : ㊎ metal 0 ● yin, 0 ○ yang --- Tin Ji : 0 ㊌ water (9)
+        // Results: 0 ㊋ fire successes, 0 ㊏ earth beneficial-dice, 1 ㊍ wood noxious-dice --- Loksyu : ㊎ metal 0 ● yin, 0 ○ yang --- Tin Ji : 0 ㊌ water
       case earth:
         message += (parseInt(d10_0) + parseInt(d10_5)) + " ";
         message += game.i18n.localize("CDE.Earth");
@@ -382,7 +382,7 @@ export class CDEActorSheet extends ActorSheet {
         message += game.i18n.localize("CDE.Wood");
         message += suite;
         break;
-        // Results: 0 ㊏ earth successes, 0 ㊎ metal beneficial-dice, 1 ㊋ fire noxious-dice --- Loksyu : ㊌ water 0 ● yin, 0 ○ yang --- Tin Ji : 0 ㊍ wood (7)
+        // Results: 0 ㊏ earth successes, 0 ㊎ metal beneficial-dice, 1 ㊋ fire noxious-dice --- Loksyu : ㊌ water 0 ● yin, 0 ○ yang --- Tin Ji : 0 ㊍ wood
       case metal:
         message += (parseInt(d10_3) + parseInt(d10_8)) + " ";
         message += game.i18n.localize("CDE.Metal");
