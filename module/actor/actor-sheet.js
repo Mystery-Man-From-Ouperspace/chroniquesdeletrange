@@ -93,12 +93,8 @@ export class CDEActorSheet extends ActorSheet {
     event.preventDefault();
 
     // Obtain event data
-    const button = event.currentTarget;
-    const li = button.closest(".item");
-    const item = this.actor.items.get(li?.dataset.itemId);
-
-    // Handle different actions
     switch ( button.dataset.action ) {
+
       case "create":
         const cls = getDocumentClass("Item");
         return cls.create({name: game.i18n.localize("CDE.ItemNew"), type: "item"}, {parent: this.actor});
@@ -232,10 +228,22 @@ export class CDEActorSheet extends ActorSheet {
     const earth = 2;
     const metal = 3;
     const water = 4;
-    const elements = ["CDE.Wood", "CDE.Fire", "CDE.Earth", "㊏", "CDE.Metal"];
+    const noSpecial = -1;
+    const aspectLabel = ["CDE.Wood", "CDE.Fire", "CDE.Earth", "㊏", "CDE.Metal"];
 
-    var elementChoice = wood;
- 
+    var skillUsed = "";
+    var skillValue = 0;
+    var skillUsedLabel = "";
+    var specialUsed = "";
+    var specialUsedLabel = "";
+    var aspectSkill = 0;
+    var numberDice = 15;
+    var bonusDice = 0;
+    var bonusBeneficial = 0;
+    var aspectSpecial = 0;
+    var difficultySpecial = 0;
+    var bonusSpecial = 0;
+    
     let d10_1 = 0;
     let d10_2 = 0;
     let d10_3 = 0;
@@ -249,10 +257,39 @@ export class CDEActorSheet extends ActorSheet {
     let suite = "[";
 
     let button = $(event.currentTarget);
-    const tr = button.parents(".clickondie");
-    const item = this.actor.items.get(tr.data("itemId"));
+    const div = button.parents(".click");
+    console.log('div = '+div);
+    console.log(div.data());
+    const item = this.actor.items.get(div.data("itemId"));
+    console.log('item = '+item);
 
-    let r = new Roll("15d10", this.actor.getRollData());
+    // Handle different types of throw
+    //  ```html
+    // <div class="fire nghangpart1">
+    // ```` 
+    // ```js
+    //    let button = $(event.currentTarget);
+    //    const tr = button.parents(".clickondie");`
+    //``` 
+  
+    // Il y a moyen à partir de là de récupérer seulement 'fire' dans la classe ? Je n'ai pas besoin du nghangpart1... (ça me sert juste dans le css).
+    switch ( div ) {
+      case "fire nghangpart1":
+      case "wood nghangpart2":
+      case "earth nghangpart4":
+      case "water nghangpart5":
+      case "metal nghangpart7":
+        let tabClass = tr.split(" ");
+        skillUsed = tabClass[0];
+        console.log('skillUsed = '+skillUsed);
+      break;
+      default: console.log("Nothing");
+
+    let totalDice = 0;
+    if (numberDice+bonusDice > 0) {
+      totalDice = numberDice+bonusDice;
+    };
+    let r = new Roll(numberDice+bonusDice+"d10", this.actor.getRollData());
     // let r = new Roll("15d10+2d20", this.actor.getRollData());
     await r.evaluate();
     console.log(r);
@@ -269,7 +306,7 @@ export class CDEActorSheet extends ActorSheet {
         } else {
           suite += myD + ", ";
         };
-        switch (myD) {
+        switch ( myD ) {
           case 1: d10_1 += 1;
           break;
           case 2: d10_2 += 1;
@@ -317,7 +354,7 @@ export class CDEActorSheet extends ActorSheet {
 
     let message = game.i18n.localize("CDE.Results")+" ";
 
-    switch (elementChoice) {
+    switch (aspectSkill) {
       case wood:
         message += (parseInt(d10_4) + parseInt(d10_9)) + " ";
         message += game.i18n.localize("CDE.Wood");
@@ -434,22 +471,30 @@ export class CDEActorSheet extends ActorSheet {
     let rModif = r;
     rModif._total = 0;
     
-   const msg = await rModif.toMessage({
+    const msg = await rModif.toMessage({
       user: game.user.id,
       speaker: ChatMessage.getSpeaker({ actor: this.actor })
     });
 
     console.log(message);
 
-  if (game.modules.get("dice-so-nice")?.active) {
-    await game.dice3d.waitFor3DAnimationByMessageID(msg.id);
-  }
+    if (game.modules.get("dice-so-nice")?.active) {
+      await game.dice3d.waitFor3DAnimationByMessageID(msg.id);
+    }
 
-  return (ChatMessage.create({
-    user: game.user.id,
-    // speaker: ChatMessage.getSpeaker({ token: this.actor }),
-    speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-    content: message
-    }))
+    let title = game.i18n.localize(skillUsedLabel);
+    if (specialUsed != "") {
+      title += " "+game.i18n.localize(specialUsedLabel);
+    };
+    title += ", ";
+    title += game.i18n.localize("CDE.Aspect")+" "+game.i18n.localize(aspectLabel[aspectSkill])+"| ";
+
+    return (ChatMessage.create({
+      user: game.user.id,
+      // speaker: ChatMessage.getSpeaker({ token: this.actor }),
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: title+message
+    }));
   }
+}
 }
