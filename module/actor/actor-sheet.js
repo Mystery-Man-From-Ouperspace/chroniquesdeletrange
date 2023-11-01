@@ -441,21 +441,15 @@ export class CDEActorSheet extends ActorSheet {
 
     console.log(message);
 
-    var isDSNInstalled = false;
-
-    Hooks.once('diceSoNiceInit', (dice3d) => {
-      isDSNInstalled = true;
-  });
-
   if (game.modules.get("dice-so-nice")?.active) {
     await game.dice3d.waitFor3DAnimationByMessageID(msg.id);
   }
 
-    return (ChatMessage.create({
-      user: game.user.id,
-      // speaker: ChatMessage.getSpeaker({ token: this.actor }),
-      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content: message
+  return (ChatMessage.create({
+    user: game.user.id,
+    // speaker: ChatMessage.getSpeaker({ token: this.actor }),
+    speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+    content: message
     }))
   }
 }
