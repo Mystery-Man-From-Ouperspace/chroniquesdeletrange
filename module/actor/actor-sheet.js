@@ -223,7 +223,7 @@ export class CDEActorSheet extends ActorSheet {
 
 
   /**
-   * Listen for roll buttons on Clickable D10.
+   * Listen for roll buttons on Clickable d10.
    * @param {MouseEvent} event    The originating left click event
    */
   async _onClickDieRoll(event) {
@@ -255,13 +255,14 @@ export class CDEActorSheet extends ActorSheet {
     let r = new Roll("15d10", this.actor.getRollData());
     // let r = new Roll("15d10+2d20", this.actor.getRollData());
     await r.evaluate();
-    let myR = r.dice;
-    console.log(myR);
-    console.log(myR[0]);
-    for (let key in myR) {
-      console.log(myR[key]);
-      for (let i=0; i<myR[key].number; i++) {
-        let myD = myR[key].results[i].result;
+    console.log(r);
+    let myRDice = r.dice;
+    console.log(myRDice);
+    console.log(myRDice[0]);
+    for (let key in myRDice) {
+      console.log(myRDice[key]);
+      for (let i=0; i<myRDice[key].number; i++) {
+        let myD = myRDice[key].results[i].result;
         console.log(myD);
         if (myD == 10) {
           suite += "0, "
@@ -302,16 +303,16 @@ export class CDEActorSheet extends ActorSheet {
     };
 
     let myResult = "";
-    myResult += "0("+d10_0+") "; // Terre Yin
-    myResult += "1("+d10_1+") "; // Eau Yang
-    myResult += "2("+d10_2+") "; // Feu Yin
-    myResult += "3("+d10_3+") "; // Métal Yang
-    myResult += "4("+d10_4+") "; // Bois Yin
-    myResult += "5("+d10_5+") "; // Terre Yang
-    myResult += "6("+d10_6+") "; // Eau Yin
-    myResult += "7("+d10_7+") "; // Feu Yang
-    myResult += "8("+d10_8+") "; // Métal Yin
-    myResult += "9("+d10_9+")"; // Bois Yang
+    myResult += "0("+d10_0+") "; // Earth Yin
+    myResult += "1("+d10_1+") "; // Water Yang
+    myResult += "2("+d10_2+") "; // Fire Yin
+    myResult += "3("+d10_3+") "; // Metal Yang
+    myResult += "4("+d10_4+") "; // Wood Yin
+    myResult += "5("+d10_5+") "; // Earth Yang
+    myResult += "6("+d10_6+") "; // Water Yin
+    myResult += "7("+d10_7+") "; // Fire Yang
+    myResult += "8("+d10_8+") "; // Metal Yin
+    myResult += "9("+d10_9+")"; // Wood Yang
     console.log(myResult);
 
     let message = game.i18n.localize("CDE.Results")+" ";
@@ -328,7 +329,7 @@ export class CDEActorSheet extends ActorSheet {
         message += game.i18n.localize("CDE.Water");
         message += game.i18n.localize("CDE.Noxious") + " --- ";
         message += game.i18n.localize("CDE.Loksyu2") + " ";
-        message += game.i18n.localize("CDE.Earth");
+        message += game.i18n.localize("CDE.Earth") + ": ";
         message += d10_0 + " ";
         message += game.i18n.localize("CDE.Yin") + ", ";
         message += d10_5 + " ";
@@ -338,7 +339,7 @@ export class CDEActorSheet extends ActorSheet {
         message += game.i18n.localize("CDE.Metal");
         message += suite;
         break;
-        // Results: 4 ㊍ wood successes, 3 ㊋ fire beneficial-dice, 2 ㊌ water noxious-dice --- Loksyu : ㊏ earth 1 ● yin, 1 ○ yang --- Tin Ji : 1 ㊎ metal (7,2,5,9,4,10,6,4,4,2,6,8)
+        // Results: 3 ㊍ Wood Successes, 2 ㊋ Fire Beneficial-Dice, 0 ㊌ Water Noxious-Dice --- Loksyu : ㊏ Earth 0 ● Yin, 1 ○ Yang --- Tin Ji : 1 ㊎ Metal [4,9,4,5,2,8,7]
       case fire:
         message += (parseInt(d10_2) + parseInt(d10_8)) + " ";
         message += game.i18n.localize("CDE.Fire");
@@ -350,7 +351,7 @@ export class CDEActorSheet extends ActorSheet {
         message += game.i18n.localize("CDE.Wood");
         message += game.i18n.localize("CDE.Noxious") + " --- ";
         message += game.i18n.localize("CDE.Loksyu2") + " ";
-        message += game.i18n.localize("CDE.Metal");
+        message += game.i18n.localize("CDE.Metal") + ": ";
         message += d10_8 + " ";
         message += game.i18n.localize("CDE.Yin") + " ";
         message += d10_3 + " ";
@@ -360,7 +361,7 @@ export class CDEActorSheet extends ActorSheet {
         message += game.i18n.localize("CDE.Water");
         message += suite;
         break;
-        // Results: 0 ㊋ fire successes, 0 ㊏ earth beneficial-dice, 1 ㊍ wood noxious-dice --- Loksyu : ㊎ metal 0 ● yin, 0 ○ yang --- Tin Ji : 0 ㊌ water
+        // Results: 0 ㊋ Fire Successes, 4 ㊏ Earth Beneficial-Dice, 0 ㊍ Wood Noxious-Dice --- Loksyu : ㊎ Metal 1 ● Yin, 1 ○ Yang --- Tin Ji : 1 ㊌ Water [10,3,8,5,5,5,1]
       case earth:
         message += (parseInt(d10_0) + parseInt(d10_5)) + " ";
         message += game.i18n.localize("CDE.Earth");
@@ -372,7 +373,7 @@ export class CDEActorSheet extends ActorSheet {
         message += game.i18n.localize("CDE.Fire");
         message += game.i18n.localize("CDE.Noxious") + " --- ";
         message += game.i18n.localize("CDE.Loksyu2") + " ";
-        message += game.i18n.localize("CDE.Water");
+        message += game.i18n.localize("CDE.Water") + ": ";
         message += d10_6 + " ";
         message += game.i18n.localize("CDE.Yin") + ", ";
         message += d10_1 + " ";
@@ -382,7 +383,7 @@ export class CDEActorSheet extends ActorSheet {
         message += game.i18n.localize("CDE.Wood");
         message += suite;
         break;
-        // Results: 0 ㊏ earth successes, 0 ㊎ metal beneficial-dice, 1 ㊋ fire noxious-dice --- Loksyu : ㊌ water 0 ● yin, 0 ○ yang --- Tin Ji : 0 ㊍ wood
+        // Results: 2 ㊏ Earth Successes, 0 ㊎ Metal Beneficial-Dice, 0 ㊋ Fire Noxious-Dice --- Loksyu : ㊌ Water 2 ● Yin, 1 ○ Yang --- Tin Ji : 2 ㊍ Wood [6,4,9,6,1,10,5]
       case metal:
         message += (parseInt(d10_3) + parseInt(d10_8)) + " ";
         message += game.i18n.localize("CDE.Metal");
@@ -394,7 +395,7 @@ export class CDEActorSheet extends ActorSheet {
         message += game.i18n.localize("CDE.Earth");
         message += game.i18n.localize("CDE.Noxious") + " --- ";
         message += game.i18n.localize("CDE.Loksyu2") + " ";
-        message += game.i18n.localize("CDE.Wood");
+        message += game.i18n.localize("CDE.Wood") + ": ";
         message += d10_4 + " ";
         message += game.i18n.localize("CDE.Yin") + ", ";
         message += d10_9 + " ";
@@ -404,7 +405,7 @@ export class CDEActorSheet extends ActorSheet {
         message += game.i18n.localize("CDE.Fire");
         message += suite;
         break;
-        // Results: 2 ㊎ metal successes, 3 ㊌ water beneficial-dice, 1 ㊏ earth noxious-dice --- Loksyu : ㊍ wood 0 ● yin, 1 ○ yang --- Tin Ji : 0 ㊋ fire (10,8,1,8,9,1,1)
+        // Results: 1 ㊎ Metal Successes, 0 ㊌ Water Beneficial-Dice, 1 ㊏ Earth Noxious-Dice --- Loksyu : ㊍ Wood 2 ● Yin, 2 ○ Yang --- Tin Ji : 1 ㊋ Fire [9,9,5,4,2,4,3]
       case water:
         message += (parseInt(d10_1) + parseInt(d10_6)) + " ";
         message += game.i18n.localize("CDE.Water");
@@ -416,7 +417,7 @@ export class CDEActorSheet extends ActorSheet {
         message += game.i18n.localize("CDE.Metal");
         message += game.i18n.localize("CDE.Noxious") + " --- ";
         message += game.i18n.localize("CDE.Loksyu2") + " ";
-        message += game.i18n.localize("CDE.Fire");
+        message += game.i18n.localize("CDE.Fire") + ": ";
         message += d10_2 + " ";
         message += game.i18n.localize("CDE.Yin") + ", ";
         message += d10_7 + " ";
@@ -426,15 +427,35 @@ export class CDEActorSheet extends ActorSheet {
         message += game.i18n.localize("CDE.Earth");
         message += suite;
         break;
-      //Results: 1 ㊌ water successes, 0 ㊍ wood beneficial-dice, 2 ㊎ metal noxious-dice --- Loksyu : ㊋ fire 0 ● yin, 1 ○ yang --- Tin Ji : 4 ㊏ earth (8,8,5,1,5,7,10,10)
+        // Results: 1 ㊌ Water Successes, 2 ㊍ Wood Beneficial-Dice, 1 ㊎ Metal Noxious-Dice --- Loksyu : ㊋ Fire 1 ● Yin, 0 ○ Yang --- Tin Ji : 2 ㊏ Earth [9,5,1,2,4,5,8]
       default: console.log("C'est bizarre !");
     };
-
-    console.log(message);
-
-    return r.toMessage({
+ 
+    let rModif = r;
+    rModif._total = 0;
+    
+   const msg = await rModif.toMessage({
       user: game.user.id,
       speaker: ChatMessage.getSpeaker({ actor: this.actor })
     });
+
+    console.log(message);
+
+    var isDSNInstalled = false;
+
+    Hooks.once('diceSoNiceInit', (dice3d) => {
+      isDSNInstalled = true;
+  });
+
+  if (game.modules.get("dice-so-nice")?.active) {
+    await game.dice3d.waitFor3DAnimationByMessageID(msg.id);
+  }
+
+    return (ChatMessage.create({
+      user: game.user.id,
+      // speaker: ChatMessage.getSpeaker({ token: this.actor }),
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: message
+    }))
   }
 }

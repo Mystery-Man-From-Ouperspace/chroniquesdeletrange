@@ -82,7 +82,7 @@
 					<td class="click"><img class="d1click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize skill.label }}" alt="Die" /></td>
 					<td class="label"><b>&nbsp;{{ localize skill.label }}</b></td>
 					<td class="image"><img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
-						<div class="truc">&nbsp;</div>
+						<div class="stick">&nbsp;</div>
 						<input class="input" type="number" placeholder="0" name="system.skills.{{@key}}.value" value="{{skill.value}}" /></td>
 					<td class="specialities"><input class="input" type="text" placeholder="{{ localize "CDE.Specialities" }}" name="system.skills.{{@key}}.specialities" value="{{skill.specialities}}" /></td>
 					<td class="bonus"><b>+1 D</b></td>
@@ -102,7 +102,7 @@
 					<td class="click"><img class="d1click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize resource.label }}" alt="Die" /></td>
 					<td class="label"><b>&nbsp;{{ localize resource.label }}</b></td>
 					<td class="image"><img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
-						<div class="truc">&nbsp;</div>
+						<div class="stick">&nbsp;</div>
 						<input class="input" type="number" placeholder="0" name="system.resources.{{@key}}.value" value="{{resource.value}}" /></td>
 					<td class="specialities"><input class="input" type="text" placeholder="{{ localize "CDE.Fields" }}" name="system.resources.{{@key}}.specialities" value="{{resource.specialities}}" /></td>
 					<td class="bonus"><b>+1 D</b></td>
@@ -175,7 +175,7 @@
 					<td class="click"><img id="system.magics.{{@key}}.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize magic.label }}" alt="{{ localize magic.aspectlabel }}" /></td>
 					<td class="label"><b>&nbsp;&nbsp;{{ localize magic.label }}</b></td>
 					<td class="image"><img id="system.magics.{{@key}}.cercle.value" src="systems/chroniquesdeletrange/images/cercle.png" title="Circle" alt="Cercle" />
-						<div class="truc">&nbsp;</div>
+						<div class="stick">&nbsp;</div>
 						<input class="input" type="number" placeholder="0" name="system.magics.{{@key}}.value" value="{{magic.value}}" /></td>
 					<td class="label"><b>&nbsp;&nbsp;,&nbsp;{{ localize magic.aspectlabel }}</b></td>
 					<td>
@@ -318,38 +318,38 @@
 				
 		{{!-- NgHang Tab --}}
         <div class="tab nghang nghang_wrap" data-group="primary" data-tab="nghang">
-			<div class="machin">
+			<div class="schema">
 				<div>
 				<img style="width: 21%;margin-top: -30px;margin-left: -22px;" class="logo" src="systems/chroniquesdeletrange/images/logo_jeu.png" title="奇闻异事 ● Hong Kong – Les Chroniques de l'&Eacute;trange ● R.d′Huissier & C.Lameire ● Antre Monde &Eacute;ditions" alt="Logo">
 				</div>
 				<br>&nbsp;<br>
-				<div class="nghangpart1">
+				<div class="fire nghangpart1">
 					<input type="number" name="system.aspect.fire.value" value="{{systemData.aspect.fire.value}}" title="{{ localize "CDE.Fire" }}{{ localize "CDE.FireQualities" }}" />
 					<img class="click" id="systemfireclick" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Fire" }}"
 					alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
 				</div>
 				<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>
-				<div class="nghangpart2">
+				<div class="wood nghangpart2">
 					<input type="number" name="system.aspect.wood.value" value="{{systemData.aspect.wood.value}}" title="{{ localize "CDE.Wood" }}{{ localize "CDE.WoodQualities" }}" />
 					<img class="click" id="systemwoodclick" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Wood" }}"
 					alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
 				</div>
 				<div class="nghangpart3">
 				</div>
-				<div class="nghangpart4">
+				<div class="earth nghangpart4">
 					<input type="number" name="system.aspect.earth.value" value="{{systemData.aspect.earth.value}}" title="{{ localize "CDE.Earth" }}{{ localize "CDE.EarthQualities" }}" />
 					<img class="click" id="systemearthclick" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Earth" }}"
 					alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
 				</div>
 				<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>
-				<div class="nghangpart5">
+				<div class="water nghangpart5">
 					<input type="number" name="system.aspect.water.value" value="{{systemData.aspect.water.value}}" title="{{ localize "CDE.Water" }}{{ localize "CDE.WaterQualities" }}" />
 					<img class="click" id="systemwaterclick" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Water" }}"
 					alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
 				</div>
 				<div class="nghangpart6">
 				</div>
-				<div class="nghangpart7">
+				<div class="metal nghangpart7">
 					<input type="number" name="system.aspect.metal.value" value="{{systemData.aspect.metal.value}}" title="{{ localize "CDE.Metal" }}{{ localize "CDE.MetalQualities" }}" />
 					<img class="click" id="systemmetalclick" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Metal" }}"
 					alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />

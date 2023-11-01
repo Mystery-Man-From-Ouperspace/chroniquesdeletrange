@@ -93,7 +93,7 @@ border: 0px;
 z-index: 4;
 width: 100%;
 }
-.chroniquesdeletrange .sheet-body .skills image div.truc {
+.chroniquesdeletrange .sheet-body .skills image div.stick {
 margin-top: -52px;
 z-index: 2;
 width: 3%;
@@ -122,7 +122,7 @@ text-align: center;
 z-index: 4;
 width: 100%;
 }
-.chroniquesdeletrange .sheet-body .skills table tr td.image div.truc {
+.chroniquesdeletrange .sheet-body .skills table tr td.image div.stick {
 margin-top: -52px;
 z-index: 2;
 width: 3%;
@@ -183,7 +183,7 @@ text-align: left;
   z-index: 4;
   width: 50px;
 }
-  .chroniquesdeletrange .sheet-body .magics .image div.truc {
+  .chroniquesdeletrange .sheet-body .magics .image div.stick {
   margin-top: -46px;
   z-index: 2;
   width: 3%;
@@ -560,7 +560,7 @@ text-align: left;
     padding: 16px;
     border: no-border;
 }
-.chroniquesdeletrange .sheet-body .nghang_wrap .machin {
+.chroniquesdeletrange .sheet-body .nghang_wrap .schema {
     padding: 100px;
     position: relative;
     z-index: 2;
@@ -588,7 +588,7 @@ text-align: left;
     padding: 16px;
     border: no-border;
 }
-.chroniquesdeletrange .sheet-body .loksyu_wrap .machin {
+.chroniquesdeletrange .sheet-body .loksyu_wrap .schema {
     padding: 100px;
     position: relative;
     z-index: 2;
@@ -696,7 +696,7 @@ text-align: left;
   z-index: 4;
   width: 100%;
 }
-.chroniquesdeletrange .sheet-body .aptitudes table tr td.image div.truc {
+.chroniquesdeletrange .sheet-body .aptitudes table tr td.image div.stick {
   margin-top: -52px;
   z-index: 2;
   width: 3%;
@@ -712,7 +712,7 @@ text-align: left;
     z-index: 4;
     width: 100%;
 }
-.chroniquesdeletrange .sheet-body .aptitudes table tr td.image2 div.truc {
+.chroniquesdeletrange .sheet-body .aptitudes table tr td.image2 div.stick {
   margin-top: -47px;
   z-index: 2;
   width: 3%;
