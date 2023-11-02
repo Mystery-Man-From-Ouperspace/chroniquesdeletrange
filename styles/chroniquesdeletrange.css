@@ -341,27 +341,27 @@ text-align: left;
   font-size: 1.5em;
 }
 
-.chroniquesdeletrange .nghangpart1 #systemfireclick {
+.chroniquesdeletrange .nghangpart1 .fire {
   width: 5%;
   margin-top: 82px;
   margin-left: 309px;
 }
-.chroniquesdeletrange .nghangpart2 #systemwoodclick {
+.chroniquesdeletrange .nghangpart2 .wood {
   width: 5%;
   margin-top: 223px;
   margin-left: 116px;
 }
-.chroniquesdeletrange .nghangpart4 #systemearthclick {
+.chroniquesdeletrange .nghangpart4 .earth {
   width: 5%;
   margin-top: 227px;
   margin-left: 503px;
 }
-.chroniquesdeletrange .nghangpart5 #systemwaterclick {
+.chroniquesdeletrange .nghangpart5 .water {
   width: 5%;
   margin-top: 427px;
   margin-left: 168px;
 }
-.chroniquesdeletrange .nghangpart7 #systemmetalclick {
+.chroniquesdeletrange .nghangpart7 .metal {
   width: 5%;
   margin-top: 427px;
   margin-left: 445px;

@@ -257,11 +257,9 @@ export class CDEActorSheet extends ActorSheet {
     let suite = "[";
 
     let button = $(event.currentTarget);
-    const div = button.parents(".click");
-    console.log('div = '+div);
-    console.log(div.data());
-    const item = this.actor.items.get(div.data("itemId"));
-    console.log('item = '+item);
+    const divORtd = button.parents(".click");
+    const skillUsed = this.actor.items.get(divORtd?.dataset.libelID);
+    console.log("skillUsed");
 
     // Handle different types of throw
     //  ```html
@@ -273,15 +271,12 @@ export class CDEActorSheet extends ActorSheet {
     //``` 
   
     // Il y a moyen à partir de là de récupérer seulement 'fire' dans la classe ? Je n'ai pas besoin du nghangpart1... (ça me sert juste dans le css).
-    switch ( div ) {
+    switch (  skillUsed ) {
       case "fire nghangpart1":
       case "wood nghangpart2":
       case "earth nghangpart4":
       case "water nghangpart5":
       case "metal nghangpart7":
-        let tabClass = tr.split(" ");
-        skillUsed = tabClass[0];
-        console.log('skillUsed = '+skillUsed);
       break;
       default: console.log("Nothing");
 
