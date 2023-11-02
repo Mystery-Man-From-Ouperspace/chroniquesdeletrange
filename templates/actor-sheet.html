@@ -79,14 +79,14 @@
 
 				{{#each systemData.skills as |skill key|}}
 				<tr class="clickondie">
-					<td class="click"  data-libel="{{key}}.skill"><img class="d1click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize skill.label }}" alt="Die" /></td>
+					<td class="click"  data-libel-id="{{key}}.skill"><img class="d1click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize skill.label }}" alt="Die" /></td>
 					<td class="label"><b>&nbsp;{{ localize skill.label }}</b></td>
 					<td class="image"><img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
 						<div class="stick">&nbsp;</div>
 						<input class="input" type="number" placeholder="0" name="system.skills.{{@key}}.value" value="{{skill.value}}" /></td>
 					<td class="specialities"><input class="input" type="text" placeholder="{{ localize "CDE.Specialities" }}" name="system.skills.{{@key}}.specialities" value="{{skill.specialities}}" /></td>
 					<td class="bonus"><b>+1 D</b></td>
-					<td class="click"  data-libel="{{key}}.special"><img class="d2click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}" alt="Die" /></td>
+					<td class="click" data-libel-id="{{key}}.special"><img class="d2click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}" alt="Die" /></td>
 				</tr>
 				{{/each}}
 
@@ -99,14 +99,14 @@
 
 				{{#each systemData.resources as |resource key|}}
 				<tr class="clickondie">
-					<td class="click" data-libel="{{key}}.skill"><img class="d1click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize resource.label }}" alt="Die" /></td>
+					<td class="click" data-libel-id="{{key}}.skill"><img class="d1click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize resource.label }}" alt="Die" /></td>
 					<td class="label"><b>&nbsp;{{ localize resource.label }}</b></td>
 					<td class="image"><img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
 						<div class="stick">&nbsp;</div>
 						<input class="input" type="number" placeholder="0" name="system.resources.{{@key}}.value" value="{{resource.value}}" /></td>
 					<td class="specialities"><input class="input" type="text" placeholder="{{ localize "CDE.Fields" }}" name="system.resources.{{@key}}.specialities" value="{{resource.specialities}}" /></td>
 					<td class="bonus"><b>+1 D</b></td>
-					<td class="click" data-libel="{{key}}.area"><img class="d2click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieDM" }}" alt="Die" /></td>
+					<td class="click" data-libel-id="{{key}}.area"><img class="d2click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieDM" }}" alt="Die" /></td>
 					<td class="check"><input type="checkbox" name="system.resources.{{@key}}.debt" {{checked resource.debt}} title="{{ localize "CDE.Debt" }}{{ localize resource.label }}" /></td>
 				</tr>
 				{{/each}}
@@ -171,8 +171,8 @@
 			{{#each systemData.magics as |magic key1|}}
 			<table class="{{magic.background}}">
 
-				<tr class="clickondie">
-					<td class="click" data-libel-id="{{key1}}"><img id="system.magics.{{@key}}.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize magic.label }}" alt="{{ localize magic.aspectlabel }}" /></td>
+				<tr class="clickondie" data-libel-id="{{key1}}">
+					<td class="click"><img id="system.magics.{{@key}}.click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize magic.label }}" alt="{{ localize magic.aspectlabel }}" /></td>
 					<td class="label"><b>&nbsp;&nbsp;{{ localize magic.label }}</b></td>
 					<td class="image"><img id="system.magics.{{@key}}.cercle.value" src="systems/chroniquesdeletrange/images/cercle.png" title="Circle" alt="Cercle" />
 						<div class="stick">&nbsp;</div>
@@ -181,12 +181,12 @@
 					<td>
 						<table>
 							{{#each magic.speciality as |special key2|}}
-							<tr>
+							<tr class="clickondie" data-libel-id="{{key1}}">
 								<td class="check"><input type="checkbox" name="system.magics.{{key1}}.speciality.{{key2}}.check" {{ checked special.check }} title="{{ localize "CDE.PracticeSpecialty" }}{{ localize special.label }}" /></td>
 								<td class="label"><b>{{ localize special.label }}</b></td>
 								<td class="icon-element"><img src="{{special.elementicon}}" title="{{ localize special.labelelement }}" alt="{{special.labelelement}}" /></td>
 								<td class="{{special.classicon}}"><img src="{{special.icon}}" title="{{special.labelicon}}" alt="{{special.labelicon}}" /></td>
-								<td class="click icon-d" data-libel-id="{{key2}}"><img id="{{system.magics.magic.speciality.special.click}}" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize special.label }}" alt="Die" /></td>
+								<td class="click icon-d"><img id="{{system.magics.magic.speciality.special.click}}" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieSP" }}{{ localize special.label }}" alt="Die" /></td>
 							</tr>	
 							{{/each}}
 							
@@ -276,7 +276,8 @@
             </div>
 			&nbsp;<br>&nbsp;
 			&nbsp;<br>&nbsp;
-			&nbsp;<br>&nbsp;			<div>
+			&nbsp;<br>&nbsp;
+			<div>
 				<img style="width: 8%;margin-top: 0px;visibility: hidden;" class="cercle-yinyang-cache" src="systems/chroniquesdeletrange/images/yin_yang.png" title="Yin Yang" alt="Yin Yang">
 				<img style="width: 15%;margin-top: 0px;" class="cercle-tres-petit" src="systems/chroniquesdeletrange/images/cercle.png" title="{{ localize "CDE.Max" }}" alt="Cercle">
 				<img style="width: 25%;margin-left: -25px;" class="cercle-moyen" src="systems/chroniquesdeletrange/images/cercle.png" title="{{ localize "CDE.Present" }}" alt="Cercle">
@@ -327,43 +328,43 @@
 
 
 				<br>&nbsp;<br>
-				<div class="nghangpart1">
+				<div class="clickondie" id="nghangpart1" data-libel-id="fire">
 					<input type="number" name="system.aspect.fire.value" value="{{systemData.aspect.fire.value}}" title="{{ localize "CDE.Fire" }}{{ localize "CDE.FireQualities" }}" />
-					<div class="click" data-libel-id="fire">
+					<div class="click">
 						<img class="fire" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Fire" }}"
 						alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
 					</div>
 				</div>
 				<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>
-				<div class="nghangpart2">
+				<div class="clickondie" id="nghangpart2" data-libel-id="wood">
 					<input type="number" name="system.aspect.wood.value" value="{{systemData.aspect.wood.value}}" title="{{ localize "CDE.Wood" }}{{ localize "CDE.WoodQualities" }}" />
-					<div class="click" data-libel-id="wood">
+					<div class="click">
 						<img class="wood" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Wood" }}"
 						alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
 					</div>
 				</div>
-				<div class="nghangpart3">
+				<div id="nghangpart3">
 				</div>
-				<div class="nghangpart4">
+				<div class="clickondie" id="nghangpart4" data-libel-id="earth">
 					<input type="number" name="system.aspect.earth.value" value="{{systemData.aspect.earth.value}}" title="{{ localize "CDE.Earth" }}{{ localize "CDE.EarthQualities" }}" />
-					<div class="click" data-libel-id="earth">
+					<div class="click">
 						<img class="earth" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Earth" }}"
 						alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
 					</div>
-					</div>
+				</div>
 				<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>
-				<div class="nghangpart5">
+				<div class="clickondie" id="nghangpart5" data-libel-id="water">
 					<input type="number" name="system.aspect.water.value" value="{{systemData.aspect.water.value}}" title="{{ localize "CDE.Water" }}{{ localize "CDE.WaterQualities" }}" />
-					<div class="click" data-libel-id="water">
+					<div class="click">
 						<img class="water" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Water" }}"
 						alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
 					</div>
-					</div>
-				<div class="nghangpart6">
 				</div>
-				<div class="nghangpart7">
+				<div id="nghangpart6">
+				</div>
+				<div class="clickondie" id="nghangpart7" data-libel-id="metal">
 					<input type="number" name="system.aspect.metal.value" value="{{systemData.aspect.metal.value}}" title="{{ localize "CDE.Metal" }}{{ localize "CDE.MetalQualities" }}" />
-					<div class="click" data-libel-id="metal">
+					<div class="click">
 						<img class="metal" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.Metal" }}"
 						alt="Die" onmouseout="this.src='/systems/chroniquesdeletrange/images/d10-transparent.png';"; onmouseover="this.src='/systems/chroniquesdeletrange/images/d10-10.png';" />
 					</div>

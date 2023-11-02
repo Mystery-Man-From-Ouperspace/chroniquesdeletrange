@@ -229,7 +229,7 @@ export class CDEActorSheet extends ActorSheet {
     const metal = 3;
     const water = 4;
     const noSpecial = -1;
-    const aspectLabel = ["CDE.Wood", "CDE.Fire", "CDE.Earth", "㊏", "CDE.Metal"];
+    const aspectLabel = ["CDE.Wood", "CDE.Fire", "CDE.Earth", "CDE.Water", "CDE.Metal"];
 
     var skillUsed = "";
     var skillValue = 0;
@@ -257,9 +257,10 @@ export class CDEActorSheet extends ActorSheet {
     let suite = "[";
 
     let button = $(event.currentTarget);
-    const divORtd = button.parents(".click");
-    const skillUsed = this.actor.items.get(divORtd?.dataset.libelID);
-    console.log("skillUsed");
+    const divORtdORtr = button.parents(".clickondie");
+    console.log(divORtdORtr);
+    // const skillUsed = this.actor.items.get(divORtdORtr?.dataset.libelID);
+    // console.log("skillUsed");
 
     // Handle different types of throw
     //  ```html
@@ -271,7 +272,7 @@ export class CDEActorSheet extends ActorSheet {
     //``` 
   
     // Il y a moyen à partir de là de récupérer seulement 'fire' dans la classe ? Je n'ai pas besoin du nghangpart1... (ça me sert juste dans le css).
-    switch (  skillUsed ) {
+/*    switch (  skillUsed ) {
       case "fire nghangpart1":
       case "wood nghangpart2":
       case "earth nghangpart4":
@@ -279,7 +280,7 @@ export class CDEActorSheet extends ActorSheet {
       case "metal nghangpart7":
       break;
       default: console.log("Nothing");
-
+    }; */
     let totalDice = 0;
     if (numberDice+bonusDice > 0) {
       totalDice = numberDice+bonusDice;
@@ -475,7 +476,7 @@ export class CDEActorSheet extends ActorSheet {
 
     if (game.modules.get("dice-so-nice")?.active) {
       await game.dice3d.waitFor3DAnimationByMessageID(msg.id);
-    }
+    };
 
     let title = game.i18n.localize(skillUsedLabel);
     if (specialUsed != "") {
@@ -483,7 +484,7 @@ export class CDEActorSheet extends ActorSheet {
     };
     title += ", ";
     title += game.i18n.localize("CDE.Aspect")+" "+game.i18n.localize(aspectLabel[aspectSkill])+"| ";
-
+   
     return (ChatMessage.create({
       user: game.user.id,
       // speaker: ChatMessage.getSpeaker({ token: this.actor }),
@@ -491,5 +492,4 @@ export class CDEActorSheet extends ActorSheet {
       content: title+message
     }));
   }
-}
 }
