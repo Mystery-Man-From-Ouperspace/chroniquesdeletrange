@@ -247,85 +247,99 @@ text-align: left;
   width: 150px;
   height: 28px;
 }
+
+.chroniquesdeletrange .nghangpart1 {
+  margin-top: -80px;
+}
+
+
 .chroniquesdeletrange .nghangpart1 input {
-  z-index: 25;
   width: 40px;
   height: 28px;
-  margin-top: -2000px;
-  margin-left: 0px;
+  margin-top: 15px;
+  margin-left: 257px;
   font-size: 1.5em;
+  text-align: center;
 }
 .chroniquesdeletrange .nghangpart2 input {
-  z-index: 25;
   width: 40px;
   height: 28px;
-  margin-top: 0px;
-  margin-left: 0px;
+  margin-top: 113px;
+  margin-left: 67px;
   font-size: 1.5em;
+  text-align: center;
 }
 /*
 .chroniquesdeletrange .nghangpart3 input {
-  z-index: 25;
   width: 40px;
   height: 28px;
 }
 */
+
+.chroniquesdeletrange .nghangpart4 {
+  margin-top: -15px;
+}
+
 .chroniquesdeletrange .nghangpart4 input {
-  z-index: 25;
   width: 40px;
   height: 28px;
-  margin-top: -600px;
-  margin-left: 452px;
+  margin-top: -135px;
+  margin-left: 455px;
   font-size: 1.5em;
+  text-align: center;
 }
 .chroniquesdeletrange .nghangpart5 input {
-  z-index: 25;
   width: 40px;
   height: 28px;
-  margin-top: 180px;
-  margin-left: 95px;
+  margin-top: 170px;
+  margin-left: 120px;
   font-size: 1.5em;
+  text-align: center;
 }
 /*
 .chroniquesdeletrange .nghangpart6 input {
-  z-index: 25;
   width: 40px;
   height: 28px;
 }
 */
+
+.chroniquesdeletrange .nghangpart7 {
+  margin-top: -19px;
+}
+
 .chroniquesdeletrange .nghangpart7 input {
-  z-index: 25;
   width: 40px;
   height: 28px;
-  margin-top: 30px;
-  margin-left: 370px;
+  margin-top: -67px;
+  margin-left: 393px;
   font-size: 1.5em;
+  text-align: center;
 }
 
 
 
 
-.chroniquesdeletrange .nghangpart1  .click2 .fire {
+.chroniquesdeletrange .nghangpart1  .fire .click2 {
   width: 30px;
   margin-top: 82px;
   margin-left: 310px; 
 }
-.chroniquesdeletrange .nghangpart2 .click2 .wood {
+.chroniquesdeletrange .nghangpart2 .wood .click2 {
   width: 30px;
   margin-top: 224px;
   margin-left: 118px;
 }
-.chroniquesdeletrange .nghangpart4 .click2 .earth {
+.chroniquesdeletrange .nghangpart4 .earth .click2 {
   width: 30px;
   margin-top: 228px;
   margin-left: 505px;
 }
-.chroniquesdeletrange .nghangpart5 .click2 .water {
+.chroniquesdeletrange .nghangpart5 .water .click2 {
   width: 30px;
   margin-top: 427px;
   margin-left: 169px;
 }
-.chroniquesdeletrange .nghangpart7 .click2 .metal {
+.chroniquesdeletrange .nghangpart7 .metal .click2 {
   width: 30px;
   margin-top: 427px;
   margin-left: 445px;
@@ -501,9 +515,9 @@ text-align: left;
 }
 .chroniquesdeletrange.sheet.actor {
   min-width: 700px; /* 560px; */
- /* max-width: 700px; */
+ max-width: 700px;
   min-height: 420px;
-  /* max-height: 850px; */
+  max-height: 850px;
 }
 .chroniquesdeletrange.sheet.item {
   min-width: 460px;
@@ -535,8 +549,6 @@ text-align: left;
     top: 0px;
     width: 100%;
     height: auto;
-    z-index: -40;
-
 }
 
 
@@ -574,9 +586,9 @@ text-align: left;
 
 .chroniquesdeletrange.sheet.loksyu {
   min-width: 700px; /* 560px; */
-  max-width: 700px;
+  /* max-width: 700px; */
   min-height: 420px;
-  max-height: 850px;
+  /* max-height: 850px; */
 }
 
 .chroniquesdeletrange .sheet-body .loksyu div input

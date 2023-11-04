@@ -67,6 +67,7 @@ export class CDEActorSheet extends ActorSheet {
 
     html.find(".click").click(this._onClickDieRoll.bind(this));
 
+    html.find(".click2").click(this._onClickDieRoll.bind(this));
 
 
 
@@ -231,7 +232,6 @@ export class CDEActorSheet extends ActorSheet {
     const noSpecial = -1;
     const aspectLabel = ["CDE.Wood", "CDE.Fire", "CDE.Earth", "CDE.Water", "CDE.Metal"];
 
-    var skillUsed = "";
     var skillValue = 0;
     var skillUsedLabel = "";
     var specialUsed = "";
@@ -257,10 +257,12 @@ export class CDEActorSheet extends ActorSheet {
     let suite = "[";
 
     let button = $(event.currentTarget);
-    const divORtdORtr = button.parents(".clickondie");
-    console.log(divORtdORtr);
-    // const skillUsed = this.actor.items.get(divORtdORtr?.dataset.libelID);
-    // console.log("skillUsed");
+    const divORtdORtr2 = button.parents(".clickondie");
+    // const divORtdORtr1 = button.parents(".click2");
+    console.log(divORtdORtr2);
+    // console.log(divORtdORtr1);
+    // const skillUsed = this.actor.items.get(divORtdORtr1.previousObject.dataset.libelId);
+    // console.log(skillUsed);
 
     // Handle different types of throw
     //  ```html
