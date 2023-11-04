@@ -586,77 +586,107 @@ text-align: left;
 
 .chroniquesdeletrange.sheet.loksyu {
   min-width: 700px; /* 560px; */
-  /* max-width: 700px; */
+  max-width: 700px;
   min-height: 420px;
-  /* max-height: 850px; */
+  max-height: 850px;
 }
 
-.chroniquesdeletrange .sheet-body .loksyu div input
+/* .chroniquesdeletrange .sheet-body .loksyu .number
 {
   width: 50px;
   text-align: center;
   font-size: 1.5em;
-}
+  z-index: 4;
+} */
 
 .chroniquesdeletrange .sheet-body .loksyu div.wood-yang
 {
   margin-top: 5px;
   margin-left : 123px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
 }
 
-.chroniquesdeletrange .sheet-body .loksyu div.wood-yin
+.chroniquesdeletrange .sheet-body .loksyu .wood-yin
 {
   margin-top: 12px;
   margin-left : 285px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
 }
 
-.chroniquesdeletrange .sheet-body .loksyu div.metal-yang
+.chroniquesdeletrange .sheet-body .loksyu .metal-yang
 {
   margin-top: 20px;
   margin-left : 25px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
 }
 
-.chroniquesdeletrange .sheet-body .loksyu div.fire-yang
+.chroniquesdeletrange .sheet-body .loksyu .fire-yang
 {
   margin-top: -38px;
   margin-left: 420px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
 }
 
-.chroniquesdeletrange .sheet-body .loksyu div.earth-yang
+.chroniquesdeletrange .sheet-body .loksyu .earth-yang
 {
   margin-top: 45px;
   margin-left: 123px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
 }
 
-.chroniquesdeletrange .sheet-body .loksyu div.earth-yin
+.chroniquesdeletrange .sheet-body .loksyu .earth-yin
 {
   margin-top: 12px;
   margin-left: 285px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
 }
 
-.chroniquesdeletrange .sheet-body .loksyu div.metal-yin
+.chroniquesdeletrange .sheet-body .loksyu .metal-yin
 {
   margin-top: 35px;
   margin-left: -15px;
-
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
 }
 
-.chroniquesdeletrange .sheet-body .loksyu div.fire-yin
+.chroniquesdeletrange .sheet-body .loksyu .fire-yin
 {
   margin-top: -40px;
   margin-left: 380px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
 }
 
-.chroniquesdeletrange .sheet-body .loksyu div.water-yang
+.chroniquesdeletrange .sheet-body .loksyu .water-yang
 {
   margin-top: 42px;
   margin-left : 125px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
 }
 
-.chroniquesdeletrange .sheet-body .loksyu div.water-yin
+.chroniquesdeletrange .sheet-body .loksyu .water-yin
 {
   margin-top: 10px;
   margin-left : 285px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
 }
 
 

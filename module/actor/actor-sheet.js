@@ -261,8 +261,8 @@ export class CDEActorSheet extends ActorSheet {
     // const divORtdORtr1 = button.parents(".click2");
     console.log(divORtdORtr2);
     // console.log(divORtdORtr1);
-    // const skillUsed = this.actor.items.get(divORtdORtr1.previousObject.dataset.libelId);
-    // console.log(skillUsed);
+    const skillUsed = this.actor.items.get(divORtdORtr2.previousObjet[0].dataset.libelId);
+    console.log(skillUsed);
 
     // Handle different types of throw
     //  ```html
