@@ -90,7 +90,7 @@
 
  "CDE.Components2": "Components & Ingredients",
  "CDE.Component": "Component #",
- "CDE.ChanceThrow": "Selecting a Component at Random In a Hurry",
+ "CDE.ChanceThrow": "Selecting a Component at Random in a Hurry",
  "CDE.TypesOfMagic": "Types of Magic",
 
  
@@ -269,7 +269,7 @@
  "CDE.Results": "Results:",
 
  "CDE.Randomize": "Randomize",
- "CDE.RandomizeSentence": "# of the component chosen randomly and quick",
+ "CDE.RandomizeSentence": "# of the Component selection at Random in a Hurry",
 
  "TYPES": {
     "Actor" : {
