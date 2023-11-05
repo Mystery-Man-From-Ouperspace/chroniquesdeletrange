@@ -166,7 +166,8 @@
  "CDE.Orientation": "Orientation",
  "CDE.Aspect": "Aspect",
  "CDE.Skill": "Compétence",
- "CDE.Speciality": "Specialité",
+ "CDE.Speciality": "Spécialité",
+ "CDE.Area": "Domaine",
  "CDE.Style": "Style",
  "CDE.Technique": "Technique",
  "CDE.Activation": "Activation",
@@ -237,6 +238,8 @@
  "CDE.Vitality": "Vitalité",
  "CDE.Hei": "Hei",
 
+ "CDE.Notes": "Notes",
+
  "CDE.SupernaturalCreate": "Créer une Capacité Surnaturelle",
  "CDE.SupernaturalEdit": "Éditer la Capacité Surnaturelle",
  "CDE.SupernaturalDelete": "Supprimer la Capacité Surnaturelle",
@@ -264,6 +267,9 @@
  "CDE.TinJi": "Tin Ji :",
  "CDE.Loksyu2": "Loksyu :",
  "CDE.Results": "Résultats :",
+
+ "CDE.Randomize": "Tirage aléatoire",
+ "CDE.RandomizeSentence": "N° du composant choisi au hasard dans l'urgence",
 
 
  "TYPES": {

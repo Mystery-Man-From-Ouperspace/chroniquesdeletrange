@@ -166,6 +166,7 @@
  "CDE.Aspect": "Aspecto",
  "CDE.Skill": "Habilidad",
  "CDE.Speciality": "Specialidad",
+ "CDE.Area": "Área",
  "CDE.Style": "Estilo",
  "CDE.Technique": "Técnica",
  "CDE.Activation": "Activación",
@@ -266,6 +267,9 @@
  "CDE.TinJi": "Tin Ji:",
  "CDE.Loksyu2": "Loksyu:",
  "CDE.Results": "Résultos:",
+
+ "CDE.Randomize": "Tirage aléatoire",
+ "CDE.RandomizeSentence": "N° du composant choisi au hasard dans l'urgence",
 
 
  "TYPES": {

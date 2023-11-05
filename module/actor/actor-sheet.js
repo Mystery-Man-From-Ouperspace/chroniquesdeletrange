@@ -229,6 +229,7 @@ export class CDEActorSheet extends ActorSheet {
     const earth = 2;
     const fire = 3;
     const wood = 4;
+    const random = 5;
 
     const noTypeUsed = -1;
     const skill2BDefined = -999;
@@ -240,7 +241,7 @@ export class CDEActorSheet extends ActorSheet {
     const specialDefined = 999;
     const noSpecialUsed = -1;
 
-    const aspectLabel = ["CDE.Metal", "CDE.Water", "CDE.Earth", "CDE.Fire", "CDE.Wood"];
+    const aspectLabel = ["CDE.Metal", "CDE.Water", "CDE.Earth", "CDE.Fire", "CDE.Wood", "CDE.Ramdomize"];
 
     const wiiAspect = 0;
     const wiiSkill = 1;
@@ -249,6 +250,7 @@ export class CDEActorSheet extends ActorSheet {
     const wiiArea = 4;
     const wiiMagic = 5;
     const wiiMagicSpecial = 6;
+    const wiiRandomize = 7;
 
     var myTypeUsed = noTypeUsed;
     var myAspectUsed = aspect2BDefined;
@@ -304,6 +306,9 @@ export class CDEActorSheet extends ActorSheet {
       case "magicspecial":
         myTypeUsed = wiiMagicSpecial;
       break;
+      case "randomize":
+        myTypeUsed = wiiRandomize;
+      break;
       default: console.log("C'est bizarre !");
     };
     console.log("myTypeUsed = "+myTypeUsed);
@@ -318,62 +323,89 @@ export class CDEActorSheet extends ActorSheet {
       break;
       case wiiSpecial:
         numberDice = this.actor.system.skills[skillUsed].value;
+        //////////////////////////////////////////////////////////////////
+        if (this.actor.system.skills[skillUsed].specialities == "") { return; };
+        //////////////////////////////////////////////////////////////////
+        console.log("specialUsed = "+specialUsed);
       break;
       case wiiResource:
         numberDice = this.actor.system.resources[skillUsed].value;
       break;
       case wiiArea:
-        numberDice = this.actor.system.ressources[skillUsed].value;
+        numberDice = this.actor.system.resources[skillUsed].value;
+        //////////////////////////////////////////////////////////////////
+        if (this.actor.system.resources[skillUsed].specialities == "") { return; };
+        //////////////////////////////////////////////////////////////////
+        console.log("specialUsed = "+specialUsed);
       break;
       case wiiMagic:
         numberDice = this.actor.system.magics[skillUsed].value;
       break;
       case wiiMagicSpecial:
         numberDice = this.actor.system.magics[skillUsed].value;
+        mySpecialUsed = specialDefined;
+        specialUsed = whatIsItTab[2];
+        //////////////////////////////////////////////////////////////////
+        if (!this.actor.system.magics[skillUsed].speciality[specialUsed].check) { return; };
+        //////////////////////////////////////////////////////////////////
+        console.log("specialUsed = "+specialUsed);
+        specialUsedLabel = this.actor.system.magics[skillUsed].speciality[specialUsed].label;
+      break;
+      case wiiRandomize:
+        numberDice = 1;
       break;
       default: ;
     };
+
+
     console.log("numberDice = "+numberDice);
     //////////////////////////////////////////////////////////////////
-    console.log(skillUsed);
-    switch ( myTypeUsed ) {                           // Transforme la string en nom de variable (uniquement pour les aspects)
+    console.log("skillUsed = "+skillUsed);
+    switch ( myTypeUsed ) {                         // Transforme la string en nom de variable (uniquement pour les aspects)
       case wiiAspect:                               // Récupère les libellés de la compétence, de l'aspect (s'il est déjà défini)
       switch( skillUsed ){                          // et de l'éventuelle spécialité (définie càd magies, ou générique càd compétences ou ressources)
-        case "wood": mySkillUsed = wood;            // Appelle un prompt s'il le faut (càd compétences, ressources ou magies)
+        case "wood":                                // Appelle un prompt s'il le faut (càd compétences, ressources ou magies)
+        mySkillUsed = wood;
         myAspectUsed = wood;
         skillUsedLabel = aspectLabel[mySkillUsed];
         aspectUsedLabel = aspectLabel[myAspectUsed];
         break;
-        case "fire": mySkillUsed = fire;
+        case "fire":
+        mySkillUsed = fire;
         myAspectUsed = fire;
         skillUsedLabel = aspectLabel[mySkillUsed];
         aspectUsedLabel = aspectLabel[myAspectUsed];
         break;
-        case "earth": mySkillUsed = earth;
+        case "earth":
+        mySkillUsed = earth;
         myAspectUsed = earth;
         skillUsedLabel = aspectLabel[mySkillUsed];
         aspectUsedLabel = aspectLabel[myAspectUsed];
         break;
-        case "metal": mySkillUsed = metal;
+        case "metal":
+        mySkillUsed = metal;
         myAspectUsed = metal;
         skillUsedLabel = aspectLabel[mySkillUsed];
         aspectUsedLabel = aspectLabel[myAspectUsed];
         break;
-        case "water": mySkillUsed = water;
+        case "water":
+        mySkillUsed = water;
         myAspectUsed = water;
         skillUsedLabel = aspectLabel[mySkillUsed];
         aspectUsedLabel = aspectLabel[myAspectUsed];
         break;
         default: console.log("C'est bizarre !");
-      }
+      };
       break;
       case wiiSkill:
+        mySkillUsed = skillDefined;
         skillUsedLabel = this.actor.system.skills[skillUsed].label;
         myAspectUsed = aspect2BDefined;
         mySpecialUsed = noSpecialUsed;
         // let data = APPELER LE PROMPT
       break;
       case wiiSpecial:
+        mySkillUsed = skillDefined;
         skillUsedLabel = this.actor.system.skills[skillUsed].label;
         myAspectUsed = aspect2BDefined;
         mySpecialUsed = specialDefined;
@@ -381,12 +413,14 @@ export class CDEActorSheet extends ActorSheet {
         // let data = APPELER LE PROMPT
         break;
       case wiiResource:
+        mySkillUsed = skillDefined;
         skillUsedLabel = this.actor.system.resources[skillUsed].label;
         myAspectUsed = aspect2BDefined;
         mySpecialUsed = noSpecialUsed;
         // let data = APPELER LE PROMPT
       break;
       case wiiArea:
+        mySkillUsed = skillDefined;
         skillUsedLabel = this.actor.system.resources[skillUsed].label;
         myAspectUsed = aspect2BDefined;
         mySpecialUsed = specialDefined;
@@ -394,37 +428,93 @@ export class CDEActorSheet extends ActorSheet {
         // let data = APPELER LE PROMPT
       break;
       case wiiMagic:
+        mySkillUsed = skillDefined;
         skillUsedLabel = this.actor.system.magics[skillUsed].label;
         myAspectUsed = aspect2BDefined;
         mySpecialUsed = noSpecialUsed;
+        switch( skillUsed ){                  // et de l'éventuelle spécialité (définie càd magies, ou générique càd compétences ou ressources)
+          case "internalcinnabar":            // Appelle un prompt s'il le faut (càd compétences, ressources ou magies)
+          myAspectUsed = metal;
+          aspectUsedLabel = aspectLabel[myAspectUsed];
+          break;
+          case "alchimy":
+          myAspectUsed = water;
+          aspectUsedLabel = aspectLabel[myAspectUsed];
+          break;
+          case "masteryoftheway":
+          myAspectUsed = earth;
+          aspectUsedLabel = aspectLabel[myAspectUsed];
+          break;
+          case "exorcism":
+          myAspectUsed = fire;
+          aspectUsedLabel = aspectLabel[myAspectUsed];
+          break;
+          case "geomancy":
+          myAspectUsed = wood;
+          aspectUsedLabel = aspectLabel[myAspectUsed];
+          break;
+          default: console.log("C'est bizarre !");
+        };
         // let data = APPELER LE PROMPT
       break;
       case wiiMagicSpecial:
+        mySkillUsed = skillDefined;
         skillUsedLabel = this.actor.system.magics[skillUsed].label;
         myAspectUsed = aspect2BDefined;
         aspectUsedLabel = this.actor.system.magics[skillUsed].label;
-        mySpecialUsed = specialDefined;
-        specialUsed = whatIsItTab[2];
-        specialUsedLabel = this.actor.system.magics.speciality[specialUsed].label;
-        // let data = APPELER LE PROMPT
+        switch( skillUsed ){                  // et de l'éventuelle spécialité (définie càd magies, ou générique càd compétences ou ressources)
+          case "internalcinnabar":            // Appelle un prompt s'il le faut (càd compétences, ressources ou magies)
+          myAspectUsed = metal;
+          aspectUsedLabel = aspectLabel[myAspectUsed];
+          break;
+          case "alchimy":
+          myAspectUsed = water;
+          aspectUsedLabel = aspectLabel[myAspectUsed];
+          break;
+          case "masteryoftheway":
+          myAspectUsed = earth;
+          aspectUsedLabel = aspectLabel[myAspectUsed];
+          break;
+          case "exorcism":
+          myAspectUsed = fire;
+          aspectUsedLabel = aspectLabel[myAspectUsed];
+          break;
+          case "geomancy":
+          myAspectUsed = wood;
+          aspectUsedLabel = aspectLabel[myAspectUsed];
+          break;
+          default: console.log("C'est bizarre !");
+        };
+          // let data = APPELER LE PROMPT
       break;
-      default: ;
+      case wiiRandomize:
+        mySkillUsed = random;
+        myAspectUsed = random;
+        skillUsedLabel = "CDE.Randomize";
+        aspectUsedLabel = "CDE.Randomize";
+        mySpecialUsed = special2BDefined;
+      break;
+      default: console.log("C'est bizarre ! Compétence non-définie...");
     };
     console.log("mySkillUsed = "+mySkillUsed);
     console.log("myAspectUsed = "+myAspectUsed);
     console.log("skillUsedLabel = "+skillUsedLabel);
     console.log("specialUsed = "+specialUsed);
-//////////////////////////////////////////////////////////////////
     if (myTypeUsed != wiiAspect) {
       console.log("aspectUsedLabel = "+aspectUsedLabel);
       console.log("specialUsedLabel = "+specialUsedLabel);
     };
-//////////////////////////////////////////////////////////////////
+
+
+    //////////////////////////////////////////////////////////////////
+    if (numberDice <= 0) { return; };
+    //////////////////////////////////////////////////////////////////
+
 
     let totalDice = 0;
     if (numberDice+bonusDice > 0) {
       totalDice = numberDice+bonusDice;
-    };
+    } ;
     let r = new Roll(numberDice+bonusDice+"d10", this.actor.getRollData());
     await r.evaluate();
     console.log(r);
@@ -600,12 +690,19 @@ export class CDEActorSheet extends ActorSheet {
         message += suite;
         break;
         // Results: 1 ㊌ Water Successes, 2 ㊍ Wood Beneficial-Dice, 1 ㊎ Metal Noxious-Dice --- Loksyu : ㊋ Fire 1 ● Yin, 0 ○ Yang --- Tin Ji : 2 ㊏ Earth [9,5,1,2,4,5,8]
-      default: console.log("C'est bizarre !");
+        case random:
+          message += game.i18n.localize("CDE.RandomizeSentence");
+        break;
+        default: console.log("C'est bizarre ! Aspect non-défini...");
     };
  
     let rModif = r;
-    rModif._total = 0;
-    
+    if (!(myAspectUsed == random)) {
+      rModif._total = 0;
+    } else if (rModif._total == 10) {
+        rModif._total = 0;
+    };
+
     const msg = await rModif.toMessage({
       user: game.user.id,
       speaker: ChatMessage.getSpeaker({ actor: this.actor })
@@ -621,10 +718,10 @@ export class CDEActorSheet extends ActorSheet {
     if (mySkillUsed != skill2BDefined) {
       title = game.i18n.localize(skillUsedLabel);
     };
-    if (specialUsed != "?") {
-      title += " "+game.i18n.localize(specialUsedLabel);
+    if (mySpecialUsed == specialDefined) {
+      title += " ["+game.i18n.localize(specialUsedLabel)+"]";
     };
-    if (myAspectUsed == mySkillUsed || myAspectUsed == noAspectDefined) {
+    if (myAspectUsed == mySkillUsed || myAspectUsed == aspect2BDefined || myAspectUsed == random) {
       title += " | ";
     } else {
       title += ", "+game.i18n.localize("CDE.Aspect")+" "+game.i18n.localize(aspectUsedLabel)+"| ";
