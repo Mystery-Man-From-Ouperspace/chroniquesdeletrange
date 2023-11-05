@@ -603,7 +603,7 @@ export class CDEActorSheet extends ActorSheet {
         break;
         // Results: 3 ㊍ Wood Successes, 2 ㊋ Fire Beneficial-Dice, 0 ㊌ Water Noxious-Dice --- Loksyu : ㊏ Earth 0 ● Yin, 1 ○ Yang --- Tin Ji : 1 ㊎ Metal [4,9,4,5,2,8,7]
       case fire:
-        message += (parseInt(d10_2) + parseInt(d10_8)) + " ";
+        message += (parseInt(d10_2) + parseInt(d10_7)) + " ";
         message += game.i18n.localize("CDE.Fire");
         message += game.i18n.localize("CDE.Successes") + ", ";
         message += (parseInt(d10_0) + parseInt(d10_5)) + " ";
@@ -631,7 +631,7 @@ export class CDEActorSheet extends ActorSheet {
         message += (parseInt(d10_3) + parseInt(d10_8)) + " ";
         message += game.i18n.localize("CDE.Metal");
         message += game.i18n.localize("CDE.Beneficial") + ", ";
-        message += (parseInt(d10_2) + parseInt(d10_8)) + " ";
+        message += (parseInt(d10_2) + parseInt(d10_7)) + " ";
         message += game.i18n.localize("CDE.Fire");
         message += game.i18n.localize("CDE.Noxious") + " --- ";
         message += game.i18n.localize("CDE.Loksyu2") + " ";
