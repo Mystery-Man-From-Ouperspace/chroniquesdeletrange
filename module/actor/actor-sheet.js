@@ -289,6 +289,7 @@ export class CDEActorSheet extends ActorSheet {
     var skillUsedLabel = "?";
     var aspectUsedLabel ="?";
     var specialUsedLabel = "?";
+    var aspectSpecialUsedLabel = "?";
 
     var specialUsed = "?";
 
@@ -533,6 +534,8 @@ export class CDEActorSheet extends ActorSheet {
           default: console.log("C'est bizarre !");
         };  
         console.log("myAspectSpecialUsed = "+myAspectSpecialUsed);
+        aspectSpecialUsedLabel = aspectLabel[myAspectSpecialUsed];
+        console.log("aspectSpecialUsedLabel = "+aspectSpecialUsedLabel);
         // _openSpecialMagicDicePrompt(myTitle, totalDice, myAspectUsed, 0, 0,
         //  myAspectSpecialUsed, 0, 0);
         break;
