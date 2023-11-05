@@ -550,11 +550,12 @@ text-align: left;
     width: 100%;
     height: auto;
 }
-
-
-
-
-
+.chroniquesdeletrange .sheet-body .nghang_wrap .logo {
+  z-index: 4;
+  width: 21%;
+  margin-top: -30px;
+  margin-left: -22px;
+}
 
 .chroniquesdeletrange .sheet-body .loksyu_wrap {
   background-image: url("");
@@ -578,7 +579,12 @@ text-align: left;
     width: 100%;
     height: auto;
 }
-
+.chroniquesdeletrange .sheet-body .nghang_wrap .logo {
+  z-index: 4;
+  width: 21%;
+  margin-top: -30px;
+  margin-left: -22px;
+}
 
 
 

@@ -18,7 +18,7 @@
                         <img class="bigsquare" src="systems/chroniquesdeletrange/images/bigsquare.png" />
                     </td>
                     <td class="label col3-5">&nbsp;</td>
-                    <td class="label col4-5"><b>+</b></td>
+                    <td class="label col4-5"><b>&nbsp;+&nbsp;</b>{{$if system.skillprpt.isspecial}}<b>1&nbsp;+</b>{{/if}}</td>
                     <td class="label col5-5">&nbsp;</td>
                 </tr>
                 <tr> <!-- Ce tr collé au-dessus du tr ci-dessus, pour que le numberofdice soit au milieu du bigsquare.png -->
@@ -37,11 +37,11 @@
                     <td class="select col1-3">
                         <select name="system.skillprpt.aspect">
                         {{#select systemData.skillprpt.aspect }}
-                            <option value="1">{{ localize "CDE.Metal" }}</option>
-                            <option value="2">{{ localize "CDE.Water" }}</option>
-                            <option value="3">{{ localize "CDE.Earth" }}</option>
-                            <option value="4">{{ localize "CDE.Fire" }}</option>
-                            <option value="5">{{ localize "CDE.Wood" }}</option>
+                            <option value="0">{{ localize "CDE.Metal" }}</option>
+                            <option value="1">{{ localize "CDE.Water" }}</option>
+                            <option value="2">{{ localize "CDE.Earth" }}</option>
+                            <option value="3">{{ localize "CDE.Fire" }}</option>
+                            <option value="4">{{ localize "CDE.Wood" }}</option>
                         {{/select}}
                         </select>
                     </td>

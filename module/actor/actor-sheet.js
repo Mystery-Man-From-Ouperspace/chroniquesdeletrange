@@ -124,7 +124,7 @@ export class CDEActorSheet extends ActorSheet {
     switch ( button.dataset.action ) {
       case "create":
         const cls = getDocumentClass("Item");
-        return cls.create({name: game.i18n.game.i18n.localize("CDE.KFNew"), type: "kungfu"}, {parent: this.actor});
+        return cls.create({name: game.i18n.localize("CDE.KFNew"), type: "kungfu"}, {parent: this.actor});
       case "edit":
         return item.sheet.render(true);
       case "delete":
@@ -150,7 +150,7 @@ export class CDEActorSheet extends ActorSheet {
     switch ( button.dataset.action ) {
       case "create":
         const cls = getDocumentClass("Item");
-        return cls.create({name: game.i18n.game.i18n.localize("CDE.SpellNew"), type: "spell"}, {parent: this.actor});
+        return cls.create({name: game.i18n.localize("CDE.SpellNew"), type: "spell"}, {parent: this.actor});
       case "edit":
         return item.sheet.render(true);
       case "delete":
@@ -224,20 +224,43 @@ export class CDEActorSheet extends ActorSheet {
    * @param {MouseEvent} event    The originating left click event
    */
   async _onClickDieRoll(event) {
-    const wood = 0;
-    const fire = 1;
+    const metal = 0;
+    const water = 1;
     const earth = 2;
-    const metal = 3;
-    const water = 4;
-    const noSpecial = -1;
-    const aspectLabel = ["CDE.Wood", "CDE.Fire", "CDE.Earth", "CDE.Water", "CDE.Metal"];
+    const fire = 3;
+    const wood = 4;
 
-    var skillValue = 0;
-    var skillUsedLabel = "";
-    var specialUsed = "";
-    var specialUsedLabel = "";
-    var aspectSkill = 0;
-    var numberDice = 15;
+    const noTypeUsed = -1;
+    const skill2BDefined = -999;
+    const skillDefined = 999;
+    const aspect2BDefined = -999;
+    const aspectDefined = 999;
+    const noAspectUsed = -1;
+    const special2BDefined = -999;
+    const specialDefined = 999;
+    const noSpecialUsed = -1;
+
+    const aspectLabel = ["CDE.Metal", "CDE.Water", "CDE.Earth", "CDE.Fire", "CDE.Wood"];
+
+    const wiiAspect = 0;
+    const wiiSkill = 1;
+    const wiiSpecial = 2;
+    const wiiResource = 3;
+    const wiiArea = 4;
+    const wiiMagic = 5;
+    const wiiMagicSpecial = 6;
+
+    var myTypeUsed = noTypeUsed;
+    var myAspectUsed = aspect2BDefined;
+    var mySkillUsed = skill2BDefined;
+    var mySpecialUsed = special2BDefined;
+
+    var skillUsedLabel = "?";
+    var aspectUsedLabel ="?";
+    var specialUsedLabel = "?";
+
+    var specialUsed = "?";
+
     var bonusDice = 0;
     var bonusBeneficial = 0;
     var aspectSpecial = 0;
@@ -256,39 +279,153 @@ export class CDEActorSheet extends ActorSheet {
     let d10_0 = 0;
     let suite = "[";
 
-    let button = $(event.currentTarget);
-    const divORtdORtr2 = button.parents(".clickondie");
-    // const divORtdORtr1 = button.parents(".click2");
-    console.log(divORtdORtr2);
-    // console.log(divORtdORtr1);
-    const skillUsed = this.actor.items.get(divORtdORtr2.previousObjet[0].dataset.libelId);
-    console.log(skillUsed);
 
-    // Handle different types of throw
-    //  ```html
-    // <div class="fire nghangpart1">
-    // ```` 
-    // ```js
-    //    let button = $(event.currentTarget);
-    //    const tr = button.parents(".clickondie");`
-    //``` 
-  
-    // Il y a moyen à partir de là de récupérer seulement 'fire' dans la classe ? Je n'ai pas besoin du nghangpart1... (ça me sert juste dans le css).
-/*    switch (  skillUsed ) {
-      case "fire nghangpart1":
-      case "wood nghangpart2":
-      case "earth nghangpart4":
-      case "water nghangpart5":
-      case "metal nghangpart7":
+    const element = event.currentTarget;              // On récupère le clic
+    const whatIsIt = element.dataset.libelId;         // Va récupérer 'fire-aspect' par exemple
+    console.log("whatIsIt = "+whatIsIt)
+    const whatIsItTab = whatIsIt.split('-');
+    const skillUsed = whatIsItTab[0];                 // Va récupérer 'fire'
+    console.log("skillUsed = "+skillUsed)
+    const typeUsed = whatIsItTab[1];                  // Va récupérer 'aspect'
+    console.log("typeUsed = "+typeUsed)
+    switch( typeUsed ) {                              // Transforme la string en nom de variable
+      case "aspect": myTypeUsed = wiiAspect;
       break;
-      default: console.log("Nothing");
-    }; */
+      case "skill": myTypeUsed = wiiSkill;
+      break;
+      case "special": myTypeUsed = wiiSpecial;
+      break;
+      case "resource": myTypeUsed = wiiResource;
+      break;
+      case "area": myTypeUsed = wiiArea;
+      break;
+      case "magic": myTypeUsed = wiiMagic;
+      break;
+      case "magicspecial":
+        myTypeUsed = wiiMagicSpecial;
+      break;
+      default: console.log("C'est bizarre !");
+    };
+    console.log("myTypeUsed = "+myTypeUsed);
+    //////////////////////////////////////////////////////////////////
+    var numberDice = 0;
+    switch ( myTypeUsed ) {                             // Recupère la valeur de la compétence (= nbre de dés à lancer de base)
+      case wiiAspect:
+        numberDice = this.actor.system.aspect[skillUsed].value;
+      break;
+      case wiiSkill:
+        numberDice = this.actor.system.skills[skillUsed].value;
+      break;
+      case wiiSpecial:
+        numberDice = this.actor.system.skills[skillUsed].value;
+      break;
+      case wiiResource:
+        numberDice = this.actor.system.resources[skillUsed].value;
+      break;
+      case wiiArea:
+        numberDice = this.actor.system.ressources[skillUsed].value;
+      break;
+      case wiiMagic:
+        numberDice = this.actor.system.magics[skillUsed].value;
+      break;
+      case wiiMagicSpecial:
+        numberDice = this.actor.system.magics[skillUsed].value;
+      break;
+      default: ;
+    };
+    console.log("numberDice = "+numberDice);
+    //////////////////////////////////////////////////////////////////
+    console.log(skillUsed);
+    switch ( myTypeUsed ) {                           // Transforme la string en nom de variable (uniquement pour les aspects)
+      case wiiAspect:                               // Récupère les libellés de la compétence, de l'aspect (s'il est déjà défini)
+      switch( skillUsed ){                          // et de l'éventuelle spécialité (définie càd magies, ou générique càd compétences ou ressources)
+        case "wood": mySkillUsed = wood;            // Appelle un prompt s'il le faut (càd compétences, ressources ou magies)
+        myAspectUsed = wood;
+        skillUsedLabel = aspectLabel[mySkillUsed];
+        aspectUsedLabel = aspectLabel[myAspectUsed];
+        break;
+        case "fire": mySkillUsed = fire;
+        myAspectUsed = fire;
+        skillUsedLabel = aspectLabel[mySkillUsed];
+        aspectUsedLabel = aspectLabel[myAspectUsed];
+        break;
+        case "earth": mySkillUsed = earth;
+        myAspectUsed = earth;
+        skillUsedLabel = aspectLabel[mySkillUsed];
+        aspectUsedLabel = aspectLabel[myAspectUsed];
+        break;
+        case "metal": mySkillUsed = metal;
+        myAspectUsed = metal;
+        skillUsedLabel = aspectLabel[mySkillUsed];
+        aspectUsedLabel = aspectLabel[myAspectUsed];
+        break;
+        case "water": mySkillUsed = water;
+        myAspectUsed = water;
+        skillUsedLabel = aspectLabel[mySkillUsed];
+        aspectUsedLabel = aspectLabel[myAspectUsed];
+        break;
+        default: console.log("C'est bizarre !");
+      }
+      break;
+      case wiiSkill:
+        skillUsedLabel = this.actor.system.skills[skillUsed].label;
+        myAspectUsed = aspect2BDefined;
+        mySpecialUsed = noSpecialUsed;
+        // let data = APPELER LE PROMPT
+      break;
+      case wiiSpecial:
+        skillUsedLabel = this.actor.system.skills[skillUsed].label;
+        myAspectUsed = aspect2BDefined;
+        mySpecialUsed = specialDefined;
+        specialUsedLabel = "CDE.Speciality";
+        // let data = APPELER LE PROMPT
+        break;
+      case wiiResource:
+        skillUsedLabel = this.actor.system.resources[skillUsed].label;
+        myAspectUsed = aspect2BDefined;
+        mySpecialUsed = noSpecialUsed;
+        // let data = APPELER LE PROMPT
+      break;
+      case wiiArea:
+        skillUsedLabel = this.actor.system.resources[skillUsed].label;
+        myAspectUsed = aspect2BDefined;
+        mySpecialUsed = specialDefined;
+        specialUsedLabel = "CDE.Area";
+        // let data = APPELER LE PROMPT
+      break;
+      case wiiMagic:
+        skillUsedLabel = this.actor.system.magics[skillUsed].label;
+        myAspectUsed = aspect2BDefined;
+        mySpecialUsed = noSpecialUsed;
+        // let data = APPELER LE PROMPT
+      break;
+      case wiiMagicSpecial:
+        skillUsedLabel = this.actor.system.magics[skillUsed].label;
+        myAspectUsed = aspect2BDefined;
+        aspectUsedLabel = this.actor.system.magics[skillUsed].label;
+        mySpecialUsed = specialDefined;
+        specialUsed = whatIsItTab[2];
+        specialUsedLabel = this.actor.system.magics.speciality[specialUsed].label;
+        // let data = APPELER LE PROMPT
+      break;
+      default: ;
+    };
+    console.log("mySkillUsed = "+mySkillUsed);
+    console.log("myAspectUsed = "+myAspectUsed);
+    console.log("skillUsedLabel = "+skillUsedLabel);
+    console.log("specialUsed = "+specialUsed);
+//////////////////////////////////////////////////////////////////
+    if (myTypeUsed != wiiAspect) {
+      console.log("aspectUsedLabel = "+aspectUsedLabel);
+      console.log("specialUsedLabel = "+specialUsedLabel);
+    };
+//////////////////////////////////////////////////////////////////
+
     let totalDice = 0;
     if (numberDice+bonusDice > 0) {
       totalDice = numberDice+bonusDice;
     };
     let r = new Roll(numberDice+bonusDice+"d10", this.actor.getRollData());
-    // let r = new Roll("15d10+2d20", this.actor.getRollData());
     await r.evaluate();
     console.log(r);
     let myRDice = r.dice;
@@ -352,7 +489,7 @@ export class CDEActorSheet extends ActorSheet {
 
     let message = game.i18n.localize("CDE.Results")+" ";
 
-    switch (aspectSkill) {
+    switch ( myAspectUsed ) {                       // On fabrique le message de retour du lancer de dés
       case wood:
         message += (parseInt(d10_4) + parseInt(d10_9)) + " ";
         message += game.i18n.localize("CDE.Wood");
@@ -480,13 +617,18 @@ export class CDEActorSheet extends ActorSheet {
       await game.dice3d.waitFor3DAnimationByMessageID(msg.id);
     };
 
-    let title = game.i18n.localize(skillUsedLabel);
-    if (specialUsed != "") {
+    let title = "";
+    if (mySkillUsed != skill2BDefined) {
+      title = game.i18n.localize(skillUsedLabel);
+    };
+    if (specialUsed != "?") {
       title += " "+game.i18n.localize(specialUsedLabel);
     };
-    title += ", ";
-    title += game.i18n.localize("CDE.Aspect")+" "+game.i18n.localize(aspectLabel[aspectSkill])+"| ";
-   
+    if (myAspectUsed == mySkillUsed || myAspectUsed == noAspectDefined) {
+      title += " | ";
+    } else {
+      title += ", "+game.i18n.localize("CDE.Aspect")+" "+game.i18n.localize(aspectUsedLabel)+"| ";
+    };
     return (ChatMessage.create({
       user: game.user.id,
       // speaker: ChatMessage.getSpeaker({ token: this.actor }),
@@ -494,4 +636,85 @@ export class CDEActorSheet extends ActorSheet {
       content: title+message
     }));
   }
+
+  /**
+   * Display prompt for skills or resources or no special magics.
+   * myIsSpecial: boolean.
+  async _openSkillDicePrompt(myTitle, myNumberOfDice, myIsSpecial, myAspect, myBonus, myBonusAuspiciousDice) {
+    let options = "";
+    var data = {
+      title = myTitle,
+      content = {
+        numberofdice = myNumberOfDice,
+        isspecial = myIsSpecial,
+        aspect = myAspect,
+        bonus = myBonus,
+        bonusauspiciousdice = myBonusAuspiciousDice,
+      },
+      buttons: {
+        click: {
+          label: "",
+          callback: html => resolve()
+        }
+      },
+      default: "click",
+      close: () => resolve({cancelled: true})
+    };
+
+
+
+
+    const cls = getDocumentClass("Item");
+    cls.create({name: game.i18n.localize("CDE.SpellNew"), type: "skillprpt"}, {parent: this.actor});
+
+    this(data, options).sheet.render(true);
+
+
+
+
+
+    return data;
+  }
+*/
+
+  /**
+   * Display prompt for special magics.
+  async _openSpecialMagicDicePrompt(myTitle, myNumberofdice, myAspectSkill, myBonusMalusSkill, myBonusAuspiciousDice,
+    myAspectSpeciality, myRollDifficulty, myBonusMalusSpeciality) {
+    let options = "";
+    var data = {
+      title = myTitle,
+      content = {
+        numberofdice = myNumberofdice,
+        aspectskill = myAspectSkill,
+        bonusmalusskill = myBonusMalusSkill,
+        bonusauspiciousdice = myBonusAuspiciousDice,
+        aspectspeciality = myAspectSpeciality,
+        rolldifficulty = myRollDifficulty,
+        bonusmalusspeciality = myBonusMalusSpeciality
+      },
+      buttons: {
+        click: {
+          label: "",
+          callback: html => resolve()
+        }
+      },
+      default: "click",
+      close: () => resolve({cancelled: true})
+    };
+
+
+
+    const cls = getDocumentClass("Item");
+    cls.create({name: game.i18n.localize("CDE.SpellNew"), type: "skillprpt"}, {parent: this.actor});
+
+    this(data, options).sheet.render(true);
+
+
+
+
+    return data;
+
+*/
+
 }

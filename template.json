@@ -685,6 +685,7 @@
     "skillprpt": {
       "title": "",
       "numberofdice": 0,
+      "isspecial": false,
       "aspect": 0,
       "bonusmalus": 0,
       "bonusauspiciousdice": 0
