@@ -313,7 +313,7 @@ export class CDEActorSheet extends ActorSheet {
     let d10_8 = 0;
     let d10_9 = 0;
     let d10_0 = 0;
-    let suite = "· [";
+    let suite = "~ [";
 
 
     const element = event.currentTarget;              // On récupère le clic
@@ -780,8 +780,14 @@ export class CDEActorSheet extends ActorSheet {
     if (myAspectUsed == mySkillUsed || myAspectUsed == aspect2BDefined || myAspectUsed == random) {
       title += " | ";
     } else {
-      title += ", "+game.i18n.localize("CDE.Aspect")+" "+game.i18n.localize(aspectUsedLabel)+"| ";
+      title += ", "+game.i18n.localize("CDE.Aspect")+" "+game.i18n.localize(aspectUsedLabel);
+      if (mySpecialUsed == specialDefined) {
+        title += "· "+game.i18n.localize("CDE.SpecialAspect")+" "+game.i18n.localize(aspectSpecialUsedLabel)+"| ";
+      }  else {
+        title += "| ";
+      }
     };
+
     return (ChatMessage.create({
       user: game.user.id,
       // speaker: ChatMessage.getSpeaker({ token: this.actor }),
