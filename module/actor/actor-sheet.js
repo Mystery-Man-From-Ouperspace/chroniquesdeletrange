@@ -239,7 +239,7 @@ export class CDEActorSheet extends ActorSheet {
       elixirs: { prefix :"eli", name :"elixirs", aspect :"water" },
       poisons: { prefix :"poi", name :"poisons", aspect :"earth" },
       arsenal: { prefix :"ars", name :"arsenal", aspect :"fire" },
-      philters: { prefix :"phi", name :"philters", aspect :"wood" },
+      potions: { prefix :"pot", name :"philters", aspect :"wood" },
       curse: { prefix :"cur", name :"curse", aspect :"metal" },
       transfiguration: { prefix :"trn", name :"transfiguration", aspect :"water" },
       necromancy: { prefix :"nec", name :"necromancy", aspect :"earth" },
@@ -469,7 +469,7 @@ export class CDEActorSheet extends ActorSheet {
           myAspectUsed = metal;
           aspectUsedLabel = aspectLabel[myAspectUsed];
           break;
-          case "alchimy":
+          case "alchemy":
           myAspectUsed = water;
           aspectUsedLabel = aspectLabel[myAspectUsed];
           break;
@@ -498,7 +498,7 @@ export class CDEActorSheet extends ActorSheet {
           myAspectUsed = metal;
           aspectUsedLabel = aspectLabel[myAspectUsed];
           break;
-          case "alchimy":
+          case "alchemy":
           myAspectUsed = water;
           aspectUsedLabel = aspectLabel[myAspectUsed];
           break;
