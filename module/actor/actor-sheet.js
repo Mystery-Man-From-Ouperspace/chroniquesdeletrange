@@ -85,17 +85,21 @@ export class CDEActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
 
-  /**
-   * Handle click events for Item item control buttons within the Actor Sheet
+   /**
+   * Handle click events for Item control buttons within the Actor Sheet
    * @param event
    * @private
    */
-  _onItemControl(event) {
+   _onItemControl(event) {
     event.preventDefault();
 
     // Obtain event data
-    switch ( button.dataset.action ) {
+    const button = event.currentTarget;
+    const li = button.closest(".item");
+    const item = this.actor.items.get(li?.dataset.itemId);
 
+    // Handle different actions
+    switch ( button.dataset.action ) {
       case "create":
         const cls = getDocumentClass("Item");
         return cls.create({name: game.i18n.localize("CDE.ItemNew"), type: "item"}, {parent: this.actor});
@@ -107,7 +111,7 @@ export class CDEActorSheet extends ActorSheet {
   }
 
 
-   /**
+  /**
    * Handle click events for Item kungfu control buttons within the Actor Sheet
    * @param event
    * @private
@@ -118,7 +122,7 @@ export class CDEActorSheet extends ActorSheet {
     // Obtain event data
     const button = event.currentTarget;
     const li = button.closest(".kungfu");
-    const item = this.actor.items.get(li?.dataset.itemId);
+    const item = this.actor.items.get(li?.dataset.kungfuId);
 
     // Handle different actions
     switch ( button.dataset.action ) {
@@ -144,7 +148,7 @@ export class CDEActorSheet extends ActorSheet {
     // Obtain event data
     const button = event.currentTarget;
     const li = button.closest(".spell");
-    const item = this.actor.items.get(li?.dataset.itemId);
+    const item = this.actor.items.get(li?.dataset.spellId);
 
     // Handle different actions
     switch ( button.dataset.action ) {
@@ -162,9 +166,9 @@ export class CDEActorSheet extends ActorSheet {
   /* -------------------------------------------- */
 
   /**
-   * Listen for roll buttons on items.
-   * @param {MouseEvent} event    The originating left click event
-   */
+     * Listen for roll buttons on items.
+     * @param {MouseEvent} event    The originating left click event
+     */
   _onItemRoll(event) {
     let button = $(event.currentTarget);
     const li = button.parents(".item");
@@ -309,7 +313,7 @@ export class CDEActorSheet extends ActorSheet {
     let d10_8 = 0;
     let d10_9 = 0;
     let d10_0 = 0;
-    let suite = "[";
+    let suite = "· [";
 
 
     const element = event.currentTarget;              // On récupère le clic
