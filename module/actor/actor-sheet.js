@@ -224,6 +224,35 @@ export class CDEActorSheet extends ActorSheet {
    * @param {MouseEvent} event    The originating left click event
    */
   async _onClickDieRoll(event) {
+    const aspectLabel = ["CDE.Metal", "CDE.Water", "CDE.Earth", "CDE.Fire", "CDE.Wood", "CDE.Ramdomize"];
+    const myMagicSpecial = {
+      essence: { prefix :"ess", name :"essence", aspect :"metal" },
+      mind : { prefix :"min", name :"mind", aspect :"water" },
+      purification : { prefix :"pur", name :"purification", aspect :"earth" },
+      manipulation: { prefix :"man", name :"manipulation", aspect :"fire" },
+      aura: { prefix :"aur", name :"aura", aspect :"wood" },
+      acupuncture: { prefix :"acu", name :"acupuncture", aspect :"metal" },
+      elixirs: { prefix :"eli", name :"elixirs", aspect :"water" },
+      poisons: { prefix :"poi", name :"poisons", aspect :"earth" },
+      arsenal: { prefix :"ars", name :"arsenal", aspect :"fire" },
+      philters: { prefix :"phi", name :"philters", aspect :"wood" },
+      curse: { prefix :"cur", name :"curse", aspect :"metal" },
+      transfiguration: { prefix :"trn", name :"transfiguration", aspect :"water" },
+      necromancy: { prefix :"nec", name :"necromancy", aspect :"earth" },
+      climatecontrol: { prefix :"cli", name :"climatecontrol", aspect :"fire" },
+      goldenmagic: { prefix :"gol", name :"goldenmagic", aspect :"wood" },
+      invocation: { prefix :"inv", name :"Invocation", aspect :"metal" },
+      tracking: { prefix :"trc", name :"tracking", aspect :"water" },
+      protection: { prefix :"pro", name :"protection", aspect :"earth" },
+      punishment: { prefix :"pun", name :"punishment", aspect :"fire" },
+      Domination: { prefix :"dom", name :"domination", aspect :"wood" },
+      neutralization: { prefix :"neu", name :"neutralization", aspect :"metal" },
+      divination: { prefix :"div", name :"divination", aspect :"water" },
+      earthlyprayer: { prefix :"ear", name :"earthlyprayer", aspect :"earth" },
+      heavenlyprayer: { prefix :"hea", name :"heavenlyprayer", aspect :"fire" },
+      fungseoi: { prefix :"fun", name :"fungseoi", aspect :"wood" }
+    };
+
     const metal = 0;
     const water = 1;
     const earth = 2;
@@ -241,8 +270,6 @@ export class CDEActorSheet extends ActorSheet {
     const specialDefined = 999;
     const noSpecialUsed = -1;
 
-    const aspectLabel = ["CDE.Metal", "CDE.Water", "CDE.Earth", "CDE.Fire", "CDE.Wood", "CDE.Ramdomize"];
-
     const wiiAspect = 0;
     const wiiSkill = 1;
     const wiiSpecial = 2;
@@ -256,6 +283,8 @@ export class CDEActorSheet extends ActorSheet {
     var myAspectUsed = aspect2BDefined;
     var mySkillUsed = skill2BDefined;
     var mySpecialUsed = special2BDefined;
+
+    var myAspectSpecialUsed = -999;
 
     var skillUsedLabel = "?";
     var aspectUsedLabel ="?";
@@ -430,10 +459,8 @@ export class CDEActorSheet extends ActorSheet {
       case wiiMagic:
         mySkillUsed = skillDefined;
         skillUsedLabel = this.actor.system.magics[skillUsed].label;
-        myAspectUsed = aspect2BDefined;
-        mySpecialUsed = noSpecialUsed;
-        switch( skillUsed ){                  // et de l'éventuelle spécialité (définie càd magies, ou générique càd compétences ou ressources)
-          case "internalcinnabar":            // Appelle un prompt s'il le faut (càd compétences, ressources ou magies)
+        switch( skillUsed ){                        // et de l'éventuelle spécialité (définie càd magies, ou générique càd compétences ou ressources)
+          case "internalcinnabar":                  // Appelle un prompt s'il le faut (càd compétences, ressources ou magies)
           myAspectUsed = metal;
           aspectUsedLabel = aspectLabel[myAspectUsed];
           break;
@@ -458,12 +485,11 @@ export class CDEActorSheet extends ActorSheet {
         // let data = APPELER LE PROMPT
       break;
       case wiiMagicSpecial:
+        console.log("I'm here!");
         mySkillUsed = skillDefined;
         skillUsedLabel = this.actor.system.magics[skillUsed].label;
-        myAspectUsed = aspect2BDefined;
-        aspectUsedLabel = this.actor.system.magics[skillUsed].label;
-        switch( skillUsed ){                  // et de l'éventuelle spécialité (définie càd magies, ou générique càd compétences ou ressources)
-          case "internalcinnabar":            // Appelle un prompt s'il le faut (càd compétences, ressources ou magies)
+        switch( skillUsed ){                        // et de l'éventuelle spécialité (définie càd magies, ou générique càd compétences ou ressources)
+          case "internalcinnabar":                  // Appelle un prompt s'il le faut (càd compétences, ressources ou magies)
           myAspectUsed = metal;
           aspectUsedLabel = aspectLabel[myAspectUsed];
           break;
@@ -485,8 +511,31 @@ export class CDEActorSheet extends ActorSheet {
           break;
           default: console.log("C'est bizarre !");
         };
-          // let data = APPELER LE PROMPT
-      break;
+        console.log("aspectUsedLabel = "+aspectUsedLabel);
+        let myAspectSpecialName = "";
+        for (var index in myMagicSpecial) {
+          if (myMagicSpecial[index].name == specialUsed) {
+              myAspectSpecialName = myMagicSpecial[index].aspect;
+          };
+        };
+        console.log("myAspectSpecialName = "+myAspectSpecialName);
+        switch( myAspectSpecialName ) {
+          case "metal" : myAspectSpecialUsed = metal;
+          break;
+          case "water" : myAspectSpecialUsed = water;
+          break;
+          case "earth" : myAspectSpecialUsed = earth;
+          break;
+          case "fire" : myAspectSpecialUsed = fire;
+          break;
+          case "wood" : myAspectSpecialUsed = wood;
+          break;
+          default: console.log("C'est bizarre !");
+        };  
+        console.log("myAspectSpecialUsed = "+myAspectSpecialUsed);
+        // _openSpecialMagicDicePrompt(myTitle, totalDice, myAspectUsed, 0, 0,
+        //  myAspectSpecialUsed, 0, 0);
+        break;
       case wiiRandomize:
         mySkillUsed = random;
         myAspectUsed = random;
