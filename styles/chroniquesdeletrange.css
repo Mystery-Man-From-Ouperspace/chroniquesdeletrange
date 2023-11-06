@@ -743,3 +743,12 @@ text-align: left;
 .chroniquesdeletrange .sheet-header .kungfu .libel {
   text-align: center;
 }
+
+.chroniquesdeletrange .sheet-body .aptitudes .dragon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chroniquesdeletrange .sheet-body .aptitudes .dragon .logo {
+  width : 55%;
+}
