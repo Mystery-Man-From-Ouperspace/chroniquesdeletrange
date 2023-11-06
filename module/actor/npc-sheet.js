@@ -50,9 +50,9 @@ export class CDEPNJSheet extends ActorSheet {
     // html.find(".spir-apt").on("update", this._onSpiritualAptitudeEdit.bind(this));
 
     // Attribute Management
-    html.find(".attributes").on("click", ".attribute-control", EntitySheetHelper.onClickAttributeControl.bind(this));
-    html.find(".groups").on("click", ".group-control", EntitySheetHelper.onClickAttributeGroupControl.bind(this));
-    html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
+    //html.find(".attributes").on("click", ".attribute-control", EntitySheetHelper.onClickAttributeControl.bind(this));
+    //html.find(".groups").on("click", ".group-control", EntitySheetHelper.onClickAttributeGroupControl.bind(this));
+    //html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
 
     // Item Controls
     html.find(".supernatural-control").click(this._onSupernaturalControl.bind(this));
@@ -156,8 +156,8 @@ export class CDEPNJSheet extends ActorSheet {
   /** @inheritdoc */
   _getSubmitData(updateData) {
     let formData = super._getSubmitData(updateData);
-    formData = EntitySheetHelper.updateAttributes(formData, this.object);
-    formData = EntitySheetHelper.updateGroups(formData, this.object);
+    //formData = EntitySheetHelper.updateAttributes(formData, this.object);
+    //formData = EntitySheetHelper.updateGroups(formData, this.object);
     return formData;
   }
 }
