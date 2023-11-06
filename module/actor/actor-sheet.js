@@ -566,13 +566,14 @@ export class CDEActorSheet extends ActorSheet {
     //////////////////////////////////////////////////////////////////
     if (numberDice <= 0) { return; };
     //////////////////////////////////////////////////////////////////
+    console.log("numberDice = "+numberDice);
+    console.log("bonusDice = "+bonusDice);
 
+    let total = numberDice+bonusDice;
+    let myRoll = "";
+    myRoll += total+"d10";
 
-    let totalDice = 0;
-    if (numberDice+bonusDice > 0) {
-      totalDice = numberDice+bonusDice;
-    } ;
-    let r = new Roll(numberDice+bonusDice+"d10", this.actor.getRollData());
+    let r = new Roll(myRoll, this.actor.getRollData());
     await r.evaluate();
     console.log(r);
     let myRDice = r.dice;
