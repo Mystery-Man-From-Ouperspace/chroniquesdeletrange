@@ -46,13 +46,13 @@ export class CDELoksyuSheet extends ActorSheet {
     if ( !this.isEditable ) return;
 
     // Attribute Management
-    //html.find(".attributes").on("click", ".attribute-control", EntitySheetHelper.onClickAttributeControl.bind(this));
-    //html.find(".groups").on("click", ".group-control", EntitySheetHelper.onClickAttributeGroupControl.bind(this));
-    //html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
+    html.find(".attributes").on("click", ".attribute-control", EntitySheetHelper.onClickAttributeControl.bind(this));
+    html.find(".groups").on("click", ".group-control", EntitySheetHelper.onClickAttributeGroupControl.bind(this));
+    html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
 
     // Item Controls
-    // html.find(".item-control").click(this._onItemControl.bind(this));
-    // html.find(".items .rollable").on("click", this._onItemRoll.bind(this));
+    html.find(".item-control").click(this._onItemControl.bind(this));
+    html.find(".items .rollable").on("click", this._onItemRoll.bind(this));
 
 
 
@@ -197,8 +197,8 @@ export class CDELoksyuSheet extends ActorSheet {
   /** @inheritdoc */
   _getSubmitData(updateData) {
     let formData = super._getSubmitData(updateData);
-    //formData = EntitySheetHelper.updateAttributes(formData, this.object);
-    //formData = EntitySheetHelper.updateGroups(formData, this.object);
+    formData = EntitySheetHelper.updateAttributes(formData, this.object);
+    formData = EntitySheetHelper.updateGroups(formData, this.object);
     return formData;
   }
 }

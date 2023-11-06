@@ -5,6 +5,10 @@
             <h1 class="charname">
                 <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
             </h1>
+            <div>
+                <label><b>{{localize "CDE.Reference"}}</b></label>
+                <input class="input" type="text" placeholder="{{ localize "CDE.Reference" }}" name="system.supernatural.reference" value="{{systemData.supernatural.reference}}" />
+            </div>
 		</div>
     </header>
 	
@@ -18,7 +22,7 @@
 
         {{!-- Description Tab --}}
         <div class="tab" data-group="primary" data-tab="description">
-            {{editor descriptionHTML target="system.spell.description" button=true editable=editable engine="prosemirror"}}
+            {{editor descriptionHTML target="system.supernatural.description" button=true editable=editable engine="prosemirror"}}
         </div>
 
     </section>

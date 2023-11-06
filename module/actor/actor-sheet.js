@@ -239,7 +239,7 @@ export class CDEActorSheet extends ActorSheet {
       elixirs: { prefix :"eli", name :"elixirs", aspect :"water" },
       poisons: { prefix :"poi", name :"poisons", aspect :"earth" },
       arsenal: { prefix :"ars", name :"arsenal", aspect :"fire" },
-      potions: { prefix :"pot", name :"philters", aspect :"wood" },
+      potions: { prefix :"pot", name :"potions", aspect :"wood" },
       curse: { prefix :"cur", name :"curse", aspect :"metal" },
       transfiguration: { prefix :"trn", name :"transfiguration", aspect :"water" },
       necromancy: { prefix :"nec", name :"necromancy", aspect :"earth" },

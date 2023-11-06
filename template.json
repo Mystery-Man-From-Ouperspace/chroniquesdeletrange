@@ -632,6 +632,7 @@
     "htmlFields": ["description", "style", "technique", "components", "effects", "examples"],
 
     "item": {
+      "reference": "",
       "description": "",
       "quantity": 1,
       "weight": 0,

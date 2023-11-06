@@ -28,11 +28,11 @@
 							<tr>
 								<td>
 									<div class="threat">
-										{{ localize "CDE.Threat" }}
+										<b>{{ localize "CDE.Threat" }}</b>
 										<span>&nbsp;</span>
 										<!-- <select name="system.guardian" value="{{ systemData.guardian }}" > -->
 										<select name="system.npc.threat">
-										{{#select systemData.npc.threat }}
+										<label><b>{{#select systemData.npc.threat }}</b></label>
 											<option value="0">{{ localize "CDE.Profane" }}</option>
 											<option value="1">{{ localize "CDE.Apprentice" }}</option>
 											<option value="2">{{ localize "CDE.Initiate" }}</option>
@@ -44,7 +44,7 @@
 								</td>
 								<td>
 									<div class="nuisance">
-										{{ localize "CDE.Nuisance" }}
+									</label><b>{{ localize "CDE.Nuisance" }}</b></label>
 										<span>&nbsp;</span>
 										<!-- <select name="system.guardian" value="{{ systemData.guardian }}" > -->
 										<select name="system.npc.nuisance">
@@ -97,7 +97,7 @@
 					<td class="label"><b>&nbsp;{{ localize "CDE.Physical" }}</b></td>
 					<td class="image"><img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
 						<div class="stick">&nbsp;</div>
-						<input class="input" type="number" placeholder="0" name="system.npc.aptitude.physical.value" value="{{systemData.npc.aptitude.physical.value}}" /></td>
+						<input class="input phys-apt" type="number" placeholder="0" name="system.npc.aptitude.physical.value" value="{{systemData.npc.aptitude.physical.value}}" /></td>
 					<td class="specialities"><input class="input" type="text" placeholder="{{ localize "CDE.Specialities" }}" name="system.npc.aptitude.physical.speciality" value="{{systemData.npc.aptitude.physical.speciality}}" /></td>
 				</tr>
 				<tr>
@@ -125,7 +125,7 @@
 					<td class="label"><b>&nbsp;{{ localize "CDE.Spiritual" }}</b></td>
 					<td class="image"><img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
 						<div class="stick">&nbsp;</div>
-						<input class="input" type="number" placeholder="0" name="system.npc.aptitude.spiritual.value" value="{{systemData.npc.aptitude.spiritual.value}}" /></td>
+						<input class="input spir-apt" type="number" placeholder="0" name="system.npc.aptitude.spiritual.value" value="{{systemData.npc.aptitude.spiritual.value}}" /></td>
 					<td class="specialities"><input class="input" type="text" placeholder="{{ localize "CDE.Specialities" }}" name="system.npc.aptitude.spiritual.speciality" value="{{systemData.npc.aptitude.spiritual.speciality}}" /></td>
 				</tr>
 			</table>

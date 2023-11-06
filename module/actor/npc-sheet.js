@@ -46,10 +46,13 @@ export class CDEPNJSheet extends ActorSheet {
     // Everything below here is only needed if the sheet is editable
     if ( !this.isEditable ) return;
 
+    // html.find(".phys-apt").on("update", this._onPhysicalAptitudeEdit.bind(this));
+    // html.find(".spir-apt").on("update", this._onSpiritualAptitudeEdit.bind(this));
+
     // Attribute Management
-    //html.find(".attributes").on("click", ".attribute-control", EntitySheetHelper.onClickAttributeControl.bind(this));
-    //html.find(".groups").on("click", ".group-control", EntitySheetHelper.onClickAttributeGroupControl.bind(this));
-    //html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
+    html.find(".attributes").on("click", ".attribute-control", EntitySheetHelper.onClickAttributeControl.bind(this));
+    html.find(".groups").on("click", ".group-control", EntitySheetHelper.onClickAttributeGroupControl.bind(this));
+    html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
 
     // Item Controls
     html.find(".supernatural-control").click(this._onSupernaturalControl.bind(this));
@@ -78,7 +81,7 @@ export class CDEPNJSheet extends ActorSheet {
     // Obtain event data
     const button = event.currentTarget;
     const li = button.closest(".supernatural");
-    const item = this.actor.items.get(li?.dataset.itemId);
+    const item = this.actor.items.get(li?.dataset.supernaturalId);
 
     // Handle different actions
     switch ( button.dataset.action ) {
@@ -112,6 +115,15 @@ export class CDEPNJSheet extends ActorSheet {
   }
 
 
+
+  _onPhysicalAptitudeEdit(event) {
+    this.actor.system.npc.aptitude.vitality.calcul = this.actor.system.npc.aptitude.physical.speciality * 4;
+  };
+  _onSpiritualAptitudeEdit(event) {
+    this.actor.system.npc.aptitude.hei.calcul = this.actor.system.npc.aptitude.spiritual.speciality * 4;
+ 
+  };
+
  /* _onKungFuRoll(event) {
     let button = $(event.currentTarget);
     const li = button.parents(".kungfu");
@@ -144,8 +156,8 @@ export class CDEPNJSheet extends ActorSheet {
   /** @inheritdoc */
   _getSubmitData(updateData) {
     let formData = super._getSubmitData(updateData);
-    //formData = EntitySheetHelper.updateAttributes(formData, this.object);
-    //formData = EntitySheetHelper.updateGroups(formData, this.object);
+    formData = EntitySheetHelper.updateAttributes(formData, this.object);
+    formData = EntitySheetHelper.updateGroups(formData, this.object);
     return formData;
   }
 }
