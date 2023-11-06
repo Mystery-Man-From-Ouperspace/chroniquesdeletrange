@@ -5,7 +5,11 @@
             <h1 class="charname">
                 <input name="name" type="text" value="{{data.name}}" placeholder="{{ localize "CDE.Name" }}" />
             </h1>
-		</div>
+            <div>
+                <label><b>{{localize "CDE.Reference"}}</b></label>
+                <input class="input" type="text" placeholder="{{ localize "CDE.Reference" }}" name="system.spell.reference" value="{{systemData.spell.reference}}" />
+            </div>
+        </div>
     </header>
 	
 	{{!-- Sheet Tab Navigation --}}

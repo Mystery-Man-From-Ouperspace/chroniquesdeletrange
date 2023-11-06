@@ -44,10 +44,11 @@ export class CDESpellSheet extends ItemSheet {
     if ( !this.isEditable ) return;
 
     // Attribute Management
-    html.find(".attributes").on("click", ".attribute-control", EntitySheetHelper.onClickAttributeControl.bind(this));
-    html.find(".groups").on("click", ".group-control", EntitySheetHelper.onClickAttributeGroupControl.bind(this));
-    html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
+    // html.find(".attributes").on("click", ".attribute-control", EntitySheetHelper.onClickAttributeControl.bind(this));
+    // html.find(".groups").on("click", ".group-control", EntitySheetHelper.onClickAttributeGroupControl.bind(this));
+    // html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
 
+    /*
     // Add draggable for Macro creation
     html.find(".attributes a.attribute-roll").each((i, a) => {
       a.setAttribute("draggable", true);
@@ -56,6 +57,7 @@ export class CDESpellSheet extends ItemSheet {
         ev.dataTransfer.setData('text/plain', JSON.stringify(dragData));
       }, false);
     });
+    */
   }
 
   /* -------------------------------------------- */
@@ -63,8 +65,8 @@ export class CDESpellSheet extends ItemSheet {
   /** @override */
   _getSubmitData(updateData) {
     let formData = super._getSubmitData(updateData);
-    formData = EntitySheetHelper.updateAttributes(formData, this.object);
-    formData = EntitySheetHelper.updateGroups(formData, this.object);
+    // formData = EntitySheetHelper.updateAttributes(formData, this.object);
+    // formData = EntitySheetHelper.updateGroups(formData, this.object);
     return formData;
   }
 }

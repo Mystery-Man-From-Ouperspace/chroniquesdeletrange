@@ -272,6 +272,8 @@
  "CDE.Randomize": "Tirage aléatoire",
  "CDE.RandomizeSentence": "n° du composant choisi au hasard dans l'urgence",
 
+ "CDE.Reference": "Référence",
+
 
  "TYPES": {
     "Actor" : {

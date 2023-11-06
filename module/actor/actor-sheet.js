@@ -397,7 +397,7 @@ export class CDEActorSheet extends ActorSheet {
     console.log("skillUsed = "+skillUsed);
     switch ( myTypeUsed ) {                         // Transforme la string en nom de variable (uniquement pour les aspects)
       case wiiAspect:                               // Récupère les libellés de la compétence, de l'aspect (s'il est déjà défini)
-      switch( skillUsed ){                          // et de l'éventuelle spécialité (définie càd magies, ou générique càd compétences ou ressources)
+      switch( skillUsed ) {                         // et de l'éventuelle spécialité (définie càd magies, ou générique càd compétences ou ressources)
         case "wood":                                // Appelle un prompt s'il le faut (càd compétences, ressources ou magies)
         mySkillUsed = wood;
         myAspectUsed = wood;
@@ -540,6 +540,7 @@ export class CDEActorSheet extends ActorSheet {
         console.log("myAspectSpecialUsed = "+myAspectSpecialUsed);
         aspectSpecialUsedLabel = aspectLabel[myAspectSpecialUsed];
         console.log("aspectSpecialUsedLabel = "+aspectSpecialUsedLabel);
+        // let data = APPELER LE PROMPT
         // _openSpecialMagicDicePrompt(myTitle, totalDice, myAspectUsed, 0, 0,
         //  myAspectSpecialUsed, 0, 0);
         break;

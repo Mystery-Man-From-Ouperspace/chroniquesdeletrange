@@ -273,6 +273,9 @@
  "CDE.Randomize": "Randomize",
  "CDE.RandomizeSentence": "# of the Component Selected at Random in a Hurry",
 
+ "CDE.Reference": "Reference",
+
+
  "TYPES": {
     "Actor" : {
       "character" : "Fat si",

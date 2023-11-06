@@ -640,6 +640,7 @@
     },
     
     "kungfu": {
+      "reference": "",
       "orientation": "",
       "aspect": "",
       "skill": "",
@@ -666,6 +667,7 @@
     },
   
     "spell": {
+      "reference": "",
       "specialityname": "",
       "description": "",
       "associatedelement": "",
