@@ -46,8 +46,8 @@ export class CDEPNJSheet extends ActorSheet {
     // Everything below here is only needed if the sheet is editable
     if ( !this.isEditable ) return;
 
-    // html.find(".phys-apt").on("update", this._onPhysicalAptitudeEdit.bind(this));
-    // html.find(".spir-apt").on("update", this._onSpiritualAptitudeEdit.bind(this));
+    html.find(".phys-apt").on("focusout", this._onPhysicalAptitudeEdit.bind(this));
+    html.find(".spir-apt").on("focusout", this._onSpiritualAptitudeEdit.bind(this));
 
     // Attribute Management
     //html.find(".attributes").on("click", ".attribute-control", EntitySheetHelper.onClickAttributeControl.bind(this));
@@ -116,13 +116,31 @@ export class CDEPNJSheet extends ActorSheet {
 
 
 
-  _onPhysicalAptitudeEdit(event) {
-    this.actor.system.npc.aptitude.vitality.calcul = this.actor.system.npc.aptitude.physical.speciality * 4;
+  async _onPhysicalAptitudeEdit(event) {
+    console.log("Je suis ici !");
+    function resolveAfterOneSeconds(x) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(x);
+        }, 1000);
+      });
+    };
+    await resolveAfterOneSeconds(10).then(()=> this.actor.update({"system.npc.vitality.calcul": this.actor.system.npc.aptitudes.physical.value * 4}));
   };
-  _onSpiritualAptitudeEdit(event) {
-    this.actor.system.npc.aptitude.hei.calcul = this.actor.system.npc.aptitude.spiritual.speciality * 4;
- 
+
+  async _onSpiritualAptitudeEdit(event) {
+    console.log("Je suis ici !");
+    function resolveAfterOneSeconds(x) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(x);
+        }, 1000);
+      });
+    };
+    await resolveAfterOneSeconds(10).then(()=> this.actor.update({"system.npc.hei.calcul": this.actor.system.npc.aptitudes.spiritual.value * 4}));
   };
+
+  
 
  /* _onKungFuRoll(event) {
     let button = $(event.currentTarget);
