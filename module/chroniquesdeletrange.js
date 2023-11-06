@@ -130,8 +130,8 @@ Hooks.once("init", async function() {
   Items.registerSheet("chroniquesdeletrange", CDEKungFuSheet, { types: ["kungfu"], makeDefault: true });
   Items.registerSheet("chroniquesdeletrange", CDESpellSheet, { types: ["spell"], makeDefault: true });
   Items.registerSheet("chroniquesdeletrange", CDESupernaturalSheet, { types: ["supernatural"], makeDefault: true });
-  //Items.registerSheet("chroniquesdeletrange", CDESkillPrompt, { types: ["skillprpt"], makeDefault: true });
-  //Items.registerSheet("chroniquesdeletrange", CDEMagicPrompt, { types: ["magicprpt"], makeDefault: true });
+  Items.registerSheet("chroniquesdeletrange", CDESkillPrompt, { types: ["skillprpt"], makeDefault: true });
+  Items.registerSheet("chroniquesdeletrange", CDEMagicPrompt, { types: ["magicprpt"], makeDefault: true });
 
   console.log("ACTOR SHEET LOADED !!!!")
 

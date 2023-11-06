@@ -43,7 +43,8 @@
  "CDE.New": "New",
 
 
- "CDE.Name": "Character's Name",
+ "CDE.Name": "Name",
+ "CDE.PCName": "Character's Name",
  "CDE.Concept": "Concept",
  "CDE.CelestialGuardian": "Celestial Guardian",
  "CDE.CelestialGuardian1": "White Tiger (Metal)",
@@ -167,7 +168,7 @@
  "CDE.Skill": "Skill",
  "CDE.Speciality": "Speciality",
  "CDE.Style": "Style",
- "CDE.Area": "Area",
+ "CDE.Field": "Field",
  "CDE.Technique": "Technique",
  "CDE.Activation": "Activation",
  

@@ -16,7 +16,7 @@
 							<tr>
 								<td>
 									<h1 class="charname">
-										<input name="name" type="text" value="{{data.name}}" placeholder="{{ localize "CDE.Name" }}" />
+										<input name="name" type="text" value="{{data.name}}" placeholder="{{ localize "CDE.PCName" }}" />
 									</h1>
 								</td>
 							</tr>
@@ -106,7 +106,7 @@
 						<input class="input" type="number" placeholder="0" name="system.resources.{{@key}}.value" value="{{resource.value}}" /></td>
 					<td class="specialities"><input class="input" type="text" placeholder="{{ localize "CDE.Fields" }}" name="system.resources.{{@key}}.specialities" value="{{resource.specialities}}" /></td>
 					<td class="bonus"><b>+1 D</b></td>
-					<td class="click" data-libel-id="{{key}}-area"><img class="d2click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieDM" }}" alt="Die" /></td>
+					<td class="click" data-libel-id="{{key}}-field"><img class="d2click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.DieDM" }}" alt="Die" /></td>
 					<td class="check"><input type="checkbox" name="system.resources.{{@key}}.debt" {{checked resource.debt}} title="{{ localize "CDE.Debt" }}{{ localize resource.label }}" /></td>
 				</tr>
 				{{/each}}
@@ -426,7 +426,7 @@
         <div class="tab kungfus" data-group="primary" data-tab="kungfus">
             <ol class="kungfu-list">
                 {{#each data.kungfus as |kungfu id|}}
-                <li class="kungfu flexrow" data-kungu-id="{{kungfu._id}}">
+                <li class="kungfu flexrow" data-kungfu-id="{{kungfu._id}}">
                     <img src="{{kungfu.img}}" title="{{kungfu.name}}" width="24" height="24" />
                     <h4 class="kungfu-name">{{kungfu.name}}</h4>
 <!--                    {{!-- Iterate through all attributes on the kungfu and output buttons for any that are formula. --}}

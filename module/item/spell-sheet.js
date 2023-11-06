@@ -12,10 +12,10 @@ export class CDESpellSheet extends ItemSheet {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["chroniquesdeletrange", "sheet", "spell"],
       template: "systems/chroniquesdeletrange/templates/item/spell-sheet.html",
-      width: 520,
-      height: 480,
+      width: 620,
+      height: 530,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
-      scrollY: [".attributes"]
+      scrollY: [".description", ".data", ".components", ".effects", ".examples"]
     });
   }
 

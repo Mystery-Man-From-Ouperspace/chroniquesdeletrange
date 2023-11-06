@@ -278,7 +278,7 @@ export class CDEActorSheet extends ActorSheet {
     const wiiSkill = 1;
     const wiiSpecial = 2;
     const wiiResource = 3;
-    const wiiArea = 4;
+    const wiiField = 4;
     const wiiMagic = 5;
     const wiiMagicSpecial = 6;
     const wiiRandomize = 7;
@@ -333,7 +333,7 @@ export class CDEActorSheet extends ActorSheet {
       break;
       case "resource": myTypeUsed = wiiResource;
       break;
-      case "area": myTypeUsed = wiiArea;
+      case "field": myTypeUsed = wiiField;
       break;
       case "magic": myTypeUsed = wiiMagic;
       break;
@@ -365,7 +365,7 @@ export class CDEActorSheet extends ActorSheet {
       case wiiResource:
         numberDice = this.actor.system.resources[skillUsed].value;
       break;
-      case wiiArea:
+      case wiiField:
         numberDice = this.actor.system.resources[skillUsed].value;
         //////////////////////////////////////////////////////////////////
         if (this.actor.system.resources[skillUsed].specialities == "") { return; };
@@ -453,12 +453,12 @@ export class CDEActorSheet extends ActorSheet {
         mySpecialUsed = noSpecialUsed;
         // let data = APPELER LE PROMPT
       break;
-      case wiiArea:
+      case wiiField:
         mySkillUsed = skillDefined;
         skillUsedLabel = this.actor.system.resources[skillUsed].label;
         myAspectUsed = aspect2BDefined;
         mySpecialUsed = specialDefined;
-        specialUsedLabel = "CDE.Area";
+        specialUsedLabel = "CDE.Field";
         // let data = APPELER LE PROMPT
       break;
       case wiiMagic:

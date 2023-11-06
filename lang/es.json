@@ -43,7 +43,8 @@
  "CDE.New": "Nuevo",
 
 
- "CDE.Name": "Nombre del Personaje",
+ "CDE.Name": "Nombre",
+ "CDE.PCName": "Nombre del Personaje",
  "CDE.Concept": "Concepto",
  "CDE.CelestialGuardian": "Guardián Celestial",
  "CDE.CelestialGuardian1": "Tigre Blanco (Metal)",
@@ -166,7 +167,7 @@
  "CDE.Aspect": "Aspecto",
  "CDE.Skill": "Habilidad",
  "CDE.Speciality": "Specialidad",
- "CDE.Area": "Área",
+ "CDE.Field": "Área",
  "CDE.Style": "Estilo",
  "CDE.Technique": "Técnica",
  "CDE.Activation": "Activación",
@@ -180,7 +181,7 @@
  "CDE.SpecialityName": "Nombre Especialidad",
  "CDE.AssociatedElement": "Elemento Asociado",
  "CDE.HEI2": "Hei",
- "CDE.RealizationTimeRitual": "Tiempo de Real (Ritual)",
+ "CDE.RealizationTimeRitual": "Tiempo de Realización (Ritual)",
  "CDE.RealizationTimeAccelerated": "Tiempo de Realización (Acelerado)",
  "CDE.Flashback": "Flashback",
  "CDE.Data": "Data",

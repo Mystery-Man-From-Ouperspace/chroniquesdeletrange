@@ -42,8 +42,8 @@
  "CDE.Create": "Créer",
  "CDE.New": "Nouveau",
 
-
- "CDE.Name": "Nom du Personnage",
+ "CDE.Name": "Nom",
+ "CDE.PCName": "Nom du Personnage",
  "CDE.Concept": "Concept",
  "CDE.CelestialGuardian": "Gardien Céleste",
  "CDE.CelestialGuardian1": "Tigre Blanc (Métal)",
@@ -167,7 +167,7 @@
  "CDE.Aspect": "Aspect",
  "CDE.Skill": "Compétence",
  "CDE.Speciality": "Spécialité",
- "CDE.Area": "Domaine",
+ "CDE.Field": "Domaine",
  "CDE.Style": "Style",
  "CDE.Technique": "Technique",
  "CDE.Activation": "Activation",

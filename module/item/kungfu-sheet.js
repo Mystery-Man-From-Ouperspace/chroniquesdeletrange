@@ -12,10 +12,10 @@ export class CDEKungFuSheet extends ItemSheet {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["chroniquesdeletrange", "sheet", "kungfu"],
       template: "systems/chroniquesdeletrange/templates/item/kungfu-sheet.html",
-      width: 520,
-      height: 480,
+      width: 720,
+      height: 520,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
-      scrollY: [".attributes"]
+      scrollY: [".description", ".technique1", ".technique2", ".technique3"]
     });
   }
 

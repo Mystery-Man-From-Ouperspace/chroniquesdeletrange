@@ -2,11 +2,11 @@
     <header class="sheet-header">
         <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
         <div class="header-fields">
-            <h1 class="kungfu">
-                <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+            <h1 class="charname">
+                <input name="name" type="text" value="{{data.name}}" placeholder="{{ localize "CDE.Name" }}" />
             </h1>
 			<div>
-				<table>
+				<table class="kungfu">
 					<tr>
 							<td class="label"><b>&nbsp;{{ localize "CDE.Orientation" }}</b></td>
 							<td class="libel"><input class="input" type="text" placeholder="{{ localize "CDE.Orientation" }}" name="system.kf.orientation" value="{{systemData.kf.orientation}}"/></td>
@@ -34,7 +34,7 @@
     <section class="sheet-body">
 
         {{!-- Description Tab --}}
-        <div class="tab" components-group="primary" components-tab="description">
+        <div class="tab" data-group="primary" data-tab="description">
             {{editor descriptionHTML target="system.kf.description" button=true editable=editable engine="prosemirror"}}
         </div>
 		
@@ -46,10 +46,13 @@
 			</div>
 			<div class="techniqueactivation1">
 				<label><b>{{localize "CDE.Activation"}}</b></label>
-				<input class="input" type="text" placeholder="{{ localize "CDE.Activation" }" name="system.kf.techniques.technique1.activation" value="{{systemData.kf.techniques.technique1.activation}}" />
+				<input class="input" type="text" placeholder="{{ localize "CDE.Activation" }}" name="system.kf.techniques.technique1.activation" value="{{systemData.kf.techniques.technique1.activation}}" />
+			</div>
+			<div>
+				<label><b>{{localize "CDE.Description"}}</b></label><br>
 			</div>
 			{{editor descriptionHTML target="system.kf.techniques.technique1.technique" button=true editable=editable engine="prosemirror"}}
-        </div>
+		</div>
 
 		{{!-- Technique 2 Tab --}}
         <div class="tab" data-group="primary" data-tab="technique2">
@@ -61,8 +64,11 @@
 				<label><b>{{localize "CDE.Activation"}}</b></label>
 				<input class="input" type="text" placeholder="{{ localize "CDE.Activation" }}" name="system.kf.techniques.technique2.activation" value="{{systemData.kf.techniques.technique2.activation}}" />
 			</div>
+			<div>
+				<label><b>{{localize "CDE.Description"}}</b></label><br>
+			</div>
 			{{editor descriptionHTML target="system.kf.techniques.technique2.technique" button=true editable=editable engine="prosemirror"}}
-        </div>
+		</div>
 
 		{{!-- Technique 3 Tab --}}
         <div class="tab" data-group="primary" data-tab="technique3">
@@ -74,8 +80,11 @@
 				<label><b>{{localize "CDE.Activation"}}</b></label>
 				<input class="input" type="text" placeholder="{{ localize "CDE.Activation" }}" name="system.kf.techniques.technique3.activation" value="{{systemData.kf.techniques.technique3.activation}}" />
 			</div>
+			<label><b>{{localize "CDE.Description"}}</b></label><br>
+			<div>
+			</div>
 			{{editor descriptionHTML target="system.kf.techniques.technique3.technique" button=true editable=editable engine="prosemirror"}}
-        </div>
+		</div>
 
     </section>
 
