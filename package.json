@@ -1,6 +1,6 @@
 {
   "name": "chroniquesdeletrange",
-  "version": "1.0.0",
+  "version": "0.0.4",
   "description": "CSS compiler for the Les Chroniques de l'Étrange system",
   "scripts": {
     "css": "gulp css",
@@ -13,9 +13,6 @@
   "author": "",
   "license": "MIT",
   "private": true,
-  "dependencies": {
-    "gulp": "^4.0.2",
-    "gulp-less": "^4.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {}
 }
