@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2020 Foundry Network
+Copyright © 2020 Foundry Network
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -13,21 +13,22 @@ The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
 
-Exceptées les images de d10, les images des fichiers .png du dossier images
-utilisées dans ce logiciel sont Copyright (c) 2023 Antre Monde Éditions ;
+Exceptées les peties images N&B de d10 de l'interface, les images des
+fichiers du dossier images utilisées dans ce logiciel sont :
+Copyright © 2023-2024 Antre Monde Éditions ;
 elles sont leurs propriétés et elles ne peuvent ni être reproduites ni
 réutilisées en dehors de ce logiciel, ni cédées sans leur autorisation
 expresse.
 
 
 Code additionnel et modifications / additionnal coding and code editing:
-David R.D. 'Mystery Man From Outerspace' Bercovici (2023)
+David R.D. 'Mystery Man From Outerspace' Bercovici (2023-2024)
 
 Avec l'aide précieuse de / with precious help from (sur / on "La Fonderie"):
 LeRatierBretonnien
 Christophe 'Qaw' Laudon
 Maxime 
-(et d'autres)
+(et d'autres / and others)
 
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR

@@ -32,7 +32,7 @@
     }
   ],
   "compatibility": {
-    "minimum": "10",
+    "minimum": "11",
     "verified": "11",
     "maximum": "11"
   },
@@ -41,5 +41,5 @@
   "primaryTokenAttribute": "heiyang",
   "secondaryTokenAttribute": "heiyin",
   "manifest": "https://chroniques-etrange-no.fr/download/foundry/system.json",
-  "download": "https://chroniques-etrange-no.fr/download/foundry/release-003.zip"
+  "download": "https://chroniques-etrange-no.fr/download/foundry/release-004.zip"
 }
