@@ -12,21 +12,20 @@
         {{!-- Frame --}}
         <div class="frame">
 
-            <table style="border: 0px; background-color: transparent;">
+            <table style="border: 0px; background-color: transparent;" >
                 <tr style="background-color: transparent;">
                     <td class="label col1-5">&nbsp;</td>
                     <td class="image col2-5">
-                        <img class="bigsquare" src="systems/chroniquesdeletrange/images/bigsquare.png" />
+                        <!--  style="display: flex; justify-content: center; align-items: center;" -->
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <img class="bigsquare" style="border: 0px; z-index: 4;" src="systems/chroniquesdeletrange/images/bigsquare.png" />
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <span class="value" style="font-size: 30px; text-align: center; margin-top: -45px; z-index: 4;"><b>{{ numberofdice }}</b></span>
+                        </div>
                     </td>
                     <td class="label col3-5">&nbsp;</td>
-                    <td class="label col4-5" style="font-size: 30px"><b>&nbsp;+</td>
-                    <td class="label col5-5">&nbsp;</td>
-                </tr>
-                <tr style="background-color: transparent;"> <!-- Ce tr collé au-dessus du tr ci-dessus, pour que le numberofdice soit au milieu du bigsquare.png -->
-                    <td class="label col1-5">&nbsp;</td>
-                    <td class="value col2-5">{{ numberofdice }}</td>
-                    <td class="label col3-5">&nbsp;</td>
-                    <td class="label col4-5">&nbsp;</td>
+                    <td class="label col4-5" style="font-size: 30px"><b>&nbsp;+&nbsp;</b></td>
                     <td class="label col5-5">&nbsp;</td>
                 </tr>
             </table>
@@ -81,6 +80,7 @@
                     </td>
                 </tr>
             </table>
+            <br>
             <table style="border: 0px; background-color: transparent;">
                 <tr style="background-color: transparent;">
                 <b>{{ localize "CDE.TypeOfThrow" }}</b>

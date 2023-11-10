@@ -821,7 +821,7 @@ export class CDEActorSheet extends ActorSheet {
 }
 
 
-async function _skillDiceRollDialog({ template, myTitle, myDialogOptions, myNumberOfDice, myIsSpecial, myAspect, myBonus, myBonusAuspiciousDice, myTypeOfThrow } = {}) {
+async function _skillDiceRollDialog(template, myTitle, myDialogOptions, myNumberOfDice, myIsSpecial, myAspect, myBonus, myBonusAuspiciousDice, myTypeOfThrow) {
   // Render modal dialog
   template = template || 'systems/chroniquesdeletrange/templates/form/skill-dice-prompt.html';
   let title = myTitle;
@@ -834,7 +834,7 @@ async function _skillDiceRollDialog({ template, myTitle, myDialogOptions, myNumb
     bonusauspiciousdice: myBonusAuspiciousDice,
     typeofthrow: myTypeOfThrow
   };
-  console.log("dialogData = "+dialogData);
+  console.log(dialogData);
   const html = await renderTemplate(template, dialogData);
 
   // Create the Dialog window
@@ -859,7 +859,7 @@ async function _skillDiceRollDialog({ template, myTitle, myDialogOptions, myNumb
     dialogOptions
     ).render(true, {
       width: 520,
-      height: 390
+      height: 375
     });
   });
   if (prompt != null) {
@@ -870,7 +870,7 @@ async function _skillDiceRollDialog({ template, myTitle, myDialogOptions, myNumb
   }
 }
 
-async function _skillSpecialDiceRollDialog({ template, myTitle, myDialogOptions, myNumberOfDice, myIsSpecial, myAspect, myBonus, myBonusAuspiciousDice, myTypeOfThrow } = {}) {
+async function _skillSpecialDiceRollDialog(template, myTitle, myDialogOptions, myNumberOfDice, myIsSpecial, myAspect, myBonus, myBonusAuspiciousDice, myTypeOfThrow) {
   // Render modal dialog
   template = template || 'systems/chroniquesdeletrange/templates/form/skill-special-dice-prompt.html';
   let title = myTitle;
@@ -883,7 +883,7 @@ async function _skillSpecialDiceRollDialog({ template, myTitle, myDialogOptions,
     bonusauspiciousdice: myBonusAuspiciousDice,
     typeofthrow: myTypeOfThrow
   };
-  console.log("dialogData = "+dialogData);
+  console.log(dialogData);
   const html = await renderTemplate(template, dialogData);
 
   // Create the Dialog window
@@ -908,7 +908,7 @@ async function _skillSpecialDiceRollDialog({ template, myTitle, myDialogOptions,
     dialogOptions
     ).render(true, {
       width: 520,
-      height: 390
+      height: 375
     });
   });
   if (prompt != null) {
@@ -918,11 +918,9 @@ async function _skillSpecialDiceRollDialog({ template, myTitle, myDialogOptions,
     return prompt;
   }
 }
-  
 
-
-async function _magicDiceRollDialog({ template, myTitle, myDialogOptions, myNumberofdice, myIsSpecial, myAspectSkill, myBonusMalusSkill, myBonusAuspiciousDice,
-  myAspectSpeciality, myRollDifficulty, myBonusMalusSpeciality, myTypeOfThrow } = {}) {
+async function _magicDiceRollDialog(template, myTitle, myDialogOptions, myNumberofdice, myIsSpecial, myAspectSkill, myBonusMalusSkill, myBonusAuspiciousDice,
+  myAspectSpeciality, myRollDifficulty, myBonusMalusSpeciality, myTypeOfThrow) {
   // Render modal dialog
   template = template || 'systems/chroniquesdeletrange/templates/form/magic-dice-prompt.html';
   const title = myTitle;
@@ -938,7 +936,7 @@ async function _magicDiceRollDialog({ template, myTitle, myDialogOptions, myNumb
     bonusmalusspeciality: myBonusMalusSpeciality,
     typeofthrow: myTypeOfThrow
   };
-  console.log("dialogData = "+dialogData);
+  console.log(dialogData);
   const html = await renderTemplate(template, dialogData);
 
   // Create the Dialog window
@@ -963,7 +961,7 @@ async function _magicDiceRollDialog({ template, myTitle, myDialogOptions, myNumb
       dialogOptions
     ).render(true, {
       width: 520,
-      height: 520
+      height: 530
     });
   });
   if (prompt != null) {
