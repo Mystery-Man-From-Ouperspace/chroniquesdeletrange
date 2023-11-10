@@ -315,6 +315,11 @@ export class CDEActorSheet extends ActorSheet {
     let d10_0 = 0;
     let suite = "~ [";
 
+    let myTitle;
+    let myIsSpecial;
+    let data;
+    let myDialogOptions;
+
 
     const element = event.currentTarget;              // On récupère le clic
     const whatIsIt = element.dataset.libelId;         // Va récupérer 'fire-aspect' par exemple
@@ -436,7 +441,9 @@ export class CDEActorSheet extends ActorSheet {
         skillUsedLabel = this.actor.system.skills[skillUsed].label;
         myAspectUsed = aspect2BDefined;
         mySpecialUsed = noSpecialUsed;
-        // let data = APPELER LE PROMPT
+        myIsSpecial = false;
+        
+        data = await _skillDiceRollDialog("", myTitle, myDialogOptions, numberDice, myIsSpecial, myAspectUsed, 0, 0, 0);
       break;
       case wiiSpecial:
         mySkillUsed = skillDefined;
@@ -444,14 +451,18 @@ export class CDEActorSheet extends ActorSheet {
         myAspectUsed = aspect2BDefined;
         mySpecialUsed = specialDefined;
         specialUsedLabel = "CDE.Speciality";
-        // let data = APPELER LE PROMPT
+        myIsSpecial = true;
+        
+        data = await _skillSpecialDiceRollDialog("", myTitle, myDialogOptions, numberDice, myIsSpecial, myAspectUsed, 0, 0, 0);
         break;
       case wiiResource:
         mySkillUsed = skillDefined;
         skillUsedLabel = this.actor.system.resources[skillUsed].label;
         myAspectUsed = aspect2BDefined;
         mySpecialUsed = noSpecialUsed;
-        // let data = APPELER LE PROMPT
+        myIsSpecial = false;
+        
+        data = await _skillDiceRollDialog("", myTitle, myDialogOptions, numberDice, myIsSpecial, myAspectUsed, 0, 0, 0);
       break;
       case wiiField:
         mySkillUsed = skillDefined;
@@ -459,7 +470,9 @@ export class CDEActorSheet extends ActorSheet {
         myAspectUsed = aspect2BDefined;
         mySpecialUsed = specialDefined;
         specialUsedLabel = "CDE.Field";
-        // let data = APPELER LE PROMPT
+        myIsSpecial = true;
+        
+        data = await _skillSpecialDiceRollDialog("", myTitle, myDialogOptions, numberDice, myIsSpecial, myAspectUsed, 0, 0, 0);
       break;
       case wiiMagic:
         mySkillUsed = skillDefined;
@@ -487,7 +500,9 @@ export class CDEActorSheet extends ActorSheet {
           break;
           default: console.log("C'est bizarre !");
         };
-        // let data = APPELER LE PROMPT
+        myIsSpecial = false;
+
+        data = await _skillDiceRollDialog("", myTitle, myDialogOptions, numberDice, myIsSpecial, myAspectUsed, 0, 0, 0);
       break;
       case wiiMagicSpecial:
         console.log("I'm here!");
@@ -540,9 +555,9 @@ export class CDEActorSheet extends ActorSheet {
         console.log("myAspectSpecialUsed = "+myAspectSpecialUsed);
         aspectSpecialUsedLabel = aspectLabel[myAspectSpecialUsed];
         console.log("aspectSpecialUsedLabel = "+aspectSpecialUsedLabel);
-        // let data = APPELER LE PROMPT
-        // _openSpecialMagicDicePrompt(myTitle, totalDice, myAspectUsed, 0, 0,
-        //  myAspectSpecialUsed, 0, 0);
+        myIsSpecial = true;
+
+        data = await _magicDiceRollDialog("", myTitle, myDialogOptions, numberDice, myIsSpecial, myAspectUsed, 0, 0, myAspectSpecialUsed, 0, 0, 0);
         break;
       case wiiRandomize:
         mySkillUsed = random;
@@ -562,7 +577,13 @@ export class CDEActorSheet extends ActorSheet {
       console.log("specialUsedLabel = "+specialUsedLabel);
     };
 
-
+    //////////////////////////////////////////////////////////////////
+    if (data == null && myTypeUsed != wiiAspect && myTypeUsed != wiiRandomize) {
+      return;
+    } else {
+      // traitement ici
+    };
+    //////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////
     if (numberDice <= 0) { return; };
     //////////////////////////////////////////////////////////////////
@@ -796,86 +817,156 @@ export class CDEActorSheet extends ActorSheet {
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       content: title+message
     }));
+  };
+}
+
+
+async function _skillDiceRollDialog({ template, myTitle, myDialogOptions, myNumberOfDice, myIsSpecial, myAspect, myBonus, myBonusAuspiciousDice, myTypeOfThrow } = {}) {
+  // Render modal dialog
+  template = template || 'systems/chroniquesdeletrange/templates/form/skill-dice-prompt.html';
+  let title = myTitle;
+  let dialogOptions = myDialogOptions;
+  let dialogData = {
+    numberofdice: myNumberOfDice,
+    isspecial: myIsSpecial,
+    aspect: myAspect,
+    bonus: myBonus,
+    bonusauspiciousdice: myBonusAuspiciousDice,
+    typeofthrow: myTypeOfThrow
+  };
+  const html = await renderTemplate(template, dialogData);
+
+  // Create the Dialog window
+  let prompt = await new Promise((resolve) => {
+    new Dialog(
+      {
+        title: title,
+        content: html,
+        buttons: {
+          validateBtn: {
+            icon: `<div class="tooltip"><i class="fas fa-check"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Validate')}</span></div>`,
+            callback: (html) => resolve(dialogData)
+          },
+          cancelBtn: {
+            icon: `<div class="tooltip"><i class="fas fa-cancel"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Cancel')}</span></div>`,
+            callback: (html) => resolve(null)
+          }
+        },
+        default: 'validateBtn',
+        close: () => resolve(null)
+    },
+    dialogOptions
+    ).render(true, {
+      width: 520,
+      height: 390
+    });
+  });
+  if (prompt != null) {
+    // traitement ici
+    return dialogData;
+  } else {
+    return prompt;
   }
+}
 
-  /**
-   * Display prompt for skills or resources or no special magics.
-   * myIsSpecial: boolean.
-  async _openSkillDicePrompt(myTitle, myNumberOfDice, myIsSpecial, myAspect, myBonus, myBonusAuspiciousDice) {
-    let options = "";
-    var data = {
-      title = myTitle,
-      content = {
-        numberofdice = myNumberOfDice,
-        isspecial = myIsSpecial,
-        aspect = myAspect,
-        bonus = myBonus,
-        bonusauspiciousdice = myBonusAuspiciousDice,
-      },
-      buttons: {
-        click: {
-          label: "",
-          callback: html => resolve()
-        }
-      },
-      default: "click",
-      close: () => resolve({cancelled: true})
-    };
+async function _skillSpecialDiceRollDialog({ template, myTitle, myDialogOptions, myNumberOfDice, myIsSpecial, myAspect, myBonus, myBonusAuspiciousDice, myTypeOfThrow } = {}) {
+  // Render modal dialog
+  template = template || 'systems/chroniquesdeletrange/templates/form/skill-special-dice-prompt.html';
+  let title = myTitle;
+  let dialogOptions = myDialogOptions;
+  let dialogData = {
+    numberofdice: myNumberOfDice,
+    isspecial: myIsSpecial,
+    aspect: myAspect,
+    bonus: myBonus,
+    bonusauspiciousdice: myBonusAuspiciousDice,
+    typeofthrow: myTypeOfThrow
+  };
+  const html = await renderTemplate(template, dialogData);
 
-
-
-
-    const cls = getDocumentClass("Item");
-    cls.create({name: game.i18n.localize("CDE.SpellNew"), type: "skillprpt"}, {parent: this.actor});
-
-    this(data, options).sheet.render(true);
-
-
-
-
-
-    return data;
+  // Create the Dialog window
+  let prompt = await new Promise((resolve) => {
+    new Dialog(
+      {
+        title: title,
+        content: html,
+        buttons: {
+          validateBtn: {
+            icon: `<div class="tooltip"><i class="fas fa-check"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Validate')}</span></div>`,
+            callback: (html) => resolve(dialogData)
+          },
+          cancelBtn: {
+            icon: `<div class="tooltip"><i class="fas fa-cancel"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Cancel')}</span></div>`,
+            callback: (html) => resolve(null)
+          }
+        },
+        default: 'validateBtn',
+        close: () => resolve(null)
+    },
+    dialogOptions
+    ).render(true, {
+      width: 520,
+      height: 390
+    });
+  });
+  if (prompt != null) {
+    // traitement ici
+    return dialogData;
+  } else {
+    return prompt;
   }
-*/
+}
+  
 
-  /**
-   * Display prompt for special magics.
-  async _openSpecialMagicDicePrompt(myTitle, myNumberofdice, myAspectSkill, myBonusMalusSkill, myBonusAuspiciousDice,
-    myAspectSpeciality, myRollDifficulty, myBonusMalusSpeciality) {
-    let options = "";
-    var data = {
-      title = myTitle,
-      content = {
-        numberofdice = myNumberofdice,
-        aspectskill = myAspectSkill,
-        bonusmalusskill = myBonusMalusSkill,
-        bonusauspiciousdice = myBonusAuspiciousDice,
-        aspectspeciality = myAspectSpeciality,
-        rolldifficulty = myRollDifficulty,
-        bonusmalusspeciality = myBonusMalusSpeciality
+
+async function _magicDiceRollDialog({ template, myTitle, myDialogOptions, myNumberofdice, myIsSpecial, myAspectSkill, myBonusMalusSkill, myBonusAuspiciousDice,
+  myAspectSpeciality, myRollDifficulty, myBonusMalusSpeciality, myTypeOfThrow } = {}) {
+  // Render modal dialog
+  template = template || 'systems/chroniquesdeletrange/templates/form/magic-dice-prompt.html';
+  const title = myTitle;
+  let dialogOptions = myDialogOptions;
+  let dialogData = {
+    numberofdice: myNumberofdice,
+    isspecial: myIsSpecial,
+    aspectskill: myAspectSkill,
+    bonusmalusskill: myBonusMalusSkill,
+    bonusauspiciousdice: myBonusAuspiciousDice,
+    aspectspeciality: myAspectSpeciality,
+    rolldifficulty: myRollDifficulty,
+    bonusmalusspeciality: myBonusMalusSpeciality,
+    myTypeOfThrow: myTypeOfThrow
+  };
+  const html = await renderTemplate(template, dialogData);
+
+  // Create the Dialog window
+  let prompt = await new Promise((resolve) => {
+    new Dialog(
+      {
+        title: title,
+        content: html,
+        buttons: {
+          validateBtn: {
+            icon: `<div class="tooltip"><i class="fas fa-check"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Validate')}</span></div>`,
+            callback: (html) => resolve(dialogData)
+          },
+          cancelBtn: {
+            icon: `<div class="tooltip"><i class="fas fa-cancel"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Cancel')}</span></div>`,
+            callback: (html) => resolve(null)
+          }
+        },
+        default: 'validateBtn',
+        close: () => resolve(null)
       },
-      buttons: {
-        click: {
-          label: "",
-          callback: html => resolve()
-        }
-      },
-      default: "click",
-      close: () => resolve({cancelled: true})
-    };
-
-
-
-    const cls = getDocumentClass("Item");
-    cls.create({name: game.i18n.localize("CDE.SpellNew"), type: "skillprpt"}, {parent: this.actor});
-
-    this(data, options).sheet.render(true);
-
-
-
-
-    return data;
-
-*/
-
+      dialogOptions
+    ).render(true, {
+      width: 520,
+      height: 520
+    });
+  });
+  if (prompt != null) {
+    // traitement ici
+    return dialogData;
+  } else {
+    return prompt;
+  }
 }

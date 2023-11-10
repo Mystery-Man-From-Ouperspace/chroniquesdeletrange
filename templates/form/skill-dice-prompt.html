@@ -1,42 +1,45 @@
 <form class="flexcol {{cssClass}}" autocomplete="off">
     <header class="sheet-header">
         <div class="name">
-            <label><b>{{ localize "CDE.SkillPromptName" }}{{ systemData.skillprpt.title }}</b></label>
+            <label><b>{{ localize "CDE.SkillPromptName" }}{{ title }}</b></label>
         </div>
     </header>
 	
     {{!-- Sheet Body --}}
-    <section class="sheet-body" id="prompt">
+    <section class="sheet-body" style="background-image: url('/systems/chroniquesdeletrange/images/cde_fond_transp.png')";
+    >
 
         {{!-- Frame --}}
         <div class="frame">
 
-            <table>
-                <tr>
+            <table style="border: 0px; background-color: transparent;">
+                <tr style="background-color: transparent;">
                     <td class="label col1-5">&nbsp;</td>
                     <td class="image col2-5">
                         <img class="bigsquare" src="systems/chroniquesdeletrange/images/bigsquare.png" />
                     </td>
                     <td class="label col3-5">&nbsp;</td>
-                    <td class="label col4-5"><b>&nbsp;+&nbsp;</b>{{$if system.skillprpt.isspecial}}<b>1&nbsp;+</b>{{/if}}</td>
+                    <td class="label col4-5" style="font-size: 30px"><b>&nbsp;+</td>
                     <td class="label col5-5">&nbsp;</td>
                 </tr>
-                <tr> <!-- Ce tr collé au-dessus du tr ci-dessus, pour que le numberofdice soit au milieu du bigsquare.png -->
-                    <td class="value col1-3">{{ systemData.skillprpt.numberofdice }}</td>
-                    <td class="label col2-3">&nbsp;</td>
-                    <td class="label col3-3">&nbsp;</td>
+                <tr style="background-color: transparent;"> <!-- Ce tr collé au-dessus du tr ci-dessus, pour que le numberofdice soit au milieu du bigsquare.png -->
+                    <td class="label col1-5">&nbsp;</td>
+                    <td class="value col2-5">{{ numberofdice }}</td>
+                    <td class="label col3-5">&nbsp;</td>
+                    <td class="label col4-5">&nbsp;</td>
+                    <td class="label col5-5">&nbsp;</td>
                 </tr>
             </table>
-            <table>
-                <tr>
+            <table style="border: 0px; background-color: transparent;">
+                <tr style="background-color: transparent;">
                     <td class="label col1-3">{{ localize "CDE.Aspect" }}</td>
                     <td class="label col2-3">&nbsp;</td>
                     <td class="label col3-3">{{ localize "CDE.BonusMalus" }}</td>
                 </tr>
-                <tr>
+                <tr style="background-color: transparent;">
                     <td class="select col1-3">
                         <select name="system.skillprpt.aspect">
-                        {{#select systemData.skillprpt.aspect }}
+                        {{#select aspect }}
                             <option value="0">{{ localize "CDE.Metal" }}</option>
                             <option value="1">{{ localize "CDE.Water" }}</option>
                             <option value="2">{{ localize "CDE.Earth" }}</option>
@@ -45,18 +48,18 @@
                         {{/select}}
                         </select>
                     </td>
-                    <td class="label col2-3">&nbsp;</td>
-                    <td class="value col3-3"><input class="input" type="number" name="system.skillprpt.bonusmalus" value="{{systemData.skillprpt.bonusmalus}}"/></td>
-                </tr>
+                    <td class="label col2-3" style="font-size: 25px">&nbsp;+&nbsp;</td>
+                    <td class="value col3-3"><input class="input" style="text-align: center; width: 60px;" type="number" name="system.skillprpt.bonusmalus" value="{{systemData.skillprpt.bonusmalus}}"/></td>
+                </tr style="background-color: transparent;">
             </table>
-            <table>
+            <table style="border: 0px; background-color: transparent;">
                 <tr>
                     <td class="label col123 totheleft">{{ localize "CDE.BonusAuspiciousDice" }}</td>
                 </tr>
-                <tr>
+                <tr style="background-color: transparent;">
                     <td  class="select col1-1">
                         <select name="system.skillprpt.bonusauspiciousdice">
-                        {{#select systemData.skillprpt.bonusauspiciousdice }}
+                        {{#select bonusauspiciousdice }}
                             <option value="0">0</option>
                             <option value="1">+1&nbsp;{{ localize "CDE.AuspiciousDie" }}</option>
                             <option value="2">+2&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
@@ -78,9 +81,19 @@
                     </td>
                 </tr>
             </table>
-            <table>
-                <tr> <!-- Ce logo sert de bouton pour valider le Prompt -->
-                    <td class="click col123 button-right"><img id="system.skillprpt.click" src="systems/chroniquesdeletrange/images/yin_yang.png" title="{{ localize "CDE.Die" }}" alt="Die" /></td>
+            <table style="border: 0px; background-color: transparent;">
+                <tr style="background-color: transparent;">
+                    {{ localize "CDE.TypeOfThrow" }}
+                    <td class="select col 1-2">
+                        <select name="typeofthrow">
+                        {{#select aspectspeciality }}
+                            <option value="0">{{ localize "CDE.Everybody" }}</option>
+                            <option value="1">{{ localize "CDE.JustDMAndMe" }}</option>
+                            <option value="2">{{ localize "CDE.DMOnly" }}</option>
+                            <option value="3">{{ localize "CDE.MeOnly" }}</option>
+                        {{/select}}
+                        </select>
+                    </td>
                 </tr>
             </table>
 

@@ -275,6 +275,18 @@
 
  "CDE.Reference": "Reference",
 
+ "CDE.TypeOfThrow": "Type of Throw: Visible by…",
+ "CDE.Everybody": "Everybody",
+ "CDE.JustDMAndMe": "Just the DM and Me",
+ "CDE.DMOnly": "DM Only",
+ "CDE.MeOnly": "Me Only",
+ "CDE.AuspiciousDice": "Auspicious-Dice",
+ "CDE.AuspiciousDie": "Auspicious-Die",
+
+ "CDE.Validate": "Validate",
+ "CDE.Cancel": "Cancel",
+
+
 
  "TYPES": {
     "Actor" : {

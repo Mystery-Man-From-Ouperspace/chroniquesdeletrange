@@ -1,58 +1,60 @@
 <form class="flexcol {{cssClass}}" autocomplete="off">
     <header class="sheet-header">
         <div class="name">
-            <label><b>{{ localize "CDE.MagicPromptName" }}{{ systemData.magicprpt.title }}</b></label>
+            <label><b>{{ localize "CDE.MagicPromptName" }}{{ title }}</b></label>
         </div>
     </header>
 	
     {{!-- Sheet Body --}}
-    <section class="sheet-body" id="prompt">
+    <section class="sheet-body" style="background-image: url('/systems/chroniquesdeletrange/images/cde_fond_transp.png')";
 
         {{!-- Frame --}}
         <div class="frame">
 
-            <table>
-                <tr>
+            <table style="background-color: transparent; border-top: 0px; border-bottom: 1px; border-color: transparent transparent black;">
+                <tr style="background-color: transparent;">
                     <td>
-                        {{ localize "CDE.OneMagicRoll" }}
+                        <b>{{ localize "CDE.OneMagicRoll" }}</b>
                     </td>
                 </tr>
             </table>
-            <table>
-                <tr>
+            <table style="border: 0px; background-color: transparent;" >
+                <tr style="background-color: transparent;">
                     <td class="label col1-5">&nbsp;</td>
                     <td class="image col2-5">
                         <img class="bigsquare" src="systems/chroniquesdeletrange/images/bigsquare.png" />
                     </td>
                     <td class="label col3-5">&nbsp;</td>
-                    <td class="label col4-5"><b>&nbsp;+&nbsp;1&nbsp;+</b></td>
+                    <td class="label col4-5" style="font-size: 30px"><b>&nbsp;+&nbsp;</b><b>1&nbsp;+</b></td>
                     <td class="label col5-5">&nbsp;</td>
                 </tr>
-                <tr> <!-- Ce tr collé au-dessus du tr ci-dessus, pour que le numberofdice soit au milieu du bigsquare.png -->
-                    <td class="value col1-3">{{ systemData.magicprpt.numberofdice }}</td>
-                    <td class="label col2-3">&nbsp;</td>
-                    <td class="label col3-3">&nbsp;</td>
+                <tr style="background-color: transparent;"> <!-- Ce tr collé au-dessus du tr ci-dessus, pour que le numberofdice soit au milieu du bigsquare.png -->
+                    <td class="label col1-5">&nbsp;</td>
+                    <td class="value col2-5">{{ numberofdice }}</td>
+                    <td class="label col3-5">&nbsp;</td>
+                    <td class="label col4-5">&nbsp;</td>
+                    <td class="label col5-5">&nbsp;</td>
                 </tr>
             </table>
-            <table>
-                <tr>
+            <table style="border: 0px; background-color: transparent;">
+                <tr style="background-color: transparent;">
                     <td class="small">
-                        {{ localize "CDE.DoNotModify" }}
+                        <small><i>{{ localize "CDE.DoNotModify" }}</i></small>
                     </td>
                 </tr>
             </table>
-            <table>
-                <tr>
+            <table style="border: 0px; background-color: transparent;">
+                <tr style="background-color: transparent;">
                     <td class="label col1-5">{{ localize "CDE.AspectSkill" }}</td>
                     <td class="label col2-5">&nbsp;</td>
                     <td class="label col3-5">{{ localize "CDE.BonusMalus" }}</td>
                     <td class="label col4-5">&nbsp;</td>
                     <td class="label col5-5">{{ localize "CDE.BonusAuspiciousDice" }}</td>
                 </tr>
-                <tr>
+                <tr style="background-color: transparent;">
                     <td class="select col1-5">
                         <select name="system.magicprpt.aspectskill">
-                        {{#select systemData.magicprpt.aspectskill }}
+                        {{#select aspectskill }}
                             <option value="0">{{ localize "CDE.Metal" }}</option>
                             <option value="1">{{ localize "CDE.Water" }}</option>
                             <option value="2">{{ localize "CDE.Earth" }}</option>
@@ -61,12 +63,12 @@
                         {{/select}}
                         </select>
                     </td>
-                    <td class="label col2-5">+</td>
-                    <td class="value col3-5"><input class="input" type="number" name="system.magicprpt.bonusmalusskill" value="{{systemData.magicprpt.bonusmalusskill}}"/></td>
+                    <td class="label col2-5" style="font-size: 25px;">+</td>
+                    <td class="value col3-5"><input class="input" style="text-align: center; width: 60px;" type="number" name="system.magicprpt.bonusmalusskill" value="{{systemData.magicprpt.bonusmalusskill}}"/></td>
                     <td class="label col4-5">&nbsp;</td>
                     <td  class="select col5-5">
                         <select name="system.magicprpt.bonusauspiciousdice">
-                        {{#select systemData.magicprpt.bonusauspiciousdice }}
+                        {{#select bonusauspiciousdice }}
                             <option value="0">0</option>
                             <option value="1">+1&nbsp;{{ localize "CDE.AuspiciousDie" }}</option>
                             <option value="2">+2&nbsp;{{ localize "CDE.AuspiciousDice" }}</option>
@@ -88,49 +90,59 @@
                     </td>
                 </tr>
             </table>
-            <table>
-                <tr>
+            <table style="background-color: transparent; border-top: 0px; border-bottom: 1px; border-color: transparent transparent black;">
+                <tr style="background-color: transparent;">
                     <td>
-                        {{ localize "CDE.TwoPowerOfSpell" }}
+                        <b>{{ localize "CDE.TwoPowerOfSpell" }}</b>
                     </td>
                 </tr>
             </table>
-            <table>
-                <tr>
+            <table style="border: 0px; background-color: transparent;">
+                <tr style="background-color: transparent;">
                     <td class="small">
-                        {{ localize "CDE.DoNotModify" }}
+                        <small><i>{{ localize "CDE.DoNotModify" }}</i></small>
                     </td>
                 </tr>
             </table>
-            <table>
-                <tr>
+            <table style="border: 0px; background-color: transparent;">
+                <tr style="background-color: transparent;">
                     <td class="label col1-5">{{ localize "CDE.AspectSpeciality" }}</td>
                     <td class="label col2-5">&nbsp;</td>
                     <td class="label col3-5">{{ localize "CDE.RollDifficulty" }}</td>
                     <td class="label col4-5">&nbsp;</td>
                     <td class="label col5-5">{{ localize "CDE.BonusMalus" }}</td>
                 </tr>
-                <tr>
+                <tr style="background-color: transparent;">
                     <td class="select col1-5">
                         <select name="system.magicprpt.aspectspeciality">
-                        {{#select systemData.magicprpt.aspectspeciality }}
-                            <option value="1">{{ localize "CDE.Metal" }}</option>
-                            <option value="2">{{ localize "CDE.Water" }}</option>
-                            <option value="3">{{ localize "CDE.Earth" }}</option>
-                            <option value="4">{{ localize "CDE.Fire" }}</option>
-                            <option value="5">{{ localize "CDE.Wood" }}</option>
+                        {{#select aspectspeciality }}
+                            <option value="0">{{ localize "CDE.Metal" }}</option>
+                            <option value="1">{{ localize "CDE.Water" }}</option>
+                            <option value="2">{{ localize "CDE.Earth" }}</option>
+                            <option value="3">{{ localize "CDE.Fire" }}</option>
+                            <option value="4">{{ localize "CDE.Wood" }}</option>
                         {{/select}}
                         </select>
                     </td>
-                    <td class="label col2-5">⨯</td>
-                    <td class="value col3-5"><input class="input" type="number" name="system.magicprpt.rolldifficulty" value="{{systemData.magicprpt.rolldifficulty}}"/></td>
-                    <td class="label col4-5">+</td>
-                    <td class="value col3-5"><input class="input" type="number" name="system.magicprpt.bonusmalusspeciality" value="{{systemData.magicprpt.bonusmalusspeciality}}"/></td>
+                    <td class="label col2-5" style="font-size: 25px;">⨯</td>
+                    <td class="value col3-5"><input class="input" style="text-align: center; width: 60px;" type="number" name="system.magicprpt.rolldifficulty" value="{{systemData.magicprpt.rolldifficulty}}"/></td>
+                    <td class="label col4-5" style="font-size: 25px;">+</td>
+                    <td class="value col3-5"><input class="input" style="text-align: center; width: 60px;" type="number" name="system.magicprpt.bonusmalusspeciality" value="{{systemData.magicprpt.bonusmalusspeciality}}"/></td>
                 </tr>
             </table>
-            <table>
-                <tr> <!-- Ce logo sert de bouton pour valider le Prompt -->
-                    <td class="click col123 button-right"><img id="system.magicprpt.click" src="systems/chroniquesdeletrange/images/yin_yang.png" title="{{ localize "CDE.Die" }}" alt="Die" /></td>
+            <table style="border: 0px; background-color: transparent;">
+                <tr style="background-color: transparent;">
+                    {{ localize "CDE.TypeOfThrow" }}
+                    <td class="select col 1-2">
+                        <select name="system.magicprpt.typeofthrow">
+                        {{#select aspectspeciality }}
+                            <option value="0">{{ localize "CDE.Everybody" }}</option>
+                            <option value="1">{{ localize "CDE.JustDMAndMe" }}</option>
+                            <option value="2">{{ localize "CDE.DMOnly" }}</option>
+                            <option value="3">{{ localize "CDE.MeOnly" }}</option>
+                        {{/select}}
+                        </select>
+                    </td>
                 </tr>
             </table>
 

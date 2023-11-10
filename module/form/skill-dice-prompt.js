@@ -5,13 +5,13 @@ import {ATTRIBUTE_TYPES} from "../constants.js";
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export class CDEMagicPrompt extends ItemSheet {
+export class CDESkillPrompt extends ItemSheet {
 
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["chroniquesdeletrange", "sheet", "kungfu"],
-      template: "systems/chroniquesdeletrange/templates/item/magic-dice-prompt-sheet.html",
+      classes: ["chroniquesdeletrange", "sheet"],
+      template: "systems/chroniquesdeletrange/templates/form/skill-dice-prompt.html",
       width: 520,
       height: 480,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],

@@ -21,8 +21,8 @@ import { CDELoksyuSheet } from "./actor/loksyu-sheet.js";
 import { CDEKungFuSheet } from "./item/kungfu-sheet.js";
 import { CDESpellSheet } from "./item/spell-sheet.js";
 import { CDESupernaturalSheet } from "./item/supernatural-sheet.js";
-import { CDESkillPrompt } from "./item/skill-dice-prompt.js";
-import { CDEMagicPrompt } from "./item/magic-dice-prompt.js";
+// import { CDESkillPrompt } from "./form/skill-dice-prompt.js";
+// import { CDEMagicPrompt } from "./form/magic-dice-prompt.js";
 
 
 

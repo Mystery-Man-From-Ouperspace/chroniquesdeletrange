@@ -275,6 +275,19 @@
 
  "CDE.Reference": "Referencia",
 
+ "CDE.TypeOfThrow": "Tipo de tirada: Visible por…",
+ "CDE.Everybody": "Todo el mundo",
+ "CDE.JustDMAndMe": "Solo el DM y yo",
+ "CDE.DMOnly": "El DM solamente",
+ "CDE.MeOnly": "Yo solamente",
+ "CDE.AuspiciousDice": "Dados-buenos",
+ "CDE.AuspiciousDie": "Dada-bueno",
+
+ "CDE.Validate": "Validate",
+ "CDE.Cancel": "Cancel",
+
+
+
  "TYPES": {
     "Actor" : {
       "character" : "Fat si",

@@ -274,6 +274,18 @@
 
  "CDE.Reference": "Référence",
 
+ "CDE.TypeOfThrow": "Type de jet : visible pour…",
+ "CDE.Everybody": "Tout le monde",
+ "CDE.JustDMAndMe": "Juste le MJ et moi",
+ "CDE.DMOnly": "Le MJ uniquement",
+ "CDE.MeOnly": "Moi uniquement",
+ "CDE.AuspiciousDice": "Dés-fastes",
+ "CDE.AuspiciousDie": "Dé-faste",
+
+ "CDE.Validate": "Valider",
+ "CDE.Cancel": "Annuler",
+
+
 
  "TYPES": {
     "Actor" : {

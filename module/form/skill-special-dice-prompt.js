@@ -10,8 +10,8 @@ export class CDESkillPrompt extends ItemSheet {
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["chroniquesdeletrange", "sheet", "kungfu"],
-      template: "systems/chroniquesdeletrange/templates/item/skill-dice-prompt.html",
+      classes: ["chroniquesdeletrange", "sheet"],
+      template: "systems/chroniquesdeletrange/templates/form/skill-dice-prompt.html",
       width: 520,
       height: 480,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
