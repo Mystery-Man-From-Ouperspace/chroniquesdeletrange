@@ -1,7 +1,7 @@
 <form class="flexcol {{cssClass}}" autocomplete="off">
     <header class="sheet-header">
         <div class="name">
-            <label><b>{{ localize "CDE.MagicPromptName" }}{{ title }}</b></label>
+            <label><b>{{ localize "CDE.MagicPromptName" }}</b></label>
         </div>
     </header>
 	
@@ -64,7 +64,7 @@
                         </select>
                     </td>
                     <td class="label col2-5" style="font-size: 25px;">+</td>
-                    <td class="value col3-5"><input class="input" style="text-align: center; width: 60px;" type="number" name="system.magicprpt.bonusmalusskill" value="{{systemData.magicprpt.bonusmalusskill}}"/></td>
+                    <td class="value col3-5"><input class="input" style="text-align: center; width: 60px;" type="number" name="bonusmalusskill" value="{{bonusmalusskill}}"/></td>
                     <td class="label col4-5">&nbsp;</td>
                     <td  class="select col5-5">
                         <select name="system.magicprpt.bonusauspiciousdice">
@@ -125,16 +125,16 @@
                         </select>
                     </td>
                     <td class="label col2-5" style="font-size: 25px;">⨯</td>
-                    <td class="value col3-5"><input class="input" style="text-align: center; width: 60px;" type="number" name="system.magicprpt.rolldifficulty" value="{{systemData.magicprpt.rolldifficulty}}"/></td>
+                    <td class="value col3-5"><input class="input" style="text-align: center; width: 60px;" type="number" name="rolldifficulty" value="{{rolldifficulty}}"/></td>
                     <td class="label col4-5" style="font-size: 25px;">+</td>
-                    <td class="value col3-5"><input class="input" style="text-align: center; width: 60px;" type="number" name="system.magicprpt.bonusmalusspeciality" value="{{systemData.magicprpt.bonusmalusspeciality}}"/></td>
+                    <td class="value col3-5"><input class="input" style="text-align: center; width: 60px;" type="number" name="bonusmalusspeciality" value="{{bonusmalusspeciality}}"/></td>
                 </tr>
             </table>
             <table style="border: 0px; background-color: transparent;">
                 <tr style="background-color: transparent;">
                 <b>{{ localize "CDE.TypeOfThrow" }}</b>
                     <td class="select col 1-2">
-                        <select name="system.magicprpt.typeofthrow">
+                        <select name="typeofthrow">
                         {{#select aspectspeciality }}
                             <option value="0">{{ localize "CDE.Everybody" }}</option>
                             <option value="1">{{ localize "CDE.JustDMAndMe" }}</option>
