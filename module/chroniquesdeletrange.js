@@ -21,8 +21,6 @@ import { CDELoksyuSheet } from "./actor/loksyu-sheet.js";
 import { CDEKungFuSheet } from "./item/kungfu-sheet.js";
 import { CDESpellSheet } from "./item/spell-sheet.js";
 import { CDESupernaturalSheet } from "./item/supernatural-sheet.js";
-// import { CDESkillPrompt } from "./form/skill-dice-prompt.js";
-// import { CDEMagicPrompt } from "./form/magic-dice-prompt.js";
 
 
 
@@ -130,8 +128,6 @@ Hooks.once("init", async function() {
   Items.registerSheet("chroniquesdeletrange", CDEKungFuSheet, { types: ["kungfu"], makeDefault: true });
   Items.registerSheet("chroniquesdeletrange", CDESpellSheet, { types: ["spell"], makeDefault: true });
   Items.registerSheet("chroniquesdeletrange", CDESupernaturalSheet, { types: ["supernatural"], makeDefault: true });
-  //Items.registerSheet("chroniquesdeletrange", CDESkillPrompt, { types: ["skillprpt"], makeDefault: true });
-  //Items.registerSheet("chroniquesdeletrange", CDEMagicPrompt, { types: ["magicprpt"], makeDefault: true });
 
   console.log("ACTOR SHEET LOADED !!!!")
 

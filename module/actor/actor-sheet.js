@@ -363,7 +363,10 @@ export class CDEActorSheet extends ActorSheet {
       case wiiSpecial:
         numberDice = this.actor.system.skills[skillUsed].value;
         //////////////////////////////////////////////////////////////////
-        if (this.actor.system.skills[skillUsed].specialities == "") { return; };
+        if (this.actor.system.skills[skillUsed].specialities == "") {
+          ui.notifications.warn(game.i18n.localize("CDE.Error2"));
+          return;
+        };
         //////////////////////////////////////////////////////////////////
         console.log("specialUsed = "+specialUsed);
       break;
@@ -373,7 +376,10 @@ export class CDEActorSheet extends ActorSheet {
       case wiiField:
         numberDice = this.actor.system.resources[skillUsed].value;
         //////////////////////////////////////////////////////////////////
-        if (this.actor.system.resources[skillUsed].specialities == "") { return; };
+        if (this.actor.system.resources[skillUsed].specialities == "") {
+          ui.notifications.warn(game.i18n.localize("CDE.Error4"));
+          return;
+        };
         //////////////////////////////////////////////////////////////////
         console.log("specialUsed = "+specialUsed);
       break;
@@ -385,7 +391,10 @@ export class CDEActorSheet extends ActorSheet {
         mySpecialUsed = specialDefined;
         specialUsed = whatIsItTab[2];
         //////////////////////////////////////////////////////////////////
-        if (!this.actor.system.magics[skillUsed].speciality[specialUsed].check) { return; };
+        if (!this.actor.system.magics[skillUsed].speciality[specialUsed].check) {
+          ui.notifications.warn(game.i18n.localize("CDE.Error6"));
+          return;
+        };
         //////////////////////////////////////////////////////////////////
         console.log("specialUsed = "+specialUsed);
         specialUsedLabel = this.actor.system.magics[skillUsed].speciality[specialUsed].label;
@@ -557,7 +566,7 @@ export class CDEActorSheet extends ActorSheet {
         console.log("aspectSpecialUsedLabel = "+aspectSpecialUsedLabel);
         myIsSpecial = true;
 
-        data = await _magicDiceRollDialog("", myTitle, myDialogOptions, numberDice, myIsSpecial, myAspectUsed, 0, 0, myAspectSpecialUsed, 0, 0, 0);
+        data = await _magicDiceRollDialog("", myTitle, myDialogOptions, numberDice, myIsSpecial, myAspectUsed, 0, 0, myAspectSpecialUsed, 1, 0, 0);
         break;
       case wiiRandomize:
         mySkillUsed = random;
@@ -585,7 +594,10 @@ export class CDEActorSheet extends ActorSheet {
     };
     //////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////
-    if (numberDice <= 0) { return; };
+    if (numberDice <= 0) {
+      ui.notifications.warn(game.i18n.localize("CDE.Error0"));
+      return;
+      };
     //////////////////////////////////////////////////////////////////
     console.log("numberDice = "+numberDice);
     console.log("bonusDice = "+bonusDice);
