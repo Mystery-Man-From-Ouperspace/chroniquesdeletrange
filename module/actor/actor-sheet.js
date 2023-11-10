@@ -834,6 +834,7 @@ async function _skillDiceRollDialog({ template, myTitle, myDialogOptions, myNumb
     bonusauspiciousdice: myBonusAuspiciousDice,
     typeofthrow: myTypeOfThrow
   };
+  console.log("dialogData = "+dialogData);
   const html = await renderTemplate(template, dialogData);
 
   // Create the Dialog window
@@ -882,6 +883,7 @@ async function _skillSpecialDiceRollDialog({ template, myTitle, myDialogOptions,
     bonusauspiciousdice: myBonusAuspiciousDice,
     typeofthrow: myTypeOfThrow
   };
+  console.log("dialogData = "+dialogData);
   const html = await renderTemplate(template, dialogData);
 
   // Create the Dialog window
