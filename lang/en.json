@@ -300,7 +300,7 @@
  "CDE.Error16": "Unable to proceed: you can't possess any Speciality in this Magical Skill which score is less than 1.",
 
 
- "CDE.Preferences": "Preferences",
+ "CDE.Preferences": "Preferences for this actor",
  "CDE.TypeOfThrowCheck": "Always ask before making a throw",
 
  "CDE.TypeOfThrow4ThisTime": "Type of Throwing for this time: Visible by…",
