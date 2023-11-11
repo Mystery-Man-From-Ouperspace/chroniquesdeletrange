@@ -14,6 +14,11 @@
 					<div class="header-fields">
 						<table>
 							<tr>
+								<td style="width: 1%;">
+									<h1>
+										<i class="click-prefs fas fa-gear"></i>
+									</h1>
+								</td>
 								<td>
 									<h1 class="charname">
 										<input name="name" type="text" value="{{data.name}}" placeholder="{{ localize "CDE.PCName" }}" />
@@ -21,8 +26,9 @@
 								</td>
 							</tr>
 							<tr>
+								<td></td>
 								<td>
-									<div class="resourceZ">
+									<div class="concept">
 										<input type="text" name="system.concept" value="{{systemData.concept}}" placeholder="{{ localize "CDE.Concept" }}"/>
 										<span> / </span>
 										<!-- <select name="system.guardian" value="{{ systemData.guardian }}" > -->
@@ -160,9 +166,9 @@
 					<td class="value" style="width: 25%";><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}0" name="system.component.zero.value" value="{{systemData.component.zero.value}}"/></td>
 				</tr>
 			</table>
-			<div class="chancethrow">
+			<div class="chancethrow" style="display: flex; justify-content: center; align-items: center";>
 				<img style="width: 27px;" class="click" data-libel-id="randomize-randomize" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.ChanceThrow" }}"" alt="Die" />	
-				<label style="margin-top: -20px;" class="label"><b>&nbsp;{{ localize "CDE.ChanceThrow" }}</b></label>
+				<label class="label"><b>&nbsp;{{ localize "CDE.ChanceThrow" }}</b></label>
 			</div>
 			
 			&nbsp;<br>&nbsp;

@@ -298,6 +298,15 @@
  "CDE.Error16": "Impossible de poursuivre : vous ne pouvez pas posséder de Spécialité dans cette Compétence de Magie dont le score est inférieur à 1.",
 
 
+ "CDE.Preferences": "Préférences",
+ "CDE.TypeOfThrowCheck": "Toujours demander avant d'effectuer un lancer",
+
+ "CDE.TypeOfThrow4ThisTime": "Type de jet pour cette fois : visible pour…",
+ "CDE.TypeOfThrowTitle": "Modifier le type de jet",
+ "CDE.CancelChanges": "Annuler les modifications",
+
+ "CDE.NextTimeGoToTheSettings": "Tout ceci est paramétrable dans les Préférences",
+
 
  "TYPES": {
     "Actor" : {

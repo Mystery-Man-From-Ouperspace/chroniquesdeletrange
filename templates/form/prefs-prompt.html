@@ -1,0 +1,34 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <div class="name">
+            <label><b>{{ localize "CDE.SkillPromptName" }}</b></label>
+        </div>
+    </header>
+	
+    {{!-- Sheet Body --}}
+    <section class="sheet-body" style="background-image: url('/systems/chroniquesdeletrange/images/cde_fond_transp.png')";
+    >
+
+        {{!-- Frame --}}
+        <div class="frame">
+
+            <table style="border: 0px; background-color: transparent;">
+                <tr style="background-color: transparent;">
+                    <b>{{ localize "CDE.TypeOfThrow" }}</b>
+                    <td>
+                        <select name="system.typeofthrow.menu">
+                        {{#select menu }}
+                            <option value="0">{{ localize "CDE.Everybody" }}</option>
+                            <option value="1">{{ localize "CDE.JustDMAndMe" }}</option>
+                            <option value="2">{{ localize "CDE.DMOnly" }}</option>
+                            <option value="3">{{ localize "CDE.MeOnly" }}</option>
+                        {{/select}}
+                        </select>
+                    </td>
+                    <td class="check"><input type="checkbox" name="check" {{ checked check }} title="" /><b>{{ localize "CDE.TypeOfThrowCheck" }}</b></td>
+                </tr>
+            </table>
+
+		</div>	
+    </section>
+</form>

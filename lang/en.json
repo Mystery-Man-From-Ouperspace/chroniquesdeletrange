@@ -207,7 +207,7 @@
  "CDE.AspectSpeciality": "Aspect/Speciality",
  "CDE.RollDifficulty": "Roll Difficulty",
 
- "CDE.TypeOfThrow": "Type of Throw: Visible by…",
+ "CDE.TypeOfThrow": "Type of Throwing: Visible by…",
  "CDE.Everybody": "Everybody",
  "CDE.JustDMAndMe": "Just the DM and Me",
  "CDE.DMOnly": "DM Only",
@@ -299,6 +299,15 @@
  "CDE.Error14": "Unable to proceed: you can't possess any Field in this Resource which score is less than 1.",
  "CDE.Error16": "Unable to proceed: you can't possess any Speciality in this Magical Skill which score is less than 1.",
 
+
+ "CDE.Preferences": "Preferences",
+ "CDE.TypeOfThrowCheck": "Always ask before making a throw",
+
+ "CDE.TypeOfThrow4ThisTime": "Type of Throwing for this time: Visible by…",
+ "CDE.TypeOfThrowTitle": "Modify Type of Throw",
+ "CDE.CancelChanges": "Cancel Changes",
+
+ "CDE.NextTimeGoToTheSettings": "All these are parametrable in the Settings",
 
 
  "TYPES": {

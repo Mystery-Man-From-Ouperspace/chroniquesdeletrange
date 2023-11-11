@@ -207,7 +207,7 @@
  "CDE.AspectSpeciality": "Aspecto/Especialidad",
  "CDE.RollDifficulty": "Dificultad de la Tirada",
 
- "CDE.TypeOfThrow": "Tipo de tirada: Visible por…",
+ "CDE.TypeOfThrow": "Tipo de tirada: visible por…",
  "CDE.Everybody": "Todo el mundo",
  "CDE.JustDMAndMe": "Solo el DM y yo",
  "CDE.DMOnly": "El DM solamente",
@@ -298,6 +298,16 @@
  "CDE.Error12": "Unable to proceed: you can't possess any Speciality in this Skill which score is less than 1.",
  "CDE.Error14": "Unable to proceed: you can't possess any Field in this Resource which score is less than 1.",
  "CDE.Error16": "Unable to proceed: you can't possess any Speciality in this Magical Skill which score is less than 1.",
+
+
+ "CDE.Preferences": "Preferencias",
+ "CDE.TypeOfThrowCheck": "Preguntar siempre antes de realizar una tirada",
+
+ "CDE.TypeOfThrow4ThisTime": "Tipo de tirada por esta vez: visible por…",
+ "CDE.TypeOfThrowTitle": "Modificar el tipo de tirada",
+ "CDE.CancelChanges": "Cancel Changes",
+
+ "CDE.NextTimeGoToTheSettings": "All these are parametrable in the Settings",
 
 
  

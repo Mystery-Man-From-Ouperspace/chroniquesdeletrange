@@ -7,7 +7,12 @@
       "concept": "",
       "guardian": "0",
       "biography": "",
-      
+      "prefs": {
+        "typeofthrow": {
+          "check": true,
+          "choice": 0
+        }
+      },
       "aspect": {
         "fire": {
           "chinese": "㊋",
