@@ -100,7 +100,7 @@
 
 				{{#each systemData.resources as |resource key|}}
 				<tr class="clickondie">
-					<td class="click" data-libel-id="{{key}}-resource"><img class="d1click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize resource.label }}" alt="Die" /></td>
+					<td class="noclick" data-libel-id="{{key}}-resource"><img class="d1click" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="" alt="NoDie" /></td>
 					<td class="label"><b>&nbsp;{{ localize resource.label }}</b></td>
 					<td class="image"><img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
 						<div class="stick">&nbsp;</div>
@@ -126,44 +126,44 @@
 			<table>
 				<tr>
 					<td style="width: 2.2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-1.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}1" name="system.component.one.value" value="{{systemData.component.one.value}}"/></td>
-					<td style="width: 2%;">&nbsp;</td>
+					<td class="value" style="width: 25%;"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}1" name="system.component.one.value" value="{{systemData.component.one.value}}"/></td>
+					<td style="width: 2.2%;">&nbsp;</td>
 					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-6.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}6" name="system.component.six.value" value="{{systemData.component.six.value}}"/></td>
+					<td class="value" style="width: 25%";><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}6" name="system.component.six.value" value="{{systemData.component.six.value}}"/></td>
 				</tr>
 				<tr>
 					<td style="width: 2.2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-2.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}2" name="system.component.two.value" value="{{systemData.component.two.value}}"/></td>
-					<td style="width: 2%;">&nbsp;</td>
+					<td class="value" style="width: 25%;"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}2" name="system.component.two.value" value="{{systemData.component.two.value}}"/></td>
+					<td style="width: 2.2%;">&nbsp;</td>
 					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-7.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}7" name="system.component.seven.value" value="{{systemData.component.seven.value}}"/></td>
+					<td class="value" style="width: 25%";><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}7" name="system.component.seven.value" value="{{systemData.component.seven.value}}"/></td>
 				</tr>
 				<tr>
 					<td style="width: 2.2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-3.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}3" name="system.component.three.value" value="{{systemData.component.three.value}}"/></td>
-					<td style="width: 2%;">&nbsp;</td>
+					<td class="value" style="width: 25%;"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}3" name="system.component.three.value" value="{{systemData.component.three.value}}"/></td>
+					<td style="width: 2.2%;">&nbsp;</td>
 					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-8.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}8" name="system.component.eight.value" value="{{systemData.component.eight.value}}"/></td>
+					<td class="value" style="width: 25%";><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}8" name="system.component.eight.value" value="{{systemData.component.eight.value}}"/></td>
 				</tr>
 				<tr>
 					<td style="width: 2.2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-4.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}4" name="system.component.four.value" value="{{systemData.component.four.value}}"/></td>
-					<td style="width: 2%;">&nbsp;</td>
+					<td class="value" style="width: 25%;"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}4" name="system.component.four.value" value="{{systemData.component.four.value}}"/></td>
+					<td style="width: 2.2%;">&nbsp;</td>
 					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-9.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}9" name="system.component.nine.value" value="{{systemData.component.nine.value}}"/></td>
+					<td class="value" style="width: 25%";><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}9" name="system.component.nine.value" value="{{systemData.component.nine.value}}"/></td>
 				</tr>
 				<tr>
 					<td style="width: 2.2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-5.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}5" name="system.component.five.value" value="{{systemData.component.five.value}}"/></td>
-					<td style="width: 2%;">&nbsp;</td>
+					<td class="value" style="width: 25%;"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}5" name="system.component.five.value" value="{{systemData.component.five.value}}"/></td>
+					<td style="width: 2.2%;">&nbsp;</td>
 					<td style="width: 2%;" class="image"><img src="systems/chroniquesdeletrange/images/d10-0.png" alt="Die" /></td>
-					<td style="width: 25%;" class="value"><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}0" name="system.component.zero.value" value="{{systemData.component.zero.value}}"/></td>
+					<td class="value" style="width: 25%";><input class="input" type="text" placeholder="{{ localize "CDE.Component" }}0" name="system.component.zero.value" value="{{systemData.component.zero.value}}"/></td>
 				</tr>
-				<tr class="chancethrow">
-					<td style="width: 2.2%;" class="click" data-libel-id="randomize-randomize"><img src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.ChanceThrow" }}"" alt="Die" /></td>	
-					<td style="margin-left: 5px;" class="label"><b>&nbsp;{{ localize "CDE.ChanceThrow" }}</b></td>
-				</tr>
-			</table>	
+			</table>
+			<div class="chancethrow">
+				<img style="width: 27px;" class="click" data-libel-id="randomize-randomize" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize "CDE.Die" }}{{ localize "CDE.ChanceThrow" }}"" alt="Die" />	
+				<label style="margin-top: -20px;" class="label"><b>&nbsp;{{ localize "CDE.ChanceThrow" }}</b></label>
+			</div>
 			
 			&nbsp;<br>&nbsp;
 			<b>{{ localize "CDE.TypesOfMagic" }}</b>

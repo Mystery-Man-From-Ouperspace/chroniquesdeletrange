@@ -290,9 +290,12 @@
  "CDE.Error2": "Impossible de poursuivre : vous ne possédez pas de Spécialité dans cette Compétence.",
  "CDE.Error3": "Impossible de poursuivre : vous ne possédez pas cette Ressource.",
  "CDE.Error4": "Impossible de poursuivre : vous ne possédez pas de Domaine dans cette Ressource.",
- "CDE.Error5": "Impossible de poursuivre : vous ne possédez pas cette Compétence magique.",
- "CDE.Error6": "Impossible de poursuivre : vous ne possédez pas cette Spécialité dans cette Compétence magique.",
+ "CDE.Error5": "Impossible de poursuivre : vous ne possédez pas cette Compétence de Magie.",
+ "CDE.Error6": "Impossible de poursuivre : vous ne possédez pas cette Spécialité dans cette Compétence de Magie.",
  "CDE.Error10": "Impossible de poursuivre : vous avez 0 ou moins dans cet Aspect.",
+ "CDE.Error12": "Impossible de poursuivre : vous ne pouvez pas posséder de Spécialité dans cette Compétence dont le score est inférieur à 1.",
+ "CDE.Error14": "Impossible de poursuivre : vous ne pouvez pas posséder de Domaine dans cette Ressource dont le score est inférieur à 1.",
+ "CDE.Error16": "Impossible de poursuivre : vous ne pouvez pas posséder de Spécialité dans cette Compétence de Magie dont le score est inférieur à 1.",
 
 
 

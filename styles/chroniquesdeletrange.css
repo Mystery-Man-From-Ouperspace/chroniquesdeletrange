@@ -107,10 +107,13 @@ width: 3%;
 text-align: center;
 }
 .chroniquesdeletrange .sheet-body .skills table tr td.click {
-width: 4%;
+width: 27px;
 }
+.chroniquesdeletrange .sheet-body .skills table tr td.noclick {
+width: 27px;
+} 
 .chroniquesdeletrange .sheet-body .skills table tr td table tr td.icon-d {
-width: 1%;
+width: 27px;
 }
 .chroniquesdeletrange .sheet-body .skills table tr td.bonus {
 width: 35px;
@@ -146,7 +149,7 @@ text-align: left;
 }
 
 
-/* concenre la magie */
+/* concerne la magie */
 
 .chroniquesdeletrange .sheet-body .magics .linear-green {
 	background: linear-gradient(Khaki, ForestGreen);
@@ -778,6 +781,9 @@ text-align: left;
 .chroniquesdeletrange .sheet-body .frame table tr:nth-child(even) {
   background-color: transparent;
 }
+
+
+/* concerne l'interface de Foundry */
 
 #logo {
   content: url("/systems/chroniquesdeletrange/images/logo_jeu.png");

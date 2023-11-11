@@ -287,14 +287,17 @@
  "CDE.Reference": "Reference",
 
 
- "CDE.Error0": "Unable to proceed : total dice number to be thrown is less than 1.",
- "CDE.Error1": "Unable to proceed : you don't possess this Skill.",
- "CDE.Error2": "Unable to proceed : you don't possess any Speciality in this Skill.",
- "CDE.Error3": "Unable to proceed : you don't possess this Resource.",
- "CDE.Error4": "Unable to proceed : you don't possess any Field in this Resource.",
- "CDE.Error5": "Unable to proceed : you don't possess this Magical Skill.",
- "CDE.Error6": "Unable to proceed : you don't possess this Speciality in this Magical Skill.",
- "CDE.Error10": "Unable to proceed : you've got 0 or less in this Aspect.",
+ "CDE.Error0": "Unable to proceed: total dice number to be thrown is less than 1.",
+ "CDE.Error1": "Unable to proceed: you don't possess this Skill.",
+ "CDE.Error2": "Unable to proceed: you don't possess any Speciality in this Skill.",
+ "CDE.Error3": "Unable to proceed: you don't possess this Resource.",
+ "CDE.Error4": "Unable to proceed: you don't possess any Field in this Resource.",
+ "CDE.Error5": "Unable to proceed: you don't possess this Magical Skill.",
+ "CDE.Error6": "Unable to proceed: you don't possess this Speciality in this Magical Skill.",
+ "CDE.Error10": "Unable to proceed: you've got 0 or less in this Aspect.",
+ "CDE.Error12": "Unable to proceed: you can't possess any Speciality in this Skill which score is less than 1.",
+ "CDE.Error14": "Unable to proceed: you can't possess any Field in this Resource which score is less than 1.",
+ "CDE.Error16": "Unable to proceed: you can't possess any Speciality in this Magical Skill which score is less than 1.",
 
 
 

@@ -366,6 +366,10 @@ export class CDEActorSheet extends ActorSheet {
         if (this.actor.system.skills[skillUsed].specialities == "") {
           ui.notifications.warn(game.i18n.localize("CDE.Error2"));
           return;
+        } else if (numberDice <= 0) {
+          ui.notifications.warn(game.i18n.localize("CDE.Error12"));
+          return;
+
         };
         //////////////////////////////////////////////////////////////////
         console.log("specialUsed = "+specialUsed);
@@ -378,6 +382,9 @@ export class CDEActorSheet extends ActorSheet {
         //////////////////////////////////////////////////////////////////
         if (this.actor.system.resources[skillUsed].specialities == "") {
           ui.notifications.warn(game.i18n.localize("CDE.Error4"));
+          return;
+        } else if (numberDice <= 0) {
+          ui.notifications.warn(game.i18n.localize("CDE.Error14"));
           return;
         };
         //////////////////////////////////////////////////////////////////
@@ -393,6 +400,9 @@ export class CDEActorSheet extends ActorSheet {
         //////////////////////////////////////////////////////////////////
         if (!this.actor.system.magics[skillUsed].speciality[specialUsed].check) {
           ui.notifications.warn(game.i18n.localize("CDE.Error6"));
+          return;
+        } else if (numberDice <= 0) {
+          ui.notifications.warn(game.i18n.localize("CDE.Error16"));
           return;
         };
         //////////////////////////////////////////////////////////////////
@@ -982,4 +992,23 @@ async function _magicDiceRollDialog(template, myTitle, myDialogOptions, myNumber
   } else {
     return prompt;
   }
+
+
+
+/*
+
+  html.find("div.skills table.clickondie").each((i, myClickondie) => {
+    let value = html.find(myClickondie+"td.image input.input.dataset.value");
+    console.log('value = ', value);
+    let input = html.find(myClickondie+"td.specialities input.input");
+    console.log('input = ', input);
+    if (value == 0)  {
+      $(input).prop(disabled, true);
+    }
+  });
+
+*/
+
+
+
 }
