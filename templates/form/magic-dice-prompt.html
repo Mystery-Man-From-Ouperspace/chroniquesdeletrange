@@ -45,7 +45,7 @@
                 </tr>
                 <tr style="background-color: transparent;">
                     <td class="select col1-5">
-                        <select name="system.magicprpt.aspectskill">
+                        <select name="aspectskill">
                         {{#select aspectskill }}
                             <option value="0">{{ localize "CDE.Metal" }}</option>
                             <option value="1">{{ localize "CDE.Water" }}</option>
@@ -59,7 +59,7 @@
                     <td class="value col3-5"><input class="input" style="text-align: center; width: 60px;" type="number" name="bonusmalusskill" value="{{bonusmalusskill}}"/></td>
                     <td class="label col4-5">&nbsp;</td>
                     <td  class="select col5-5">
-                        <select name="system.magicprpt.bonusauspiciousdice">
+                        <select name="bonusauspiciousdice">
                         {{#select bonusauspiciousdice }}
                             <option value="0">0</option>
                             <option value="1">+1&nbsp;{{ localize "CDE.AuspiciousDie" }}</option>
@@ -85,7 +85,7 @@
             <table style="border: 0px; background-color: transparent; margin-top: -10px;">
                 <tr style="background-color: transparent;">
                     <td class="small">
-                        <small><i>{{ localize "CDE.DoNotModify" }}</i></small>
+                        <small><i class="click-prefs fas fa-alert"></i>&nbsp;<i>{{ localize "CDE.DoNotModify" }}</i></small>
                     </td>
                 </tr>
             </table>
@@ -107,7 +107,7 @@
                 </tr>
                 <tr style="background-color: transparent;">
                     <td class="select col1-5">
-                        <select name="system.magicprpt.aspectspeciality">
+                        <select name="aspectspeciality">
                         {{#select aspectspeciality }}
                             <option value="0">{{ localize "CDE.Metal" }}</option>
                             <option value="1">{{ localize "CDE.Water" }}</option>
@@ -126,7 +126,7 @@
             <table style="border: 0px; background-color: transparent; margin-top: -10px;">
                 <tr style="background-color: transparent;">
                     <td class="small" style="margin-top: -5px">
-                        <small><i>{{ localize "CDE.DoNotModify" }}</i></small>
+                        <small><i class="click-prefs fas fa-alert"></i>&nbsp;<i>{{ localize "CDE.DoNotModify" }}</i></small>
                     </td>
                 </tr>
             </table>
@@ -136,7 +136,7 @@
                 <b>{{ localize "CDE.TypeOfThrow" }}</b>
                     <td class="select col 1-2">
                         <select name="typeofthrow">
-                        {{#select aspectspeciality }}
+                        {{#select typeofthrow }}
                             <option value="0">{{ localize "CDE.Everybody" }}</option>
                             <option value="1">{{ localize "CDE.JustDMAndMe" }}</option>
                             <option value="2">{{ localize "CDE.DMOnly" }}</option>

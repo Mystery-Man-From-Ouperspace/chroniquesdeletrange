@@ -304,7 +304,7 @@
  "CDE.TypeOfThrowCheck": "Always ask before making a throw",
 
  "CDE.TypeOfThrow4ThisTime": "Type of Throwing for this time: Visible by…",
- "CDE.TypeOfThrowTitle": "Modify Type of Throw",
+ "CDE.TypeOfThrowTitle": "Modify Type of Throw?",
  "CDE.CancelChanges": "Cancel Changes",
 
  "CDE.NextTimeGoToTheSettings": "All these are parametrable in the Settings",

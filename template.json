@@ -13,6 +13,24 @@
           "choice": 0
         }
       },
+      "prompt": {
+        "typeofthrow": {
+        "check": true,
+        "choice": 0
+        },
+        "configure": {
+          "numberofdice": 0,
+          "aspect": 0,
+          "bonus": 0,
+          "bonusauspiciousdice": 0,
+          "typeofthrow": 0,
+          "aspectskill": 0,
+          "bonusmalusskill": 0,
+          "aspectspeciality": 0,
+          "rolldifficulty": 0,
+          "bonusmalusspeciality": 0
+        }
+      },
       "aspect": {
         "fire": {
           "chinese": "㊋",

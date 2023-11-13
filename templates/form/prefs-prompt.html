@@ -16,8 +16,8 @@
                 <tr style="background-color: transparent;">
                     <b>{{ localize "CDE.TypeOfThrow" }}</b>
                     <td>
-                        <select name="system.typeofthrow.menu">
-                        {{#select menu }}
+                        <select name="choice">
+                        {{#select choice }}
                             <option value="0">{{ localize "CDE.Everybody" }}</option>
                             <option value="1">{{ localize "CDE.JustDMAndMe" }}</option>
                             <option value="2">{{ localize "CDE.DMOnly" }}</option>
@@ -25,7 +25,7 @@
                         {{/select}}
                         </select>
                     </td>
-                    <td class="check"><input type="checkbox" name="check" {{ checked check }} title="" /><b>{{ localize "CDE.TypeOfThrowCheck" }}</b></td>
+                    <td class="check"><input type="checkbox" name="check"  {{ checked check }} title="" /><b>{{ localize "CDE.TypeOfThrowCheck" }}</b></td>
                 </tr>
             </table>
 

@@ -231,10 +231,10 @@ export class CDEActorSheet extends ActorSheet {
     const title = game.i18n.localize("CDE.Preferences");
     let dialogOptions = "";
     var dialogData = {
-      check: this.actor.system.prefs.typeofthrow.check,
-      menu: this.actor.system.prefs.typeofthrow.choice
+      choice: this.actor.system.prefs.typeofthrow.choice,
+      check: this.actor.system.prefs.typeofthrow.check
     };
-    console.log(dialogData);
+    console.log("Gear dialogData = ", dialogData);
     const html = await renderTemplate(template, dialogData);
 
     // Create the Dialog window
@@ -246,7 +246,7 @@ export class CDEActorSheet extends ActorSheet {
           buttons: {
             validateBtn: {
               icon: `<div class="tooltip"><i class="fas fa-check"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Validate')}</span></div>`,
-              callback: (html) => resolve(dialogData)
+              callback: (html) => resolve(_computeResult(this.actor, html))
             },
             cancelBtn: {
               icon: `<div class="tooltip"><i class="fas fa-cancel"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Cancel')}</span></div>`,
@@ -262,13 +262,15 @@ export class CDEActorSheet extends ActorSheet {
         height: 150
       });
     });
-    if (prompt != null) {
-      // traitement ici
-      return dialogData;
-    } else {
-      return prompt;
+    async function _computeResult(myActor, myHtml) {
+      console.log("I'm in _computeResult(myActor)");
+      const choice =  myHtml.find("select[name='choice']").val();
+      console.log("choice = ", choice);
+      const isChecked = myHtml.find("input[name='check']").is(':checked');
+      console.log("isChecked = ", isChecked);
+      myActor.update({ "system.prefs.typeofthrow.choice": choice });
+      myActor.update({ "system.prefs.typeofthrow.check": isChecked });
     }
-
   }
 
 
@@ -338,8 +340,6 @@ export class CDEActorSheet extends ActorSheet {
     var mySkillUsed = skill2BDefined;
     var mySpecialUsed = special2BDefined;
 
-    var myAspectSpecialUsed = -999;
-
     var skillUsedLabel = "?";
     var aspectUsedLabel ="?";
     var specialUsedLabel = "?";
@@ -348,11 +348,11 @@ export class CDEActorSheet extends ActorSheet {
     var specialUsed = "?";
 
     var bonusDice = 0;
-    var bonusBeneficial = 0;
-    var aspectSpecial = 0;
-    var difficultySpecial = 0;
+    var bonusAuspicious = 0;
+    var myAspectSpecialUsed = 0;
+    var rollDifficulty = 1;
     var bonusSpecial = 0;
-    
+
     let d10_1 = 0;
     let d10_2 = 0;
     let d10_3 = 0;
@@ -365,12 +365,16 @@ export class CDEActorSheet extends ActorSheet {
     let d10_0 = 0;
     let suite = "~ [";
 
-    let myTitle;
+    let titleDialog;
     let myIsSpecial;
-    let data;
-    let myDialogOptions;
 
-    let myTypeOfThrow = this.actor.system.prefs.typeofthrow.choice;
+    var data;
+
+    var dataBis;
+  
+    let dialogOptions;
+
+    let typeOfThrow = this.actor.system.prefs.typeofthrow.choice;
 
 
     const element = event.currentTarget;              // On récupère le clic
@@ -507,7 +511,8 @@ export class CDEActorSheet extends ActorSheet {
         default: console.log("C'est bizarre !");
       };
       if (this.actor.system.prefs.typeofthrow.check) {
-        myTypeOfThrow = await _whichTypeOfThrow(this.actor, myTypeOfThrow);
+        typeOfThrow = await _whichTypeOfThrow(this.actor, typeOfThrow);
+        console.log("typeOfThrow = ", typeOfThrow);
       };
       break;
       case wiiSkill:
@@ -517,7 +522,15 @@ export class CDEActorSheet extends ActorSheet {
         mySpecialUsed = noSpecialUsed;
         myIsSpecial = false;
         
-        data = await _skillDiceRollDialog("", myTitle, myDialogOptions, numberDice, myIsSpecial, myAspectUsed, 0, 0, myTypeOfThrow);
+        data = await _skillDiceRollDialog(this.actor, "", titleDialog, dialogOptions, numberDice, myIsSpecial, 0, bonusDice, bonusAuspicious, typeOfThrow);
+        console.log("data après Prompt = ", data);
+        if (data == null) {return;};
+        numberDice = data.numberofdice;
+        myAspectUsed = data.aspectused;
+        console.log("myAspectUsed après Prompt = ", myAspectUsed);
+        bonusDice = data.bonus;
+        bonusAuspicious = data.bonusauspiciousdice;
+        typeOfThrow = data.typeofthrow;
       break;
       case wiiSpecial:
         mySkillUsed = skillDefined;
@@ -527,7 +540,14 @@ export class CDEActorSheet extends ActorSheet {
         specialUsedLabel = "CDE.Speciality";
         myIsSpecial = true;
         
-        data = await _skillSpecialDiceRollDialog("", myTitle, myDialogOptions, numberDice, myIsSpecial, myAspectUsed, 0, 0, myTypeOfThrow);
+        data = await _skillSpecialDiceRollDialog(this.actor, "", titleDialog, dialogOptions, numberDice, myIsSpecial, myAspectUsed, bonusDice, bonusAuspicious, typeOfThrow);
+        console.log("data après Prompt = ", data);
+        if (data == null) {return;};
+          numberDice = data.numberofdice;
+        myAspectUsed = data.aspectused;
+        bonusDice = data.bonus;
+        bonusAuspicious = data.bonusauspiciousdice;
+        typeOfThrow = data.typeofthrow;
         break;
       case wiiResource:
         mySkillUsed = skillDefined;
@@ -536,7 +556,13 @@ export class CDEActorSheet extends ActorSheet {
         mySpecialUsed = noSpecialUsed;
         myIsSpecial = false;
         
-        data = await _skillDiceRollDialog("", myTitle, myDialogOptions, numberDice, myIsSpecial, myAspectUsed, 0, 0, myTypeOfThrow);
+        data = await _skillDiceRollDialog("", titleDialog, dialogOptions, numberDice, myIsSpecial, 0, bonusDice, bonusAuspicious, typeOfThrow);
+        console.log("data après Prompt = ", data);
+        numberDice = data.numberofdice;
+        myAspectUsed = data.aspectused;
+        bonusDice = bonus;
+        bonusAuspicious = data.bonusauspiciousdice;
+        typeOfThrow = data.typeofthrow;
       break;
       case wiiField:
         mySkillUsed = skillDefined;
@@ -546,7 +572,14 @@ export class CDEActorSheet extends ActorSheet {
         specialUsedLabel = "CDE.Field";
         myIsSpecial = true;
         
-        data = await _skillSpecialDiceRollDialog("", myTitle, myDialogOptions, numberDice, myIsSpecial, myAspectUsed, 0, 0, myTypeOfThrow);
+        data = await _skillSpecialDiceRollDialog(this.actor, "", titleDialog, dialogOptions, numberDice, myIsSpecial, 0, bonusDice, bonusAuspicious, typeOfThrow);
+        console.log("data après Prompt = ", data);
+        if (data == null) {return;};
+          numberDice = data.numberofdice;
+        myAspectUsed = data.aspectused;
+        bonusDice = data.bonus;
+        bonusAuspicious = data.bonusauspiciousdice;
+        typeOfThrow = data.typeofthrow;
       break;
       case wiiMagic:
         mySkillUsed = skillDefined;
@@ -576,7 +609,14 @@ export class CDEActorSheet extends ActorSheet {
         };
         myIsSpecial = false;
 
-        data = await _skillDiceRollDialog("", myTitle, myDialogOptions, numberDice, myIsSpecial, myAspectUsed, 0, 0, myTypeOfThrow);
+        data = await _skillDiceRollDialog(this.actor, "", titleDialog, dialogOptions, numberDice, myIsSpecial, myAspectUsed, bonusDice, bonusAuspicious, typeOfThrow);
+        console.log("data après Prompt = ", data);
+        if (data == null) {return;};
+        numberDice = data.numberofdice;
+        myAspectUsed = data.aspectused;
+        bonusDice = data.bonus;
+        bonusAuspicious = data.bonusauspiciousdice;
+        typeOfThrow = data.typeofthrow;
       break;
       case wiiMagicSpecial:
         console.log("I'm here!");
@@ -631,7 +671,17 @@ export class CDEActorSheet extends ActorSheet {
         console.log("aspectSpecialUsedLabel = "+aspectSpecialUsedLabel);
         myIsSpecial = true;
 
-        data = await _magicDiceRollDialog("", myTitle, myDialogOptions, numberDice, myIsSpecial, myAspectUsed, 0, 0, myAspectSpecialUsed, 1, 0, myTypeOfThrow);
+        dataBis = await _magicDiceRollDialog(this.actor, "", titleDialog, dialogOptions, numberDice, myIsSpecial, myAspectUsed, bonusDice, bonusAuspicious, myAspectSpecialUsed, rollDifficulty, bonusSpecial, typeOfThrow);
+        console.log("dataBis = ", dataBis);
+        numberDice = dataBis.numberofdice;
+        myAspectUsed = dataBis.aspectskill;
+        bonusDice = dataBis.bonusmalusskill;
+        bonusAuspicious = dataBis.auspiciousdice;
+        myAspectSpecialUsed = dataBis.aspectspeciality;
+        rollDifficulty = dataBis.rolldifficulty;
+        bonusSpecial = dataBis.bonusmalusspeciality;
+        typeOfThrow = dataBis.typeofthrow;
+        
         break;
       case wiiRandomize:
         mySkillUsed = random;
@@ -640,7 +690,8 @@ export class CDEActorSheet extends ActorSheet {
         aspectUsedLabel = "CDE.Randomize";
         mySpecialUsed = special2BDefined;
         if (this.actor.system.prefs.typeofthrow.check) {
-          myTypeOfThrow = await _whichTypeOfThrow(this.actor, myTypeOfThrow);
+          typeOfThrow = await _whichTypeOfThrow(this.actor, typeOfThrow);
+          console.log("typeOfThrow = ", typeOfThrow);
         };
       break;
       default: console.log("C'est bizarre ! Compétence non-définie...");
@@ -654,13 +705,6 @@ export class CDEActorSheet extends ActorSheet {
       console.log("specialUsedLabel = "+specialUsedLabel);
     };
 
-    //////////////////////////////////////////////////////////////////
-    if (data == null && myTypeUsed != wiiAspect && myTypeUsed != wiiRandomize) {
-      return;
-    } else {
-      // traitement ici
-    };
-    //////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////
     if (numberDice <= 0) {
       ui.notifications.warn(game.i18n.localize("CDE.Error0"));
@@ -898,14 +942,16 @@ export class CDEActorSheet extends ActorSheet {
       content: title+message
     }));
 
-   async function _whichTypeOfThrow (myActor, myTypeOfThrow) {
+    async function _whichTypeOfThrow (myActor, myTypeOfThrow) {
     // Render modal dialog
     const template = 'systems/chroniquesdeletrange/templates/form/type-throw-prompt.html';
     const title = game.i18n.localize("CDE.TypeOfThrowTitle");
     let dialogOptions = "";
+    var choice;
     var dialogData = {
-      check: myActor.system.prefs.typeofthrow.check,
-      menu: myTypeOfThrow
+      choice: myTypeOfThrow,
+      check: myActor.system.prefs.typeofthrow.check
+      // check: true
     };
     console.log(dialogData);
     const html = await renderTemplate(template, dialogData);
@@ -919,7 +965,7 @@ export class CDEActorSheet extends ActorSheet {
           buttons: {
             validateBtn: {
               icon: `<div class="tooltip"><i class="fas fa-check"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Validate')}</span></div>`,
-              callback: (html) => resolve(myTypeOfThrow)
+              callback: (html) => resolve(choice = _computeResult(myActor, html))
             },
             cancelBtn: {
               icon: `<div class="tooltip"><i class="fas fa-cancel"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.CancelChanges')}</span></div>`,
@@ -935,18 +981,27 @@ export class CDEActorSheet extends ActorSheet {
         height: 180
       });
     });
-    if (prompt != null) {
-      // traitement ici
-      return myTypeOfThrow;
-    } else {
-      return myTypeOfThrow;
-    }
 
+    if (prompt != null) {
+    return choice;
+    } else {
+      return dialogData.choice;
+    };
+
+
+    async function _computeResult(myActor, myHtml) {
+      const choice =  myHtml.find("select[name='choice']").val();
+      console.log("choice = ", choice);
+      const isChecked = myHtml.find("input[name='check']").is(':checked');
+      console.log("isChecked = ", isChecked);
+      myActor.update({"system.prefs.typeofthrow.check": isChecked});
+      return choice;
+    }
   }
 }
 }
 
-async function _skillDiceRollDialog(template, myTitle, myDialogOptions, myNumberOfDice, myIsSpecial, myAspect, myBonus, myBonusAuspiciousDice, myTypeOfThrow) {
+async function _skillDiceRollDialog(myActor, template, myTitle, myDialogOptions, myNumberOfDice, myIsSpecial, myAspect, myBonus, myBonusAuspiciousDice, myTypeOfThrow) {
   // Render modal dialog
   template = template || 'systems/chroniquesdeletrange/templates/form/skill-dice-prompt.html';
   let title = myTitle;
@@ -955,11 +1010,11 @@ async function _skillDiceRollDialog(template, myTitle, myDialogOptions, myNumber
   var dialogData = {
     numberofdice: myNumberOfDice,
     aspect: myAspect,
-    bonus: myBonus,
+    bonusmalus: myBonus,
     bonusauspiciousdice: myBonusAuspiciousDice,
     typeofthrow: myTypeOfThrow
   };
-  console.log(dialogData);
+  console.log("dialogData avant retour func = ", dialogData);
   const html = await renderTemplate(template, dialogData);
 
   // Create the Dialog window
@@ -971,15 +1026,15 @@ async function _skillDiceRollDialog(template, myTitle, myDialogOptions, myNumber
         buttons: {
           validateBtn: {
             icon: `<div class="tooltip"><i class="fas fa-check"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Validate')}</span></div>`,
-            callback: (html) => resolve(dialogData)
+            callback: (html) => resolve(dialogData = _computeResult(dialogData, html) )
           },
           cancelBtn: {
             icon: `<div class="tooltip"><i class="fas fa-cancel"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Cancel')}</span></div>`,
-            callback: (html) => resolve(null)
+            callback: (html) => resolve(dialogData = null)
           }
         },
         default: 'validateBtn',
-        close: () => resolve(null)
+        close: () => resolve(dialogData = null)
     },
     dialogOptions
     ).render(true, {
@@ -987,15 +1042,22 @@ async function _skillDiceRollDialog(template, myTitle, myDialogOptions, myNumber
       height: 375
     });
   });
-  if (prompt != null) {
-    // traitement ici
-    return dialogData;
-  } else {
-    return prompt;
-  }
+
+  console.log("dialogData après traitement et avant retour func = ", dialogData);
+  return dialogData;
+
+  function _computeResult(myDialogData, myHtml) {
+    myDialogData.aspect = myHtml.find("input[name='aspect']").val();
+    myDialogData.bonusmalus = myHtml.find("input[name='bonusmalus']").val();
+    myDialogData.bonusauspiciousdice = myHtml.find("input[name='bonusauspiciousdice']").val();
+    myDialogData.typeofthrow = myHtml.find("select[name='typeofthrow']").val();
+    console.log("myDialogData après traitement et avant retour func = ", myDialogData);
+    return myDialogData;
+  };
+
 }
 
-async function _skillSpecialDiceRollDialog(template, myTitle, myDialogOptions, myNumberOfDice, myIsSpecial, myAspect, myBonus, myBonusAuspiciousDice, myTypeOfThrow) {
+async function _skillSpecialDiceRollDialog(myActor, template, myTitle, myDialogOptions, myNumberOfDice, myIsSpecial, myAspect, myBonus, myBonusAuspiciousDice, myTypeOfThrow) {
   // Render modal dialog
   template = template || 'systems/chroniquesdeletrange/templates/form/skill-special-dice-prompt.html';
   let title = myTitle;
@@ -1004,11 +1066,11 @@ async function _skillSpecialDiceRollDialog(template, myTitle, myDialogOptions, m
   var dialogData = {
     numberofdice: myNumberOfDice,
     aspect: myAspect,
-    bonus: myBonus,
+    bonusmalus: myBonus,
     bonusauspiciousdice: myBonusAuspiciousDice,
     typeofthrow: myTypeOfThrow
   };
-  console.log(dialogData);
+  console.log("dialogData avant retour func = ", dialogData);
   const html = await renderTemplate(template, dialogData);
 
   // Create the Dialog window
@@ -1020,15 +1082,15 @@ async function _skillSpecialDiceRollDialog(template, myTitle, myDialogOptions, m
         buttons: {
           validateBtn: {
             icon: `<div class="tooltip"><i class="fas fa-check"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Validate')}</span></div>`,
-            callback: (html) => resolve(dialogData)
+            callback: (html) => resolve(dialogData = _computeResult(dialogData, html))
           },
           cancelBtn: {
             icon: `<div class="tooltip"><i class="fas fa-cancel"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Cancel')}</span></div>`,
-            callback: (html) => resolve(null)
+            callback: (html) => resolve(dialogData = null)
           }
         },
         default: 'validateBtn',
-        close: () => resolve(null)
+        close: () => resolve(dialogData = null)
     },
     dialogOptions
     ).render(true, {
@@ -1036,32 +1098,39 @@ async function _skillSpecialDiceRollDialog(template, myTitle, myDialogOptions, m
       height: 375
     });
   });
-  if (prompt != null) {
-    // traitement ici
-    return dialogData;
-  } else {
-    return prompt;
-  }
+
+  console.log("dialogData après traitement et avant retour func = ", dialogData);
+  return dialogData;
+
+  async function _computeResult(myDialogData, myHtml) {
+    myDialogData.aspect = myHtml.find("input[name='aspect']").val();
+    myDialogData.bonusmalus = myHtml.find("input[name='bonusmalus']").val();
+    myDialogData.bonusauspiciousdice = myHtml.find("input[name='bonusauspiciousdice']").val();
+    myDialogData.typeofthrow = myHtml.find("select[name='typeofthrow']").val();
+    console.log("myDialogData après traitement et avant retour func = ", myDialogData);
+    return myDialogData;
+  };
+
 }
 
-async function _magicDiceRollDialog(template, myTitle, myDialogOptions, myNumberofdice, myIsSpecial, myAspectSkill, myBonusMalusSkill, myBonusAuspiciousDice,
-  myAspectSpeciality, myRollDifficulty, myBonusMalusSpeciality, myTypeOfThrow) {
+async function _magicDiceRollDialog(myActor, template, myTitle, myDialogOptions, myNumberOfDice, myIsSpecial, myAspectSkill, myBonusMalusSkill, myBonusAuspiciousDice,
+  myAspectSpecial, myRollDifficulty, myBonusMalusSpecial, myTypeOfThrow) {
   // Render modal dialog
   template = template || 'systems/chroniquesdeletrange/templates/form/magic-dice-prompt.html';
   const title = myTitle;
   let dialogOptions = myDialogOptions;
   let isspecial = myIsSpecial;
   var dialogData = {
-    numberofdice: myNumberofdice,
+    numberofdice: myNumberOfDice,
     aspectskill: myAspectSkill,
     bonusmalusskill: myBonusMalusSkill,
     bonusauspiciousdice: myBonusAuspiciousDice,
-    aspectspeciality: myAspectSpeciality,
+    aspectspeciality: myAspectSpecial,
     rolldifficulty: myRollDifficulty,
-    bonusmalusspeciality: myBonusMalusSpeciality,
+    bonusmalusspeciality: myBonusMalusSpecial,
     typeofthrow: myTypeOfThrow
   };
-  console.log(dialogData);
+  console.log("dialogData avant retour func = ", dialogData);
   const html = await renderTemplate(template, dialogData);
 
   // Create the Dialog window
@@ -1073,15 +1142,15 @@ async function _magicDiceRollDialog(template, myTitle, myDialogOptions, myNumber
         buttons: {
           validateBtn: {
             icon: `<div class="tooltip"><i class="fas fa-check"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Validate')}</span></div>`,
-            callback: (html) => resolve(dialogData)
+            callback: (html) => resolve(dialogData = _computeResult(dialogData, html))
           },
           cancelBtn: {
             icon: `<div class="tooltip"><i class="fas fa-cancel"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Cancel')}</span></div>`,
-            callback: (html) => resolve(null)
+            callback: (html) => resolve(dialogData = null)
           }
         },
         default: 'validateBtn',
-        close: () => resolve(null)
+        close: () => resolve(dialogData = null)
       },
       dialogOptions
     ).render(true, {
@@ -1089,14 +1158,47 @@ async function _magicDiceRollDialog(template, myTitle, myDialogOptions, myNumber
       height: 530
     });
   });
-  if (prompt != null) {
-    // traitement ici
-    return dialogData;
-  } else {
-    return prompt;
-  }
+
+  console.log("dialogData après traitement et avant retour func = ", dialogData);
+  return dialogData;
+
+  async function _computeResult(myDialogData, myHtml) {
+    myDialogData.aspect = myHtml.find("input[name='aspectskill']").val();
+    myDialogData.aspect = myHtml.find("input[name='bonusmalusskill']").val();
+    myDialogData.aspect = myHtml.find("input[name='bonusauspiciousdice']").val();
+    myDialogData.aspect = myHtml.find("input[name='aspectspeciality']").val();
+    myDialogData.aspect = myHtml.find("input[name='rolldifficulty']").val();
+    myDialogData.aspect = myHtml.find("input[name='bonusmalusspeciality']").val();
+    myDialogData.typeofthrow = myHtml.find("select[name='typeofthrow']").val();
+    console.log("myDialogData après traitement et avant retour func = ", myDialogData);
+    return myDialogData;
+  };
 
 }
+
+/*
+
+_updateObject
+
+    _updateObject(event: Event, formData: any): Promise<any>
+
+    This method is called upon form submission after form data is validated
+
+    abstract
+
+    Parameters
+        event: Event
+
+        The initial triggering submission event
+        formData: any
+
+        The object of validated form data with which to update the object
+    Returns Promise<any>
+
+    A Promise which resolves once the update operation has completed
+
+
+*/
 
 /*
 

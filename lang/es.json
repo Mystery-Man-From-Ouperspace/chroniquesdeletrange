@@ -304,7 +304,7 @@
  "CDE.TypeOfThrowCheck": "Preguntar siempre antes de realizar una tirada",
 
  "CDE.TypeOfThrow4ThisTime": "Tipo de tirada por esta vez: visible por…",
- "CDE.TypeOfThrowTitle": "Modificar el tipo de tirada",
+ "CDE.TypeOfThrowTitle": "¿Modificar el tipo de tirada?",
  "CDE.CancelChanges": "Cancel Changes",
 
  "CDE.NextTimeGoToTheSettings": "All these are parametrable in the Settings",

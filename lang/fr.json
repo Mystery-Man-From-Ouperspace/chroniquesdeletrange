@@ -302,7 +302,7 @@
  "CDE.TypeOfThrowCheck": "Toujours demander avant d'effectuer un lancer",
 
  "CDE.TypeOfThrow4ThisTime": "Type de jet pour cette fois : visible pour…",
- "CDE.TypeOfThrowTitle": "Modifier le type de jet",
+ "CDE.TypeOfThrowTitle": "Modifier le type de jet ?",
  "CDE.CancelChanges": "Annuler les modifications",
 
  "CDE.NextTimeGoToTheSettings": "Tout ceci est paramétrable dans les Préférences",
