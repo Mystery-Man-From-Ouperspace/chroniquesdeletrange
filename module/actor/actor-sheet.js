@@ -935,10 +935,34 @@ export class CDEActorSheet extends ActorSheet {
         rModif._total = 0;
     };
 
-    const msg = await rModif.toMessage({
-      user: game.user.id,
-      speaker: ChatMessage.getSpeaker({ actor: this.actor })
-    });
+    var msg;
+    switch ( typeOfThrow ) {
+      case 0: msg = await rModif.toMessage({
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        rollMode: 'roll'                      // Public Roll
+        });
+      break;
+      case 1: msg = await rModif.toMessage({
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        rollMode: 'gmroll'                    // Private Roll
+        });
+        break;
+      case 2: msg = await rModif.toMessage({
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        rollMode: 'blindroll'                 // Blind GM Roll
+      });
+      break;
+      case 3: msg = await rModif.toMessage({
+        user: game.user.id,
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        rollMode: 'self'                      // Self Roll
+      });
+      break;
+      default: console.log("C'est bizarre !");
+    };
 
     console.log(message);
 
@@ -964,12 +988,44 @@ export class CDEActorSheet extends ActorSheet {
       }
     };
 
-    return (ChatMessage.create({
-      user: game.user.id,
-      // speaker: ChatMessage.getSpeaker({ token: this.actor }),
-      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content: title+message
-    }));
+
+
+    switch ( typeOfThrow ) {
+      case 0: return (ChatMessage.create({
+        user: game.user.id,
+        // speaker: ChatMessage.getSpeaker({ token: this.actor }),
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        content: title+message,
+        rollMode: 'roll'                      // Public Roll
+      }));        
+      break;
+      case 1: return (ChatMessage.create({
+        user: game.user.id,
+        // speaker: ChatMessage.getSpeaker({ token: this.actor }),
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        content: title+message,
+        rollMode: 'gmroll'                    // Private Roll
+      }));
+      break;
+      case 2: return (ChatMessage.create({
+        user: game.user.id,
+        // speaker: ChatMessage.getSpeaker({ token: this.actor }),
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        content: title+message,
+        rollMode: 'blindroll'                 // Blind GM Roll
+      }));
+      break;
+      case 3: return (ChatMessage.create({
+        user: game.user.id,
+        // speaker: ChatMessage.getSpeaker({ token: this.actor }),
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        content: title+message,
+        rollMode: 'self'                      // Self Roll
+      }));
+      break;
+      default: console.log("C'est bizarre !");
+    };
+
 
     async function _whichTypeOfThrow (myActor, myTypeOfThrow) {
     // Render modal dialog
