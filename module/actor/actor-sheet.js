@@ -472,7 +472,7 @@ export class CDEActorSheet extends ActorSheet {
     };
 
 
-    console.log("numberDice = "+numberDice);
+    console.log("numberDice = ", numberDice);
     //////////////////////////////////////////////////////////////////
     console.log("skillUsed = "+skillUsed);
     switch ( myTypeUsed ) {                         // Transforme la string en nom de variable (uniquement pour les aspects)
@@ -518,68 +518,67 @@ export class CDEActorSheet extends ActorSheet {
       case wiiSkill:
         mySkillUsed = skillDefined;
         skillUsedLabel = this.actor.system.skills[skillUsed].label;
-        myAspectUsed = aspect2BDefined;
+        myAspectUsed = metal;
         mySpecialUsed = noSpecialUsed;
         myIsSpecial = false;
         
-        data = await _skillDiceRollDialog(this.actor, "", titleDialog, dialogOptions, numberDice, myIsSpecial, 0, bonusDice, bonusAuspicious, typeOfThrow);
+        data = await _skillDiceRollDialog(this.actor, "", titleDialog, dialogOptions, numberDice, myIsSpecial, myAspectUsed, bonusDice, bonusAuspicious, typeOfThrow);
         console.log("data après Prompt = ", data);
-        if (data == null) {return;};
-        numberDice = data.numberofdice;
-        myAspectUsed = data.aspectused;
-        console.log("myAspectUsed après Prompt = ", myAspectUsed);
-        bonusDice = data.bonus;
-        bonusAuspicious = data.bonusauspiciousdice;
-        typeOfThrow = data.typeofthrow;
+        if (data == null) {console.log("C'est égal à null"); return;};
+        numberDice = parseInt(data.numberofdice);
+        myAspectUsed = parseInt(data.aspect);
+        bonusDice = parseInt(data.bonusmalus);
+        bonusAuspicious = parseInt(data.bonusauspiciousdice);
+        typeOfThrow = parseInt(data.typeofthrow);
       break;
       case wiiSpecial:
         mySkillUsed = skillDefined;
         skillUsedLabel = this.actor.system.skills[skillUsed].label;
-        myAspectUsed = aspect2BDefined;
+        myAspectUsed = metal;
         mySpecialUsed = specialDefined;
         specialUsedLabel = "CDE.Speciality";
         myIsSpecial = true;
         
         data = await _skillSpecialDiceRollDialog(this.actor, "", titleDialog, dialogOptions, numberDice, myIsSpecial, myAspectUsed, bonusDice, bonusAuspicious, typeOfThrow);
         console.log("data après Prompt = ", data);
-        if (data == null) {return;};
-          numberDice = data.numberofdice;
-        myAspectUsed = data.aspectused;
-        bonusDice = data.bonus;
-        bonusAuspicious = data.bonusauspiciousdice;
-        typeOfThrow = data.typeofthrow;
+        if (data == null) {console.log("C'est égal à null"); return;};
+        numberDice = parseInt(data.numberofdice);
+        myAspectUsed = parseInt(data.aspect);
+        bonusDice = parseInt(data.bonusmalus);
+        bonusAuspicious = parseInt(data.bonusauspiciousdice);
+        typeOfThrow = parseInt(data.typeofthrow);
         break;
       case wiiResource:
         mySkillUsed = skillDefined;
         skillUsedLabel = this.actor.system.resources[skillUsed].label;
-        myAspectUsed = aspect2BDefined;
+        myAspectUsed = metal;
         mySpecialUsed = noSpecialUsed;
         myIsSpecial = false;
         
-        data = await _skillDiceRollDialog("", titleDialog, dialogOptions, numberDice, myIsSpecial, 0, bonusDice, bonusAuspicious, typeOfThrow);
+        data = await _skillDiceRollDialog("", titleDialog, dialogOptions, numberDice, myIsSpecial, myAspectUsed, bonusDice, bonusAuspicious, typeOfThrow);
         console.log("data après Prompt = ", data);
-        numberDice = data.numberofdice;
-        myAspectUsed = data.aspectused;
-        bonusDice = bonus;
-        bonusAuspicious = data.bonusauspiciousdice;
-        typeOfThrow = data.typeofthrow;
+        numberDice = parseInt(data.numberofdice);
+        myAspectUsed = parseInt(data.aspect);
+        bonusDice = parseInt(data.bonusmalus);
+        bonusAuspicious = parseInt(data.bonusauspiciousdice);
+        typeOfThrow = parseInt(data.typeofthrow);
       break;
       case wiiField:
         mySkillUsed = skillDefined;
         skillUsedLabel = this.actor.system.resources[skillUsed].label;
-        myAspectUsed = aspect2BDefined;
+        myAspectUsed = metal;
         mySpecialUsed = specialDefined;
         specialUsedLabel = "CDE.Field";
         myIsSpecial = true;
         
-        data = await _skillSpecialDiceRollDialog(this.actor, "", titleDialog, dialogOptions, numberDice, myIsSpecial, 0, bonusDice, bonusAuspicious, typeOfThrow);
+        data = await _skillSpecialDiceRollDialog(this.actor, "", titleDialog, dialogOptions, numberDice, myIsSpecial, myAspectUsed, bonusDice, bonusAuspicious, typeOfThrow);
         console.log("data après Prompt = ", data);
-        if (data == null) {return;};
-          numberDice = data.numberofdice;
-        myAspectUsed = data.aspectused;
-        bonusDice = data.bonus;
-        bonusAuspicious = data.bonusauspiciousdice;
-        typeOfThrow = data.typeofthrow;
+        if (data == null) {console.log("C'est égal à null"); return;};
+        numberDice = parseInt(data.numberofdice);
+        myAspectUsed = parseInt(data.aspect);
+        bonusDice = parseInt(data.bonusmalus);
+        bonusAuspicious = parseInt(data.bonusauspiciousdice);
+        typeOfThrow = parseInt(data.typeofthrow);
       break;
       case wiiMagic:
         mySkillUsed = skillDefined;
@@ -611,12 +610,12 @@ export class CDEActorSheet extends ActorSheet {
 
         data = await _skillDiceRollDialog(this.actor, "", titleDialog, dialogOptions, numberDice, myIsSpecial, myAspectUsed, bonusDice, bonusAuspicious, typeOfThrow);
         console.log("data après Prompt = ", data);
-        if (data == null) {return;};
-        numberDice = data.numberofdice;
-        myAspectUsed = data.aspectused;
-        bonusDice = data.bonus;
-        bonusAuspicious = data.bonusauspiciousdice;
-        typeOfThrow = data.typeofthrow;
+        if (data == null) {console.log("C'est égal à null"); return;};
+        numberDice = parseInt(data.numberofdice);
+        myAspectUsed = parseInt(data.aspect);
+        bonusDice = parseInt(data.bonusmalus);
+        bonusAuspicious = parseInt(data.bonusauspiciousdice);
+        typeOfThrow = parseInt(data.typeofthrow);
       break;
       case wiiMagicSpecial:
         console.log("I'm here!");
@@ -671,16 +670,17 @@ export class CDEActorSheet extends ActorSheet {
         console.log("aspectSpecialUsedLabel = "+aspectSpecialUsedLabel);
         myIsSpecial = true;
 
-        dataBis = await _magicDiceRollDialog(this.actor, "", titleDialog, dialogOptions, numberDice, myIsSpecial, myAspectUsed, bonusDice, bonusAuspicious, myAspectSpecialUsed, rollDifficulty, bonusSpecial, typeOfThrow);
+        dataBis = await _magicDiceRollDialog(this.actor, "", titleDialog, dialogOptions, numberDice, myIsSpecial,
+        myAspectUsed, bonusDice, bonusAuspicious, myAspectSpecialUsed, rollDifficulty, bonusSpecial, typeOfThrow);
         console.log("dataBis = ", dataBis);
-        numberDice = dataBis.numberofdice;
-        myAspectUsed = dataBis.aspectskill;
-        bonusDice = dataBis.bonusmalusskill;
-        bonusAuspicious = dataBis.auspiciousdice;
-        myAspectSpecialUsed = dataBis.aspectspeciality;
-        rollDifficulty = dataBis.rolldifficulty;
-        bonusSpecial = dataBis.bonusmalusspeciality;
-        typeOfThrow = dataBis.typeofthrow;
+        numberDice = parseInt(dataBis.numberofdice);
+        myAspectUsed = parseInt(dataBis.aspectskill);
+        bonusDice = parseInt(dataBis.bonusmalusskill);
+        bonusAuspicious = parseInt(dataBis.auspiciousdice);
+        myAspectSpecialUsed = parseInt(dataBis.aspectspeciality);
+        rollDifficulty = parseInt(dataBis.rolldifficulty);
+        bonusSpecial = parseInt(dataBis.bonusmalusspeciality);
+        typeOfThrow = parseInt(dataBis.typeofthrow);
         
         break;
       case wiiRandomize:
@@ -696,27 +696,44 @@ export class CDEActorSheet extends ActorSheet {
       break;
       default: console.log("C'est bizarre ! Compétence non-définie...");
     };
-    console.log("mySkillUsed = "+mySkillUsed);
-    console.log("myAspectUsed = "+myAspectUsed);
-    console.log("skillUsedLabel = "+skillUsedLabel);
-    console.log("specialUsed = "+specialUsed);
+    console.log("mySkillUsed = ", mySkillUsed);
+    console.log("myAspectUsed = ", myAspectUsed);
+    console.log("mySpecialUsed = ", mySpecialUsed);
+    console.log("bonusDice = ", bonusDice);
+    console.log("bonusAuspicious = ", bonusAuspicious);
+    console.log("skillUsedLabel = ", skillUsedLabel);
+    console.log("specialUsed = ", specialUsed);
     if (myTypeUsed != wiiAspect) {
-      console.log("aspectUsedLabel = "+aspectUsedLabel);
-      console.log("specialUsedLabel = "+specialUsedLabel);
+      console.log("aspectUsedLabel = ", aspectUsedLabel);
+      console.log("specialUsedLabel = ", specialUsedLabel);
     };
+    console.log("numberDice = ", numberDice);
+    console.log("bonusDice = ", bonusDice);
+    var aspectDice = 0;
+    if (myAspectUsed >= 0 && myAspectUsed <= 4 && myTypeUsed != wiiAspect && myTypeUsed != wiiRandomize) {
+      console.log("On ajoute la valeur de l'Aspect aux Dés !");
+      switch ( myAspectUsed ) {
+        case wood: aspectDice = this.actor.system.aspect.wood.value; break;
+        case fire: aspectDice = this.actor.system.aspect.fire.value; break;
+        case earth: aspectDice = this.actor.system.aspect.earth.value; break;
+        case water: aspectDice = this.actor.system.aspect.water.value; break;
+        case metal: aspectDice = this.actor.system.aspect.metal.value; break;
+        default: console.log("C'est bizarre !");
+      };
+    };
+    let total = numberDice + aspectDice + bonusDice;
+    if (myIsSpecial) { total++; };
+    console.log("total = ", total);
+    let myRoll = "";
+    myRoll += total+"d10";
+    console.log("myRoll = ", myRoll);
 
     //////////////////////////////////////////////////////////////////
-    if (numberDice <= 0) {
+    if (total <= 0) {
       ui.notifications.warn(game.i18n.localize("CDE.Error0"));
       return;
       };
     //////////////////////////////////////////////////////////////////
-    console.log("numberDice = "+numberDice);
-    console.log("bonusDice = "+bonusDice);
-
-    let total = numberDice+bonusDice;
-    let myRoll = "";
-    myRoll += total+"d10";
 
     let r = new Roll(myRoll, this.actor.getRollData());
     await r.evaluate();
@@ -781,9 +798,17 @@ export class CDEActorSheet extends ActorSheet {
     console.log(myResult);
 
     let message = game.i18n.localize("CDE.Results")+" ";
-
+  
+    console.log("myAspectUsed = ", myAspectUsed);
+    console.log(wood);
+    console.log(fire);
+    console.log(earth);
+    console.log(water);
+    console.log(metal);
+    
     switch ( myAspectUsed ) {                       // On fabrique le message de retour du lancer de dés
       case wood:
+        console.log("C'est le Bois !");
         message += (parseInt(d10_4) + parseInt(d10_9)) + " ";
         message += game.i18n.localize("CDE.Wood");
         message += game.i18n.localize("CDE.Successes") + ", ";
@@ -806,6 +831,7 @@ export class CDEActorSheet extends ActorSheet {
         break;
         // Results: 3 ㊍ Wood Successes, 2 ㊋ Fire Beneficial-Dice, 0 ㊌ Water Noxious-Dice --- Loksyu : ㊏ Earth 0 ● Yin, 1 ○ Yang --- Tin Ji : 1 ㊎ Metal [4,9,4,5,2,8,7]
       case fire:
+        console.log("C'est le Feu !");
         message += (parseInt(d10_2) + parseInt(d10_7)) + " ";
         message += game.i18n.localize("CDE.Fire");
         message += game.i18n.localize("CDE.Successes") + ", ";
@@ -828,6 +854,7 @@ export class CDEActorSheet extends ActorSheet {
         break;
         // Results: 0 ㊋ Fire Successes, 4 ㊏ Earth Beneficial-Dice, 0 ㊍ Wood Noxious-Dice --- Loksyu : ㊎ Metal 1 ● Yin, 1 ○ Yang --- Tin Ji : 1 ㊌ Water [10,3,8,5,5,5,1]
       case earth:
+        console.log("C'est la Terre !");
         message += (parseInt(d10_0) + parseInt(d10_5)) + " ";
         message += game.i18n.localize("CDE.Earth");
         message += game.i18n.localize("CDE.Successes") + ", ";
@@ -850,6 +877,7 @@ export class CDEActorSheet extends ActorSheet {
         break;
         // Results: 2 ㊏ Earth Successes, 0 ㊎ Metal Beneficial-Dice, 0 ㊋ Fire Noxious-Dice --- Loksyu : ㊌ Water 2 ● Yin, 1 ○ Yang --- Tin Ji : 2 ㊍ Wood [6,4,9,6,1,10,5]
       case metal:
+        console.log("C'est le Métal !");
         message += (parseInt(d10_3) + parseInt(d10_8)) + " ";
         message += game.i18n.localize("CDE.Metal");
         message += game.i18n.localize("CDE.Successes") + ", ";
@@ -872,6 +900,7 @@ export class CDEActorSheet extends ActorSheet {
         break;
         // Results: 1 ㊎ Metal Successes, 0 ㊌ Water Beneficial-Dice, 1 ㊏ Earth Noxious-Dice --- Loksyu : ㊍ Wood 2 ● Yin, 2 ○ Yang --- Tin Ji : 1 ㊋ Fire [9,9,5,4,2,4,3]
       case water:
+        console.log("C'est l'Eau !");
         message += (parseInt(d10_1) + parseInt(d10_6)) + " ";
         message += game.i18n.localize("CDE.Water");
         message += game.i18n.localize("CDE.Successes") + ", ";
@@ -983,9 +1012,9 @@ export class CDEActorSheet extends ActorSheet {
     });
 
     if (prompt != null) {
-    return choice;
+    return parseInt(choice);
     } else {
-      return dialogData.choice;
+      return parseInt(dialogData.choice);
     };
 
 
@@ -1026,15 +1055,15 @@ async function _skillDiceRollDialog(myActor, template, myTitle, myDialogOptions,
         buttons: {
           validateBtn: {
             icon: `<div class="tooltip"><i class="fas fa-check"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Validate')}</span></div>`,
-            callback: (html) => resolve(dialogData = _computeResult(dialogData, html) )
+            callback: (html) => resolve( dialogData = _computeResult(dialogData, html) )
           },
           cancelBtn: {
             icon: `<div class="tooltip"><i class="fas fa-cancel"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Cancel')}</span></div>`,
-            callback: (html) => resolve(dialogData = null)
+            callback: (html) => resolve( null )
           }
         },
         default: 'validateBtn',
-        close: () => resolve(dialogData = null)
+        close: () => resolve( null )
     },
     dialogOptions
     ).render(true, {
@@ -1043,13 +1072,17 @@ async function _skillDiceRollDialog(myActor, template, myTitle, myDialogOptions,
     });
   });
 
-  console.log("dialogData après traitement et avant retour func = ", dialogData);
+  if (prompt == null) {
+    dialogData = null;
+  };
+
   return dialogData;
 
   function _computeResult(myDialogData, myHtml) {
-    myDialogData.aspect = myHtml.find("input[name='aspect']").val();
+    console.log("J'exécute bien _computeResult()");
+    myDialogData.aspect = myHtml.find("select[name='aspect']").val();
     myDialogData.bonusmalus = myHtml.find("input[name='bonusmalus']").val();
-    myDialogData.bonusauspiciousdice = myHtml.find("input[name='bonusauspiciousdice']").val();
+    myDialogData.bonusauspiciousdice = myHtml.find("select[name='bonusauspiciousdice']").val();
     myDialogData.typeofthrow = myHtml.find("select[name='typeofthrow']").val();
     console.log("myDialogData après traitement et avant retour func = ", myDialogData);
     return myDialogData;
@@ -1082,15 +1115,15 @@ async function _skillSpecialDiceRollDialog(myActor, template, myTitle, myDialogO
         buttons: {
           validateBtn: {
             icon: `<div class="tooltip"><i class="fas fa-check"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Validate')}</span></div>`,
-            callback: (html) => resolve(dialogData = _computeResult(dialogData, html))
+            callback: (html) => resolve( dialogData = _computeResult(dialogData, html) )
           },
           cancelBtn: {
             icon: `<div class="tooltip"><i class="fas fa-cancel"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Cancel')}</span></div>`,
-            callback: (html) => resolve(dialogData = null)
+            callback: (html) => (resolve) => { dialogData = null }
           }
         },
         default: 'validateBtn',
-        close: () => resolve(dialogData = null)
+        close: () => resolve( null )
     },
     dialogOptions
     ).render(true, {
@@ -1099,13 +1132,17 @@ async function _skillSpecialDiceRollDialog(myActor, template, myTitle, myDialogO
     });
   });
 
-  console.log("dialogData après traitement et avant retour func = ", dialogData);
+  if (prompt == null) {
+    dialogData = null;
+  };
+
   return dialogData;
 
-  async function _computeResult(myDialogData, myHtml) {
-    myDialogData.aspect = myHtml.find("input[name='aspect']").val();
+  function _computeResult(myDialogData, myHtml) {
+    console.log("J'exécute bien _computeResult()");
+    myDialogData.aspect = myHtml.find("select[name='aspect']").val();
     myDialogData.bonusmalus = myHtml.find("input[name='bonusmalus']").val();
-    myDialogData.bonusauspiciousdice = myHtml.find("input[name='bonusauspiciousdice']").val();
+    myDialogData.bonusauspiciousdice = myHtml.find("select[name='bonusauspiciousdice']").val();
     myDialogData.typeofthrow = myHtml.find("select[name='typeofthrow']").val();
     console.log("myDialogData après traitement et avant retour func = ", myDialogData);
     return myDialogData;
@@ -1142,15 +1179,15 @@ async function _magicDiceRollDialog(myActor, template, myTitle, myDialogOptions,
         buttons: {
           validateBtn: {
             icon: `<div class="tooltip"><i class="fas fa-check"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Validate')}</span></div>`,
-            callback: (html) => resolve(dialogData = _computeResult(dialogData, html))
+            callback: (html) => resolve ( dialogData = _computeResult(dialogData, html) )
           },
           cancelBtn: {
             icon: `<div class="tooltip"><i class="fas fa-cancel"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Cancel')}</span></div>`,
-            callback: (html) => resolve(dialogData = null)
+            callback: (html) => resolve( null )
           }
         },
         default: 'validateBtn',
-        close: () => resolve(dialogData = null)
+        close: () => resolve( null )
       },
       dialogOptions
     ).render(true, {
@@ -1159,16 +1196,20 @@ async function _magicDiceRollDialog(myActor, template, myTitle, myDialogOptions,
     });
   });
 
-  console.log("dialogData après traitement et avant retour func = ", dialogData);
+  if (prompt == null) {
+    dialogData = null;
+  };
+
   return dialogData;
 
-  async function _computeResult(myDialogData, myHtml) {
-    myDialogData.aspect = myHtml.find("input[name='aspectskill']").val();
-    myDialogData.aspect = myHtml.find("input[name='bonusmalusskill']").val();
-    myDialogData.aspect = myHtml.find("input[name='bonusauspiciousdice']").val();
-    myDialogData.aspect = myHtml.find("input[name='aspectspeciality']").val();
-    myDialogData.aspect = myHtml.find("input[name='rolldifficulty']").val();
-    myDialogData.aspect = myHtml.find("input[name='bonusmalusspeciality']").val();
+  function _computeResult(myDialogData, myHtml) {
+    console.log("J'exécute bien _computeResult()");
+    myDialogData.aspectskill = myHtml.find("select[name='aspectskill']").val();
+    myDialogData.bonusmalusskill = myHtml.find("input[name='bonusmalusskill']").val();
+    myDialogData.bonusauspiciousdice = myHtml.find("select[name='bonusauspiciousdice']").val();
+    myDialogData.aspectspeciality = myHtml.find("select[name='aspectspeciality']").val();
+    myDialogData.rolldifficulty = myHtml.find("input[name='rolldifficulty']").val();
+    myDialogData.bonusmalusspeciality = myHtml.find("input[name='bonusmalusspeciality']").val();
     myDialogData.typeofthrow = myHtml.find("select[name='typeofthrow']").val();
     console.log("myDialogData après traitement et avant retour func = ", myDialogData);
     return myDialogData;
