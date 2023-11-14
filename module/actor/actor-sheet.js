@@ -231,7 +231,7 @@ export class CDEActorSheet extends ActorSheet {
     const title = game.i18n.localize("CDE.Preferences");
     let dialogOptions = "";
     var dialogData = {
-      choice: this.actor.system.prefs.typeofthrow.choice,
+      choice: toString(this.actor.system.prefs.typeofthrow.choice),
       check: this.actor.system.prefs.typeofthrow.check
     };
     console.log("Gear dialogData = ", dialogData);
@@ -263,12 +263,12 @@ export class CDEActorSheet extends ActorSheet {
       });
     });
     async function _computeResult(myActor, myHtml) {
-      console.log("I'm in _computeResult(myActor)");
-      const choice =  myHtml.find("select[name='choice']").val();
+      console.log("I'm in _computeResult(myActor, myHtml)");
+      const choice =  parseInt(myHtml.find("select[name='choice']").val());
       console.log("choice = ", choice);
       const isChecked = myHtml.find("input[name='check']").is(':checked');
       console.log("isChecked = ", isChecked);
-      myActor.update({ "system.prefs.typeofthrow.choice": choice });
+      myActor.update({ "system.prefs.typeofthrow.choice": toString(choice) });
       myActor.update({ "system.prefs.typeofthrow.check": isChecked });
     }
   }
@@ -374,7 +374,11 @@ export class CDEActorSheet extends ActorSheet {
   
     let dialogOptions;
 
-    let typeOfThrow = this.actor.system.prefs.typeofthrow.choice;
+    let typeOfThrow = 0;
+    typeOfThrow = parseInt(this.actor.system.prefs.typeofthrow.choice);
+    if (!( typeOfThrow == 0 || typeOfThrow == 1 || typeOfThrow == 2 || typeOfThrow == 3 )) {
+      typeOfThrow = 0;
+    };
 
 
     const element = event.currentTarget;              // On récupère le clic
@@ -735,7 +739,7 @@ export class CDEActorSheet extends ActorSheet {
       };
     //////////////////////////////////////////////////////////////////
 
-    let r = new Roll(myRoll, this.actor.getRollData());
+    const r = new Roll(myRoll, this.actor.getRollData());
     await r.evaluate();
     console.log(r);
     let myRDice = r.dice;
@@ -948,7 +952,7 @@ export class CDEActorSheet extends ActorSheet {
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         rollMode: 'gmroll'                    // Private Roll
         });
-        break;
+      break;
       case 2: msg = await rModif.toMessage({
         user: game.user.id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
@@ -958,7 +962,7 @@ export class CDEActorSheet extends ActorSheet {
       case 3: msg = await rModif.toMessage({
         user: game.user.id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        rollMode: 'self'                      // Self Roll
+        rollMode: 'selfroll'                      // Self Roll
       });
       break;
       default: console.log("C'est bizarre !");
@@ -1020,7 +1024,7 @@ export class CDEActorSheet extends ActorSheet {
         // speaker: ChatMessage.getSpeaker({ token: this.actor }),
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         content: title+message,
-        rollMode: 'self'                      // Self Roll
+        rollMode: 'selfroll'                      // Self Roll
       }));
       break;
       default: console.log("C'est bizarre !");
@@ -1032,9 +1036,9 @@ export class CDEActorSheet extends ActorSheet {
     const template = 'systems/chroniquesdeletrange/templates/form/type-throw-prompt.html';
     const title = game.i18n.localize("CDE.TypeOfThrowTitle");
     let dialogOptions = "";
-    var choice;
+    var choice = 0;
     var dialogData = {
-      choice: myTypeOfThrow,
+      choice: toString(myTypeOfThrow),
       check: myActor.system.prefs.typeofthrow.check
       // check: true
     };
@@ -1050,7 +1054,7 @@ export class CDEActorSheet extends ActorSheet {
           buttons: {
             validateBtn: {
               icon: `<div class="tooltip"><i class="fas fa-check"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.Validate')}</span></div>`,
-              callback: (html) => resolve(choice = _computeResult(myActor, html))
+              callback: (html) => resolve( choice = _computeResult(myActor, html) )
             },
             cancelBtn: {
               icon: `<div class="tooltip"><i class="fas fa-cancel"></i>&nbsp;<span class="tooltiptextleft">${game.i18n.localize('CDE.CancelChanges')}</span></div>`,
@@ -1068,14 +1072,15 @@ export class CDEActorSheet extends ActorSheet {
     });
 
     if (prompt != null) {
-    return parseInt(choice);
+    return choice;
     } else {
       return parseInt(dialogData.choice);
     };
 
 
     async function _computeResult(myActor, myHtml) {
-      const choice =  myHtml.find("select[name='choice']").val();
+      console.log("I'm in _computeResult(myActor, myHtml)");
+      const choice =  parseInt(myHtml.find("select[name='choice']").val());
       console.log("choice = ", choice);
       const isChecked = myHtml.find("input[name='check']").is(':checked');
       console.log("isChecked = ", isChecked);
@@ -1097,7 +1102,7 @@ async function _skillDiceRollDialog(myActor, template, myTitle, myDialogOptions,
     aspect: myAspect,
     bonusmalus: myBonus,
     bonusauspiciousdice: myBonusAuspiciousDice,
-    typeofthrow: myTypeOfThrow
+    typeofthrow: toString(myTypeOfThrow)
   };
   console.log("dialogData avant retour func = ", dialogData);
   const html = await renderTemplate(template, dialogData);
@@ -1139,7 +1144,7 @@ async function _skillDiceRollDialog(myActor, template, myTitle, myDialogOptions,
     myDialogData.aspect = myHtml.find("select[name='aspect']").val();
     myDialogData.bonusmalus = myHtml.find("input[name='bonusmalus']").val();
     myDialogData.bonusauspiciousdice = myHtml.find("select[name='bonusauspiciousdice']").val();
-    myDialogData.typeofthrow = myHtml.find("select[name='typeofthrow']").val();
+    myDialogData.typeofthrow = toString(myHtml.find("select[name='typeofthrow']").val());
     console.log("myDialogData après traitement et avant retour func = ", myDialogData);
     return myDialogData;
   };
@@ -1157,7 +1162,7 @@ async function _skillSpecialDiceRollDialog(myActor, template, myTitle, myDialogO
     aspect: myAspect,
     bonusmalus: myBonus,
     bonusauspiciousdice: myBonusAuspiciousDice,
-    typeofthrow: myTypeOfThrow
+    typeofthrow: toString(myTypeOfThrow)
   };
   console.log("dialogData avant retour func = ", dialogData);
   const html = await renderTemplate(template, dialogData);
@@ -1199,7 +1204,7 @@ async function _skillSpecialDiceRollDialog(myActor, template, myTitle, myDialogO
     myDialogData.aspect = myHtml.find("select[name='aspect']").val();
     myDialogData.bonusmalus = myHtml.find("input[name='bonusmalus']").val();
     myDialogData.bonusauspiciousdice = myHtml.find("select[name='bonusauspiciousdice']").val();
-    myDialogData.typeofthrow = myHtml.find("select[name='typeofthrow']").val();
+    myDialogData.typeofthrow = toString(myHtml.find("select[name='typeofthrow']").val());
     console.log("myDialogData après traitement et avant retour func = ", myDialogData);
     return myDialogData;
   };
@@ -1221,7 +1226,7 @@ async function _magicDiceRollDialog(myActor, template, myTitle, myDialogOptions,
     aspectspeciality: myAspectSpecial,
     rolldifficulty: myRollDifficulty,
     bonusmalusspeciality: myBonusMalusSpecial,
-    typeofthrow: myTypeOfThrow
+    typeofthrow: toString(myTypeOfThrow)
   };
   console.log("dialogData avant retour func = ", dialogData);
   const html = await renderTemplate(template, dialogData);
@@ -1266,7 +1271,7 @@ async function _magicDiceRollDialog(myActor, template, myTitle, myDialogOptions,
     myDialogData.aspectspeciality = myHtml.find("select[name='aspectspeciality']").val();
     myDialogData.rolldifficulty = myHtml.find("input[name='rolldifficulty']").val();
     myDialogData.bonusmalusspeciality = myHtml.find("input[name='bonusmalusspeciality']").val();
-    myDialogData.typeofthrow = myHtml.find("select[name='typeofthrow']").val();
+    myDialogData.typeofthrow = toString(myHtml.find("select[name='typeofthrow']").val());
     console.log("myDialogData après traitement et avant retour func = ", myDialogData);
     return myDialogData;
   };

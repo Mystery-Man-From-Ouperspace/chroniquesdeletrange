@@ -10,13 +10,13 @@
       "prefs": {
         "typeofthrow": {
           "check": true,
-          "choice": 0
+          "choice": "0"
         }
       },
       "prompt": {
         "typeofthrow": {
         "check": true,
-        "choice": 0
+        "choice": "0"
         },
         "configure": {
           "numberofdice": 0,
