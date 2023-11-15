@@ -179,6 +179,18 @@ Hooks.once("init", async function() {
 
   // Preload template partials
   await preloadHandlebarsTemplates();
+
+
+
+
+  
+  // Modify Runtime configuration settings / Added by MMFO
+  await modifyConfigurationSettings();
+
+
+
+
+
 });
 
 /**
@@ -199,3 +211,60 @@ Hooks.on("getActorDirectoryEntryContext", (html, options) => {
 Hooks.on("getItemDirectoryEntryContext", (html, options) => {
 
 });
+
+
+async function modifyConfigurationSettings () {
+    /**
+   * Runtime configuration settings for Foundry VTT which exposes a large number of variables which determine how
+   * aspects of the software behaves.
+   *
+   * Unlike the CONST analog which is frozen and immutable, the CONFIG object may be updated during the course of a
+   * session or modified by system and module developers to adjust how the application behaves.
+   *
+   **/
+
+  /**
+   * Configuration for the Actor document
+   */
+  CONFIG.Actor.compendiumBanner = "/systems/chroniquesdeletrange/images/banners/actor-banner.webp";
+
+  /**
+   * Configuration for the Adventure document
+   */
+  CONFIG.Adventure.compendiumBanner = "/systems/chroniquesdeletrange/images/banners/adventure-banner.webp";
+
+  /**
+   * Configuration for the Cards primary Document type
+   */
+  CONFIG.Cards.compendiumBanner = "ui/banners/cards-banner.webp";
+
+  /**
+   * Configuration for Item document
+   */
+  CONFIG.Item.compendiumBanner = "/systems/chroniquesdeletrange/images/banners/item-banner.webp";
+
+  /**
+   * Configuration for the JournalEntry document
+   */
+  CONFIG.JournalEntry.compendiumBanner = "/systems/chroniquesdeletrange/images/banners/journalentry-banner.webp";
+
+  /**
+   * Configuration for the Macro document
+   */
+  CONFIG.Macro.compendiumBanner = "ui/banners/macro-banner.webp";
+
+  /**
+   * Configuration for the Playlist document
+   */
+  CONFIG.Playlist.compendiumBanner = "ui/banners/playlist-banner.webp";
+
+  /**
+   * Configuration for RollTable random draws
+   */
+  CONFIG.RollTable.compendiumBanner = "ui/banners/rolltable-banner.webp";
+
+  /**
+   * Configuration for the Scene document
+   */
+  CONFIG.Scene.compendiumBanner = "/systems/chroniquesdeletrange/images/banners/scene-banner.webp";
+}

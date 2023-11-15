@@ -377,7 +377,7 @@ export class CDEActorSheet extends ActorSheet {
     let typeOfThrow = 0;
     typeOfThrow = parseInt(this.actor.system.prefs.typeofthrow.choice);
     if (!( typeOfThrow == 0 || typeOfThrow == 1 || typeOfThrow == 2 || typeOfThrow == 3 )) {
-      typeOfThrow = 0;
+      typeOfThrow = 0; console.log("Zur, erreur !");
     };
 
 
@@ -515,7 +515,7 @@ export class CDEActorSheet extends ActorSheet {
         default: console.log("C'est bizarre !");
       };
       if (this.actor.system.prefs.typeofthrow.check) {
-        typeOfThrow = await _whichTypeOfThrow(this.actor, typeOfThrow);
+        typeOfThrow = parseInt(await _whichTypeOfThrow(this.actor, typeOfThrow));
         console.log("typeOfThrow = ", typeOfThrow);
       };
       break;
@@ -534,6 +534,7 @@ export class CDEActorSheet extends ActorSheet {
         bonusDice = parseInt(data.bonusmalus);
         bonusAuspicious = parseInt(data.bonusauspiciousdice);
         typeOfThrow = parseInt(data.typeofthrow);
+        console.log("typeOfThrow = ", typeOfThrow);
       break;
       case wiiSpecial:
         mySkillUsed = skillDefined;
@@ -551,6 +552,7 @@ export class CDEActorSheet extends ActorSheet {
         bonusDice = parseInt(data.bonusmalus);
         bonusAuspicious = parseInt(data.bonusauspiciousdice);
         typeOfThrow = parseInt(data.typeofthrow);
+        console.log("typeOfThrow = ", typeOfThrow);
         break;
       case wiiResource:
         mySkillUsed = skillDefined;
@@ -566,6 +568,7 @@ export class CDEActorSheet extends ActorSheet {
         bonusDice = parseInt(data.bonusmalus);
         bonusAuspicious = parseInt(data.bonusauspiciousdice);
         typeOfThrow = parseInt(data.typeofthrow);
+        console.log("typeOfThrow = ", typeOfThrow);
       break;
       case wiiField:
         mySkillUsed = skillDefined;
@@ -583,6 +586,7 @@ export class CDEActorSheet extends ActorSheet {
         bonusDice = parseInt(data.bonusmalus);
         bonusAuspicious = parseInt(data.bonusauspiciousdice);
         typeOfThrow = parseInt(data.typeofthrow);
+        console.log("typeOfThrow = ", typeOfThrow);
       break;
       case wiiMagic:
         mySkillUsed = skillDefined;
@@ -620,6 +624,7 @@ export class CDEActorSheet extends ActorSheet {
         bonusDice = parseInt(data.bonusmalus);
         bonusAuspicious = parseInt(data.bonusauspiciousdice);
         typeOfThrow = parseInt(data.typeofthrow);
+        console.log("typeOfThrow = ", typeOfThrow);
       break;
       case wiiMagicSpecial:
         console.log("I'm here!");
@@ -680,12 +685,12 @@ export class CDEActorSheet extends ActorSheet {
         numberDice = parseInt(dataBis.numberofdice);
         myAspectUsed = parseInt(dataBis.aspectskill);
         bonusDice = parseInt(dataBis.bonusmalusskill);
-        bonusAuspicious = parseInt(dataBis.auspiciousdice);
+        bonusAuspicious = dataBis.auspiciousdice;
         myAspectSpecialUsed = parseInt(dataBis.aspectspeciality);
         rollDifficulty = parseInt(dataBis.rolldifficulty);
         bonusSpecial = parseInt(dataBis.bonusmalusspeciality);
         typeOfThrow = parseInt(dataBis.typeofthrow);
-        
+        console.log("typeOfThrow = ", typeOfThrow);
         break;
       case wiiRandomize:
         mySkillUsed = random;
@@ -694,7 +699,7 @@ export class CDEActorSheet extends ActorSheet {
         aspectUsedLabel = "CDE.Randomize";
         mySpecialUsed = special2BDefined;
         if (this.actor.system.prefs.typeofthrow.check) {
-          typeOfThrow = await _whichTypeOfThrow(this.actor, typeOfThrow);
+          typeOfThrow = parseInt(await _whichTypeOfThrow(this.actor, typeOfThrow));
           console.log("typeOfThrow = ", typeOfThrow);
         };
       break;
@@ -1038,7 +1043,7 @@ export class CDEActorSheet extends ActorSheet {
     let dialogOptions = "";
     var choice = 0;
     var dialogData = {
-      choice: toString(myTypeOfThrow),
+      choice: myTypeOfThrow,
       check: myActor.system.prefs.typeofthrow.check
       // check: true
     };
@@ -1144,7 +1149,7 @@ async function _skillDiceRollDialog(myActor, template, myTitle, myDialogOptions,
     myDialogData.aspect = myHtml.find("select[name='aspect']").val();
     myDialogData.bonusmalus = myHtml.find("input[name='bonusmalus']").val();
     myDialogData.bonusauspiciousdice = myHtml.find("select[name='bonusauspiciousdice']").val();
-    myDialogData.typeofthrow = toString(myHtml.find("select[name='typeofthrow']").val());
+    myDialogData.typeofthrow = myHtml.find("select[name='typeofthrow']").val();
     console.log("myDialogData après traitement et avant retour func = ", myDialogData);
     return myDialogData;
   };
@@ -1271,7 +1276,7 @@ async function _magicDiceRollDialog(myActor, template, myTitle, myDialogOptions,
     myDialogData.aspectspeciality = myHtml.find("select[name='aspectspeciality']").val();
     myDialogData.rolldifficulty = myHtml.find("input[name='rolldifficulty']").val();
     myDialogData.bonusmalusspeciality = myHtml.find("input[name='bonusmalusspeciality']").val();
-    myDialogData.typeofthrow = toString(myHtml.find("select[name='typeofthrow']").val());
+    myDialogData.typeofthrow = myHtml.find("select[name='typeofthrow']").val();
     console.log("myDialogData après traitement et avant retour func = ", myDialogData);
     return myDialogData;
   };
