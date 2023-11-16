@@ -231,7 +231,7 @@ export class CDEActorSheet extends ActorSheet {
     const title = game.i18n.localize("CDE.Preferences");
     let dialogOptions = "";
     var dialogData = {
-      choice: toString(this.actor.system.prefs.typeofthrow.choice),
+      choice: this.actor.system.prefs.typeofthrow.choice,
       check: this.actor.system.prefs.typeofthrow.check
     };
     console.log("Gear dialogData = ", dialogData);
@@ -268,8 +268,7 @@ export class CDEActorSheet extends ActorSheet {
       console.log("choice = ", choice);
       const isChecked = myHtml.find("input[name='check']").is(':checked');
       console.log("isChecked = ", isChecked);
-      myActor.update({ "system.prefs.typeofthrow.choice": toString(choice) });
-      myActor.update({ "system.prefs.typeofthrow.check": isChecked });
+      await myActor.update({ "system.prefs.typeofthrow.choice": choice.toString(), "system.prefs.typeofthrow.check": isChecked });
     }
   }
 
