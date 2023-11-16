@@ -1,16 +1,12 @@
 {
  "SETTINGS.CDEMacroShorthandN": "Shortened Macro Syntax",
  "SETTINGS.CDEMacroShorthandL": "Enable a shortened macro syntax which allows referencing attributes directly, for example @str instead of @attributes.str.value. Disable this setting if you need the ability to reference the full attribute model, for example @attributes.str.label.",
- "SETTINGS.CDEInitFormulaN": "Formule d′initiative",
- "SETTINGS.CDEInitFormulaL": "Saisissez une formule d′initiative, telle que d20+@dex",
 
  "CDE.ItemCreate": "Créer un Équipement",
  "CDE.ItemEdit": "Éditer l′Équipement",
  "CDE.ItemDelete": "Supprimer l′Équipement",
  "CDE.ItemNew": "Nouvel Équipement",
 
- "CDE.NotifyInitFormulaUpdated": "La formule d′initiative a été modifiée en",
- "CDE.NotifyInitFormulaInvalid": "Cette formule d′initiative était invalide",
  "CDE.NotifyGroupDuplicate": "Ce groupe d′attributs existe déjà.",
  "CDE.NotifyGroupAttrDuplicate": "Ce groupe d′attributs existe déjà en tant qu′attribut.",
  "CDE.NotifyGroupAlphanumeric": "Les noms de groupe d′attributs ne peuvent pas contenir d′espaces ni de points.",

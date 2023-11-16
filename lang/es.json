@@ -1,16 +1,12 @@
 {
  "SETTINGS.CDEMacroShorthandN": "Shortened Macro Syntax",
  "SETTINGS.CDEMacroShorthandL": "Enable a shortened macro syntax which allows referencing attributes directly, for example @str instead of @attributes.str.value. Disable this setting if you need the ability to reference the full attribute model, for example @attributes.str.label.",
- "SETTINGS.CDEInitFormulaN": "Initiative Formula",
- "SETTINGS.CDEInitFormulaL": "Enter an initiative formula, such as d20+@dex",
 
  "CDE.ItemCreate": "Crear un Equipo",
  "CDE.ItemEdit": "Editar el Equipo",
  "CDE.ItemDelete": "Borrar el Equipo",
  "CDE.ItemNew": "Nuevo Equipo",
 
- "CDE.NotifyInitFormulaUpdated": "Initiative formula was updated to",
- "CDE.NotifyInitFormulaInvalid": "Initiative formula was invalid",
  "CDE.NotifyGroupDuplicate": "Attribute group already exists.",
  "CDE.NotifyGroupAttrDuplicate": "Attribute group already exists as an attribute.",
  "CDE.NotifyGroupAlphanumeric": "Attribute group names may not contain spaces or periods.",
