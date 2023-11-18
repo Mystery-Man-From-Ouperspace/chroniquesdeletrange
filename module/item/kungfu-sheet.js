@@ -1,12 +1,8 @@
-import { EntitySheetHelper } from "../helper.js";
-import {ATTRIBUTE_TYPES} from "../constants.js";
-
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
 export class CDEKungFuSheet extends ItemSheet {
-
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
@@ -14,8 +10,8 @@ export class CDEKungFuSheet extends ItemSheet {
       template: "systems/chroniquesdeletrange/templates/item/kungfu-sheet.html",
       width: 720,
       height: 520,
-      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
-      scrollY: [".description", ".technique1", ".technique2", ".technique3"]
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }],
+      scrollY: [".description", ".technique1", ".technique2", ".technique3"],
     });
   }
 
@@ -24,12 +20,22 @@ export class CDEKungFuSheet extends ItemSheet {
   /** @inheritdoc */
   async getData(options) {
     const context = await super.getData(options);
-    //EntitySheetHelper.getAttributeData(context.data);
-    context.systemData = context.data.system;
-    context.dtypes = ATTRIBUTE_TYPES;
-    context.descriptionHTML = await TextEditor.enrichHTML(context.systemData.description, {
+    context.systemData = this.item.system;
+    context.descriptionHTML = await TextEditor.enrichHTML(this.item.system.description, {
       secrets: this.document.isOwner,
-      async: true
+      async: true,
+    });
+    context.descriptionTechnique1 = await TextEditor.enrichHTML(this.item.system.techniques.technique1.technique, {
+      secrets: this.document.isOwner,
+      async: true,
+    });
+    context.descriptionTechnique2 = await TextEditor.enrichHTML(this.item.system.techniques.technique2.technique, {
+      secrets: this.document.isOwner,
+      async: true,
+    });
+    context.descriptionTechnique3 = await TextEditor.enrichHTML(this.item.system.techniques.technique3.technique, {
+      secrets: this.document.isOwner,
+      async: true,
     });
     return context;
   }
@@ -41,30 +47,6 @@ export class CDEKungFuSheet extends ItemSheet {
     super.activateListeners(html);
 
     // Everything below here is only needed if the sheet is editable
-    if ( !this.isEditable ) return;
-
-    // Attribute Management
-    html.find(".attributes").on("click", ".attribute-control", EntitySheetHelper.onClickAttributeControl.bind(this));
-    html.find(".groups").on("click", ".group-control", EntitySheetHelper.onClickAttributeGroupControl.bind(this));
-    html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
-
-    // Add draggable for Macro creation
-    html.find(".attributes a.attribute-roll").each((i, a) => {
-      a.setAttribute("draggable", true);
-      a.addEventListener("dragstart", ev => {
-        let dragData = ev.currentTarget.dataset;
-        ev.dataTransfer.setData('text/plain', JSON.stringify(dragData));
-      }, false);
-    });
-  }
-
-  /* -------------------------------------------- */
-
-  /** @override */
-  _getSubmitData(updateData) {
-    let formData = super._getSubmitData(updateData);
-    formData = EntitySheetHelper.updateAttributes(formData, this.object);
-    formData = EntitySheetHelper.updateGroups(formData, this.object);
-    return formData;
+    if (!this.isEditable) return;
   }
 }

@@ -1,15 +1,17 @@
 const gulp = require('gulp');
 const less = require('gulp-less');
 
+const LESS_DEST = "./css";
+const LESS_SRC = "./styles/chroniquesdeletrange.less";
+const LESS_WATCH = ["./styles/**/*.less"];
+
 /* ----------------------------------------- */
 /*  Compile LESS
 /* ----------------------------------------- */
-
-const SIMPLE_LESS = ["styles/*.less"];
 function compileLESS() {
-  return gulp.src("styles/simple.less")
+  return gulp.src(LESS_SRC)
     .pipe(less())
-    .pipe(gulp.dest("./styles/"))
+    .pipe(gulp.dest(LESS_DEST))
 }
 const css = gulp.series(compileLESS);
 
@@ -18,7 +20,7 @@ const css = gulp.series(compileLESS);
 /* ----------------------------------------- */
 
 function watchUpdates() {
-  gulp.watch(SIMPLE_LESS, css);
+  gulp.watch(LESS_WATCH, css);
 }
 
 /* ----------------------------------------- */

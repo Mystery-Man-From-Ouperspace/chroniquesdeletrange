@@ -13,6 +13,9 @@
   "author": "",
   "license": "MIT",
   "private": true,
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-less": "^5.0.0",
+    "less": "^4.2.0"
+  }
 }

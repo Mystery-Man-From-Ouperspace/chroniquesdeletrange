@@ -1,20 +1,14 @@
-import { EntitySheetHelper } from "../helper.js";
-import {ATTRIBUTE_TYPES} from "../constants.js";
-
+import {CDEActorSheet} from "./actor-sheet.js";
 /**
- * Extend the basic ActorSheet with some very simple modifications
- * @extends {ActorSheet}
+ * @extends {CDEActorSheet}
  */
-export class CDEPNJSheet extends ActorSheet {
+export class CDEPNJSheet extends CDEActorSheet {
 
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["chroniquesdeletrange", "sheet", "actor"],
-      template: "systems/chroniquesdeletrange/templates/npc-sheet.html",
-      width: 700,
-      height: 850,
-      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
+      classes: ["chroniquesdeletrange", "sheet", "actor", "npc"],
+      template: "systems/chroniquesdeletrange/templates/actor/npc-sheet.html",
       scrollY: [".description", ".supernaturals"],
       dragDrop: [{dragSelector: ".supernatural", dropSelector: null}]
     });
@@ -25,15 +19,11 @@ export class CDEPNJSheet extends ActorSheet {
   /** @inheritdoc */
   async getData(options) {
     const context = await super.getData(options);
-    //EntitySheetHelper.getAttributeData(context.data);
-    context.shorthand = !!game.settings.get("chroniquesdeletrange", "macroShorthand");
-    context.systemData = duplicate(this.actor.system);
-    context.dtypes = ATTRIBUTE_TYPES;
-    context.biographyHTML = await TextEditor.enrichHTML(context.systemData.biography, {
+    context.descriptionHTML = await TextEditor.enrichHTML(this.actor.system.description, {
       secrets: this.document.isOwner,
       async: true
     });
-    console.log("getData context", context)
+    context.supernaturals = context.items.filter(item => item.type === "supernatural");
     return context;
   }
 
@@ -43,32 +33,9 @@ export class CDEPNJSheet extends ActorSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
-    // Everything below here is only needed if the sheet is editable
-    if ( !this.isEditable ) return;
-
-    html.find(".phys-apt").on("focusout", this._onPhysicalAptitudeEdit.bind(this));
-    html.find(".spir-apt").on("focusout", this._onSpiritualAptitudeEdit.bind(this));
-
-    // Attribute Management
-    //html.find(".attributes").on("click", ".attribute-control", EntitySheetHelper.onClickAttributeControl.bind(this));
-    //html.find(".groups").on("click", ".group-control", EntitySheetHelper.onClickAttributeGroupControl.bind(this));
-    //html.find(".attributes").on("click", "a.attribute-roll", EntitySheetHelper.onAttributeRoll.bind(this));
-
     // Item Controls
-    html.find(".supernatural-control").click(this._onSupernaturalControl.bind(this));
     // html.find(".items .rollable").on("click", this._onSupernaturalRoll.bind(this));
-
-
-    // Add draggable for Macro creation
-    html.find(".attributes a.attribute-roll").each((i, a) => {
-      a.setAttribute("draggable", true);
-      a.addEventListener("dragstart", ev => {
-        let dragData = ev.currentTarget.dataset;
-        ev.dataTransfer.setData('text/plain', JSON.stringify(dragData));
-      }, false);
-    });
   }
-
    
   /**
    * Handle click events for Item supernatural control buttons within the Actor Sheet
@@ -116,31 +83,6 @@ export class CDEPNJSheet extends ActorSheet {
 
 
 
-  async _onPhysicalAptitudeEdit(event) {
-    console.log("Je suis ici !");
-    function resolveAfterOneSeconds(x) {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve(x);
-        }, 1000);
-      });
-    };
-    await resolveAfterOneSeconds(10).then(()=> this.actor.update({"system.npc.vitality.calcul": this.actor.system.npc.aptitudes.physical.value * 4}));
-  };
-
-  async _onSpiritualAptitudeEdit(event) {
-    console.log("Je suis ici !");
-    function resolveAfterOneSeconds(x) {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve(x);
-        }, 1000);
-      });
-    };
-    await resolveAfterOneSeconds(10).then(()=> this.actor.update({"system.npc.hei.calcul": this.actor.system.npc.aptitudes.spiritual.value * 4}));
-  };
-
-  
 
  /* _onKungFuRoll(event) {
     let button = $(event.currentTarget);
@@ -167,15 +109,4 @@ export class CDEPNJSheet extends ActorSheet {
     });
   } */
 
-
-
-  /* -------------------------------------------- */
-
-  /** @inheritdoc */
-  _getSubmitData(updateData) {
-    let formData = super._getSubmitData(updateData);
-    //formData = EntitySheetHelper.updateAttributes(formData, this.object);
-    //formData = EntitySheetHelper.updateGroups(formData, this.object);
-    return formData;
-  }
 }

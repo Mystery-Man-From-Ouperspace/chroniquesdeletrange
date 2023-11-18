@@ -1,0 +1,85 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+  {{log 'loksyu-sheet' this}} {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <table>
+      <tr>
+        <td>
+          <!-- <img class="logo-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" height="300" width="200" /> -->
+          <img class="logo-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+        </td>
+        <td>
+          <div class="header-fields">
+            <table>
+              <tr>
+                <td>
+                  <h1 class="charname">
+                    <input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'CDE.LoksyuName' }}" />
+                  </h1>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="loksyu">{{ localize "CDE.Loksyu" }}</a>
+    <a class="item" data-tab="description">{{ localize "CDE.Description" }}</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    {{!-- Loksyu Tab --}}
+    <div class="tab loksyu loksyu_wrap" data-group="primary" data-tab="loksyu">
+      <div class="schema">
+        <div>
+          <img
+            class="logo"
+            src="systems/chroniquesdeletrange/images/logo_jeu.png"
+            title="奇闻异事 ● Hong Kong – Les Chroniques de l'&Eacute;trange ● R.d′Huissier & C.Lameire ● Antre Monde &Eacute;ditions"
+            alt="Logo"
+          />
+        </div>
+        <div class="wood-yang">
+          <input type="number" name="system.wood.yang.value" value="{{systemData.wood.yang.value}}" title="{{ localize 'CDE.WoodYang' }}" />
+        </div>
+        <div class="wood-yin">
+          <input type="number" name="system.wood.yin.value" value="{{systemData.wood.yin.value}}" title="{{ localize 'CDE.WoodYin' }}" />
+        </div>
+        <div class="metal-yang">
+          <input type="number" name="system.metal.yang.value" value="{{systemData.metal.yang.value}}" title="{{ localize 'CDE.MetalYang' }}" />
+        </div>
+        <div class="fire-yang">
+          <input type="number" name="system.fire.yang.value" value="{{systemData.fire.yang.value}}" title="{{ localize 'CDE.FireYang' }}" />
+        </div>
+        <div class="earth-yang">
+          <input type="number" name="system.earth.yang.value" value="{{systemData.earth.yang.value}}" title="{{ localize 'CDE.EarthYang' }}" />
+        </div>
+        <div class="earth-yin">
+          <input type="number" name="system.earth.yin.value" value="{{systemData.earth.yin.value}}" title="{{ localize 'CDE.EarthYin' }}" />
+        </div>
+        <div class="metal-yin">
+          <input type="number" name="system.metal.yin.value" value="{{systemData.metal.yin.value}}" title="{{ localize 'CDE.MetalYin' }}" />
+        </div>
+        <div class="fire-yin">
+          <input type="number" name="system.fire.yin.value" value="{{systemData.fire.yin.value}}" title="{{ localize 'CDE.FireYin' }}" />
+        </div>
+        <div class="water-yang">
+          <input type="number" name="system.water.yang.value" value="{{systemData.water.yang.value}}" title="{{ localize 'CDE.WaterYang' }}" />
+        </div>
+        <div class="water-yin">
+          <input type="number" name="system.water.yin.value" value="{{systemData.water.yin.value}}" title="{{ localize 'CDE.WaterYin' }}" />
+        </div>
+      </div>
+      <img src="systems/chroniquesdeletrange/images/loksyu.png" title="Loksyu" alt="Loksyu" />
+    </div>
+
+    {{!-- Description Tab --}}
+    <div class="tab description" data-group="primary" data-tab="description">
+      {{editor descriptionHTML target="system.description" button=true editable=editable engine="prosemirror"}}
+    </div>
+  </section>
+</form>

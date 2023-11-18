@@ -12,7 +12,7 @@
     }
   ],
   "esmodules": ["module/chroniquesdeletrange.js"],
-  "styles": ["styles/chroniquesdeletrange.css"],
+  "styles": ["css/chroniquesdeletrange.css"],
   "packs": [],
   "languages": [
     {
@@ -33,8 +33,7 @@
   ],
   "compatibility": {
     "minimum": "11",
-    "verified": "11",
-    "maximum": "11"
+    "verified": "11"
   },
   "background": "/systems/chroniquesdeletrange/images/background/accueil.jpg",
   "gridDistance": 5,

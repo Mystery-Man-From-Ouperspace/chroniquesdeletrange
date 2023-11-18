@@ -1,12 +1,12 @@
 {
   "Actor": {
     "types": ["character", "npc", "loksyu"],
-    "htmlFields": ["biography", "description", "description2"],
+    "htmlFields": ["description"],
 
     "character": {
       "concept": "",
       "guardian": "0",
-      "biography": "",
+      "description": "",
       "prefs": {
         "typeofthrow": {
           "check": true,
@@ -15,8 +15,8 @@
       },
       "prompt": {
         "typeofthrow": {
-        "check": true,
-        "choice": "0"
+          "check": true,
+          "choice": "0"
         },
         "configure": {
           "numberofdice": 0,
@@ -35,461 +35,246 @@
         "fire": {
           "chinese": "㊋",
           "label": "CDE.Fire",
-          "value": 15,
-          "min": 1,
-          "max": 15
+          "value": 15
         },
         "earth": {
           "chinese": "㊏",
           "label": "CDE.Earth",
-          "value": 15,
-          "min": 1,
-          "max": 15
+          "value": 15
         },
         "metal": {
           "chinese": "㊎",
           "label": "CDE.Metal",
-          "value": 15,
-          "min": 1,
-          "max": 15
+          "value": 15
         },
         "water": {
           "chinese": "㊌",
           "label": "CDE.Water",
-          "value": 15,
-          "min": 1,
-          "max": 15
+          "value": 15
         },
         "wood": {
           "chinese": "㊍",
           "label": "CDE.Wood",
-          "value": 15,
-          "min": 1,
-          "max": 15
+          "value": 15
         }
       },
-            
+
       "skills": {
         "art": {
           "label": "CDE.Art",
           "specialities": "",
-          "value": 0,
-          "min": 0,
-          "max": 5
+          "value": 0
         },
         "investigation": {
           "label": "CDE.Investigation",
           "specialities": "",
-          "value": 0,
-          "min": 0,
-          "max": 5
+          "value": 0
         },
         "erudition": {
           "label": "CDE.Erudition",
           "specialities": "",
-          "value": 0,
-          "min": 0,
-          "max": 5
+          "value": 0
         },
         "knavery": {
           "label": "CDE.Knavery",
           "specialities": "",
-          "value": 0,
-          "min": 0,
-          "max": 5
+          "value": 0
         },
         "wordliness": {
           "label": "CDE.Wordliness",
           "specialities": "",
-          "value": 0,
-          "min": 0,
-          "max": 5
+          "value": 0
         },
         "prowess": {
           "label": "CDE.Prowess",
           "specialities": "",
-          "value": 0,
-          "min": 0,
-          "max": 5
+          "value": 0
         },
         "sciences": {
           "label": "CDE.Sciences",
           "specialities": "",
-          "value": 0,
-          "min": 0,
-          "max": 5
+          "value": 0
         },
         "technologies": {
           "label": "CDE.Technologies",
           "specialities": "",
-          "value": 0,
-          "min": 0,
-          "max": 5
+          "value": 0
         },
         "kungfu": {
           "label": "CDE.KungFu",
           "specialities": "",
-          "value": 0,
-          "min": 0,
-          "max": 5
+          "value": 0
         },
         "rangedcombat": {
           "label": "CDE.RangedCombat",
           "specialities": "",
-          "value": 0,
-          "min": 0,
-          "max": 5
+          "value": 0
         }
       },
-  
+
       "resources": {
         "supply": {
           "label": "CDE.Supply",
           "specialities": "",
           "value": 0,
-          "min": 0,
-          "max": 5,
           "debt": false
         },
         "inquiry": {
           "label": "CDE.Inquiry",
           "specialities": "",
           "value": 0,
-          "min": 0,
-          "max": 5,
           "debt": false
         },
         "influence": {
           "label": "CDE.Influence",
           "specialities": "",
           "value": 0,
-          "min": 0,
-          "max": 5,
           "debt": false
         }
       },
-  
+
       "component": {
         "one": {
-          "value": ""	
+          "value": ""
         },
         "two": {
-          "value": ""	
+          "value": ""
         },
         "three": {
-          "value": ""	
+          "value": ""
         },
         "four": {
-          "value": ""	
+          "value": ""
         },
         "five": {
-          "value": ""	
+          "value": ""
         },
         "six": {
-          "value": ""	
+          "value": ""
         },
         "seven": {
-          "value": ""	
+          "value": ""
         },
         "eight": {
-          "value": ""	
+          "value": ""
         },
         "nine": {
-          "value": ""	
+          "value": ""
         },
         "zero": {
-          "value": ""	
+          "value": ""
         }
       },
-  
+
       "magics": {
         "internalcinnabar": {
-          "background": "linear-grey",
-          "label": "CDE.InternalCinnabar",
           "value": 0,
-          "min": 0,
-          "max": 5,
-          "aspectlabel": "CDE.Metal",
           "speciality": {
             "essence": {
-              "check": false,
-              "label": "CDE.Essence",
-              "classicon": "icon-yin",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yin.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_metal.png",
-              "labelicon": "Yin",
-              "labelelement": "CDE.Metal"
-                },
+              "check": false
+            },
             "mind": {
-              "check": false,
-              "label": "CDE.Mind",
-              "classicon": "icon-yin",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yin.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_eau.png",
-              "labelicon": "Yin",
-              "labelelement": "CDE.Water"
+              "check": false
             },
             "purification": {
-              "check": false,
-              "label": "CDE.Purification",
-              "classicon": "icon-yinyang",
-              "icon": "/systems/chroniquesdeletrange/images/yin_yang.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_terre.png",
-              "labelicon": "Yin/Yang",
-              "labelelement": "CDE.Earth"
+              "check": false
             },
             "manipulation": {
-              "check": false,
-              "label": "CDE.Manipulation",
-              "classicon": "icon-yang",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yang.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_feu.png",
-              "labelicon": "Yang",
-              "labelelement": "CDE.Fire"
+              "check": false
             },
             "aura": {
-              "check": false,
-              "label": "CDE.Aura",
-              "classicon": "icon-yang",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yang.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_bois.png",
-              "labelicon": "Yang",
-              "labelelement": "CDE.Wood"
+              "check": false
             }
           }
         },
         "alchemy": {
-          "background": "linear-blue",
-          "label": "CDE.Alchemy",
           "value": 0,
-          "min": 0,
-          "max": 5,
-          "aspectlabel": "CDE.Water",
           "speciality": {
             "acupuncture": {
-              "check": false,
-              "label": "CDE.Acupuncture",
-              "classicon": "icon-yin",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yin.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_metal.png",
-              "labelicon": "Yin",
-              "labelelement": "CDE.Metal"
+              "check": false
             },
             "elixirs": {
-              "check": false,
-              "label": "CDE.Elixirs",
-              "classicon": "icon-yin",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yin.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_eau.png",
-              "labelicon": "Yin",
-              "labelelement": "CDE.Water"
+              "check": false
             },
             "poisons": {
-              "check": false,
-              "label": "CDE.Poisons",
-              "classicon": "icon-yinyang",
-              "icon": "/systems/chroniquesdeletrange/images/yin_yang.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_terre.png",
-              "labelicon": "Yin/Yang",
-              "labelelement": "CDE.Earth"
+              "check": false
             },
             "arsenal": {
-              "check": false,
-              "label": "CDE.Arsenal",
-              "classicon": "icon-yang",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yang.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_feu.png",
-              "labelicon": "Yang",
-              "labelelement": "CDE.Fire"
+              "check": false
             },
             "potions": {
-              "check": false,
-              "label": "CDE.Potions",
-              "classicon": "icon-yang",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yang.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_bois.png",
-              "labelicon": "Yang",
-              "labelelement": "CDE.Wood"
+              "check": false
             }
           }
         },
         "masteryoftheway": {
-          "background": "linear-brown",
-          "label": "CDE.MasteryOfTheWay",
           "value": 0,
-          "min": 0,
-          "max": 5,
-          "aspectlabel": "CDE.Earth",
           "speciality": {
             "curse": {
-              "check": false,
-              "label": "CDE.Curse",
-              "classicon": "icon-yin",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yin.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_metal.png",
-              "labelicon": "Yin",
-              "labelelement": "CDE.Metal"
+              "check": false
             },
             "transfiguration": {
-              "check": false,
-              "label": "CDE.Transfiguration",
-              "classicon": "icon-yin",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yin.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_eau.png",
-              "labelicon": "Yin",
-              "labelelement": "CDE.Water"
+              "check": false
             },
             "necromancy": {
-              "check": false,
-              "label": "CDE.Necromancy",
-              "classicon": "icon-yinyang",
-              "icon": "/systems/chroniquesdeletrange/images/yin_yang.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_terre.png",
-              "labelicon": "Yin/Yang",
-              "labelelement": "CDE.Earth"
+              "check": false
             },
             "climatecontrol": {
-              "check": false,
-              "label": "CDE.ClimateControl",
-              "classicon": "icon-yang",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yang.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_feu.png",
-              "labelicon": "Yang",
-              "labelelement": "CDE.Fire"
+              "check": false
             },
             "goldenmagic": {
-              "check": false,
-              "label": "CDE.GoldenMagic",
-              "classicon": "icon-yang",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yang.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_bois.png",
-              "labelicon": "Yang",
-              "labelelement": "CDE.Wood"
+              "check": false
             }
           }
         },
         "exorcism": {
-          "background": "linear-red",
-          "label": "CDE.Exorcism",
           "value": 0,
-          "min": 0,
-          "max": 5,
-          "aspectlabel": "CDE.Fire",
           "speciality": {
             "invocation": {
-              "check": false,
-              "label": "CDE.Invocation",
-              "classicon": "icon-yin",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yin.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_metal.png",
-              "labelicon": "Yin",
-              "labelelement": "CDE.Metal"
+              "check": false
             },
             "tracking": {
-              "check": false,
-              "label": "CDE.Tracking",
-              "classicon": "icon-yin",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yin.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_eau.png",
-              "labelicon": "Yin",
-              "labelelement": "CDE.Water"
+              "check": false
             },
             "protection": {
-              "check": false,
-              "label": "CDE.Protection",
-              "classicon": "icon-yinyang",
-              "icon": "/systems/chroniquesdeletrange/images/yin_yang.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_terre.png",
-              "labelicon": "Yin/Yang",
-              "labelelement": "CDE.Earth"
+              "check": false
             },
             "punishment": {
-              "check": false,
-              "label": "CDE.Punishment",
-              "classicon": "icon-yang",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yang.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_feu.png",
-              "labelicon": "Yang",
-              "labelelement": "CDE.Fire"
+              "check": false
             },
             "domination": {
-              "check": false,
-              "label": "CDE.Domination",
-              "classicon": "icon-yang",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yang.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_bois.png",
-              "labelicon": "Yang",
-              "labelelement": "CDE.Wood"
+              "check": false
             }
           }
         },
         "geomancy": {
-          "background": "linear-green",
-          "label": "CDE.Geomancy",
           "value": 0,
-          "min": 0,
-          "max": 5,
-          "aspectlabel": "CDE.Wood",
           "speciality": {
             "neutralization": {
-              "check": false,
-              "label": "CDE.Neutralization",
-              "classicon": "icon-yin",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yin.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_metal.png",
-              "labelicon": "Yin",
-              "labelelement": "CDE.Metal"
+              "check": false
             },
             "divination": {
-              "check": false,
-              "label": "CDE.Divination",
-              "classicon": "icon-yin",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yin.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_eau.png",
-              "labelicon": "Yin",
-              "labelelement": "CDE.Water"
+              "check": false
             },
             "earthlyprayer": {
-              "check": false,
-              "label": "CDE.EarthlyPrayer",
-              "classicon": "icon-yinyang",
-              "icon": "/systems/chroniquesdeletrange/images/yin_yang.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_terre.png",
-              "labelicon": "Yin/Yang",
-              "labelelement": "CDE.Earth"
+              "check": false
             },
             "heavenlyprayer": {
-              "check": false,
-              "label": "CDE.HeavenlyPrayer",
-              "classicon": "icon-yang",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yang.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_feu.png",
-              "labelicon": "Yang",
-              "labelelement": "CDE.Fire"
+              "check": false
             },
             "fungseoi": {
-              "check": false,
-              "label": "CDE.Fungseoi",
-              "classicon": "icon-yang",
-              "icon": "/systems/chroniquesdeletrange/images/cde_yang.png",
-              "elementicon": "/systems/chroniquesdeletrange/images/cde_bois.png",
-              "labelicon": "Yang",
-              "labelelement": "CDE.Wood"
+              "check": false
             }
           }
         }
       },
-      
+
       "threetreasures": {
         "heiyang": {
-          "value": 0,
-          "max": 0,
-          "min": 0
+          "value": 0
         },
         "heiyin": {
-          "value": 0,
-          "max": 0,
-          "min": 0
+          "value": 0
         },
         "dicelevel": {
           "level0d": {
@@ -530,7 +315,7 @@
           }
         }
       },
-      
+
       "experience": {
         "value": 0,
         "max": 0,
@@ -545,39 +330,32 @@
       "aptitudes": {
         "physical": {
           "value": 0,
-          "min": 0,
           "speciality": ""
         },
         "martial": {
           "value": 0,
-          "min": 0,
           "speciality": ""
         },
         "mental": {
           "value": 0,
-          "min": 0,
           "speciality": ""
         },
         "social": {
           "value": 0,
-          "min": 0,
           "speciality": ""
         },
         "spiritual": {
           "value": 0,
-          "min": 0,
           "speciality": ""
         }
       },
       "vitality": {
         "value": 0,
-        "min": 0,
         "calcul": 0,
         "note": ""
       },
       "hei": {
         "value": 0,
-        "min": 0,
         "calcul": 0,
         "note": ""
       },
@@ -587,88 +365,66 @@
     "loksyu": {
       "fire": {
         "yin": {
-          "value": 0,
-          "max": 999,
-          "min": 0
+          "value": 0
         },
         "yang": {
-          "value": 0,
-          "max": 999,
-          "min":  0
+          "value": 0
         }
       },
       "earth": {
         "yin": {
-          "value": 0,
-          "max": 999,
-          "min":  0
+          "value": 0
         },
         "yang": {
-          "value": 0,
-          "max": 999,
-          "min":  0
+          "value": 0
         }
       },
       "metal": {
         "yin": {
-          "value": 0,
-          "max": 999,
-          "min":  0
+          "value": 0
         },
         "yang": {
-          "value": 0,
-          "max": 999,
-          "min":  0
+          "value": 0
         }
       },
       "water": {
         "yin": {
-          "value": 0,
-          "max": 999,
-          "min":  0
+          "value": 0
         },
         "yang": {
-          "value": 0,
-          "max": 999,
-          "min":  0
+          "value": 0
         }
       },
       "wood": {
         "yin": {
-          "value": 0,
-          "max": 999,
-          "min":  0
+          "value": 0
         },
         "yang": {
-          "value": 0,
-          "max": 999,
-          "min":  0
+          "value": 0
         }
       },
-      "description2": ""
+      "description": ""
     }
-    
   },
-  
+
   "Item": {
-    "types": ["item", "kungfu", "spell", "supernatural", "skillprpt", "magicprpt"],
+    "types": ["equipment", "kungfu", "spell", "supernatural"],
     "htmlFields": ["description", "style", "technique", "components", "effects", "examples"],
 
-    "item": {
+    "equipment": {
       "reference": "",
       "description": "",
-      "quantity": 1,
-      "attributes": {},
-      "groups": {}
+      "subtype": "",
+      "quantity": 1
     },
-    
+
     "kungfu": {
       "reference": "",
+      "description": "",
       "orientation": "",
       "aspect": "",
       "skill": "",
       "speciality": "",
-      "description": "",
       "style": "",
       "techniques": {
         "technique1": {
@@ -688,11 +444,11 @@
         }
       }
     },
-  
+
     "spell": {
       "reference": "",
-      "specialityname": "",
       "description": "",
+      "specialityname": "",
       "associatedelement": "",
       "hei": "",
       "realizationtimeritual": "",
@@ -705,27 +461,6 @@
 
     "supernatural": {
       "description": ""
-    },
-
-    "skillprpt": {
-      "title": "",
-      "numberofdice": 0,
-      "isspecial": false,
-      "aspect": 0,
-      "bonusmalus": 0,
-      "bonusauspiciousdice": 0
-    },
-
-    "magicprpt": {
-      "title": "",
-      "numberofdice": 0,
-      "aspectskill": 0,
-      "bonusmalusskill": 0,
-      "bonusauspiciousdice": 0,
-      "aspectspeciality": 0,
-      "rolldifficulty": 0,
-      "bonusmalusspeciality": 0
     }
-  
   }
-  }  
+}

@@ -1,0 +1,93 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+  {{log 'actor-sheet' this}} 
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <table>
+      <tr>
+        <td>
+          <img class="logo-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+        </td>
+        <td>
+          <div class="header-fields">
+            <table>
+              <tr>
+                <td style="width: 1%">
+                  <h1>
+                    <i class="click-prefs fas fa-gear"></i>
+                  </h1>
+                </td>
+                <td>
+                  <h1 class="charname">
+                    <input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'CDE.PCName' }}" />
+                  </h1>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <div class="concept">
+                    <input type="text" name="system.concept" value="{{systemData.concept}}" placeholder="{{ localize 'CDE.Concept' }}" />
+                    <span> / </span>
+                    <select name="system.guardian">
+                      {{#select systemData.guardian }}
+                      <option value="0">{{ localize "CDE.CelestialGuardian" }}</option>
+                      <option value="1">{{ localize "CDE.CelestialGuardian1" }}</option>
+                      <option value="2">{{ localize "CDE.CelestialGuardian2" }}</option>
+                      <option value="3">{{ localize "CDE.CelestialGuardian3" }}</option>
+                      <option value="4">{{ localize "CDE.CelestialGuardian4" }}</option>
+                      <option value="5">{{ localize "CDE.CelestialGuardian5" }}</option>
+                      {{/select}}
+                    </select>
+                  </div>
+                </td>
+
+                <td></td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="description">{{ localize "CDE.Description2" }}</a>
+    <a class="item" data-tab="skills">{{ localize "CDE.Skills" }}</a>
+    <a class="item" data-tab="magics">{{ localize "CDE.Magics" }}</a>
+    <a class="item" data-tab="nghang">{{ localize "CDE.NgHang" }}</a>
+    <a class="item" data-tab="treasures">{{ localize "CDE.Treasures" }}</a>
+    <a class="item" data-tab="spells">{{ localize "CDE.Spells" }}</a>
+    <a class="item" data-tab="kungfus">{{ localize "CDE.KungFu" }}</a>
+    <a class="item" data-tab="items">{{ localize "CDE.Items" }}</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    {{!-- Biography Tab --}}
+    <div class="tab description description_wrap" data-group="primary" data-tab="description">
+      {{editor descriptionHTML target="system.description" button=true editable=editable engine="prosemirror"}}
+    </div>
+
+    {{!-- Skills Tab --}}
+    <div class="tab skills" data-group="primary" data-tab="skills">{{> "systems/chroniquesdeletrange/templates/actor/parts/character-skills.html"}}</div>
+
+    {{!-- Magics Tab --}}
+    <div class="tab magics" data-group="primary" data-tab="magics">{{> "systems/chroniquesdeletrange/templates/actor/parts/character-magics.html"}}</div>
+
+    {{!-- NgHang Tab --}}
+    <div class="tab nghang nghang_wrap" data-group="primary" data-tab="nghang">{{> "systems/chroniquesdeletrange/templates/actor/parts/character-nghang.html"}}</div>
+
+    {{!-- 3 Treasures Tab --}}
+    <div class="tab treasures" data-group="primary" data-tab="treasures">{{> "systems/chroniquesdeletrange/templates/actor/parts/character-treasures.html"}}</div>
+
+    {{!-- Owned Spells Tab --}}
+    <div class="tab spells" data-group="primary" data-tab="spells">{{> "systems/chroniquesdeletrange/templates/actor/parts/character-spells.html"}}</div>
+
+    {{!-- Owned KungFu Tab --}}
+    <div class="tab kungfus" data-group="primary" data-tab="kungfus">{{> "systems/chroniquesdeletrange/templates/actor/parts/character-kungfus.html"}}</div>
+
+    {{!-- Owned Items Tab --}}
+    <div class="tab items" data-group="primary" data-tab="items">{{> "systems/chroniquesdeletrange/templates/actor/parts/character-items.html"}}</div>
+  </section>
+</form>
