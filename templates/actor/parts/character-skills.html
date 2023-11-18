@@ -1,0 +1,42 @@
+<div class="tab-sous-titre">{{ localize "CDE.Skills" }}</div>
+<table>
+  {{#each systemData.skills as |skill key|}}
+  <tr class="clickondie">
+    <td class="click" data-libel-id="{{key}}-skill">
+      <img class="d1click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize 'CDE.Die' }}{{ localize skill.label }}" alt="Die" />
+    </td>
+    <td class="label"><b>&nbsp;{{ localize skill.label }}</b></td>
+    <td class="image">
+      <img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
+      <div class="stick">&nbsp;</div>
+      <input class="input" type="number" placeholder="0" name="system.skills.{{@key}}.value" value="{{skill.value}}" />
+    </td>
+    <td class="specialities">
+      <input class="input" type="text" placeholder="{{ localize 'CDE.Specialities' }}…" name="system.skills.{{@key}}.specialities" value="{{skill.specialities}}" />
+    </td>
+    <td class="bonus"><b>+1 D</b></td>
+    <td class="click" data-libel-id="{{key}}-special"><img class="d2click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize 'CDE.DieSP' }}" alt="Die" /></td>
+  </tr>
+  {{/each}}
+</table>
+
+<div class="tab-sous-titre">{{ localize "CDE.Resources" }}</div>
+<table>
+  {{#each systemData.resources as |resource key|}}
+  <tr class="clickondie">
+    <td class="noclick" data-libel-id="{{key}}-resource"><img class="d1click" src="systems/chroniquesdeletrange/images/d10-transparent.png" title="" alt="NoDie" /></td>
+    <td class="label"><b>&nbsp;{{ localize resource.label }}</b></td>
+    <td class="image">
+      <img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
+      <div class="stick">&nbsp;</div>
+      <input class="input" type="number" placeholder="0" name="system.resources.{{@key}}.value" value="{{resource.value}}" />
+    </td>
+    <td class="specialities">
+      <input class="input" type="text" placeholder="{{ localize 'CDE.Fields' }}…" name="system.resources.{{@key}}.specialities" value="{{resource.specialities}}" />
+    </td>
+    <td class="bonus"><b>+1 D</b></td>
+    <td class="click" data-libel-id="{{key}}-field"><img class="d2click" src="systems/chroniquesdeletrange/images/d10-10.png" title="{{ localize 'CDE.DieDM' }}" alt="Die" /></td>
+    <td class="check"><input type="checkbox" name="system.resources.{{@key}}.debt" {{checked resource.debt}} title="{{ localize 'CDE.Debt' }}{{ localize resource.label }}" /></td>
+  </tr>
+  {{/each}}
+</table>

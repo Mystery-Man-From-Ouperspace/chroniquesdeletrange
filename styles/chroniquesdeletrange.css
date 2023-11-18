@@ -95,6 +95,11 @@ border: 0px;
 
 /* concerne les compétences */
 
+.chroniquesdeletrange .sheet-body .tab.skills .tab-titre{
+  padding-top: 20px;
+  font-weight: bold;
+}
+
 .chroniquesdeletrange .sheet-body .skills image img {
 border: 0px;
 z-index: 4;
@@ -522,9 +527,9 @@ text-align: left;
   flex: 0 0 116px;
   margin: 0 5px;
 }
-.chroniquesdeletrange.sheet.actor {
-  min-width: 700px; /* 560px; */
- max-width: 700px;
+.chroniquesdeletrange.sheet.character {
+  min-width: 720px; /* 560px; */
+  max-width: 720px;
   min-height: 420px;
   max-height: 850px;
 }

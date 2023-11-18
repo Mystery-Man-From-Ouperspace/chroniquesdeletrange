@@ -1,0 +1,581 @@
+/* concerne l'interface de Foundry */
+#logo {
+  content: url("/systems/chroniquesdeletrange/images/logo_jeu.png");
+  width: 70px;
+  height: 70px;
+  margin-left: 22px;
+  margin-top: -2px;
+}
+#pause > img {
+  content: url("/systems/chroniquesdeletrange/images/wheel.webp");
+  height: 192px;
+  width: 192px;
+  top: -45px;
+  left: calc(50% - 96px);
+}
+.chroniquesdeletrange .window-content {
+  height: 100%;
+  padding: 5px;
+  overflow-y: hidden;
+}
+.chroniquesdeletrange form {
+  height: 100%;
+}
+.chroniquesdeletrange .editor {
+  height: 100%;
+}
+.chroniquesdeletrange .editor-content {
+  height: 100%;
+}
+.chroniquesdeletrange.sheet.character {
+  min-width: 720px;
+  /* 560px; */
+  max-width: 720px;
+  min-height: 420px;
+  max-height: 850px;
+}
+.chroniquesdeletrange.sheet.item {
+  min-width: 460px;
+  min-height: 400px;
+}
+.chroniquesdeletrange .tabs {
+  flex: 0 0 40px;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+}
+.chroniquesdeletrange .tabs .item {
+  line-height: 40px;
+  font-weight: bold;
+}
+.chroniquesdeletrange .tabs .item.active {
+  text-decoration: underline;
+  text-shadow: none;
+}
+.chroniquesdeletrange .sheet-header {
+  flex: 0 0 150px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  height: 100%;
+  overflow-y: clip;
+  background-image: url("/systems/chroniquesdeletrange/images/fond_de_page.png");
+  background-position: top right;
+  /* Préférences */
+}
+.chroniquesdeletrange .sheet-header .logo-img {
+  max-height: 100%;
+  width: auto;
+}
+.chroniquesdeletrange .sheet-header .header-fields {
+  flex: 1;
+  height: 150px;
+}
+.chroniquesdeletrange .sheet-header .click-prefs:hover {
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 6px #af010a);
+}
+.chroniquesdeletrange .sheet-header h1.charname {
+  height: 50px;
+  padding: 5px;
+  margin: 5px 0;
+  border-bottom: 0;
+}
+.chroniquesdeletrange .sheet-header h1.charname input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.chroniquesdeletrange .sheet-header .concept {
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+  float: left;
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-header .concept input {
+  width: 325px;
+  height: 28px;
+}
+.chroniquesdeletrange .sheet-header .kungfu .libel {
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body {
+  overflow: hidden;
+  /* Compétences */
+  /* Magie */
+  /* Ng Hang */
+  /** Items */
+  /* Prompts */
+}
+.chroniquesdeletrange .sheet-body .tab {
+  height: 100%;
+  overflow-y: auto;
+  background-image: url("/systems/chroniquesdeletrange/images/fond_de_page.png");
+  background-position: bottom left;
+}
+.chroniquesdeletrange .sheet-body .tab-sous-titre {
+  padding-top: 20px;
+  font-weight: bold;
+}
+.chroniquesdeletrange .sheet-body .click:hover {
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 6px #af010a);
+}
+.chroniquesdeletrange .sheet-body .click2:hover {
+  cursor: pointer;
+}
+.chroniquesdeletrange .sheet-body img {
+  border: 0px;
+}
+.chroniquesdeletrange .sheet-body .skills image img {
+  border: 0px;
+  z-index: 4;
+  width: 100%;
+}
+.chroniquesdeletrange .sheet-body .skills image div.stick {
+  margin-top: -52px;
+  z-index: 2;
+  width: 3%;
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.click {
+  width: 27px;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.noclick {
+  width: 27px;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td table tr td.icon-d {
+  width: 27px;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.bonus {
+  width: 35px;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.label {
+  width: 25%;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.check {
+  width: 5%;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.image {
+  width: 5%;
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.image img {
+  z-index: 4;
+  width: 100%;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.image div.stick {
+  margin-top: -52px;
+  z-index: 2;
+  width: 3%;
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.image input.input {
+  border: 0px;
+  width: 30px;
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body .skills table tr td.specialities input.input {
+  width: 100%;
+  text-align: left;
+}
+.chroniquesdeletrange .sheet-body .magics .linear-green {
+  background: linear-gradient(Khaki, ForestGreen);
+}
+.chroniquesdeletrange .sheet-body .magics .linear-red {
+  background: linear-gradient(Khaki, Red);
+}
+.chroniquesdeletrange .sheet-body .magics .linear-brown {
+  background: linear-gradient(Khaki, Sienna);
+}
+.chroniquesdeletrange .sheet-body .magics .linear-blue {
+  background: linear-gradient(Khaki, DodgerBlue);
+}
+.chroniquesdeletrange .sheet-body .magics .linear-grey {
+  background: linear-gradient(Khaki, SlateGray);
+}
+.chroniquesdeletrange .sheet-body .magics table tr td.label {
+  width: 150px;
+}
+.chroniquesdeletrange .sheet-body .magics table tr td table tr td.label {
+  width: 150px;
+}
+.chroniquesdeletrange .sheet-body .magics table tr td.image {
+  width: 5%;
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body .magics .check {
+  width: 5%;
+}
+.chroniquesdeletrange .sheet-body .magics .image {
+  width: 5%;
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body .magics .image img {
+  z-index: 4;
+  width: 50px;
+}
+.chroniquesdeletrange .sheet-body .magics .image div.stick {
+  margin-top: -46px;
+  z-index: 2;
+  width: 3%;
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body .magics .image input {
+  border: 0px;
+  margin-top: -30px;
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body .magics .click {
+  width: 4%;
+}
+.chroniquesdeletrange .sheet-body .magics .icon-d {
+  width: 8%;
+}
+.chroniquesdeletrange .sheet-body .magics .icon-element img {
+  width: 50%;
+  margin-left: 6px;
+  margin-bottom: 2px;
+}
+.chroniquesdeletrange .sheet-body .magics .icon-yin img {
+  width: 25%;
+  margin-left: 8px;
+  margin-bottom: 2px;
+}
+.chroniquesdeletrange .sheet-body .magics .icon-yang img {
+  width: 40%;
+  margin-left: 0px;
+  margin-bottom: 2px;
+}
+.chroniquesdeletrange .sheet-body .magics .icon-yinyang img {
+  width: 40%;
+  margin-left: 0px;
+  margin-bottom: 2px;
+}
+.chroniquesdeletrange .sheet-body .nghang {
+  /* .nghangpart0 {
+            width: 30%;
+            height: 40px;
+            margin-top: 15px;
+            float: left;
+            text-align:
+        } */
+  /*.nghangpart3 {
+            input {
+                width: 40px;
+                height: 28px;
+            }
+        }*/
+  /*.nghangpart6 {
+            input {
+                width: 40px;
+                height: 28px;
+            }
+        }*/
+}
+.chroniquesdeletrange .sheet-body .nghang .nghangpart1 {
+  margin-top: -80px;
+}
+.chroniquesdeletrange .sheet-body .nghang .nghangpart1 input {
+  width: 40px;
+  height: 28px;
+  margin-top: 15px;
+  margin-left: 257px;
+  font-size: 1.5em;
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body .nghang .nghangpart1 .fire .click2 {
+  width: 30px;
+  margin-top: 82px;
+  margin-left: 310px;
+}
+.chroniquesdeletrange .sheet-body .nghang .nghangpart2 input {
+  width: 40px;
+  height: 28px;
+  margin-top: 113px;
+  margin-left: 67px;
+  font-size: 1.5em;
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body .nghang .nghangpart2 .wood .click2 {
+  width: 30px;
+  margin-top: 224px;
+  margin-left: 118px;
+}
+.chroniquesdeletrange .sheet-body .nghang .nghangpart4 {
+  margin-top: -15px;
+}
+.chroniquesdeletrange .sheet-body .nghang .nghangpart4 input {
+  width: 40px;
+  height: 28px;
+  margin-top: -135px;
+  margin-left: 455px;
+  font-size: 1.5em;
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body .nghang .nghangpart4 .earth .click2 {
+  width: 30px;
+  margin-top: 82px;
+  margin-left: 505px;
+}
+.chroniquesdeletrange .sheet-body .nghang .nghangpart5 input {
+  width: 40px;
+  height: 28px;
+  margin-top: 170px;
+  margin-left: 120px;
+  font-size: 1.5em;
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body .nghang .nghangpart5 .water .click2 {
+  width: 30px;
+  margin-top: 82px;
+  margin-left: 170px;
+}
+.chroniquesdeletrange .sheet-body .nghang .nghangpart7 {
+  margin-top: -19px;
+}
+.chroniquesdeletrange .sheet-body .nghang .nghangpart7 input {
+  width: 40px;
+  height: 28px;
+  margin-top: -67px;
+  margin-left: 393px;
+  font-size: 1.5em;
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body .nghang .nghangpart7 .metal .click2 {
+  width: 30px;
+  margin-top: 82px;
+  margin-left: 445px;
+}
+.chroniquesdeletrange .sheet-body .nghang_wrap {
+  position: relative;
+  overflow: hidden;
+  padding: 16px;
+  border: no-border;
+  background-image: url("");
+}
+.chroniquesdeletrange .sheet-body .nghang_wrap .schema {
+  padding: 100px;
+  position: relative;
+  z-index: 2;
+}
+.chroniquesdeletrange .sheet-body .nghang_wrap img {
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  height: auto;
+}
+.chroniquesdeletrange .sheet-body .nghang_wrap .logo {
+  z-index: 4;
+  width: 21%;
+  margin-top: -30px;
+  margin-left: -22px;
+}
+.chroniquesdeletrange .sheet-body .item-list {
+  list-style: none;
+  margin: 7px 0;
+  padding: 0;
+  overflow-y: auto;
+}
+.chroniquesdeletrange .sheet-body .item-list .item {
+  min-height: 30px;
+  line-height: 24px;
+  padding: 3px 0;
+  border-bottom: 1px solid #bbb;
+  align-items: stretch;
+}
+.chroniquesdeletrange .sheet-body .item-list .item img {
+  flex: 0 0 24px;
+  margin-right: 5px;
+}
+.chroniquesdeletrange .sheet-body .item-list .item-name {
+  margin: 0;
+}
+.chroniquesdeletrange .sheet-body .item-list .item-controls {
+  flex: 0 0 36px;
+}
+.chroniquesdeletrange .sheet-body .item-list .item-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  flex: 2;
+  justify-content: flex-start;
+}
+.chroniquesdeletrange .sheet-body .item-list .item-button {
+  line-height: 1;
+  font-size: 11px;
+  flex: none;
+  width: auto;
+}
+.chroniquesdeletrange .sheet-body .frame {
+  background-image: url("/systems/chroniquesdeletrange/images/cde_fond_transp.png");
+}
+.chroniquesdeletrange .sheet-body .frame .input {
+  text-align: center;
+}
+.chroniquesdeletrange .sheet-body .frame table tr {
+  border: 0px;
+}
+.chroniquesdeletrange .sheet-body .frame table tr :nth-child(odd) {
+  background-color: transparent;
+}
+.chroniquesdeletrange .sheet-body .frame table tr :nth-child(even) {
+  background-color: transparent;
+}
+.chroniquesdeletrange.sheet.actor.loksyu {
+  min-width: 700px;
+  /* 560px; */
+  max-width: 700px;
+  min-height: 420px;
+  max-height: 850px;
+  /*.number {
+                width: 50px;
+                text-align: center;
+                font-size: 1.5em;
+                z-index: 4;
+            
+            }*/
+}
+.chroniquesdeletrange.sheet.actor.loksyu .sheet-body .loksyu_wrap {
+  background-image: url("");
+  position: relative;
+  overflow: hidden;
+  padding: 16px;
+  border: no-border;
+}
+.chroniquesdeletrange.sheet.actor.loksyu .sheet-body .loksyu_wrap .schema {
+  position: relative;
+  z-index: 2;
+  padding: 100px;
+}
+.chroniquesdeletrange.sheet.actor.loksyu .sheet-body .loksyu_wrap img {
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  height: auto;
+}
+.chroniquesdeletrange.sheet.actor.loksyu .sheet-body .loksyu_wrap .logo {
+  z-index: 4;
+  width: 21%;
+  margin-top: -30px;
+  margin-left: -22px;
+}
+.chroniquesdeletrange.sheet.actor.loksyu div .wood-yang {
+  margin-top: 5px;
+  margin-left: 123px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
+}
+.chroniquesdeletrange.sheet.actor.loksyu .wood-yin {
+  margin-top: 12px;
+  margin-left: 285px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
+}
+.chroniquesdeletrange.sheet.actor.loksyu .metal-yang {
+  margin-top: 20px;
+  margin-left: 25px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
+}
+.chroniquesdeletrange.sheet.actor.loksyu .fire-yang {
+  margin-top: -38px;
+  margin-left: 420px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
+}
+.chroniquesdeletrange.sheet.actor.loksyu .earth-yang {
+  margin-top: 45px;
+  margin-left: 123px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
+}
+.chroniquesdeletrange.sheet.actor.loksyu .earth-yin {
+  margin-top: 12px;
+  margin-left: 285px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
+}
+.chroniquesdeletrange.sheet.actor.loksyu .metal-yin {
+  margin-top: 35px;
+  margin-left: -15px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
+}
+.chroniquesdeletrange.sheet.actor.loksyu .fire-yin {
+  margin-top: -40px;
+  margin-left: 380px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
+}
+.chroniquesdeletrange.sheet.actor.loksyu .water-yang {
+  margin-top: 42px;
+  margin-left: 125px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
+}
+.chroniquesdeletrange.sheet.actor.loksyu .water-yin {
+  margin-top: 10px;
+  margin-left: 285px;
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
+}
+.chroniquesdeletrange.sheet.actor.npc .sheet-body .aptitudes table tr td.image {
+  width: 5%;
+  text-align: center;
+}
+.chroniquesdeletrange.sheet.actor.npc .sheet-body .aptitudes table tr td.image img {
+  z-index: 4;
+  width: 100%;
+}
+.chroniquesdeletrange.sheet.actor.npc .sheet-body .aptitudes table tr td.image div.stick {
+  margin-top: -52px;
+  z-index: 2;
+  width: 3%;
+  text-align: center;
+}
+.chroniquesdeletrange.sheet.actor.npc .sheet-body .aptitudes table tr td.image inuput.input {
+  border: 0px;
+}
+.chroniquesdeletrange.sheet.actor.npc .sheet-body .aptitudes table tr td.image2 {
+  margin-top: 0px;
+  width: 5%;
+  text-align: center;
+}
+.chroniquesdeletrange.sheet.actor.npc .sheet-body .aptitudes table tr td.image2 img {
+  margin-top: -5px;
+  z-index: 4;
+  width: 100%;
+}
+.chroniquesdeletrange.sheet.actor.npc .sheet-body .aptitudes table tr td.image2 div.stick {
+  margin-top: -47px;
+  z-index: 2;
+  width: 3%;
+  text-align: center;
+}
+.chroniquesdeletrange.sheet.actor.npc .sheet-body .aptitudes .specialities {
+  width: 70%;
+}
+.chroniquesdeletrange.sheet.actor.npc .sheet-body .aptitudes .dragon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chroniquesdeletrange.sheet.actor.npc .sheet-body .aptitudes .dragon .logo {
+  width: 55%;
+}

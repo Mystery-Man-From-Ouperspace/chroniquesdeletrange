@@ -1,0 +1,15 @@
+<ol class="item-list">
+  {{#each kungfus as |item id|}}
+  <li class="item flexrow" data-item-id="{{item._id}}">
+    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+    <h4 class="item-name">{{item.name}}</h4>
+    <div class="item-controls">
+      <a class="item-control" title="{{ localize 'CDE.KFEdit' }}" data-action="edit"><i class="fas fa-edit"></i></a>
+      <a class="item-control" title="{{ localize 'CDE.KFDelete' }}" data-action="delete"><i class="fas fa-trash"></i></a>
+    </div>
+  </li>
+  {{/each}}
+</ol>
+<p>
+  <a class="item-control" title="{{ localize 'CDE.KFCreate' }}" data-action="create" data-type="kungfu"><i class="fas fa-plus"></i> {{ localize "CDE.KFCreate" }}</a>
+</p>

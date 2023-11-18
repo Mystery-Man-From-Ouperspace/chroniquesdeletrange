@@ -1,9 +1,10 @@
 <form class="flexcol {{cssClass}}" autocomplete="off">
+    {{log 'item-sheet' this}}
     <header class="sheet-header">
-        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
         <div class="header-fields">
             <h1 class="charname">
-                <input name="name" type="text" value="{{data.name}}" placeholder="Name" />
+                <input name="name" type="text" value="{{item.name}}" placeholder="Name" />
             </h1>
             <div class="resource">
                 <label><b>{{localize "CDE.Quantity"}}</b></label>
@@ -32,25 +33,6 @@
 
         {{!-- Attributes Tab --}}
         <div class="tab attributes" data-group="primary" data-tab="attributes">
-            <header class="attributes-header flexrow">
-                <span class="attribute-key">{{localize "CDE.AttributeKey"}}</span>
-                <span class="attribute-value">{{localize "CDE.AttributeValue"}}</span>
-                <span class="attribute-label">{{localize "CDE.AttributeLabel"}}</span>
-                <span class="attribute-dtype">{{localize "CDE.AttributeDtype"}}</span>
-                <a class="attribute-control" data-action="create" data-group="{{group}}"><i class="fas fa-plus"></i></a>
-            </header>
-
-            {{!-- Render the attribute list partial. --}}
-            {{> "systems/chroniquesdeletrange/templates/parts/sheet-attributes.html" attributes=systemData.ungroupedAttributes dtypes=dtypes}}
-
-            {{!-- Render the grouped attributes partial and control. --}}
-            <div class="groups">
-                {{> "systems/chroniquesdeletrange/templates/parts/sheet-groups.html" attributes=systemData.groupedAttributes groups=systemData.groups dtypes=dtypes}}
-                <div class="group-controls flexrow">
-                    <input class="group-prefix" type="text" value=""/>
-                    <a class="button group-control" data-action="create-group"><i class="fas fa-plus"></i>{{localize "CDE.AddAttributeGroup"}}</a>
-                </div>
-            </div>
         </div>
     </section>
 </form>

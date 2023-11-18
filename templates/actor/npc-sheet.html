@@ -1,0 +1,233 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+  {{log 'npc-sheet' this}} {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <table>
+      <tr>
+        <td>
+          <!-- <img class="logo-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" height="300" width="200" /> -->
+          <img class="logo-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+        </td>
+        <td>
+          <div class="header-fields">
+            <table>
+              <tr>
+                <td>
+                  <h1 class="charname">
+                    <input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'CDE.NPCName' }}" />
+                  </h1>
+                </td>
+                <td>
+                  <h1 class="charname">
+                    <input name="system.type" type="text" value="{{systemData.type}}" placeholder="{{ localize 'CDE.Type' }}" />
+                  </h1>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="threat">
+                    <b>{{ localize "CDE.Threat" }}</b>
+                    <span>&nbsp;</span>
+                    <!-- <select name="system.guardian" value="{{ systemData.guardian }}" > -->
+                    <select name="system.threat">
+                      <label><b>{{#select systemData.threat }}</b></label>
+                      <option value="0">{{ localize "CDE.Profane" }}</option>
+                      <option value="1">{{ localize "CDE.Apprentice" }}</option>
+                      <option value="2">{{ localize "CDE.Initiate" }}</option>
+                      <option value="3">{{ localize "CDE.Accomplished" }}</option>
+                      <option value="4">{{ localize "CDE.Reknowned" }}</option>
+                      {{/select}}
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <div class="nuisance">
+                    <label><b>{{ localize "CDE.Nuisance" }}</b></label>
+                    <span>&nbsp;</span>
+                    <!-- <select name="system.guardian" value="{{ systemData.guardian }}" > -->
+                    <select name="system.nuisance">
+                      {{#select systemData.nuisance }}
+                      <option value="0">{{ localize "CDE.Figurant" }}</option>
+                      <option value="1">{{ localize "CDE.Minion" }}</option>
+                      <option value="2">{{ localize "CDE.Adversary" }}</option>
+                      <option value="3">{{ localize "CDE.Ally" }}</option>
+                      <option value="4">{{ localize "CDE.Boss" }}</option>
+                      <option value="5">{{ localize "CDE.Dininity" }}</option>
+                      {{/select}}
+                    </select>
+                  </div>
+                </td>
+
+                <td></td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="description">{{ localize "CDE.Description" }}</a>
+    <a class="item" data-tab="aptitudes">{{ localize "CDE.Aptitudes" }}</a>
+    <a class="item" data-tab="supernaturals">{{ localize "CDE.SuperNatural" }}</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    {{!-- Biography Tab --}}
+    <div class="tab description description_wrap" data-group="primary" data-tab="description">
+      {{editor descriptionHTML target="system.description" button=true editable=editable engine="prosemirror"}}
+    </div>
+
+    {{!-- Aptitudes Tab --}}
+    <div class="tab aptitudes" data-group="primary" data-tab="aptitudes">
+      <table>
+        <tr>
+          <td class="label"><b>&nbsp;{{ localize "CDE.Physical" }}</b></td>
+          <td class="image">
+            <img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
+            <div class="stick">&nbsp;</div>
+            <input class="input phys-apt" type="number" placeholder="0" name="system.aptitudes.physical.value" value="{{systemData.aptitudes.physical.value}}" />
+          </td>
+          <td class="specialities">
+            <input
+              class="input"
+              type="text"
+              placeholder="{{ localize 'CDE.Specialities' }}"
+              name="system.aptitudes.physical.speciality"
+              value="{{systemData.aptitudes.physical.speciality}}"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="label"><b>&nbsp;{{ localize "CDE.Martial" }}</b></td>
+          <td class="image">
+            <img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
+            <div class="stick">&nbsp;</div>
+            <input class="input" type="number" placeholder="0" name="system.aptitudes.martial.value" value="{{systemData.aptitudes.martial.value}}" />
+          </td>
+          <td class="specialities">
+            <input
+              class="input"
+              type="text"
+              placeholder="{{ localize 'CDE.Specialities' }}"
+              name="system.aptitudes.martial.speciality"
+              value="{{systemData.aptitudes.martial.speciality}}"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="label"><b>&nbsp;{{ localize "CDE.Mental" }}</b></td>
+          <td class="image">
+            <img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
+            <div class="stick">&nbsp;</div>
+            <input class="input" type="number" placeholder="0" name="system.aptitudes.mental.value" value="{{systemData.aptitudes.mental.value}}" />
+          </td>
+          <td class="specialities">
+            <input
+              class="input"
+              type="text"
+              placeholder="{{ localize 'CDE.Specialities' }}"
+              name="system.aptitudes.mental.speciality"
+              value="{{systemData.aptitudes.mental.speciality}}"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="label"><b>&nbsp;{{ localize "CDE.Social" }}</b></td>
+          <td class="image">
+            <img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
+            <div class="stick">&nbsp;</div>
+            <input class="input" type="number" placeholder="0" name="system.aptitudes.social.value" value="{{systemData.aptitudes.social.value}}" />
+          </td>
+          <td class="specialities">
+            <input
+              class="input"
+              type="text"
+              placeholder="{{ localize 'CDE.Specialities' }}"
+              name="system.aptitudes.social.speciality"
+              value="{{systemData.aptitudes.social.speciality}}"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td class="label"><b>&nbsp;{{ localize "CDE.Spiritual" }}</b></td>
+          <td class="image">
+            <img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
+            <div class="stick">&nbsp;</div>
+            <input class="input spir-apt" type="number" placeholder="0" name="system.aptitudes.spiritual.value" value="{{systemData.aptitudes.spiritual.value}}" />
+          </td>
+          <td class="specialities">
+            <input
+              class="input"
+              type="text"
+              placeholder="{{ localize 'CDE.Specialities' }}"
+              name="system.aptitudes.spiritual.speciality"
+              value="{{systemData.aptitudes.spiritual.speciality}}"
+            />
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td class="label"><b>&nbsp;{{ localize "CDE.Vitality" }}</b></td>
+          <td class="image">
+            <img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
+            <div class="stick">&nbsp;</div>
+            <input class="input" type="number" placeholder="0" name="system.vitality.value" value="{{systemData.vitality.value}}" />
+          </td>
+          <td class="image2">
+            <img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
+            <div class="stick">&nbsp;</div>
+            <div>-{{systemData.vitality.calcul}}-</div>
+          </td>
+          <td class="specialities">
+            <input class="input" type="text" placeholder="{{ localize 'CDE.Notes' }}" name="system.vitality.note" value="{{systemData.vitality.note}}" />
+          </td>
+        </tr>
+        <tr>
+          <td class="label"><b>&nbsp;{{ localize "CDE.Hei" }}</b></td>
+          <td class="image">
+            <img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
+            <div class="stick">&nbsp;</div>
+            <input class="input" type="number" placeholder="0" name="system.hei.value" value="{{systemData.hei.value}}" />
+          </td>
+          <td class="image2">
+            <img src="systems/chroniquesdeletrange/images/cercle.png" title="Cercle" alt="Cercle" />
+            <div class="stick">&nbsp;</div>
+            <div>-{{systemData.hei.calcul}}-</div>
+          </td>
+          <td class="specialities"><input class="input" type="text" placeholder="{{ localize 'CDE.Notes' }}" name="system.hei.note" value="{{systemData.hei.note}}" /></td>
+        </tr>
+      </table>
+      <div class="dragon">
+        <img
+          class="logo"
+          src="systems/chroniquesdeletrange/images/logo_dore.png"
+          title="奇闻异事 ● Hong Kong – Les Chroniques de l'&Eacute;trange ● R.d′Huissier & C.Lameire ● Antre Monde &Eacute;ditions"
+          alt="Logo"
+        />
+      </div>
+    </div>
+
+    {{!-- SuperNatural Tab --}}
+    <div class="tab supernaturals" data-group="primary" data-tab="supernaturals">
+      <ol class="item-list">
+        {{#each supernaturals as |supernatural id|}}
+        <li class="item flexrow" data-item-id="{{supernatural._id}}">
+          <img src="{{supernatural.img}}" title="{{supernatural.name}}" width="24" height="24" />
+          <h4 class="item-name">{{supernatural.name}}</h4>
+          <div class="item-controls">
+            <a class="item-control" title="{{ localize 'CDE.SupernaturalEdit' }}" data-action="edit"><i class="fas fa-edit"></i></a>
+            <a class="item-control" title="{{ localize 'CDE.SupernaturalDelete' }}" data-action="delete"><i class="fas fa-trash"></i></a>
+          </div>
+        </li>
+        {{/each}}
+      </ol>
+      <p>
+        <a class="item-control" title="{{ localize 'CDE.SupernaturalCreate' }}" data-action="create" data-type="supernatural"><i class="fas fa-plus"></i> {{ localize "CDE.SupernaturalCreate" }}</a>
+      </p>
+    </div>
+  </section>
+</form>

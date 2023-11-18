@@ -1,19 +1,17 @@
-// Import Modules
 import { CDEActor } from "./actor/actor.js";
 import { CDEItem } from "./item/item.js";
-import { CDEItemSheet } from "./item/item-sheet.js";
-import { CDEActorSheet } from "./actor/actor-sheet.js";
-import { preloadHandlebarsTemplates } from "./templates.js";
-import { createchroniquesdeletrangeMacro } from "./macro.js";
-import { CDEToken, CDETokenDocument } from "./token.js";
 
-// Added MMFO
+import { CDECharacterSheet } from "./actor/character-sheet.js";
 import { CDEPNJSheet } from "./actor/npc-sheet.js";
 import { CDELoksyuSheet } from "./actor/loksyu-sheet.js";
+import { CDEItemSheet } from "./item/item-sheet.js";
 import { CDEKungFuSheet } from "./item/kungfu-sheet.js";
 import { CDESpellSheet } from "./item/spell-sheet.js";
 import { CDESupernaturalSheet } from "./item/supernatural-sheet.js";
 
+import { CDE } from "./config.js";
+import { preloadHandlebarsTemplates } from "./templates.js";
+import { registerHandlebarsHelpers } from "./helpers.js";
 /**
  * Adds custom dice to Dice So Nice!.
  */
@@ -68,68 +66,37 @@ Hooks.once("diceSoNiceReady", (dice3d) => {
  * Init hook.
  */
 Hooks.once("init", async function () {
-  console.log(`Initializing chroniquesdeletrange System`);
+  console.log(`CHRONIQUESDELETRANGE System | Initializing`);
 
-  game.chroniquesdeletrange = {
-    createchroniquesdeletrangeMacro,
-  };
+  game.system.CONST = CDE;
 
   // Define custom Document classes
   CONFIG.Actor.documentClass = CDEActor;
   CONFIG.Item.documentClass = CDEItem;
-  CONFIG.Token.documentClass = CDETokenDocument;
-  CONFIG.Token.objectClass = CDEToken;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("chroniquesdeletrange", CDEActorSheet, { types: ["character"], makeDefault: true }); // ligne modifiée selon directives de LeRatierBretonnien
+  Actors.registerSheet("chroniquesdeletrange", CDECharacterSheet, { types: ["character"], makeDefault: true }); // ligne modifiée selon directives de LeRatierBretonnien
   Actors.registerSheet("chroniquesdeletrange", CDEPNJSheet, { types: ["npc"], makeDefault: true });
   Actors.registerSheet("chroniquesdeletrange", CDELoksyuSheet, { types: ["loksyu"], makeDefault: true });
 
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("chroniquesdeletrange", CDEItemSheet, { types: ["item"], makeDefault: true });
+  Items.registerSheet("chroniquesdeletrange", CDEItemSheet, { types: ["equipment"], makeDefault: true });
   Items.registerSheet("chroniquesdeletrange", CDEKungFuSheet, { types: ["kungfu"], makeDefault: true });
   Items.registerSheet("chroniquesdeletrange", CDESpellSheet, { types: ["spell"], makeDefault: true });
   Items.registerSheet("chroniquesdeletrange", CDESupernaturalSheet, { types: ["supernatural"], makeDefault: true });
 
-  // Register system settings
-  game.settings.register("chroniquesdeletrange", "macroShorthand", {
-    name: "SETTINGS.CDEMacroShorthandN",
-    hint: "SETTINGS.CDEMacroShorthandL",
-    scope: "world",
-    type: Boolean,
-    default: true,
-    config: true,
-  });
-
-  /**
-   * Slugify a string.
-   */
-  Handlebars.registerHelper("slugify", function (value) {
-    return value.slugify({ strict: true });
-  });
-
   // Preload template partials
   await preloadHandlebarsTemplates();
 
+  // Register Handlebars Helpers
+  registerHandlebarsHelpers();
+
   // Modify Runtime configuration settings / Added by MMFO
   await modifyConfigurationSettings();
+
+  console.log(`CHRONIQUESDELETRANGE System | Initialized`);
 });
-
-/**
- * Macrobar hook.
- */
-Hooks.on("hotbarDrop", (bar, data, slot) => createchroniquesdeletrangeMacro(data, slot));
-
-/**
- * Adds the actor template context menu.
- */
-Hooks.on("getActorDirectoryEntryContext", (html, options) => {});
-
-/**
- * Adds the item template context menu.
- */
-Hooks.on("getItemDirectoryEntryContext", (html, options) => {});
 
 async function modifyConfigurationSettings() {
   /**
