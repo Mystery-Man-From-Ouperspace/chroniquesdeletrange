@@ -81,7 +81,7 @@ Hooks.once("init", async function () {
   Actors.registerSheet("chroniquesdeletrange", CDELoksyuSheet, { types: ["loksyu"], makeDefault: true });
 
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("chroniquesdeletrange", CDEItemSheet, { types: ["equipment"], makeDefault: true });
+  Items.registerSheet("chroniquesdeletrange", CDEItemSheet, { types: ["item"], makeDefault: true });
   Items.registerSheet("chroniquesdeletrange", CDEKungFuSheet, { types: ["kungfu"], makeDefault: true });
   Items.registerSheet("chroniquesdeletrange", CDESpellSheet, { types: ["spell"], makeDefault: true });
   Items.registerSheet("chroniquesdeletrange", CDESupernaturalSheet, { types: ["supernatural"], makeDefault: true });

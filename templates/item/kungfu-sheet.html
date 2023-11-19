@@ -9,19 +9,19 @@
 				<table class="kungfu">
 					<tr>
 							<td class="label"><b>&nbsp;{{ localize "CDE.Orientation" }}</b></td>
-							<td class="libel"><input class="input" type="text" placeholder="{{ localize 'CDE.Orientation' }}" name="system.kf.orientation" value="{{systemData.kf.orientation}}"/></td>
+							<td class="libel"><input class="input" type="text" placeholder="{{ localize 'CDE.Orientation' }}" name="system.kungfu.orientation" value="{{systemData.kungfu.orientation}}"/></td>
 							<td class="label"><b>&nbsp;{{ localize "CDE.Aspect" }}</b></td>
-							<td class="libel"><input class="input" type="text" placeholder="{{ localize 'CDE.Aspect' }}" name="system.kf.aspect" value="{{systemData.kf.aspect}}"/></td>
+							<td class="libel"><input class="input" type="text" placeholder="{{ localize 'CDE.Aspect' }}" name="system.kungfu.aspect" value="{{systemData.kungfu.aspect}}"/></td>
 							<td class="label"><b>&nbsp;{{ localize "CDE.Skill" }}</b></td>
-							<td class="libel"><input class="input" type="text" placeholder="{{ localize 'CDE.Skill' }}" name="system.kf.skill" value="{{systemData.kf.skill}}"/></td>
+							<td class="libel"><input class="input" type="text" placeholder="{{ localize 'CDE.Skill' }}" name="system.kungfu.skill" value="{{systemData.kungfu.skill}}"/></td>
 							<td class="label"><b>&nbsp;{{ localize "CDE.Speciality" }}</b></td>
-							<td class="libel"><input class="input" type="text" placeholder="{{ localize 'CDE.Speciality' }}" name="system.kf.speciality" value="{{systemData.kf.speciality}}"/></td>
+							<td class="libel"><input class="input" type="text" placeholder="{{ localize 'CDE.Speciality' }}" name="system.kungfu.speciality" value="{{systemData.kungfu.speciality}}"/></td>
 					</tr>
 				</table>			
 			</div>
 			<div>
 				<label><b>{{localize "CDE.Reference"}}</b></label>
-				<input class="input" type="text" placeholder="{{ localize 'CDE.Reference' }}" name="system.kf.reference" value="{{systemData.kf.reference}}" />
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Reference' }}" name="system.kungfu.reference" value="{{systemData.kungfu.reference}}" />
 			</div>
         </div>
     </header>
@@ -44,50 +44,53 @@
 		
 		{{!-- Technique 1 Tab --}}
         <div class="tab" data-group="primary" data-tab="technique1">
+			<div class="check"><input type="checkbox" name="system.kungfu.techniques.technique1.check" {{ checked system.kungfu.techniques.technique1.check }} title="" /><b>{{ localize "CDE.Masterized" }}</b></div>
 			<div class="techniquename1">
 				<label><b>{{localize "CDE.Technique"}} 1</b></label>
-				<input class="input" type="text" placeholder="{{ localize 'CDE.Technique' }}" name="system.kf.techniques.technique1.name" value="{{systemData.kf.techniques.technique1.name}}" />
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Technique' }}" name="system.kungfu.techniques.technique1.name" value="{{systemData.kungfu.techniques.technique1.name}}" />
 			</div>
 			<div class="techniqueactivation1">
 				<label><b>{{localize "CDE.Activation"}}</b></label>
-				<input class="input" type="text" placeholder="{{ localize 'CDE.Activation' }}" name="system.kf.techniques.technique1.activation" value="{{systemData.kf.techniques.technique1.activation}}" />
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Activation' }}" name="system.kungfu.techniques.technique1.activation" value="{{systemData.kungfu.techniques.technique1.activation}}" />
 			</div>
 			<div>
 				<label><b>{{localize "CDE.Description"}}</b></label><br>
 			</div>
-			{{editor descriptionTechnique1 target="system.kf.techniques.technique1.technique" button=true editable=editable engine="prosemirror"}}
+			{{editor descriptionTechnique1HTML target="system.techniques.technique1.technique" button=true editable=editable engine="prosemirror"}}
 		</div>
 
 		{{!-- Technique 2 Tab --}}
         <div class="tab" data-group="primary" data-tab="technique2">
+			<div class="check"><input type="checkbox" name="system.techniques.technique2.check" {{ checked system.kungfu.techniques.technique2.check }} title="" /><b>{{ localize "CDE.Masterized" }}</b></div>
 			<div class="techniquename2">
 				<label><b>{{localize "CDE.Technique"}} 2</b></label>
-				<input class="input" type="text" placeholder="{{ localize 'CDE.Technique' }}" name="system.kf.techniques.technique2.name" value="{{systemData.kf.techniques.technique2.name}}" />
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Technique' }}" name="system.kungfu.techniques.technique2.name" value="{{systemData.kungfu.techniques.technique2.name}}" />
 			</div>
 			<div class="techniqueactivation2">
 				<label><b>{{localize "CDE.Activation"}}</b></label>
-				<input class="input" type="text" placeholder="{{ localize 'CDE.Activation' }}" name="system.kf.techniques.technique2.activation" value="{{systemData.kf.techniques.technique2.activation}}" />
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Activation' }}" name="system.kungfu.techniques.technique2.activation" value="{{systemData.kungfu.techniques.technique2.activation}}" />
 			</div>
 			<div>
 				<label><b>{{localize "CDE.Description"}}</b></label><br>
 			</div>
-			{{editor descriptionTechnique2 target="system.kf.techniques.technique2.technique" button=true editable=editable engine="prosemirror"}}
+			{{editor descriptionTechnique2HTML target="system.techniques.technique2.technique" button=true editable=editable engine="prosemirror"}}
 		</div>
 
 		{{!-- Technique 3 Tab --}}
         <div class="tab" data-group="primary" data-tab="technique3">
+			<div class="check"><input type="checkbox" name="system.kungfu.techniques.technique3.check" {{ checked system.kungfu.techniques.technique3.check }} title="" /><b>{{ localize "CDE.Masterized" }}</b></div>
 			<div class="techniquename3">
 				<label><b>{{localize "CDE.Technique"}} 3</b></label>
-				<input class="input" type="text" placeholder="{{ localize 'CDE.Technique' }}" name="system.kf.techniques.technique3.name" value="{{systemData.kf.techniques.technique31.name}}" />
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Technique' }}" name="system.kungfu.techniques.technique3.name" value="{{systemData.kungfu.techniques.technique31.name}}" />
 			</div>
 			<div class="techniqueactivation3">
 				<label><b>{{localize "CDE.Activation"}}</b></label>
-				<input class="input" type="text" placeholder="{{ localize 'CDE.Activation' }}" name="system.kf.techniques.technique3.activation" value="{{systemData.kf.techniques.technique3.activation}}" />
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Activation' }}" name="system.kungfu.techniques.technique3.activation" value="{{systemData.kungfu.techniques.technique3.activation}}" />
 			</div>
 			<label><b>{{localize "CDE.Description"}}</b></label><br>
 			<div>
 			</div>
-			{{editor descriptionTechnique3 target="system.kf.techniques.technique3.technique" button=true editable=editable engine="prosemirror"}}
+			{{editor descriptionTechnique3HTML target="system.techniques.technique3.technique" button=true editable=editable engine="prosemirror"}}
 		</div>
 
     </section>

@@ -21,7 +21,7 @@ export class CDECharacterSheet extends CDEActorSheet {
   /** @inheritdoc */
   async getData(options) {
     const context = await super.getData(options);
-    context.equipments = context.items.filter(item => item.type === "equipment");
+    context.equipments = context.items.filter(item => item.type === "item");
     context.spells = context.items.filter(item => item.type === "spell");
     context.kungfus = context.items.filter(item => item.type === "kungfu");
 

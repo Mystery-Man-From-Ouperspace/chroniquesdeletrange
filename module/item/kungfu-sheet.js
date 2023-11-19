@@ -25,15 +25,15 @@ export class CDEKungFuSheet extends ItemSheet {
       secrets: this.document.isOwner,
       async: true,
     });
-    context.descriptionTechnique1 = await TextEditor.enrichHTML(this.item.system.techniques.technique1.technique, {
+    context.descriptionTechnique1HTML = await TextEditor.enrichHTML(this.item.system.techniques.technique1.technique, {
       secrets: this.document.isOwner,
       async: true,
     });
-    context.descriptionTechnique2 = await TextEditor.enrichHTML(this.item.system.techniques.technique2.technique, {
+    context.descriptionTechnique2HTML = await TextEditor.enrichHTML(this.item.system.techniques.technique2.technique, {
       secrets: this.document.isOwner,
       async: true,
     });
-    context.descriptionTechnique3 = await TextEditor.enrichHTML(this.item.system.techniques.technique3.technique, {
+    context.descriptionTechnique3HTML = await TextEditor.enrichHTML(this.item.system.techniques.technique3.technique, {
       secrets: this.document.isOwner,
       async: true,
     });

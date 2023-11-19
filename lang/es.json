@@ -4,6 +4,13 @@
   "CDE.ItemDelete": "Borrar el Equipo",
   "CDE.ItemNew": "Nuevo Equipo",
 
+  "CDE.TypeOfItem": "Tipo de Equipo",
+  "CDE.Weapon": "Weapon",
+  "CDE.Armor": "Armor",
+  "CDE.Sanhei": "Sanhei",
+  "CDE.Other": "Other",
+
+
   "CDE.ResourceMin": "Min",
   "CDE.ResourceValue": "Valor",
   "CDE.ResourceMax": "Máx",
@@ -14,6 +21,10 @@
 
   "CDE.Quantity": "Cantidad",
   "CDE.Weight": "Peso",
+  "CDE.Damage": "Daños",
+  "CDE.Range": "Alcance",
+
+  "CDE.Masterized": "Ha dominado esta técnica",
 
   "CDE.Create": "Crear",
   "CDE.New": "Nuevo",
@@ -184,7 +195,7 @@
   "CDE.Cancel": "Anular",
 
   "CDE.NPCName": "Nombre del NPC",
-  "CDE.Type": "Tipo de Criatura",
+  "CDE.TypeOfCreature": "Tipo de Criatura",
 
   "CDE.Threat": "Nivel de Amenaza",
   "CDE.Profane": "Profano",

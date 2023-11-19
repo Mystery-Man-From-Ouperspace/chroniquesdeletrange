@@ -29,7 +29,7 @@ export class CDESpellSheet extends ItemSheet {
       secrets: this.document.isOwner,
       async: true,
     });
-    context.effectDescriptionHTML = await TextEditor.enrichHTML(this.item.system.effects, {
+    context.effectsDescriptionHTML = await TextEditor.enrichHTML(this.item.system.effects, {
       secrets: this.document.isOwner,
       async: true,
     });

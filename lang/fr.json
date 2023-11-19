@@ -5,6 +5,13 @@
   "CDE.ItemDelete": "Supprimer l′Équipement",
   "CDE.ItemNew": "Nouvel Équipement",
 
+  "CDE.TypeOfItem": "Type d′Équipement",
+  "CDE.Weapon": "Arme",
+  "CDE.Armor": "Protection",
+  "CDE.Sanhei": "Sanhei",
+  "CDE.Other": "Autre",
+
+
   "CDE.ResourceMin": "Min",
   "CDE.ResourceValue": "Valeur",
   "CDE.ResourceMax": "Max",
@@ -15,6 +22,11 @@
 
   "CDE.Quantity": "Quantité",
   "CDE.Weight": "Poids",
+  "CDE.Damage": "Dégâts",
+  "CDE.Range": "Portée",
+
+  "CDE.Masterized": "Vous maîtrisez cette Technique",
+
 
   "CDE.Create": "Créer",
   "CDE.New": "Nouveau",
@@ -186,7 +198,7 @@
   "CDE.Cancel": "Annuler",
 
   "CDE.NPCName": "Nom du PNJ",
-  "CDE.Type": "Type de Créature",
+  "CDE.TypeOfCreature": "Type de Créature",
 
   "CDE.Threat": "Niveau de Menace",
   "CDE.Profane": "Profane",

@@ -6,13 +6,20 @@
             <h1 class="charname">
                 <input name="name" type="text" value="{{item.name}}" placeholder="Name" />
             </h1>
+            <label><b>{{localize "CDE.TypeOfItem"}}</b></label>
             <div class="resource">
-                <label><b>{{localize "CDE.Quantity"}}</b></label>
-                <input type="number" name="system.quantity" value="{{systemData.quantity}}"/>
+                <select name="system.subtype">
+                    {{#select system.subtype }}
+                        <option value="0">{{ localize "CDE.Weapon" }}</option>
+                        <option value="1">{{ localize "CDE.Armor" }}</option>
+                        <option value="2">{{ localize "CDE.Sanhei" }}</option>
+                        <option value="3">{{ localize "CDE.Other" }}</option>
+                    {{/select}}
+                </select>
             </div>
             <div class="resource">
 				<label><b>{{localize "CDE.Reference"}}</b></label>
-				<input class="input" type="text" placeholder="{{ localize "CDE.Reference" }}" name="system.reference" value="{{systemData.reference}}" />
+				<input class="input" type="text" placeholder="{{ localize "CDE.Reference" }}" name="system.item.reference" value="{{systemData.item.reference}}" />
             </div>
         </div>
     </header>
@@ -33,6 +40,26 @@
 
         {{!-- Attributes Tab --}}
         <div class="tab attributes" data-group="primary" data-tab="attributes">
+			<div class="quantity">
+				<label><b>{{localize "CDE.Quantity"}}</b></label>
+				<input class="input" type="number" name="system.item.quantity" value="{{systemData.item.quantity}}" />
+			</div>
+			<div class="weight">
+				<label><b>{{localize "CDE.Weight"}}</b></label>
+				<input class="input" type="number" name="system.item.weight" value="{{systemData.item.weight}}" />
+			</div>
+			<div class="protection">
+				<label><b>{{localize "CDE.Protection"}}</b></label>
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Protection' }}" name="system.item.protection" value="{{systemData.item.protection}}" />
+			</div>
+			<div class="damage">
+				<label><b>{{localize "CDE.Damage"}}</b></label>
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Damage' }}" name="system.item.damage" value="{{systemData.item.damage}}" />
+			</div>
+			<div class="range">
+				<label><b>{{localize "CDE.Range"}}</b></label>
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Range' }}" name="system.item.range" value="{{systemData.item.range}}" />
+			</div>
         </div>
     </section>
 </form>

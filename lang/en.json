@@ -1,8 +1,15 @@
 {
-  "CDE.ItemCreate": "Create Item",
-  "CDE.ItemEdit": "Edit Item",
-  "CDE.ItemDelete": "Delete Item",
-  "CDE.ItemNew": "New Item",
+  "CDE.ItemCreate": "Create Equipment",
+  "CDE.ItemEdit": "Edit Equipment",
+  "CDE.ItemDelete": "Delete Equipment",
+  "CDE.ItemNew": "New Equipment",
+
+  "CDE.TypeOfItem": "Type of Equipment",
+  "CDE.Weapon": "Weapon",
+  "CDE.Armor": "Armor",
+  "CDE.Sanhei": "Sanhei",
+  "CDE.Other": "Other",
+
 
   "CDE.ResourceMin": "Min",
   "CDE.ResourceValue": "Value",
@@ -14,6 +21,10 @@
 
   "CDE.Quantity": "Quantity",
   "CDE.Weight": "Weight",
+  "CDE.Damage": "Damage",
+  "CDE.Range": "Range",
+
+  "CDE.Masterized": "You have mastered this Technique",
 
   "CDE.Create": "Create",
   "CDE.New": "New",
@@ -36,7 +47,7 @@
   "CDE.Resources": "Resources",
   "CDE.Treasures": "Three Treasures",
   "CDE.NgHang": "Ng Hang",
-  "CDE.Items": "Items",
+  "CDE.Items": "Equipment",
   "CDE.KungFu": "Kung Fu",
   "CDE.Spells": "Spells",
 
@@ -184,7 +195,7 @@
   "CDE.Cancel": "Cancel",
 
   "CDE.NPCName": "NPC's Name",
-  "CDE.Type": "Type of Creature",
+  "CDE.TypeOfCreature": "Type of Creature",
 
   "CDE.Threat": "Capacity of Threat",
   "CDE.Profane": "Profane",

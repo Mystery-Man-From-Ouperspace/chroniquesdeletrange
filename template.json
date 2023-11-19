@@ -408,14 +408,18 @@
   },
 
   "Item": {
-    "types": ["equipment", "kungfu", "spell", "supernatural"],
+    "types": ["item", "kungfu", "spell", "supernatural"],
     "htmlFields": ["description", "style", "technique", "components", "effects", "examples"],
 
-    "equipment": {
+    "item": {
+      "subtype": "0",
       "reference": "",
       "description": "",
-      "subtype": "",
-      "quantity": 1
+      "quantity": 1,
+      "weight": 0,
+      "protection": "",
+      "damage": "",
+      "range": ""
     },
 
     "kungfu": {
@@ -428,16 +432,19 @@
       "style": "",
       "techniques": {
         "technique1": {
+          "check": false,
           "name": "",
           "activation": "",
           "technique": ""
         },
         "technique2": {
+          "check": false,
           "name": "",
           "activation": "",
           "technique": ""
         },
         "technique3": {
+          "check": false,
           "name": "",
           "activation": "",
           "technique": ""

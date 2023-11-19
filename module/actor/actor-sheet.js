@@ -55,7 +55,7 @@ export class CDEActorSheet extends ActorSheet {
       case "create":
         const cls = getDocumentClass("Item");
         let name = "";
-        if (type === "equipment") name = game.i18n.localize("CDE.ItemNew");
+        if (type === "item") name = game.i18n.localize("CDE.ItemNew");
         else if (type === "kungfu") name = game.i18n.localize("CDE.KFNew");
         else if (type === "spell") name = game.i18n.localize("CDE.SpellNew");
         else if (type === "supernatural") name = game.i18n.localize("CDE.SupernaturalNew");

@@ -8,7 +8,7 @@ export class CDEItemSheet extends ItemSheet {
       classes: ["chroniquesdeletrange", "sheet", "item"],
       template: "systems/chroniquesdeletrange/templates/item/item-sheet.html",
       width: 520,
-      height: 480,
+      height: 520,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }],
       scrollY: [".attributes"],
     });
