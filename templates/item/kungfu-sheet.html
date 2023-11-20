@@ -32,6 +32,7 @@
         <a class="item" data-tab="technique1">{{localize "CDE.Technique"}} 1</a>
         <a class="item" data-tab="technique2">{{localize "CDE.Technique"}} 2</a>
         <a class="item" data-tab="technique3">{{localize "CDE.Technique"}} 3</a>
+        <a class="item" data-tab="notes">{{localize "CDE.Notes"}}</a>
     </nav>
 	
     {{!-- Sheet Body --}}
@@ -81,7 +82,7 @@
 			<div class="check"><input type="checkbox" name="system.kungfu.techniques.technique3.check" {{ checked system.kungfu.techniques.technique3.check }} title="" /><b>{{ localize "CDE.Masterized" }}</b></div>
 			<div class="techniquename3">
 				<label><b>{{localize "CDE.Technique"}} 3</b></label>
-				<input class="input" type="text" placeholder="{{ localize 'CDE.Technique' }}" name="system.kungfu.techniques.technique3.name" value="{{systemData.kungfu.techniques.technique31.name}}" />
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Technique' }}" name="system.kungfu.techniques.technique3.name" value="{{systemData.kungfu.techniques.technique3.name}}" />
 			</div>
 			<div class="techniqueactivation3">
 				<label><b>{{localize "CDE.Activation"}}</b></label>
@@ -92,6 +93,11 @@
 			</div>
 			{{editor descriptionTechnique3HTML target="system.techniques.technique3.technique" button=true editable=editable engine="prosemirror"}}
 		</div>
+
+		{{!-- Notes Tab --}}
+        <div class="tab" data-group="primary" data-tab="notes">
+            {{editor notesHTML target="system.notes" button=true editable=editable engine="prosemirror"}}
+        </div>
 
     </section>
 

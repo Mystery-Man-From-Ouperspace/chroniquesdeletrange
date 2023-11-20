@@ -419,7 +419,8 @@
       "weight": 0,
       "protection": "",
       "damage": "",
-      "range": ""
+      "range": "",
+      "notes": ""
     },
 
     "kungfu": {
@@ -449,7 +450,8 @@
           "activation": "",
           "technique": ""
         }
-      }
+      },
+      "notes": ""
     },
 
     "spell": {
@@ -463,11 +465,14 @@
       "flashback": "",
       "components": "",
       "effects": "",
-      "examples": ""
+      "examples": "",
+      "notes": ""
     },
 
     "supernatural": {
-      "description": ""
+      "reference": "",
+      "description": "",
+      "notes": ""
     }
   }
 }

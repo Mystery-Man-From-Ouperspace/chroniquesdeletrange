@@ -287,6 +287,12 @@
       "character": "Fat si",
       "npc": "Créature",
       "loksyu": "Loksyu"
+    },
+    "Item": {
+      "item": "Équipement",
+      "kungfu": "Art martial",
+      "spell": "Sortilège",
+      "supernatural": "Capacité surnaturelle"
     }
   }
 }

@@ -37,6 +37,10 @@ export class CDEKungFuSheet extends ItemSheet {
       secrets: this.document.isOwner,
       async: true,
     });
+    context.notesHTML = await TextEditor.enrichHTML(this.item.system.notes, {
+      secrets: this.document.isOwner,
+      async: true,
+    });
     return context;
   }
 

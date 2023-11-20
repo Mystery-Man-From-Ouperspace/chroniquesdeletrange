@@ -28,6 +28,7 @@
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="description">{{localize "CDE.Description"}}</a>
         <a class="item" data-tab="attributes">{{localize "CDE.Attributes"}}</a>
+        <a class="item" data-tab="notes">{{localize "CDE.Notes"}}</a>
     </nav>
 
     {{!-- Sheet Body --}}
@@ -61,5 +62,11 @@
 				<input class="input" type="text" placeholder="{{ localize 'CDE.Range' }}" name="system.item.range" value="{{systemData.item.range}}" />
 			</div>
         </div>
+
+		{{!-- Notes Tab --}}
+        <div class="tab" data-group="primary" data-tab="notes">
+            {{editor notesHTML target="system.notes" button=true editable=editable engine="prosemirror"}}
+        </div>
+
     </section>
 </form>

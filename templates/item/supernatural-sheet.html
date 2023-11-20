@@ -15,6 +15,7 @@
 	{{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="description">{{localize "CDE.Description"}}</a>
+        <a class="item" data-tab="notes">{{localize "CDE.Notes"}}</a>
     </nav>
 	
     {{!-- Sheet Body --}}
@@ -22,8 +23,14 @@
 
         {{!-- Description Tab --}}
         <div class="tab" data-group="primary" data-tab="description">
-            {{editor descriptionHTML target="system.supernatural.description" button=true editable=editable engine="prosemirror"}}
+            {{editor descriptionHTML target="system.description" button=true editable=editable engine="prosemirror"}}
         </div>
+
+        {{!-- Notes Tab --}}
+        <div class="tab" data-group="primary" data-tab="notes">
+            {{editor notesHTML target="system.notes" button=true editable=editable engine="prosemirror"}}
+        </div>
+
 
     </section>
 </form>

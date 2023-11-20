@@ -21,7 +21,7 @@ export class CDESpellSheet extends ItemSheet {
   async getData(options) {
     const context = await super.getData(options);
     context.systemData = this.item.system;
-    context.descriptionHTML = await TextEditor.enrichHTML(this.item.system.description, {
+    context.spellDescriptionHTML = await TextEditor.enrichHTML(this.item.system.description, {
       secrets: this.document.isOwner,
       async: true,
     });
@@ -34,6 +34,10 @@ export class CDESpellSheet extends ItemSheet {
       async: true,
     });
     context.examplesDescriptionHTML = await TextEditor.enrichHTML(this.item.system.examples, {
+      secrets: this.document.isOwner,
+      async: true,
+    });
+    context.notesHTML = await TextEditor.enrichHTML(this.item.system.notes, {
       secrets: this.document.isOwner,
       async: true,
     });

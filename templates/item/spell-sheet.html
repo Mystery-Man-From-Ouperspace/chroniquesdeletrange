@@ -20,6 +20,7 @@
         <a class="item" data-tab="components">{{localize "CDE.Components"}}</a>
         <a class="item" data-tab="effects">{{localize "CDE.Effects"}}</a>
         <a class="item" data-tab="examples">{{localize "CDE.Examples"}}</a>
+        <a class="item" data-tab="notes">{{localize "CDE.Notes"}}</a>
     </nav>
 	
     {{!-- Sheet Body --}}
@@ -27,7 +28,7 @@
 
         {{!-- Description Tab --}}
         <div class="tab" data-group="primary" data-tab="description">
-            {{editor descriptionHTML target="system.description" button=true editable=editable engine="prosemirror"}}
+            {{editor spellDescriptionHTML target="system.description" button=true editable=editable engine="prosemirror"}}
         </div>
 
         {{!-- Data Tab --}}
@@ -65,18 +66,23 @@
 		
         {{!-- Components Tab --}}
         <div class="tab" data-group="primary" data-tab="components">
-            {{editor componentsdescriptionHTML target="system.components" button=true editable=editable engine="prosemirror"}}
+            {{editor componentsDescriptionHTML target="system.components" button=true editable=editable engine="prosemirror"}}
         </div>
 
 		{{!-- Effects Tab --}}
         <div class="tab" data-group="primary" data-tab="effects">
-            {{editor effectsdescriptionHTML target="system.effects" button=true editable=editable engine="prosemirror"}}
+            {{editor effectsDescriptionHTML target="system.effects" button=true editable=editable engine="prosemirror"}}
         </div>
 
 		{{!-- Examples Tab --}}
         <div class="tab" data-group="primary" data-tab="examples">
-            {{editor examplesdescriptionHTML target="system.examples" button=true editable=editable engine="prosemirror"}}
+            {{editor examplesDescriptionHTML target="system.examples" button=true editable=editable engine="prosemirror"}}
         </div>
-			
+
+		{{!-- Notes Tab --}}
+        <div class="tab" data-group="primary" data-tab="notes">
+            {{editor notesHTML target="system.notes" button=true editable=editable engine="prosemirror"}}
+        </div>        
+
     </section>
 </form>

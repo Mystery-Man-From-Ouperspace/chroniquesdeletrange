@@ -285,6 +285,12 @@
       "character": "Fat si",
       "npc": "Creature",
       "loksyu": "Loksyu"
+    },
+    "Item": {
+      "item": "Equipment",
+      "kungfu": "Martial Art",
+      "spell": "Spell",
+      "supernatural": "Supernatural Ability"
     }
   }
 }
