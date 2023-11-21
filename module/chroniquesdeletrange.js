@@ -153,3 +153,20 @@ async function modifyConfigurationSettings() {
    */
   CONFIG.Scene.compendiumBanner = "/systems/chroniquesdeletrange/images/banners/scene-banner.webp";
 }
+
+Hooks.once("i18nInit", function () {
+  // Prélocalisation des objets de configuration
+  preLocalizeConfig();
+});
+
+function preLocalizeConfig() {
+  const localizeConfigObject = (obj, keys) => {
+    for (let o of Object.values(obj)) {
+      for (let k of keys) {
+        o[k] = game.i18n.localize(o[k]);
+      }
+    }
+  };
+
+  localizeConfigObject(CDE.SUBTYPES, ["label"]);
+}

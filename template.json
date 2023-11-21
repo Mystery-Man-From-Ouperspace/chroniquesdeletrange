@@ -412,7 +412,7 @@
     "htmlFields": ["description", "style", "technique", "components", "effects", "examples"],
 
     "item": {
-      "subtype": "0",
+      "subtype": "",
       "reference": "",
       "description": "",
       "quantity": 1,
