@@ -1,19 +1,34 @@
 Exceptées les peties images N&B de d10 de l'interface, les images des
 fichiers du dossier images utilisées dans ce logiciel sont :
 Copyright © 2023-2024 Antre Monde Éditions ;
-elles sont leurs propriétés et elles ne peuvent ni être reproduites ni
-réutilisées en dehors de ce logiciel, ni cédées sans leur autorisation
-expresse.
+elles sont leurs propriétés (et celles de leurs auteurs respectifs)
+et elles ne peuvent ni être reproduites ni réutilisées en dehors de
+ce logiciel, sans leur autorisation.
 
 
-Code  / Coding:
+CODE / CODING:
 David R.D. 'Mystery Man From Outerspace' Bercovici (2023-2024)
 
-Avec l'aide précieuse de / with precious help from (sur / on "La Fonderie"):
-Christophe 'Qaw' Laudon
-LeRatierBretonnien
-Maxime 
+Avec l'aide précieuse de / with precious help from
+(sur / on "La Fonderie" Discord):
+- Christophe 'Qaw' Laudon (Many, many thanks to him!)
+- LeRatierBretonnien
+- Maxime 
 (et d'autres / and others)
+
+
+COMPENDIUM:
+
+Basés sur / based on:
+Antre Monde Éditions's 'Les Chroniques de l'étrange' RPG books by:
+- Romain 'Rom1' d'Huissier
+- Cédric Lameire
+
+Saisis par / Entered by:
+David R.D. 'Mystery Man From Outerspace' Bercovici
+
+Avec l'aide précieuse de / with precious help from:
+- 'Pretre' (sur / on "Antre Monde Éditions" Discord)
 
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
