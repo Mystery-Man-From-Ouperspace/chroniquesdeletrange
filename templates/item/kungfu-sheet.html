@@ -1,4 +1,5 @@
 <form class="flexcol {{cssClass}}" autocomplete="off">
+    {{log 'kungfu-sheet' this}}
     <header class="sheet-header">
         <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
         <div class="header-fields">
@@ -21,7 +22,7 @@
 			</div>
 			<div>
 				<label><b>{{localize "CDE.Reference"}}</b></label>
-				<input class="input" type="text" placeholder="{{ localize 'CDE.Reference' }}" name="system.kungfu.reference" value="{{systemData.kungfu.reference}}" />
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Reference' }}" name="system.reference" value="{{systemData.reference}}" />
 			</div>
         </div>
     </header>
@@ -45,14 +46,14 @@
 		
 		{{!-- Technique 1 Tab --}}
         <div class="tab" data-group="primary" data-tab="technique1">
-			<div class="check"><input type="checkbox" name="system.kungfu.techniques.technique1.check" {{ checked system.kungfu.techniques.technique1.check }} title="" /><b>{{ localize "CDE.Masterized" }}</b></div>
+			<div class="check"><input type="checkbox" name="system.techniques.technique1.check" {{ checked system.techniques.technique1.check }} title="" /><b>{{ localize "CDE.Masterized" }}</b></div>
 			<div class="techniquename1">
 				<label><b>{{localize "CDE.Technique"}} 1</b></label>
-				<input class="input" type="text" placeholder="{{ localize 'CDE.Technique' }}" name="system.kungfu.techniques.technique1.name" value="{{systemData.kungfu.techniques.technique1.name}}" />
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Technique' }}" name="system.techniques.technique1.name" value="{{systemData.techniques.technique1.name}}" />
 			</div>
 			<div class="techniqueactivation1">
 				<label><b>{{localize "CDE.Activation"}}</b></label>
-				<input class="input" type="text" placeholder="{{ localize 'CDE.Activation' }}" name="system.kungfu.techniques.technique1.activation" value="{{systemData.kungfu.techniques.technique1.activation}}" />
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Activation' }}" name="system.techniques.technique1.activation" value="{{systemData.techniques.technique1.activation}}" />
 			</div>
 			<div>
 				<label><b>{{localize "CDE.Description"}}</b></label><br>
@@ -62,14 +63,14 @@
 
 		{{!-- Technique 2 Tab --}}
         <div class="tab" data-group="primary" data-tab="technique2">
-			<div class="check"><input type="checkbox" name="system.techniques.technique2.check" {{ checked system.kungfu.techniques.technique2.check }} title="" /><b>{{ localize "CDE.Masterized" }}</b></div>
+			<div class="check"><input type="checkbox" name="system.techniques.technique2.check" {{ checked system.techniques.technique2.check }} title="" /><b>{{ localize "CDE.Masterized" }}</b></div>
 			<div class="techniquename2">
 				<label><b>{{localize "CDE.Technique"}} 2</b></label>
-				<input class="input" type="text" placeholder="{{ localize 'CDE.Technique' }}" name="system.kungfu.techniques.technique2.name" value="{{systemData.kungfu.techniques.technique2.name}}" />
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Technique' }}" name="system.techniques.technique2.name" value="{{systemData.techniques.technique2.name}}" />
 			</div>
 			<div class="techniqueactivation2">
 				<label><b>{{localize "CDE.Activation"}}</b></label>
-				<input class="input" type="text" placeholder="{{ localize 'CDE.Activation' }}" name="system.kungfu.techniques.technique2.activation" value="{{systemData.kungfu.techniques.technique2.activation}}" />
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Activation' }}" name="system.techniques.technique2.activation" value="{{systemData.techniques.technique2.activation}}" />
 			</div>
 			<div>
 				<label><b>{{localize "CDE.Description"}}</b></label><br>
@@ -79,14 +80,14 @@
 
 		{{!-- Technique 3 Tab --}}
         <div class="tab" data-group="primary" data-tab="technique3">
-			<div class="check"><input type="checkbox" name="system.kungfu.techniques.technique3.check" {{ checked system.kungfu.techniques.technique3.check }} title="" /><b>{{ localize "CDE.Masterized" }}</b></div>
+			<div class="check"><input type="checkbox" name="system.techniques.technique3.check" {{ checked system.techniques.technique3.check }} title="" /><b>{{ localize "CDE.Masterized" }}</b></div>
 			<div class="techniquename3">
 				<label><b>{{localize "CDE.Technique"}} 3</b></label>
-				<input class="input" type="text" placeholder="{{ localize 'CDE.Technique' }}" name="system.kungfu.techniques.technique3.name" value="{{systemData.kungfu.techniques.technique3.name}}" />
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Technique' }}" name="system.techniques.technique3.name" value="{{systemData.techniques.technique3.name}}" />
 			</div>
 			<div class="techniqueactivation3">
 				<label><b>{{localize "CDE.Activation"}}</b></label>
-				<input class="input" type="text" placeholder="{{ localize 'CDE.Activation' }}" name="system.kungfu.techniques.technique3.activation" value="{{systemData.kungfu.techniques.technique3.activation}}" />
+				<input class="input" type="text" placeholder="{{ localize 'CDE.Activation' }}" name="system.techniques.technique3.activation" value="{{systemData.techniques.technique3.activation}}" />
 			</div>
 			<label><b>{{localize "CDE.Description"}}</b></label><br>
 			<div>
