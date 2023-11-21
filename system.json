@@ -13,7 +13,80 @@
   ],
   "esmodules": ["module/chroniquesdeletrange.js"],
   "styles": ["css/chroniquesdeletrange.css"],
-  "packs": [],
+    "packs": [
+    {
+      "name": "aides-pour-les-joueuses",
+      "label": "FR - Aides pour les Joueuses",
+      "system": "leschroniquesdeletrange",
+      "path": "packs/aides-pour-les-joueuses",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "capacites-surnaturelles",
+      "label": "FR - Capacité surnaturelles",
+      "system": "leschroniquesdeletrange",
+      "path": "packs/capacites-surnaturelles",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "des-exemples-de-sanhei",
+      "label": "FR - Des exemples de Sanhei",
+      "system": "leschroniquesdeletrange",
+      "path": "packs/des-exemples-de-sanhei",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "fat-si-pre-tires",
+      "label": "FR - Fat si pré-tirés",
+      "system": "leschroniquesdeletrange",
+      "path": "packs/fat-si-pre-tires",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "les-arts-martiaux",
+      "label": "FR - Les Arts martiaux",
+      "system": "leschroniquesdeletrange",
+      "path": "packs/les-arts-martiaux",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "les-sortileges",
+      "label": "FR - Les Sortilèges",
+      "system": "leschroniquesdeletrange",
+      "path": "packs/les-sortileges",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    }
+  ],
   "languages": [
     {
       "lang": "en",
