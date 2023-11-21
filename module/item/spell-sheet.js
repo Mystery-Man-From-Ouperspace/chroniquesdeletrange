@@ -11,7 +11,7 @@ export class CDESpellSheet extends ItemSheet {
       width: 620,
       height: 530,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }],
-      scrollY: [".description", ".data", ".components", ".effects", ".examples", "notes"],
+      scrollY: [".description", ".data", ".components", ".effects", ".examples", ".notes"],
     });
   }
 

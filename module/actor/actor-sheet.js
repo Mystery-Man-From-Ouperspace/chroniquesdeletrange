@@ -32,7 +32,7 @@ export class CDEActorSheet extends ActorSheet {
 
     // Item Controls
     html.find(".item-control").click(this._onItemControl.bind(this));
-    html.find(".items .rollable").on("click", this._onItemRoll.bind(this));
+    // html.find(".items .rollable").on("click", this._onItemRoll.bind(this));
   }
 
   /**
@@ -72,7 +72,7 @@ export class CDEActorSheet extends ActorSheet {
   /**
    * Listen for roll buttons on items.
    * @param {MouseEvent} event    The originating left click event
-   */
+   *
   _onItemRoll(event) {
     let button = $(event.currentTarget);
     const li = button.parents(".item");
@@ -84,4 +84,5 @@ export class CDEActorSheet extends ActorSheet {
       flavor: `<h2>${item.name}</h2><h3>${button.text()}</h3>`,
     });
   }
+  */
 }
