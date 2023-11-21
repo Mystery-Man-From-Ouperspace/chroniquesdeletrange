@@ -9,7 +9,7 @@ export class CDEPNJSheet extends CDEActorSheet {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["chroniquesdeletrange", "sheet", "actor", "npc"],
       template: "systems/chroniquesdeletrange/templates/actor/npc-sheet.html",
-      scrollY: [".description", ".supernaturals"],
+      scrollY: [".description", ".aptitudes", ".supernaturals"],
       dragDrop: [{dragSelector: ".supernatural", dropSelector: null}]
     });
   }
