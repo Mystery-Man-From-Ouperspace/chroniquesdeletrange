@@ -20,6 +20,7 @@ export class CDESupernaturalSheet extends ItemSheet {
   /** @inheritdoc */
   async getData(options) {
     const context = await super.getData(options);
+    context.systemData = this.item.system;
     context.descriptionHTML = await TextEditor.enrichHTML(this.item.system.description, {
       secrets: this.document.isOwner,
       async: true,
