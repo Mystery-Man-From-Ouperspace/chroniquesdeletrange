@@ -28,7 +28,7 @@
     },
     {
       "name": "capacites-surnaturelles",
-      "label": "FR - Capacité surnaturelles",
+      "label": "FR - Capacités surnaturelles",
       "system": "leschroniquesdeletrange",
       "path": "packs/capacites-surnaturelles",
       "type": "Item",
