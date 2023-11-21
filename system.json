@@ -85,6 +85,18 @@
         "ASSISTANT": "OWNER"
       },
       "flags": {}
+    },
+    {
+      "name": "scenes-clefs",
+      "label": "FR - Scènes clefs",
+      "system": "leschroniquesdeletrange",
+      "path": "packs/scenes-clefs",
+      "type": "Scene",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
     }
   ],
   "languages": [
