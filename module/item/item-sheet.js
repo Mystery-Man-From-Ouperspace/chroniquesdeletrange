@@ -11,7 +11,7 @@ export class CDEItemSheet extends ItemSheet {
       width: 520,
       height: 520,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }],
-      scrollY: [".attributes"],
+      scrollY: [".description", ".attributes", ".notes"],
     });
   }
 

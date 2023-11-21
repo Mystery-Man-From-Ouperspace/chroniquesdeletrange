@@ -11,7 +11,7 @@ export class CDEKungFuSheet extends ItemSheet {
       width: 720,
       height: 520,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }],
-      scrollY: [".description", ".technique1", ".technique2", ".technique3"],
+      scrollY: [".description", ".technique1", ".technique2", ".technique3", "notes"],
     });
   }
 
