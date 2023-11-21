@@ -1,6 +1,6 @@
 export const CDE = {};
 
-CDE.magics = {
+CDE.MAGICS = {
   internalcinnabar: {
     background: "linear-grey",
     label: "CDE.InternalCinnabar",
@@ -235,5 +235,24 @@ CDE.magics = {
         labelelement: "CDE.Wood",
       },
     },
+  },
+};
+
+CDE.SUBTYPES = {
+  weapon: {
+    id: "weapon",
+    label: "CDE.Weapon",
+  },
+  armor: {
+    id: "armor",
+    label: "CDE.Armor",
+  },
+  sanhei: {
+    id: "sanhei",
+    label: "CDE.Sanhei",
+  },
+  other: {
+    id: "other",
+    label: "CDE.Other",
   },
 };

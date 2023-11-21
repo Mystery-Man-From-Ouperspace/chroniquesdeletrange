@@ -1,3 +1,4 @@
+import { CDE } from "../config.js";
 /**
  * @extends {ItemSheet}
  */
@@ -20,6 +21,11 @@ export class CDEItemSheet extends ItemSheet {
   async getData(options) {
     const context = await super.getData(options);
     context.systemData = this.item.system;
+    context.subtypes = CDE.SUBTYPES
+    context.isWeapon = this.item.isWeapon;
+    context.isArmor = this.item.isArmor;
+    context.isSanhei = this.item.isSanhei;
+    context.isOther = this.item.isOther;
     context.descriptionHTML = await TextEditor.enrichHTML(this.item.system.description, {
       secrets: this.document.isOwner,
       async: true,
