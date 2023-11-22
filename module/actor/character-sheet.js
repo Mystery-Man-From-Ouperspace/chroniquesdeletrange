@@ -142,7 +142,7 @@ export class CDECharacterSheet extends CDEActorSheet {
     const noAspectUsed = -1;
     const special2BDefined = -999;
     const specialDefined = 999;
-    const noSpecialUsed = -1;
+    const nomySpecialUsed = -1;
 
     const wiiAspect = 0;
     const wiiSkill = 1;
@@ -160,14 +160,11 @@ export class CDECharacterSheet extends CDEActorSheet {
 
     var skillUsedLabel = "?";
     var aspectUsedLabel ="?";
-    var specialUsedLabel = "?";
-    var aspectSpecialUsedLabel = "?";
-
-    var specialUsed = "?";
+    var mySpecialUsedLabel = "?";
 
     var bonusDice = 0;
     var bonusAuspicious = 0;
-    var myAspectSpecialUsed = 0;
+    mySpecialUsed = 0;
     var rollDifficulty = 1;
     var bonusSpecial = 0;
 
@@ -195,7 +192,7 @@ export class CDECharacterSheet extends CDEActorSheet {
     let typeOfThrow = 0;
     typeOfThrow = parseInt(this.actor.system.prefs.typeofthrow.choice);
     if (!( typeOfThrow == 0 || typeOfThrow == 1 || typeOfThrow == 2 || typeOfThrow == 3 )) {
-      typeOfThrow = 0; console.log("Zur, erreur !");
+      typeOfThrow = 0; console.log("Zut, erreur !");
     };
 
 
@@ -203,11 +200,11 @@ export class CDECharacterSheet extends CDEActorSheet {
     const whatIsIt = element.dataset.libelId;         // Va récupérer 'fire-aspect' par exemple
     console.log("whatIsIt = "+whatIsIt)
     const whatIsItTab = whatIsIt.split('-');
-    const skillUsed = whatIsItTab[0];                 // Va récupérer 'fire'
-    console.log("skillUsed = "+skillUsed)
-    const typeUsed = whatIsItTab[1];                  // Va récupérer 'aspect'
-    console.log("typeUsed = "+typeUsed)
-    switch( typeUsed ) {                              // Transforme la string en nom de variable
+    const skillUsedLibel = whatIsItTab[0];                 // Va récupérer 'fire'
+    console.log("skillUsedLibel = "+skillUsedLibel)
+    const typeUsedLibel = whatIsItTab[1];                  // Va récupérer 'aspect'
+    console.log("typeUsedLibel = "+typeUsedLibel)
+    switch( typeUsedLibel ) {                              // Transforme la string en nom de variable
       case "aspect": myTypeUsed = wiiAspect;
       break;
       case "skill": myTypeUsed = wiiSkill;
@@ -233,15 +230,15 @@ export class CDECharacterSheet extends CDEActorSheet {
     var numberDice = 0;
     switch ( myTypeUsed ) {                             // Recupère la valeur de la compétence (= nbre de dés à lancer de base)
       case wiiAspect:
-        numberDice = this.actor.system.aspect[skillUsed].value;
+        numberDice = this.actor.system.aspect[skillUsedLibel].value;
       break;
       case wiiSkill:
-        numberDice = this.actor.system.skills[skillUsed].value;
+        numberDice = this.actor.system.skills[skillUsedLibel].value;
       break;
       case wiiSpecial:
-        numberDice = this.actor.system.skills[skillUsed].value;
+        numberDice = this.actor.system.skills[skillUsedLibel].value;
         //////////////////////////////////////////////////////////////////
-        if (this.actor.system.skills[skillUsed].specialities == "") {
+        if (this.actor.system.skills[skillUsedLibel].specialities == "") {
           ui.notifications.warn(game.i18n.localize("CDE.Error2"));
           return;
         } else if (numberDice <= 0) {
@@ -249,43 +246,37 @@ export class CDECharacterSheet extends CDEActorSheet {
           return;
 
         };
-        //////////////////////////////////////////////////////////////////
-        console.log("specialUsed = "+specialUsed);
       break;
       case wiiResource:
-        numberDice = this.actor.system.resources[skillUsed].value;
+        numberDice = this.actor.system.resources[skillUsedLibel].value;
       break;
       case wiiField:
-        numberDice = this.actor.system.resources[skillUsed].value;
+        numberDice = this.actor.system.resources[skillUsedLibel].value;
         //////////////////////////////////////////////////////////////////
-        if (this.actor.system.resources[skillUsed].specialities == "") {
+        if (this.actor.system.resources[skillUsedLibel].specialities == "") {
           ui.notifications.warn(game.i18n.localize("CDE.Error4"));
           return;
         } else if (numberDice <= 0) {
           ui.notifications.warn(game.i18n.localize("CDE.Error14"));
           return;
         };
-        //////////////////////////////////////////////////////////////////
-        console.log("specialUsed = "+specialUsed);
       break;
       case wiiMagic:
-        numberDice = this.actor.system.magics[skillUsed].value;
+        numberDice = this.actor.system.magics[skillUsedLibel].value;
       break;
       case wiiMagicSpecial:
-        numberDice = this.actor.system.magics[skillUsed].value;
+        numberDice = this.actor.system.magics[skillUsedLibel].value;
         mySpecialUsed = specialDefined;
-        specialUsed = whatIsItTab[2];
+        const specialUsedLibel = whatIsItTab[2];
         //////////////////////////////////////////////////////////////////
-        if (!this.actor.system.magics[skillUsed].speciality[specialUsed].check) {
+        if (!this.actor.system.magics[skillUsedLibel].speciality[specialUsedLibel].check) {
           ui.notifications.warn(game.i18n.localize("CDE.Error6"));
           return;
         } else if (numberDice <= 0) {
           ui.notifications.warn(game.i18n.localize("CDE.Error16"));
           return;
         };
-        //////////////////////////////////////////////////////////////////
-        console.log("specialUsed = "+specialUsed);
-        specialUsedLabel = this.actor.system.magics[skillUsed].speciality[specialUsed].label;
+        mySpecialUsedLabel = this.actor.system.magics[skillUsedLibel].speciality[specialUsedLibel].label;
       break;
       case wiiRandomize:
         numberDice = 1;
@@ -296,10 +287,10 @@ export class CDECharacterSheet extends CDEActorSheet {
 
     console.log("numberDice = ", numberDice);
     //////////////////////////////////////////////////////////////////
-    console.log("skillUsed = "+skillUsed);
+    console.log("skillUsedLibel = "+skillUsedLibel);
     switch ( myTypeUsed ) {                         // Transforme la string en nom de variable (uniquement pour les aspects)
       case wiiAspect:                               // Récupère les libellés de la compétence, de l'aspect (s'il est déjà défini)
-      switch( skillUsed ) {                         // et de l'éventuelle spécialité (définie càd magies, ou générique càd compétences ou ressources)
+      switch( skillUsedLibel ) {                         // et de l'éventuelle spécialité (définie càd magies, ou générique càd compétences ou ressources)
         case "wood":                                // Appelle un prompt s'il le faut (càd compétences, ressources ou magies)
         mySkillUsed = wood;
         myAspectUsed = wood;
@@ -339,9 +330,9 @@ export class CDECharacterSheet extends CDEActorSheet {
       break;
       case wiiSkill:
         mySkillUsed = skillDefined;
-        skillUsedLabel = this.actor.system.skills[skillUsed].label;
+        skillUsedLabel = this.actor.system.skills[skillUsedLibel].label;
         myAspectUsed = metal;
-        mySpecialUsed = noSpecialUsed;
+        mySpecialUsed = nomySpecialUsed;
         myIsSpecial = false;
         
         data = await _skillDiceRollDialog(this.actor, "", titleDialog, dialogOptions, numberDice, myIsSpecial, myAspectUsed, bonusDice, bonusAuspicious, typeOfThrow);
@@ -356,10 +347,10 @@ export class CDECharacterSheet extends CDEActorSheet {
       break;
       case wiiSpecial:
         mySkillUsed = skillDefined;
-        skillUsedLabel = this.actor.system.skills[skillUsed].label;
+        skillUsedLabel = this.actor.system.skills[skillUsedLibel].label;
         myAspectUsed = metal;
         mySpecialUsed = specialDefined;
-        specialUsedLabel = "CDE.Speciality";
+        mySpecialUsedLabel = "CDE.Speciality";
         myIsSpecial = true;
         
         data = await _skillSpecialDiceRollDialog(this.actor, "", titleDialog, dialogOptions, numberDice, myIsSpecial, myAspectUsed, bonusDice, bonusAuspicious, typeOfThrow);
@@ -374,9 +365,9 @@ export class CDECharacterSheet extends CDEActorSheet {
         break;
       case wiiResource:
         mySkillUsed = skillDefined;
-        skillUsedLabel = this.actor.system.resources[skillUsed].label;
+        skillUsedLabel = this.actor.system.resources[skillUsedLibel].label;
         myAspectUsed = metal;
-        mySpecialUsed = noSpecialUsed;
+        mySpecialUsed = nomySpecialUsed;
         myIsSpecial = false;
         
         data = await _skillDiceRollDialog("", titleDialog, dialogOptions, numberDice, myIsSpecial, myAspectUsed, bonusDice, bonusAuspicious, typeOfThrow);
@@ -390,10 +381,10 @@ export class CDECharacterSheet extends CDEActorSheet {
       break;
       case wiiField:
         mySkillUsed = skillDefined;
-        skillUsedLabel = this.actor.system.resources[skillUsed].label;
+        skillUsedLabel = this.actor.system.resources[skillUsedLibel].label;
         myAspectUsed = metal;
         mySpecialUsed = specialDefined;
-        specialUsedLabel = "CDE.Field";
+        mySpecialUsedLabel = "CDE.Field";
         myIsSpecial = true;
         
         data = await _skillSpecialDiceRollDialog(this.actor, "", titleDialog, dialogOptions, numberDice, myIsSpecial, myAspectUsed, bonusDice, bonusAuspicious, typeOfThrow);
@@ -408,8 +399,8 @@ export class CDECharacterSheet extends CDEActorSheet {
       break;
       case wiiMagic:
         mySkillUsed = skillDefined;
-        skillUsedLabel = this.actor.system.magics[skillUsed].label;
-        switch( skillUsed ){                        // et de l'éventuelle spécialité (définie càd magies, ou générique càd compétences ou ressources)
+        skillUsedLabel = this.actor.system.magics[skillUsedLibel].label;
+        switch( skillUsedLibel ){                        // et de l'éventuelle spécialité (définie càd magies, ou générique càd compétences ou ressources)
           case "internalcinnabar":                  // Appelle un prompt s'il le faut (càd compétences, ressources ou magies)
           myAspectUsed = metal;
           aspectUsedLabel = aspectLabel[myAspectUsed];
@@ -447,8 +438,8 @@ export class CDECharacterSheet extends CDEActorSheet {
       case wiiMagicSpecial:
         console.log("I'm here!");
         mySkillUsed = skillDefined;
-        skillUsedLabel = this.actor.system.magics[skillUsed].label;
-        switch( skillUsed ){                        // et de l'éventuelle spécialité (définie càd magies, ou générique càd compétences ou ressources)
+        skillUsedLabel = this.actor.system.magics[skillUsedLibel].label;
+        switch( skillUsedLibel ){                        // et de l'éventuelle spécialité (définie càd magies, ou générique càd compétences ou ressources)
           case "internalcinnabar":                  // Appelle un prompt s'il le faut (càd compétences, ressources ou magies)
           myAspectUsed = metal;
           aspectUsedLabel = aspectLabel[myAspectUsed];
@@ -474,37 +465,37 @@ export class CDECharacterSheet extends CDEActorSheet {
         console.log("aspectUsedLabel = "+aspectUsedLabel);
         let myAspectSpecialName = "";
         for (var index in myMagicSpecial) {
-          if (myMagicSpecial[index].name == specialUsed) {
+          if (myMagicSpecial[index].name == mySpecialUsed) {
               myAspectSpecialName = myMagicSpecial[index].aspect;
           };
         };
         console.log("myAspectSpecialName = "+myAspectSpecialName);
         switch( myAspectSpecialName ) {
-          case "metal" : myAspectSpecialUsed = metal;
+          case "metal" : mySpecialUsed = metal;
           break;
-          case "water" : myAspectSpecialUsed = water;
+          case "water" : mySpecialUsed = water;
           break;
-          case "earth" : myAspectSpecialUsed = earth;
+          case "earth" : mySpecialUsed = earth;
           break;
-          case "fire" : myAspectSpecialUsed = fire;
+          case "fire" : mySpecialUsed = fire;
           break;
-          case "wood" : myAspectSpecialUsed = wood;
+          case "wood" : mySpecialUsed = wood;
           break;
           default: console.log("C'est bizarre !");
         };  
-        console.log("myAspectSpecialUsed = "+myAspectSpecialUsed);
-        aspectSpecialUsedLabel = aspectLabel[myAspectSpecialUsed];
-        console.log("aspectSpecialUsedLabel = "+aspectSpecialUsedLabel);
+        console.log("mySpecialUsed = "+mySpecialUsed);
+        mySpecialUsedLabel = aspectLabel[mySpecialUsed];
+        console.log("mySpecialUsedLabel = "+mySpecialUsedLabel);
         myIsSpecial = true;
 
         dataBis = await _magicDiceRollDialog(this.actor, "", titleDialog, dialogOptions, numberDice, myIsSpecial,
-        myAspectUsed, bonusDice, bonusAuspicious, myAspectSpecialUsed, rollDifficulty, bonusSpecial, typeOfThrow);
+        myAspectUsed, bonusDice, bonusAuspicious, mySpecialUsed, rollDifficulty, bonusSpecial, typeOfThrow);
         console.log("dataBis = ", dataBis);
         numberDice = parseInt(dataBis.numberofdice);
         myAspectUsed = parseInt(dataBis.aspectskill);
         bonusDice = parseInt(dataBis.bonusmalusskill);
         bonusAuspicious = dataBis.auspiciousdice;
-        myAspectSpecialUsed = parseInt(dataBis.aspectspeciality);
+        mySpecialUsed = parseInt(dataBis.aspectspeciality);
         rollDifficulty = parseInt(dataBis.rolldifficulty);
         bonusSpecial = parseInt(dataBis.bonusmalusspeciality);
         typeOfThrow = parseInt(dataBis.typeofthrow);
@@ -529,10 +520,10 @@ export class CDECharacterSheet extends CDEActorSheet {
     console.log("bonusDice = ", bonusDice);
     console.log("bonusAuspicious = ", bonusAuspicious);
     console.log("skillUsedLabel = ", skillUsedLabel);
-    console.log("specialUsed = ", specialUsed);
+    console.log("mySpecialUsed = ", mySpecialUsed);
     if (myTypeUsed != wiiAspect) {
       console.log("aspectUsedLabel = ", aspectUsedLabel);
-      console.log("specialUsedLabel = ", specialUsedLabel);
+      console.log("mySpecialUsedLabel = ", mySpecialUsedLabel);
     };
     console.log("numberDice = ", numberDice);
     console.log("bonusDice = ", bonusDice);
@@ -632,7 +623,8 @@ export class CDECharacterSheet extends CDEActorSheet {
     console.log(earth);
     console.log(water);
     console.log(metal);
-    
+
+        
     switch ( myAspectUsed ) {                       // On fabrique le message de retour du lancer de dés
       case wood:
         console.log("C'est le Bois !");
@@ -797,19 +789,26 @@ export class CDECharacterSheet extends CDEActorSheet {
       await game.dice3d.waitFor3DAnimationByMessageID(msg.id);
     };
 
+
+    aspectUsedLabel = aspectLabel[myAspectUsed];
+    if (myTypeUsed == wiiMagicSpecial) {
+      mySpecialUsedLabel = aspectLabel[mySpecialUsed];
+    };
+    
+
     let title = "";
     if (mySkillUsed != skill2BDefined) {
       title = game.i18n.localize(skillUsedLabel);
     };
     if (mySpecialUsed == specialDefined) {
-      title += " ["+game.i18n.localize(specialUsedLabel)+"]";
+      title += " ["+game.i18n.localize(mySpecialUsedLabel)+"]";
     };
     if (myAspectUsed == mySkillUsed || myAspectUsed == aspect2BDefined || myAspectUsed == random) {
       title += " | ";
     } else {
       title += ", "+game.i18n.localize("CDE.Aspect")+" "+game.i18n.localize(aspectUsedLabel);
-      if (mySpecialUsed == specialDefined) {
-        title += "· "+game.i18n.localize("CDE.SpecialAspect")+" "+game.i18n.localize(aspectSpecialUsedLabel)+"| ";
+      if ( myTypeUsed == wiiMagicSpecial) {
+        title += "· "+game.i18n.localize("CDE.SpecialAspect")+" "+game.i18n.localize(mySpecialUsedLabel)+"| ";
       }  else {
         title += "| ";
       }
@@ -922,9 +921,9 @@ async function _skillDiceRollDialog(myActor, template, myTitle, myDialogOptions,
   let isspecial = myIsSpecial;
   var dialogData = {
     numberofdice: myNumberOfDice,
-    aspect: myAspect,
+    aspect: myAspect.toString(),
     bonusmalus: myBonus,
-    bonusauspiciousdice: myBonusAuspiciousDice,
+    bonusauspiciousdice: myBonusAuspiciousDice.toString(),
     typeofthrow: myTypeOfThrow.toString()
   };
   console.log("dialogData avant retour func = ", dialogData);
@@ -982,9 +981,9 @@ async function _skillSpecialDiceRollDialog(myActor, template, myTitle, myDialogO
   let isspecial = myIsSpecial;
   var dialogData = {
     numberofdice: myNumberOfDice,
-    aspect: myAspect,
+    aspect: myAspect.toString(),
     bonusmalus: myBonus,
-    bonusauspiciousdice: myBonusAuspiciousDice,
+    bonusauspiciousdice: myBonusAuspiciousDice.toString(),
     typeofthrow: myTypeOfThrow.toString()
   };
   console.log("dialogData avant retour func = ", dialogData);
@@ -1043,13 +1042,13 @@ async function _magicDiceRollDialog(myActor, template, myTitle, myDialogOptions,
   let isspecial = myIsSpecial;
   var dialogData = {
     numberofdice: myNumberOfDice,
-    aspectskill: myAspectSkill,
+    aspectskill: myAspectSkill.toString(),
     bonusmalusskill: myBonusMalusSkill,
-    bonusauspiciousdice: myBonusAuspiciousDice,
-    aspectspeciality: myAspectSpecial,
+    bonusauspiciousdice: myBonusAuspiciousDice.toString(),
+    aspectspeciality: myAspectSpecial.toString(),
     rolldifficulty: myRollDifficulty,
     bonusmalusspeciality: myBonusMalusSpecial,
-    typeofthrow: toString(myTypeOfThrow)
+    typeofthrow: myTypeOfThrow.toString()
   };
   console.log("dialogData avant retour func = ", dialogData);
   const html = await renderTemplate(template, dialogData);
