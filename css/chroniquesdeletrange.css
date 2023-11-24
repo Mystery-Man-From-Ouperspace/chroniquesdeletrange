@@ -331,36 +331,6 @@ text-align: left;
 }
 
 
-
-
-.chroniquesdeletrange .nghangpart1  .fire .click2 {
-  width: 30px;
-  margin-top: 82px;
-  margin-left: 310px; 
-}
-.chroniquesdeletrange .nghangpart2 .wood .click2 {
-  width: 30px;
-  margin-top: 224px;
-  margin-left: 118px;
-}
-.chroniquesdeletrange .nghangpart4 .earth .click2 {
-  width: 30px;
-  margin-top: 228px;
-  margin-left: 505px;
-}
-.chroniquesdeletrange .nghangpart5 .water .click2 {
-  width: 30px;
-  margin-top: 427px;
-  margin-left: 169px;
-}
-.chroniquesdeletrange .nghangpart7 .metal .click2 {
-  width: 30px;
-  margin-top: 427px;
-  margin-left: 445px;
-}
-
-
-
 /* concerne les items */
 
 .chroniquesdeletrange .editor,
