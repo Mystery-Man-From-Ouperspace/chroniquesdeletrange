@@ -284,7 +284,14 @@
   "CDE.OneDie": "Die",
   "CDE.ManyDice": "Dice",
 
-  
+  "CDE.HasCastASpell": "has cast a spell ",
+  "CDE.MsgMagic1": "The number of Hei points spent on the  ",
+  "CDE.MsgMagic2": "speciality spell is ",
+  "CDE.MsgMagic3": ". The power to be invoked is ",
+  "CDE.MsgMagic4": ", if the spell is cast successfully.",
+
+
+
   "TYPES": {
     "Actor": {
       "character": "Fat si",

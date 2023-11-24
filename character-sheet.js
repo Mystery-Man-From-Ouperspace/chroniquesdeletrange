@@ -99,7 +99,6 @@ export class CDECharacterSheet extends CDEActorSheet {
    */
   async _onClickDieRoll(event) {
     const aspectLabel = ["CDE.Metal", "CDE.Water", "CDE.Earth", "CDE.Fire", "CDE.Wood", "CDE.Ramdomize"];
-    const aspectLibel = ["metal", "water", "earth", "fire", "wood"];
     const myMagicSpecial = {
       essence: { prefix :"ess", name :"essence", aspect :"metal" },
       mind : { prefix :"min", name :"mind", aspect :"water" },
@@ -229,7 +228,6 @@ export class CDECharacterSheet extends CDEActorSheet {
     console.log("myTypeUsed = "+myTypeUsed);
     //////////////////////////////////////////////////////////////////
     var numberDice = 0;
-    var mySkillUsedLabel;
     switch ( myTypeUsed ) {                             // Recupère la valeur de la compétence (= nbre de dés à lancer de base)
       case wiiAspect:
         numberDice = this.actor.system.aspect[skillUsedLibel].value;
@@ -265,14 +263,11 @@ export class CDECharacterSheet extends CDEActorSheet {
       break;
       case wiiMagic:
         numberDice = this.actor.system.magics[skillUsedLibel].value;
-        mySkillUsedLabel = CDE.MAGICS[skillUsedLibel].label;
       break;
       case wiiMagicSpecial:
         numberDice = this.actor.system.magics[skillUsedLibel].value;
         mySpecialUsed = specialDefined;
         var specialUsedLibel = whatIsItTab[2];
-        mySkillUsedLabel = CDE.MAGICS[skillUsedLibel].label;
-        var mySkillSpecialUsedLabel = CDE.MAGICS[skillUsedLibel].speciality[specialUsedLibel].label;
         //////////////////////////////////////////////////////////////////
         if (!this.actor.system.magics[skillUsedLibel].speciality[specialUsedLibel].check) {
           ui.notifications.warn(game.i18n.localize("CDE.Error6"));
@@ -507,8 +502,7 @@ export class CDECharacterSheet extends CDEActorSheet {
         bonusSpecial = parseInt(dataBis.bonusmalusspeciality);
         typeOfThrow = parseInt(dataBis.typeofthrow);
         console.log("typeOfThrow = ", typeOfThrow);
-        aspectUsedLabel = aspectLabel[myAspectUsed];
-        mySpecialUsedLabel = aspectLabel[mySpecialUsed];
+        mySpecialUsedLabel = aspectLabel[mySpecialUsed]
         break;
       case wiiRandomize:
         mySkillUsed = random;
@@ -811,13 +805,12 @@ export class CDECharacterSheet extends CDEActorSheet {
     var msgResultMagic = "";
     if (myTypeUsed == wiiMagicSpecial) {
       console.log("msgResultMagic", msgResultMagic);
-      const aspectLinked2Speciality = this.actor.system.aspect[aspectLibel[mySpecialUsed]].value;
       msgResultMagic += "…";
-      msgResultMagic += " "+game.i18n.localize("CDE.HasCastASpell")+"["+game.i18n.localize(mySkillSpecialUsedLabel)+"]. ";
+      msgResultMagic += " "+game.i18n.localize("CDE.HasCastASpell");
       const spellCast = game.i18n.localize(skillUsedLabel)+" ["+game.i18n.localize(aspectUsedLabel)+"/"+game.i18n.localize(mySpecialUsedLabel)+"] ";
       msgResultMagic += game.i18n.localize("CDE.MsgMagic1")+spellCast
       +game.i18n.localize("CDE.MsgMagic2")+rollDifficulty
-      +game.i18n.localize("CDE.MsgMagic3")+(aspectLinked2Speciality*rollDifficulty)
+      +game.i18n.localize("CDE.MsgMagic3")+rollDifficulty
       +game.i18n.localize("CDE.MsgMagic4");
       console.log("msgResultMagic", msgResultMagic);
     };
@@ -835,7 +828,7 @@ export class CDECharacterSheet extends CDEActorSheet {
 
     let title = "";
     if (mySkillUsed != skill2BDefined) {
-      title = game.i18n.localize(mySkillSpecialUsedLabel);
+      title = game.i18n.localize(skillUsedLabel);
     };
     if (mySpecialUsed == specialDefined) {
       title += " ["+game.i18n.localize(mySpecialUsedLabel)+"]";
@@ -855,22 +848,13 @@ export class CDECharacterSheet extends CDEActorSheet {
 
     switch ( typeOfThrow ) {
       case 0:
-        ChatMessage.create({
+        return ChatMessage.create({
           user: game.user.id,
           // speaker: ChatMessage.getSpeaker({ token: this.actor }),
           speaker: ChatMessage.getSpeaker({ actor: this.actor }),
           content: title+message+msgBonusAuspiciousDice,
           rollMode: 'roll'                          // Public Roll
         });
-        if (myTypeUsed == wiiMagicSpecial) {
-          return ChatMessage.create({
-            user: game.user.id,
-            // speaker: ChatMessage.getSpeaker({ token: this.actor }),
-            speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-            content: msgResultMagic,
-            rollMode: 'roll'                          // Public Roll
-        })};
-
       break;
       case 1:
         ChatMessage.create({
@@ -880,15 +864,6 @@ export class CDECharacterSheet extends CDEActorSheet {
           content: title+message+msgBonusAuspiciousDice,
           rollMode: 'gmroll'                        // Private Roll
         });
-        if (myTypeUsed == wiiMagicSpecial) {
-          return ChatMessage.create({
-            user: game.user.id,
-            // speaker: ChatMessage.getSpeaker({ token: this.actor }),
-            speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-            content: msgResultMagic,
-            rollMode: 'gmroll'                          // Private Roll
-        })};
-
       break;
       case 2:
         ChatMessage.create({
@@ -898,14 +873,6 @@ export class CDECharacterSheet extends CDEActorSheet {
           content: title+message+msgBonusAuspiciousDice,
           rollMode: 'blindroll'                       // Blind GM Roll
         });
-        if (myTypeUsed == wiiMagicSpecial) {
-          return ChatMessage.create({
-            user: game.user.id,
-            // speaker: ChatMessage.getSpeaker({ token: this.actor }),
-            speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-            content: msgResultMagic,
-            rollMode: 'blindroll'                          // Blind Roll
-        })};
       break;
       case 3:
         ChatMessage.create({
@@ -915,15 +882,6 @@ export class CDECharacterSheet extends CDEActorSheet {
           content: title+message+msgBonusAuspiciousDice,
           rollMode: 'selfroll'                        // Self Roll
         });
-        if (myTypeUsed == wiiMagicSpecial) {
-          return ChatMessage.create({
-            user: game.user.id,
-            // speaker: ChatMessage.getSpeaker({ token: this.actor }),
-            speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-            content: msgResultMagic,
-            rollMode: 'selfroll'                          // Self Roll
-        })};
-
       break;
       default: console.log("C'est bizarre !");
     };

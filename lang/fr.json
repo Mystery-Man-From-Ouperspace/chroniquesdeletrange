@@ -286,7 +286,14 @@
   "CDE.OneDie": "dé",
   "CDE.ManyDice": "dés",
 
-  
+  "CDE.HasCastASpell": "a lancé un sortilège ",
+  "CDE.MsgMagic1": "Le nombre de points de Hei dépensés pour le sort de spécialité ",
+  "CDE.MsgMagic2": "s'élève à ",
+  "CDE.MsgMagic3": ". La puissance à invoquer est de ",
+  "CDE.MsgMagic4": ", si toutefois le sort est lancé avec succès.",
+
+
+
   "TYPES": {
     "Actor": {
       "character": "Fat si",

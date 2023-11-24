@@ -284,6 +284,13 @@
   "CDE.OneDie": "dado",
   "CDE.ManyDice": "dados",
 
+  "CDE.HasCastASpell": "ha lanzado un hechizo ",
+  "CDE.MsgMagic1": "El número de puntos Hei gastados en el hechizo especial ",
+  "CDE.MsgMagic2": "es ",
+  "CDE.MsgMagic3": ". El poder para invocar es ",
+  "CDE.MsgMagic4": ", si el hechizo se lanza con éxito.",
+
+
   
   "TYPES": {
     "Actor": {
