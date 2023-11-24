@@ -181,7 +181,7 @@ export class CDECharacterSheet extends CDEActorSheet {
     let d10_0 = 0;
     let suite = "~ [";
 
-    let titleDialog;
+    var titleDialog;
     let myIsSpecial;
 
     var data;
@@ -229,16 +229,22 @@ export class CDECharacterSheet extends CDEActorSheet {
     console.log("myTypeUsed = "+myTypeUsed);
     //////////////////////////////////////////////////////////////////
     var numberDice = 0;
-    var mySkillUsedLabel;
+    var mySkillLabUsedLabel ="";
     switch ( myTypeUsed ) {                             // Recupère la valeur de la compétence (= nbre de dés à lancer de base)
       case wiiAspect:
         numberDice = this.actor.system.aspect[skillUsedLibel].value;
+        mySkillLabUsedLabel = game.i18n.localize(this.actor.system.aspect[skillUsedLibel].label);
       break;
       case wiiSkill:
         numberDice = this.actor.system.skills[skillUsedLibel].value;
+        mySkillLabUsedLabel = game.i18n.localize(this.actor.system.skills[skillUsedLibel].label);
+        titleDialog = mySkillLabUsedLabel;
       break;
       case wiiSpecial:
         numberDice = this.actor.system.skills[skillUsedLibel].value;
+        mySkillLabUsedLabel = game.i18n.localize(this.actor.system.skills[skillUsedLibel].label);
+        mySkillLabUsedLabel += "["+game.i18n.localize("CDE.Speciality")+"]";
+        titleDialog = mySkillLabUsedLabel;
         //////////////////////////////////////////////////////////////////
         if (this.actor.system.skills[skillUsedLibel].specialities == "") {
           ui.notifications.warn(game.i18n.localize("CDE.Error2"));
@@ -251,9 +257,13 @@ export class CDECharacterSheet extends CDEActorSheet {
       break;
       case wiiResource:
         numberDice = this.actor.system.resources[skillUsedLibel].value;
+        mySkillLabUsedLabel = game.i18n.localize(this.actor.system.resources[skillUsedLibel].label);
       break;
       case wiiField:
         numberDice = this.actor.system.resources[skillUsedLibel].value;
+        mySkillLabUsedLabel = game.i18n.localize(this.actor.system.resources[skillUsedLibel].label);
+        mySkillLabUsedLabel += "["+game.i18n.localize("CDE.Field")+"]";
+        titleDialog = mySkillLabUsedLabel;
         //////////////////////////////////////////////////////////////////
         if (this.actor.system.resources[skillUsedLibel].specialities == "") {
           ui.notifications.warn(game.i18n.localize("CDE.Error4"));
@@ -265,14 +275,19 @@ export class CDECharacterSheet extends CDEActorSheet {
       break;
       case wiiMagic:
         numberDice = this.actor.system.magics[skillUsedLibel].value;
-        mySkillUsedLabel = CDE.MAGICS[skillUsedLibel].label;
+        mySkillLabUsedLabel = game.i18n.localize(CDE.MAGICS[skillUsedLibel].label);
+        titleDialog = mySkillLabUsedLabel;
       break;
       case wiiMagicSpecial:
         numberDice = this.actor.system.magics[skillUsedLibel].value;
         mySpecialUsed = specialDefined;
         var specialUsedLibel = whatIsItTab[2];
-        mySkillUsedLabel = CDE.MAGICS[skillUsedLibel].label;
-        var mySkillSpecialUsedLabel = CDE.MAGICS[skillUsedLibel].speciality[specialUsedLibel].label;
+        mySkillLabUsedLabel = game.i18n.localize(CDE.MAGICS[skillUsedLibel].label);
+        var mySkillNonSpecialUsedLabel = mySkillLabUsedLabel;
+        var mySkillSpecialUsedLabel = game.i18n.localize(CDE.MAGICS[skillUsedLibel].speciality[specialUsedLibel].label);
+        mySkillLabUsedLabel += "["+mySkillSpecialUsedLabel+"]";
+        titleDialog = mySkillLabUsedLabel;
+
         //////////////////////////////////////////////////////////////////
         if (!this.actor.system.magics[skillUsedLibel].speciality[specialUsedLibel].check) {
           ui.notifications.warn(game.i18n.localize("CDE.Error6"));
@@ -281,10 +296,10 @@ export class CDECharacterSheet extends CDEActorSheet {
           ui.notifications.warn(game.i18n.localize("CDE.Error16"));
           return;
         };
-        mySpecialUsedLabel = this.actor.system.magics[skillUsedLibel].speciality[specialUsedLibel].label;
       break;
       case wiiRandomize:
         numberDice = 1;
+        mySkillLabUsedLabel = game.i18n.localize("CDE.Randomize");
       break;
       default: ;
     };
@@ -813,7 +828,7 @@ export class CDECharacterSheet extends CDEActorSheet {
       console.log("msgResultMagic", msgResultMagic);
       const aspectLinked2Speciality = this.actor.system.aspect[aspectLibel[mySpecialUsed]].value;
       msgResultMagic += "…";
-      msgResultMagic += " "+game.i18n.localize("CDE.HasCastASpell")+"["+game.i18n.localize(mySkillSpecialUsedLabel)+"]. ";
+      msgResultMagic += " "+game.i18n.localize("CDE.HasCastASpell")+"["+mySkillSpecialUsedLabel+"]. ";
       const spellCast = game.i18n.localize(skillUsedLabel)+" ["+game.i18n.localize(aspectUsedLabel)+"/"+game.i18n.localize(mySpecialUsedLabel)+"] ";
       msgResultMagic += game.i18n.localize("CDE.MsgMagic1")+spellCast
       +game.i18n.localize("CDE.MsgMagic2")+rollDifficulty
@@ -835,10 +850,7 @@ export class CDECharacterSheet extends CDEActorSheet {
 
     let title = "";
     if (mySkillUsed != skill2BDefined) {
-      title = game.i18n.localize(mySkillSpecialUsedLabel);
-    };
-    if (mySpecialUsed == specialDefined) {
-      title += " ["+game.i18n.localize(mySpecialUsedLabel)+"]";
+      title = game.i18n.localize(mySkillLabUsedLabel);
     };
     if (myAspectUsed == mySkillUsed || myAspectUsed == aspect2BDefined || myAspectUsed == random) {
       title += " | ";
@@ -992,7 +1004,7 @@ export class CDECharacterSheet extends CDEActorSheet {
 async function _skillDiceRollDialog(myActor, template, myTitle, myDialogOptions, myNumberOfDice, myIsSpecial, myAspect, myBonus, myBonusAuspiciousDice, myTypeOfThrow) {
   // Render modal dialog
   template = template || 'systems/chroniquesdeletrange/templates/form/skill-dice-prompt.html';
-  let title = myTitle;
+  const title = myTitle;
   let dialogOptions = myDialogOptions;
   let isspecial = myIsSpecial;
   var dialogData = {
@@ -1052,7 +1064,7 @@ async function _skillDiceRollDialog(myActor, template, myTitle, myDialogOptions,
 async function _skillSpecialDiceRollDialog(myActor, template, myTitle, myDialogOptions, myNumberOfDice, myIsSpecial, myAspect, myBonus, myBonusAuspiciousDice, myTypeOfThrow) {
   // Render modal dialog
   template = template || 'systems/chroniquesdeletrange/templates/form/skill-special-dice-prompt.html';
-  let title = myTitle;
+  const title = myTitle;
   let dialogOptions = myDialogOptions;
   let isspecial = myIsSpecial;
   var dialogData = {
