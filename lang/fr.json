@@ -282,6 +282,11 @@
 
   "CDE.NextTimeGoToTheSettings": "Tout ceci est paramétrable dans les Préférences",
 
+
+  "CDE.OneDie": "dé",
+  "CDE.ManyDice": "dés",
+
+  
   "TYPES": {
     "Actor": {
       "character": "Fat si",

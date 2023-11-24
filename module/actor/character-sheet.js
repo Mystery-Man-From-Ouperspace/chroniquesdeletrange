@@ -494,7 +494,7 @@ export class CDECharacterSheet extends CDEActorSheet {
         numberDice = parseInt(dataBis.numberofdice);
         myAspectUsed = parseInt(dataBis.aspectskill);
         bonusDice = parseInt(dataBis.bonusmalusskill);
-        bonusAuspicious = dataBis.auspiciousdice;
+        bonusAuspicious = parseInt(dataBis.bonusauspiciousdice);
         mySpecialUsed = parseInt(dataBis.aspectspeciality);
         rollDifficulty = parseInt(dataBis.rolldifficulty);
         bonusSpecial = parseInt(dataBis.bonusmalusspeciality);
@@ -772,7 +772,7 @@ export class CDECharacterSheet extends CDEActorSheet {
         user: game.user.id,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         rollMode: 'blindroll'                 // Blind GM Roll
-      });
+      });As
       break;
       case 3: msg = await rModif.toMessage({
         user: game.user.id,
@@ -784,6 +784,19 @@ export class CDECharacterSheet extends CDEActorSheet {
     };
 
     console.log(message);
+
+    var msgBonusAuspiciousDice = "";
+    console.log("bonusAuspicious : ", bonusAuspicious);
+    if (bonusAuspicious >= 1) {
+      msgBonusAuspiciousDice += " ~ "+game.i18n.localize("CDE.BonusAuspiciousDice")+", ";
+      msgBonusAuspiciousDice += bonusAuspicious+" ";
+      if (bonusAuspicious <= 1) {
+        msgBonusAuspiciousDice += game.i18n.localize("CDE.OneDie")
+      } else {
+        msgBonusAuspiciousDice += game.i18n.localize("CDE.ManyDice")
+      };
+      console.log("msgBonusAuspiciousDice : ", msgBonusAuspiciousDice);
+    };
 
     if (game.modules.get("dice-so-nice")?.active) {
       await game.dice3d.waitFor3DAnimationByMessageID(msg.id);
@@ -817,37 +830,41 @@ export class CDECharacterSheet extends CDEActorSheet {
 
 
     switch ( typeOfThrow ) {
-      case 0: return (ChatMessage.create({
-        user: game.user.id,
-        // speaker: ChatMessage.getSpeaker({ token: this.actor }),
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        content: title+message,
-        rollMode: 'roll'                      // Public Roll
-      }));        
+      case 0:
+        return ChatMessage.create({
+          user: game.user.id,
+          // speaker: ChatMessage.getSpeaker({ token: this.actor }),
+          speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+          content: title+message+msgBonusAuspiciousDice,
+          rollMode: 'roll'                          // Public Roll
+        });
       break;
-      case 1: return (ChatMessage.create({
-        user: game.user.id,
-        // speaker: ChatMessage.getSpeaker({ token: this.actor }),
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        content: title+message,
-        rollMode: 'gmroll'                    // Private Roll
-      }));
+      case 1:
+        ChatMessage.create({
+          user: game.user.id,
+          // speaker: ChatMessage.getSpeaker({ token: this.actor }),
+          speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+          content: title+message+msgBonusAuspiciousDice,
+          rollMode: 'gmroll'                        // Private Roll
+        });
       break;
-      case 2: return (ChatMessage.create({
-        user: game.user.id,
-        // speaker: ChatMessage.getSpeaker({ token: this.actor }),
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        content: title+message,
-        rollMode: 'blindroll'                 // Blind GM Roll
-      }));
+      case 2:
+        ChatMessage.create({
+          user: game.user.id,
+          // speaker: ChatMessage.getSpeaker({ token: this.actor }),
+          speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+          content: title+message+msgBonusAuspiciousDice,
+          rollMode: 'blindroll'                       // Blind GM Roll
+        });
       break;
-      case 3: return (ChatMessage.create({
-        user: game.user.id,
-        // speaker: ChatMessage.getSpeaker({ token: this.actor }),
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        content: title+message,
-        rollMode: 'selfroll'                      // Self Roll
-      }));
+      case 3:
+        ChatMessage.create({
+          user: game.user.id,
+          // speaker: ChatMessage.getSpeaker({ token: this.actor }),
+          speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+          content: title+message+msgBonusAuspiciousDice,
+          rollMode: 'selfroll'                        // Self Roll
+        });
       break;
       default: console.log("C'est bizarre !");
     };

@@ -280,6 +280,11 @@
 
   "CDE.NextTimeGoToTheSettings": "All these are parametrable in the Settings",
 
+
+  "CDE.OneDie": "dado",
+  "CDE.ManyDice": "dados",
+
+  
   "TYPES": {
     "Actor": {
       "character": "Fat si",
