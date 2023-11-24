@@ -4,8 +4,8 @@ Copyright © 2023-2024 Antre Monde Éditions ;
 elles sont leurs propriétés (et celles de leurs auteurs respectifs)
 et elles ne peuvent ni être reproduites ni réutilisées en dehors de
 ce logiciel, sans leur autorisation.
-- loksyu_roue_d_initiative.jpg est une création originale de 'Darkwin'.
-- carte_hk.jpg est d'après wahaha2005 sous GNU Free Documentation License
+- 'loksyu_roue_d_initiative.jpg' est une création originale de 'Darkwin'.
+- 'carte_hk.jpg' est d'après wahaha2005 sous GNU Free Documentation License
 version 1.2 ou toute version ultérieure publiée par la Free Software Foundation,
 https://commons.wikimedia.org/wiki/File:Hong_Kong_18_Districts_Blank_Map.svg
 
