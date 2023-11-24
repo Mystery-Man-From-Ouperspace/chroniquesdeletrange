@@ -4,6 +4,7 @@ Copyright © 2023-2024 Antre Monde Éditions ;
 elles sont leurs propriétés (et celles de leurs auteurs respectifs)
 et elles ne peuvent ni être reproduites ni réutilisées en dehors de
 ce logiciel, sans leur autorisation.
+Roue+Loksyu est une création originale de 'Darkwin'.
 
 
 CODE / CODING:
