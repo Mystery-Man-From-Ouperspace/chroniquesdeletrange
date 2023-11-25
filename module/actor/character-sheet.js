@@ -565,6 +565,9 @@ export class CDECharacterSheet extends CDEActorSheet {
     };
     let total = numberDice + aspectDice + bonusDice;
     if (myIsSpecial) { total++; };
+    if (myTypeUsed == wiiMagicSpecial) {
+      total += bonusSpecial;
+    };
     console.log("total = ", total);
     let myRoll = "";
     myRoll += total+"d10";
@@ -828,8 +831,8 @@ export class CDECharacterSheet extends CDEActorSheet {
       console.log("msgResultMagic", msgResultMagic);
       const aspectLinked2Speciality = this.actor.system.aspect[aspectLibel[mySpecialUsed]].value;
       msgResultMagic += "…";
-      msgResultMagic += " "+game.i18n.localize("CDE.HasCastASpell")+"["+mySkillSpecialUsedLabel+"]. ";
-      const spellCast = game.i18n.localize(skillUsedLabel)+" ["+game.i18n.localize(aspectUsedLabel)+"/"+game.i18n.localize(mySpecialUsedLabel)+"] ";
+      msgResultMagic += game.i18n.localize("CDE.HasCastASpell")+"["+mySkillSpecialUsedLabel+"]. ";
+      const spellCast = game.i18n.localize(skillUsedLabel)+" [ "+game.i18n.localize(aspectUsedLabel)+"/"+game.i18n.localize(mySpecialUsedLabel)+"] ";
       msgResultMagic += game.i18n.localize("CDE.MsgMagic1")+spellCast
       +game.i18n.localize("CDE.MsgMagic2")+rollDifficulty
       +game.i18n.localize("CDE.MsgMagic3")+(aspectLinked2Speciality*rollDifficulty)
@@ -841,12 +844,10 @@ export class CDECharacterSheet extends CDEActorSheet {
       await game.dice3d.waitFor3DAnimationByMessageID(msg.id);
     };
 
-
-    aspectUsedLabel = aspectLabel[myAspectUsed];
+        aspectUsedLabel = aspectLabel[myAspectUsed];
     if (myTypeUsed == wiiMagicSpecial) {
       mySpecialUsedLabel = aspectLabel[mySpecialUsed];
     };
-    
 
     let title = "";
     if (mySkillUsed != skill2BDefined) {

@@ -239,14 +239,35 @@ text-align: left;
 
 /* concerne l'onglet ng hang */
 
-/*
-.chroniquesdeletrange .nghangpart0 {
-  width: 30%;
-  height: 40px;
-  margin-top: 15px;
-  float: left;
-  text-align: center;
-} */
+.chroniquesdeletrange .sheet-body .nghang_wrap {
+  background-image: url("");
+}  
+	
+.chroniquesdeletrange .sheet-body .nghang_wrap {
+    position: relative;
+    overflow: hidden;
+    padding: 16px;
+    border: no-border;
+}
+.chroniquesdeletrange .sheet-body .nghang_wrap .schema {
+    padding: 100px;
+    position: relative;
+    z-index: 2;
+}
+.chroniquesdeletrange .sheet-body .nghang_wrap img {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: auto;
+}
+.chroniquesdeletrange .sheet-body .nghang_wrap .logo {
+  z-index: 4;
+  width: 21%;
+  margin-top: -30px;
+  margin-left: -22px;
+}
+
 
 .chroniquesdeletrange .concept {
   width: 100%;
@@ -256,76 +277,88 @@ text-align: left;
   text-align: center;
 }
 
-
 .chroniquesdeletrange .concept input {
   width: 325px;
   height: 28px;
 }
 
 .chroniquesdeletrange .nghangpart1 {
-  margin-top: -80px;
+  margin-top: -65px;
+  margin-left: 267px;
 }
-
-
+.chroniquesdeletrange .nghangpart1 .fire .click2 {
+  width: 30px;
+  margin-top: 86px;
+  margin-left: 320px;
+}
 .chroniquesdeletrange .nghangpart1 input {
   width: 40px;
   height: 28px;
-  margin-top: 15px;
-  margin-left: 257px;
   font-size: 1.5em;
   text-align: center;
+}
+
+.chroniquesdeletrange .nghangpart2 {
+  margin-top: 113px;
+  margin-left: 67px;
+}
+.chroniquesdeletrange .nghangpart2 .wood .click2 {
+  width: 30px;
+  margin-top: 231px;
+  margin-left: 123px;
 }
 .chroniquesdeletrange .nghangpart2 input {
   width: 40px;
   height: 28px;
-  margin-top: 113px;
-  margin-left: 67px;
   font-size: 1.5em;
   text-align: center;
 }
-/*
-.chroniquesdeletrange .nghangpart3 input {
-  width: 40px;
-  height: 28px;
-}
-*/
 
 .chroniquesdeletrange .nghangpart4 {
-  margin-top: -15px;
+  margin-top: -23px;
+  margin-left: 467px;
 }
+.chroniquesdeletrange .nghangpart4 .earth .click2 {
+  width: 30px;
+  margin-top: 235px;
+  margin-left: 520px;
 
+}
 .chroniquesdeletrange .nghangpart4 input {
   width: 40px;
   height: 28px;
-  margin-top: -135px;
-  margin-left: 455px;
   font-size: 1.5em;
   text-align: center;
+}
+
+.chroniquesdeletrange .nghangpart5 {
+  margin-top: 175px;
+  margin-left: 120px;
+}
+.chroniquesdeletrange .nghangpart5 .water .click2 {
+  width: 30px;
+  margin-top: 440px;
+  margin-left: 176px;
 }
 .chroniquesdeletrange .nghangpart5 input {
   width: 40px;
   height: 28px;
-  margin-top: 170px;
-  margin-left: 120px;
   font-size: 1.5em;
   text-align: center;
 }
-/*
-.chroniquesdeletrange .nghangpart6 input {
-  width: 40px;
-  height: 28px;
-}
-*/
 
 .chroniquesdeletrange .nghangpart7 {
-  margin-top: -19px;
+  margin-top: -27px;
+  margin-left: 403px;
 }
-
+.chroniquesdeletrange .nghangpart7 .metal .click2 {
+  width: 30px;
+  margin-top: 440px;
+  margin-left: 460px;
+}
 .chroniquesdeletrange .nghangpart7 input {
   width: 40px;
   height: 28px;
-  margin-top: -67px;
-  margin-left: 393px;
   font-size: 1.5em;
   text-align: center;
 }
@@ -519,36 +552,7 @@ text-align: left;
 }
 
 
-/* concerne l'onglet ng hang */
 
-.chroniquesdeletrange .sheet-body .nghang_wrap {
-  background-image: url("");
-}  
-	
-.chroniquesdeletrange .sheet-body .nghang_wrap {
-    position: relative;
-    overflow: hidden;
-    padding: 16px;
-    border: no-border;
-}
-.chroniquesdeletrange .sheet-body .nghang_wrap .schema {
-    padding: 100px;
-    position: relative;
-    z-index: 2;
-}
-.chroniquesdeletrange .sheet-body .nghang_wrap img {
-    position: absolute;
-    left: 0;
-    top: 0px;
-    width: 100%;
-    height: auto;
-}
-.chroniquesdeletrange .sheet-body .nghang_wrap .logo {
-  z-index: 4;
-  width: 21%;
-  margin-top: -30px;
-  margin-left: -22px;
-}
 
 
 /* concerne la fiche loksyu-sheet */

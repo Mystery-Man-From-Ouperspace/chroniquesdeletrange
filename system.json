@@ -1,6 +1,6 @@
 {
   "id": "chroniquesdeletrange",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "title": "Les Chroniques de l'Étrange",
   "url": "https://chroniques-etrange-no.fr/download/foundry/",
   "description": "Game system for Les Chroniques de l'Étrange.",
@@ -17,7 +17,7 @@
     {
       "name": "aides-pour-les-joueuses",
       "label": "FR - Aides pour les Joueuses",
-      "system": "leschroniquesdeletrange",
+      "system": "chroniquesdeletrange",
       "path": "packs/aides-pour-les-joueuses",
       "type": "JournalEntry",
       "ownership": {
@@ -29,7 +29,7 @@
     {
       "name": "capacites-surnaturelles",
       "label": "FR - Capacités surnaturelles",
-      "system": "leschroniquesdeletrange",
+      "system": "chroniquesdeletrange",
       "path": "packs/capacites-surnaturelles",
       "type": "Item",
       "ownership": {
@@ -41,7 +41,7 @@
     {
       "name": "des-exemples-de-sanhei",
       "label": "FR - Des exemples de Sanhei",
-      "system": "leschroniquesdeletrange",
+      "system": "chroniquesdeletrange",
       "path": "packs/des-exemples-de-sanhei",
       "type": "Item",
       "ownership": {
@@ -53,7 +53,7 @@
     {
       "name": "fat-si-pre-tires",
       "label": "FR - Fat si pré-tirés",
-      "system": "leschroniquesdeletrange",
+      "system": "chroniquesdeletrange",
       "path": "packs/fat-si-pre-tires",
       "type": "Actor",
       "ownership": {
@@ -65,7 +65,7 @@
     {
       "name": "les-arts-martiaux",
       "label": "FR - Les Arts martiaux",
-      "system": "leschroniquesdeletrange",
+      "system": "chroniquesdeletrange",
       "path": "packs/les-arts-martiaux",
       "type": "Item",
       "ownership": {
@@ -77,7 +77,7 @@
     {
       "name": "les-sortileges",
       "label": "FR - Les Sortilèges",
-      "system": "leschroniquesdeletrange",
+      "system": "chroniquesdeletrange",
       "path": "packs/les-sortileges",
       "type": "Item",
       "ownership": {
@@ -89,9 +89,21 @@
     {
       "name": "scenes-clefs",
       "label": "FR - Scènes clefs",
-      "system": "leschroniquesdeletrange",
+      "system": "chroniquesdeletrange",
       "path": "packs/scenes-clefs",
       "type": "Scene",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "musiques-mathieu-verdier",
+      "label": "Musiques Mathieu Verdier",
+      "system": "chroniquesdeletrange",
+      "path": "packs/musiques-mathieu-verdier",
+      "type": "Playlist",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -126,5 +138,5 @@
   "primaryTokenAttribute": "heiyang",
   "secondaryTokenAttribute": "heiyin",
   "manifest": "https://chroniques-etrange-no.fr/download/foundry/system.json",
-  "download": "https://chroniques-etrange-no.fr/download/foundry/release-006.zip"
+  "download": "https://chroniques-etrange-no.fr/download/foundry/release-008.zip"
 }
