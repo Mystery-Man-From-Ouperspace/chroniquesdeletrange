@@ -587,7 +587,7 @@ text-align: left;
 }
 
 
-.chroniquesdeletrange .sheet .loksyu {
+.chroniquesdeletrange.sheet.actor.loksyu {
   min-width: 700px; /* 560px; */
   max-width: 700px;
   min-height: 420px;
@@ -602,9 +602,9 @@ text-align: left;
   z-index: 4;
 } */
 
-.chroniquesdeletrange .sheet-body .loksyu .wood-yang
+.chroniquesdeletrange .sheet-body .loksyu div.wood-yang
 {
-  margin-top: 7px;
+  margin-top: 5px;
   margin-left : 123px;
   width: 50px;
   text-align: center;
@@ -613,8 +613,8 @@ text-align: left;
 
 .chroniquesdeletrange .sheet-body .loksyu .wood-yin
 {
-  margin-top: 22px;
-  margin-left : 295px;
+  margin-top: 12px;
+  margin-left : 285px;
   width: 50px;
   text-align: center;
   font-size: 1.5em;
@@ -623,7 +623,7 @@ text-align: left;
 .chroniquesdeletrange .sheet-body .loksyu .metal-yang
 {
   margin-top: 20px;
-  margin-left : 35px;
+  margin-left : 25px;
   width: 50px;
   text-align: center;
   font-size: 1.5em;
@@ -631,8 +631,8 @@ text-align: left;
 
 .chroniquesdeletrange .sheet-body .loksyu .fire-yang
 {
-  margin-top: -41px;
-  margin-left: 440px;
+  margin-top: -38px;
+  margin-left: 420px;
   width: 50px;
   text-align: center;
   font-size: 1.5em;
@@ -640,7 +640,7 @@ text-align: left;
 
 .chroniquesdeletrange .sheet-body .loksyu .earth-yang
 {
-  margin-top: 41px;
+  margin-top: 45px;
   margin-left: 123px;
   width: 50px;
   text-align: center;
@@ -649,8 +649,8 @@ text-align: left;
 
 .chroniquesdeletrange .sheet-body .loksyu .earth-yin
 {
-  margin-top: 22px;
-  margin-left: 295px;
+  margin-top: 12px;
+  margin-left: 285px;
   width: 50px;
   text-align: center;
   font-size: 1.5em;
@@ -668,7 +668,7 @@ text-align: left;
 .chroniquesdeletrange .sheet-body .loksyu .fire-yin
 {
   margin-top: -40px;
-  margin-left: 390px;
+  margin-left: 380px;
   width: 50px;
   text-align: center;
   font-size: 1.5em;
@@ -676,7 +676,7 @@ text-align: left;
 
 .chroniquesdeletrange .sheet-body .loksyu .water-yang
 {
-  margin-top: 36px;
+  margin-top: 42px;
   margin-left : 125px;
   width: 50px;
   text-align: center;
@@ -685,8 +685,8 @@ text-align: left;
 
 .chroniquesdeletrange .sheet-body .loksyu .water-yin
 {
-  margin-top: 22px;
-  margin-left : 295px;
+  margin-top: 10px;
+  margin-left : 285px;
   width: 50px;
   text-align: center;
   font-size: 1.5em;
@@ -712,6 +712,13 @@ text-align: left;
   width: 3%;
   text-align: center;
 }
+.chroniquesdeletrange.sheet.actor.npc {
+  min-width: 700px; /* 560px; */
+  max-width: 700px;
+  min-height: 420px;
+  max-height: 850px;
+}
+
 .chroniquesdeletrange .sheet-body .aptitudes table tr td.image2 {
   margin-top: 0px;
   width: 5%;

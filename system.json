@@ -1,6 +1,6 @@
 {
   "id": "chroniquesdeletrange",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "title": "Les Chroniques de l'Étrange",
   "url": "https://chroniques-etrange-no.fr/download/foundry/",
   "description": "Game system for Les Chroniques de l'Étrange.",
@@ -138,5 +138,5 @@
   "primaryTokenAttribute": "heiyang",
   "secondaryTokenAttribute": "heiyin",
   "manifest": "https://chroniques-etrange-no.fr/download/foundry/system.json",
-  "download": "https://chroniques-etrange-no.fr/download/foundry/release-010.zip"
+  "download": "https://chroniques-etrange-no.fr/download/foundry/release-011.zip"
 }
