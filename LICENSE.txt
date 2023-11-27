@@ -1,20 +1,27 @@
-- Exceptées les peties images N&B de d10 de l'interface, les images des
-fichiers du dossier images utilisées dans ce logiciel sont :
+IMAGES
+- Exceptées les peties icônes N&B de d10 et celles de game-icon.org,
+les images des fichiers du dossier images utilisées dans ce logiciel sont :
 Copyright © 2023-2024 Antre Monde Éditions ;
 elles sont leurs propriétés (et celles de leurs auteurs respectifs)
 et elles ne peuvent ni être reproduites ni réutilisées en dehors de
 ce logiciel, sans leur autorisation.
-- Les musiques de Mathieu Verdier sont librement téléchargeables su le site
-d'Antre Monde Éditions : https://antre-monde.com/les-chroniques-de-letrengae/
-- 'loksyu_roue_d_initiative.jpg' est une création originale de 'Darkwin'.
-- 'carte_hk.jpg' est d'après wahaha2005 sous GNU Free Documentation License
+- les icônes rondes, blanches sur fond noir, sont issues du site game-icons.org
+et sont sous licence https://creativecommons.org/licenses/by/3.0/
+Vous pouvez retrouver le nom de leurs auteurs respectifs sur ce site.
+- 'carte_hk.jpg', d'après 'wahaha2005', est sous GNU Free Documentation License
 version 1.2 ou toute version ultérieure publiée par la Free Software Foundation,
 https://commons.wikimedia.org/wiki/File:Hong_Kong_18_Districts_Blank_Map.svg
+- 'loksyu_roue_d_initiative.jpg' est une création originale de 'Darkwin'.
+
+- Les musiques de Mathieu Verdier, composées spécialement pour les CdE,
+à l'occasion du financement participatif de ce jeu de rôle,
+sont librement téléchargeables sur le site d'Antre Monde Éditions :
+https://antre-monde.com/les-chroniques-de-letrengae/
 
 
 CODE / CODING:
 - David R.D. 'Mystery Man From Outerspace' Bercovici
-- Christophe 'Kristov / Qaw' Laudon
+- Christophe 'Kristov / Qaw' Laudon (il a grandement collaboré !)
 
 Avec l'aide précieuse de / with precious help from
 (sur / on "La Fonderie" Discord - Many thanks to them!):
@@ -27,7 +34,7 @@ COMPENDIUM:
 Basés sur / based on:
 Antre Monde Éditions' 'Les Chroniques de l'étrange' RPG books by:
 - Romain 'Rom1' d'Huissier
-- Cédric Lameire
+- Cédric 'JTR the Hobbit' Lameire
 
 Saisis par / Entered by:
 David R.D. 'Mystery Man From Outerspace' Bercovici
