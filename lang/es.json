@@ -291,11 +291,15 @@
   "CDE.MsgMagic4": ", si el hechizo se lanza con éxito.",
 
 
+  "CDE.TinJiName": "Nombre de la Tin Ji",
+  "CDE.TinJi2": "Tin Ji",
+
   
   "TYPES": {
     "Actor": {
       "character": "Fat si",
       "npc": "Criatura",
+      "tinji": "Tin Ji",
       "loksyu": "Loksyu"
     },
     "Item": {

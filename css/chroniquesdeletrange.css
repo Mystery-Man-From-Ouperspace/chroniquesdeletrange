@@ -554,6 +554,55 @@ text-align: left;
 
 
 
+/* concerne la fiche tinji-sheet */
+
+.chroniquesdeletrange .sheet-body .tinji_wrap {
+  background-image: url("");
+}  
+	
+.chroniquesdeletrange .sheet-body .tinji_wrap {
+    position: relative;
+    overflow: hidden;
+    padding: 16px;
+    border: no-border;
+}
+.chroniquesdeletrange .sheet-body .tinji_wrap .schema {
+    padding: 100px;
+    position: relative;
+    z-index: 2;
+}
+.chroniquesdeletrange .sheet-body .tinji_wrap img {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    height: auto;
+}
+.chroniquesdeletrange .sheet-body .tinji_wrap .logo {
+  z-index: 4;
+  width: 21%;
+  margin-top: -30px;
+  margin-left: -22px;
+}
+
+.chroniquesdeletrange.sheet.actor.tinji {
+  min-width: 700px; /* 560px; */
+  max-width: 700px;
+  min-height: 420px;
+  max-height: 850px;
+}
+
+.chroniquesdeletrange .sheet-body .tinji .tinji-value
+{
+  width: 50px;
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: -35px;
+  margin-left:200px;
+}
+
+
+
 
 /* concerne la fiche loksyu-sheet */
 

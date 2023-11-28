@@ -1,0 +1,58 @@
+<form class="flexcol {{cssClass}}" autocomplete="off">
+  {{log 'loksyu-sheet' this}} {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <table>
+      <tr>
+        <td>
+          <!-- <img class="logo-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" height="300" width="200" /> -->
+          <img class="logo-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+        </td>
+        <td>
+          <div class="header-fields">
+            <table>
+              <tr>
+                <td>
+                  <h1 class="charname">
+                    <input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'CDE.TinJiName' }}" />
+                  </h1>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="tinji">{{ localize "CDE.TinJi2" }}</a>
+    <a class="item" data-tab="description">{{ localize "CDE.Description" }}</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    {{!-- TinJi Tab --}}
+    <div class="tab tinji tinji_wrap" data-group="primary" data-tab="tinji">
+      <div class="schema">
+        <div>
+          <img
+            class="logo"
+            src="systems/chroniquesdeletrange/images/logo_jeu.png"
+            title="奇闻异事 ● Hong Kong – Les Chroniques de l'&Eacute;trange ● R.d′Huissier & C.Lameire ● Antre Monde &Eacute;ditions"
+            alt="Logo"
+          />
+        </div>
+        <div class="tinji-value">
+          <input type="number" name="system.value" value="{{systemData.value}}" title="{{ localize 'CDE.TinJi2' }}" />
+        </div>
+      </div>
+      <img src="systems/chroniquesdeletrange/images/tinji.webp" title="Tin Ji" alt="Tin Ji" />
+    </div>
+
+    {{!-- Description Tab --}}
+    <div class="tab description" data-group="primary" data-tab="description">
+      {{editor descriptionHTML target="system.description" button=true editable=editable engine="prosemirror"}}
+    </div>
+  </section>
+</form>

@@ -291,11 +291,15 @@
   "CDE.MsgMagic4": ", if the spell is cast successfully.",
 
 
+  "CDE.TinJiName": "Tin Ji Name",
+  "CDE.TinJi2": "Tin Ji",
+
 
   "TYPES": {
     "Actor": {
       "character": "Fat si",
       "npc": "Creature",
+      "tinji": "Tin Ji",
       "loksyu": "Loksyu"
     },
     "Item": {

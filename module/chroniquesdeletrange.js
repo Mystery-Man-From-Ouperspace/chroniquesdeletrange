@@ -3,6 +3,7 @@ import { CDEItem } from "./item/item.js";
 
 import { CDECharacterSheet } from "./actor/character-sheet.js";
 import { CDEPNJSheet } from "./actor/npc-sheet.js";
+import { CDETinJiSheet } from "./actor/tinji-sheet.js";
 import { CDELoksyuSheet } from "./actor/loksyu-sheet.js";
 import { CDEItemSheet } from "./item/item-sheet.js";
 import { CDEKungFuSheet } from "./item/kungfu-sheet.js";
@@ -78,6 +79,7 @@ Hooks.once("init", async function () {
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("chroniquesdeletrange", CDECharacterSheet, { types: ["character"], makeDefault: true }); // ligne modifiée selon directives de LeRatierBretonnien
   Actors.registerSheet("chroniquesdeletrange", CDEPNJSheet, { types: ["npc"], makeDefault: true });
+  Actors.registerSheet("chroniquesdeletrange", CDETinJiSheet, { types: ["tinji"], makeDefault: true });
   Actors.registerSheet("chroniquesdeletrange", CDELoksyuSheet, { types: ["loksyu"], makeDefault: true });
 
   Items.unregisterSheet("core", ItemSheet);

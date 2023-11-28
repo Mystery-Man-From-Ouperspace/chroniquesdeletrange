@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character", "npc", "loksyu"],
+    "types": ["character", "npc", "tinji", "loksyu"],
     "htmlFields": ["description"],
 
     "character": {
@@ -359,6 +359,11 @@
         "calcul": 0,
         "note": ""
       },
+      "description": ""
+    },
+
+    "tinji": {
+      "value": 0,
       "description": ""
     },
 

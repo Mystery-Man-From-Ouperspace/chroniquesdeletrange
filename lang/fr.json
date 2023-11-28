@@ -293,11 +293,16 @@
   "CDE.MsgMagic4": ", si toutefois le sort est lancé avec succès.",
 
 
+  "CDE.TinJiName": "Nom de la Tin Ji",
+  "CDE.TinJi2": "Tin Ji",
+
+
 
   "TYPES": {
     "Actor": {
       "character": "Fat si",
       "npc": "Créature",
+      "tinji": "Tin Ji",
       "loksyu": "Loksyu"
     },
     "Item": {
