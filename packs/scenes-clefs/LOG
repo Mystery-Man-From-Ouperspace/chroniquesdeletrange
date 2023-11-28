@@ -1,24 +1,8 @@
-2023/11/24-09:02:32.232 26f4 Recovering log #88
-2023/11/24-09:02:32.233 26f4 Level-0 table #90: started
-2023/11/24-09:02:32.254 26f4 Level-0 table #90: 1147 bytes OK
-2023/11/24-09:02:32.264 26f4 Delete type=0 #88
-2023/11/24-09:02:32.265 26f4 Delete type=3 #87
-2023/11/24-09:54:39.292 1f14 Level-0 table #93: started
-2023/11/24-09:54:39.380 1f14 Level-0 table #93: 1317 bytes OK
-2023/11/24-09:54:39.383 1f14 Delete type=0 #91
-2023/11/24-09:54:39.390 1f14 Manual compaction at level-0 from '!scenes!2fzbJUlM3Td5S6J3' @ 72057594037927935 : 1 .. '!scenes!jWCsG42Jwo14dMLz' @ 0 : 0; will stop at '!scenes!2fzbJUlM3Td5S6J3' @ 15 : 1
-2023/11/24-09:54:39.391 1f14 Compacting 1@0 + 0@1 files
-2023/11/24-09:54:39.410 1f14 Generated table #94@0: 1 keys, 1071 bytes
-2023/11/24-09:54:39.411 1f14 Compacted 1@0 + 0@1 files => 1071 bytes
-2023/11/24-09:54:39.413 1f14 compacted to: files[ 0 2 1 0 0 0 0 ]
-2023/11/24-09:54:39.413 1f14 Delete type=2 #90
-2023/11/24-09:54:39.414 1f14 Manual compaction at level-0 from '!scenes!2fzbJUlM3Td5S6J3' @ 15 : 1 .. '!scenes!jWCsG42Jwo14dMLz' @ 0 : 0; will stop at (end)
-2023/11/24-09:54:39.414 1f14 Manual compaction at level-1 from '!scenes!2fzbJUlM3Td5S6J3' @ 72057594037927935 : 1 .. '!scenes!jWCsG42Jwo14dMLz' @ 0 : 0; will stop at '!scenes!V4QYbdq2YFr24Gs3' @ 19 : 1
-2023/11/24-09:54:39.414 1f14 Compacting 2@1 + 1@2 files
-2023/11/24-09:54:39.441 1f14 Generated table #95@1: 8 keys, 2922 bytes
-2023/11/24-09:54:39.441 1f14 Compacted 2@1 + 1@2 files => 2922 bytes
-2023/11/24-09:54:39.443 1f14 compacted to: files[ 0 0 1 0 0 0 0 ]
-2023/11/24-09:54:39.444 1f14 Delete type=2 #10
-2023/11/24-09:54:39.445 1f14 Delete type=2 #93
-2023/11/24-09:54:39.445 1f14 Delete type=2 #94
-2023/11/24-09:54:39.455 1f14 Manual compaction at level-1 from '!scenes!V4QYbdq2YFr24Gs3' @ 19 : 1 .. '!scenes!jWCsG42Jwo14dMLz' @ 0 : 0; will stop at (end)
+2023/11/28-15:07:44.351 4828 Recovering log #885
+2023/11/28-15:07:44.364 4828 Delete type=0 #885
+2023/11/28-15:07:44.364 4828 Delete type=3 #883
+2023/11/28-15:08:21.890 492c Level-0 table #891: started
+2023/11/28-15:08:21.890 492c Level-0 table #891: 0 bytes OK
+2023/11/28-15:08:21.893 492c Delete type=0 #889
+2023/11/28-15:08:21.897 492c Manual compaction at level-0 from '!scenes!2fzbJUlM3Td5S6J3' @ 72057594037927935 : 1 .. '!scenes!jWCsG42Jwo14dMLz' @ 0 : 0; will stop at (end)
+2023/11/28-15:08:21.897 492c Manual compaction at level-1 from '!scenes!2fzbJUlM3Td5S6J3' @ 72057594037927935 : 1 .. '!scenes!jWCsG42Jwo14dMLz' @ 0 : 0; will stop at (end)
