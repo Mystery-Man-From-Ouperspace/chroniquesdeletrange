@@ -13,11 +13,12 @@ version 1.2 ou toute version ultérieure publiée par la Free Software Foundatio
 https://commons.wikimedia.org/wiki/File:Hong_Kong_18_Districts_Blank_Map.svg
 - 'loksyu_roue_d_initiative.jpg' est une création originale de 'Darkwin'.
 
+
+MUSIQUES / MUSICS: MODULE À PART À PARTIR DE LA v. 1.0.0
 - Les musiques de Mathieu Verdier, composées spécialement pour les CdE,
 à l'occasion du financement participatif de ce jeu de rôle,
 sont librement téléchargeables sur le site d'Antre Monde Éditions :
 https://antre-monde.com/les-chroniques-de-letrengae/
-MODULE À PART À PARTIR DE LA v. 1.0.0
 
 
 CODE / CODING:
