@@ -32,7 +32,7 @@ Avec l'aide précieuse de / with precious help from
 (et d'autres / and others)
 
 
-COMPENDIUM: MODULES À PART À PARTIR DE LA v. 1.0.0
+COMPENDIUMS: MODULES À PART À PARTIR DE LA v. 1.0.0
 Basés sur / based on:
 Antre Monde Éditions' 'Les Chroniques de l'étrange' RPG books by:
 - Romain 'Rom1' d'Huissier
@@ -44,10 +44,10 @@ David R.D. 'Mystery Man From Outerspace' Bercovici
 
 MODULES: MODULES À PART À PARTIR DE LA v. 1.0.0
 Les Compendiums sont téléchargeables depuis deux sources :
-- Compendiums payants :
-https://preview.drivethrurpg.com/fr/publisher/15811/antre-monde-editions
 - Compendiums gratuits :
 https://antre-monde.com/les-chroniques-de-letrengae/
+- Compendiums payants :
+https://preview.drivethrurpg.com/fr/publisher/15811/antre-monde-editions
 
 
 
