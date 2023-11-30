@@ -17,6 +17,7 @@ https://commons.wikimedia.org/wiki/File:Hong_Kong_18_Districts_Blank_Map.svg
 à l'occasion du financement participatif de ce jeu de rôle,
 sont librement téléchargeables sur le site d'Antre Monde Éditions :
 https://antre-monde.com/les-chroniques-de-letrengae/
+MODULE À PART À PARTIR DE LA v. 1.0.0
 
 
 CODE / CODING:
@@ -30,7 +31,7 @@ Avec l'aide précieuse de / with precious help from
 (et d'autres / and others)
 
 
-COMPENDIUM:
+COMPENDIUM: MODULES À PART À PARTIR DE LA v. 1.0.0
 Basés sur / based on:
 Antre Monde Éditions' 'Les Chroniques de l'étrange' RPG books by:
 - Romain 'Rom1' d'Huissier
