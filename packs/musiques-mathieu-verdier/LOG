@@ -1,8 +1,0 @@
-2023/11/25-14:00:11.850 2eb0 Recovering log #34
-2023/11/25-14:00:11.861 2eb0 Delete type=0 #34
-2023/11/25-14:00:11.861 2eb0 Delete type=3 #32
-2023/11/25-14:01:57.304 3e2c Level-0 table #39: started
-2023/11/25-14:01:57.304 3e2c Level-0 table #39: 0 bytes OK
-2023/11/25-14:01:57.306 3e2c Delete type=0 #37
-2023/11/25-14:01:57.307 3e2c Manual compaction at level-0 from '!playlists!tsXHDAV9UpYlsoSu' @ 72057594037927935 : 1 .. '!playlists.sounds!tsXHDAV9UpYlsoSu.wIff36xZfkOdktiH' @ 0 : 0; will stop at (end)
-2023/11/25-14:01:57.307 3e2c Manual compaction at level-1 from '!playlists!tsXHDAV9UpYlsoSu' @ 72057594037927935 : 1 .. '!playlists.sounds!tsXHDAV9UpYlsoSu.wIff36xZfkOdktiH' @ 0 : 0; will stop at (end)

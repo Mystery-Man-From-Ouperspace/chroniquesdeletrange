@@ -27,83 +27,11 @@
       "flags": {}
     },
     {
-      "name": "capacites-surnaturelles",
-      "label": "FR - Capacités surnaturelles",
+      "name": "telecharger-compendiums",
+      "label": "Télécharger Compendiums",
       "system": "chroniquesdeletrange",
-      "path": "packs/capacites-surnaturelles",
-      "type": "Item",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "des-exemples-de-sanhei",
-      "label": "FR - Des exemples de Sanhei",
-      "system": "chroniquesdeletrange",
-      "path": "packs/des-exemples-de-sanhei",
-      "type": "Item",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "fat-si-pre-tires",
-      "label": "FR - Fat si pré-tirés",
-      "system": "chroniquesdeletrange",
-      "path": "packs/fat-si-pre-tires",
-      "type": "Actor",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "les-arts-martiaux",
-      "label": "FR - Les Arts martiaux",
-      "system": "chroniquesdeletrange",
-      "path": "packs/les-arts-martiaux",
-      "type": "Item",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "les-sortileges",
-      "label": "FR - Les Sortilèges",
-      "system": "chroniquesdeletrange",
-      "path": "packs/les-sortileges",
-      "type": "Item",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "scenes-clefs",
-      "label": "FR - Scènes clefs",
-      "system": "chroniquesdeletrange",
-      "path": "packs/scenes-clefs",
-      "type": "Scene",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
-      },
-      "flags": {}
-    },
-    {
-      "name": "musiques-mathieu-verdier",
-      "label": "Musiques Mathieu Verdier",
-      "system": "chroniquesdeletrange",
-      "path": "packs/musiques-mathieu-verdier",
-      "type": "Playlist",
+      "path": "packs/telecharger-compendiums",
+      "type": "JournalEntry",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"

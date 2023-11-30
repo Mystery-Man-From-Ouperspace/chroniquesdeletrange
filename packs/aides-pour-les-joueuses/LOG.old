@@ -1,8 +1,15 @@
-2023/11/21-11:39:21.866 243c Recovering log #2579
-2023/11/21-11:39:21.874 243c Delete type=0 #2579
-2023/11/21-11:39:21.874 243c Delete type=3 #2577
-2023/11/21-11:48:08.990 f84 Level-0 table #2584: started
-2023/11/21-11:48:08.990 f84 Level-0 table #2584: 0 bytes OK
-2023/11/21-11:48:08.993 f84 Delete type=0 #2582
-2023/11/21-11:48:09.000 f84 Manual compaction at level-0 from '!journal!0lxwWrzKsdTBQhH0' @ 72057594037927935 : 1 .. '!journal.pages!wgSyae4GTJDkmBOm.6Ql0lgquUCTrMyTZ' @ 0 : 0; will stop at (end)
-2023/11/21-11:48:09.004 f84 Manual compaction at level-1 from '!journal!0lxwWrzKsdTBQhH0' @ 72057594037927935 : 1 .. '!journal.pages!wgSyae4GTJDkmBOm.6Ql0lgquUCTrMyTZ' @ 0 : 0; will stop at (end)
+2023/11/30-11:45:39.369 44e8 Recovering log #3563
+2023/11/30-11:45:39.379 44e8 Delete type=0 #3563
+2023/11/30-11:45:39.379 44e8 Delete type=3 #3561
+2023/11/30-12:39:32.013 48e8 Level-0 table #3569: started
+2023/11/30-12:39:32.041 48e8 Level-0 table #3569: 49443 bytes OK
+2023/11/30-12:39:32.045 48e8 Delete type=0 #3567
+2023/11/30-12:39:32.085 48e8 Manual compaction at level-0 from '!journal!0lxwWrzKsdTBQhH0' @ 72057594037927935 : 1 .. '!journal.pages!wgSyae4GTJDkmBOm.6Ql0lgquUCTrMyTZ' @ 0 : 0; will stop at (end)
+2023/11/30-12:39:32.086 48e8 Manual compaction at level-1 from '!journal!0lxwWrzKsdTBQhH0' @ 72057594037927935 : 1 .. '!journal.pages!wgSyae4GTJDkmBOm.6Ql0lgquUCTrMyTZ' @ 0 : 0; will stop at '!journal.pages!XuvkHpt0JY8qNdn6.OOev7kj2KoMOGoMD' @ 412 : 1
+2023/11/30-12:39:32.087 48e8 Compacting 1@1 + 1@2 files
+2023/11/30-12:39:32.095 48e8 Generated table #3570@1: 18 keys, 19072 bytes
+2023/11/30-12:39:32.095 48e8 Compacted 1@1 + 1@2 files => 19072 bytes
+2023/11/30-12:39:32.097 48e8 compacted to: files[ 0 0 1 0 0 0 0 ]
+2023/11/30-12:39:32.098 48e8 Delete type=2 #3565
+2023/11/30-12:39:32.098 48e8 Delete type=2 #3569
+2023/11/30-12:39:32.105 48e8 Manual compaction at level-1 from '!journal.pages!XuvkHpt0JY8qNdn6.OOev7kj2KoMOGoMD' @ 412 : 1 .. '!journal.pages!wgSyae4GTJDkmBOm.6Ql0lgquUCTrMyTZ' @ 0 : 0; will stop at (end)

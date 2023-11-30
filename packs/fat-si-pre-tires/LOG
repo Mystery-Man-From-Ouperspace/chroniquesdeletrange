@@ -1,8 +1,0 @@
-2023/11/27-08:26:21.934 cb4 Recovering log #3505
-2023/11/27-08:26:21.943 cb4 Delete type=0 #3505
-2023/11/27-08:26:21.943 cb4 Delete type=3 #3503
-2023/11/27-08:27:40.991 1efc Level-0 table #3511: started
-2023/11/27-08:27:40.991 1efc Level-0 table #3511: 0 bytes OK
-2023/11/27-08:27:40.993 1efc Delete type=0 #3509
-2023/11/27-08:27:41.002 1efc Manual compaction at level-0 from '!actors!0V1Hew2rnXJtjNdw' @ 72057594037927935 : 1 .. '!actors.items!zinDgIpnL2jg8Pdq.uV1OXi98IKwp2rdy' @ 0 : 0; will stop at (end)
-2023/11/27-08:27:41.002 1efc Manual compaction at level-1 from '!actors!0V1Hew2rnXJtjNdw' @ 72057594037927935 : 1 .. '!actors.items!zinDgIpnL2jg8Pdq.uV1OXi98IKwp2rdy' @ 0 : 0; will stop at (end)
