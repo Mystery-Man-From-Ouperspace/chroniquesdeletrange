@@ -42,6 +42,14 @@ Saisis par / Entered by:
 David R.D. 'Mystery Man From Outerspace' Bercovici
 
 
+MODULES: MODULES À PART À PARTIR DE LA v. 1.0.0
+Les Compendiums sont téléchargeables depuis deux sources :
+- Compendiums payants :
+https://preview.drivethrurpg.com/fr/publisher/15811/antre-monde-editions
+- Compendiums gratuits :
+https://antre-monde.com/les-chroniques-de-letrengae/
+
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
