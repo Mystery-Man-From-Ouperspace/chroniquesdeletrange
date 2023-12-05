@@ -63,8 +63,8 @@
   "background": "/systems/chroniquesdeletrange/images/background/accueil.jpg",
   "gridDistance": 5,
   "gridUnits": "m",
-  "primaryTokenAttribute": "heiyang",
-  "secondaryTokenAttribute": "heiyin",
+  "primaryTokenAttribute": "threetreasures.heiyang",
+  "secondaryTokenAttribute": "threetreasures.heiyin",
   "manifest": "https://chroniques-etrange-no.fr/download/foundry/system.json",
   "download": "https://chroniques-etrange-no.fr/download/foundry/release-100.zip"
 }
