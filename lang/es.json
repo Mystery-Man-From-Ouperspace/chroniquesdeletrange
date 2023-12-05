@@ -260,16 +260,16 @@
   "CDE.Reference": "Referencia",
 
   "CDE.Error0": "No se puede continuar: el número total de dados que se van a lanzar es inferior a 1.",
-  "CDE.Error1": "No se puede continuar: no posee esta Habilidad.",
-  "CDE.Error2": "No se puede continuar: no posee ninguna Especialidad en esta Habilidad.",
-  "CDE.Error3": "No se puede continuar: no posee este Recurso.",
-  "CDE.Error4": "No se puede continuar: no posee ningún Área en este Recurso.",
-  "CDE.Error5": "No se puede continuar: no posee esta Habilidad Mágica.",
-  "CDE.Error6": "No se puede continuar: no posee esta Especialidad en esta Habilidad Mágica.",
-  "CDE.Error10": "No se puede continuar: tienes 0 o menos en este Aspecto.",
-  "CDE.Error12": "No se puede continuar: no puede poseer ninguna Especialidad en esta Habilidad cuya puntuación sea inferior a 1.",
-  "CDE.Error14": "No se puede continuar: no puede poseer ningún Área en este Recurso cuya puntuación sea inferior a 1.",
-  "CDE.Error16": "No se puede continuar: no puede poseer ninguna Especialidad en esta Habilidad Mágica cuya puntuación sea inferior a 1.",
+  "CDE.Error1": "No se puede continuar: no posee esta habilidad.",
+  "CDE.Error2": "No se puede continuar: no posee ninguna especialidad en esta habilidad.",
+  "CDE.Error3": "No se puede continuar: no posee este recurso.",
+  "CDE.Error4": "No se puede continuar: no posee ningún área en este recurso.",
+  "CDE.Error5": "No se puede continuar: no posee esta habilidad mágica.",
+  "CDE.Error6": "No se puede continuar: no posee esta especialidad en esta habilidad mágica.",
+  "CDE.Error10": "No se puede continuar: tienes 0 o menos en este aspecto.",
+  "CDE.Error12": "No se puede continuar: no puede poseer ninguna especialidad en esta habilidad cuya puntuación sea inferior a 1.",
+  "CDE.Error14": "No se puede continuar: no puede poseer ningún área en este recurso cuya puntuación sea inferior a 1.",
+  "CDE.Error16": "No se puede continuar: no puede poseer ninguna especialidad en esta habilidad mágica cuya puntuación sea inferior a 1.",
 
   "CDE.Preferences": "Preferencias para este actor",
   "CDE.TypeOfThrowCheck": "Preguntar siempre antes de realizar una tirada",
@@ -278,7 +278,7 @@
   "CDE.TypeOfThrowTitle": "¿Modificar el tipo de tirada?",
   "CDE.CancelChanges": "Cancelar cambios",
 
-  "CDE.NextTimeGoToTheSettings": "Todos estos son configurables en la Configuración.",
+  "CDE.NextTimeGoToTheSettings": "Todos estos son configurables en la configuración.",
 
 
   "CDE.OneDie": "dado",
